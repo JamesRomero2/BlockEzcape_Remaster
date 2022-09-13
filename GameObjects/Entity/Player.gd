@@ -3,21 +3,22 @@ extends KinematicBody2D
 onready var arrows: Node2D = $Arrows
 onready var verticalCollision: CollisionShape2D = $VerticalCollision
 onready var horizontalCollision: CollisionShape2D = $HorizontalCollision
+onready var animations: AnimationPlayer = $AnimationPlayer
 
 var arrowIndicator: Array = []
 var playerCanMove: bool = true
 var characterLooking: bool = true
 var playerVelocity: Vector2 = Vector2.ZERO
-var playerSpeed: int = 16
+var playerSpeed: int = 8
 
 func _ready():
-	var swipeControl = get_node("SwipeControl/Control/TouchScreenButton")
+	var swipeControl = get_node("SwipeController/Control/TouchScreenButton")
 	swipeControl.connect("playerSwipeDirection", self, "_on_TouchScreenButton_swipeDirection")
 	swipeControl.connect("playerGestureState", self, "_on_TouchScreenButton_characterState")
 	_addArrowsToArray()
 
 func _physics_process(_delta):
-#	_playAnimations()
+	_playAnimations()
 	
 	_showArrow(playerVelocity, characterLooking)
 	
@@ -60,24 +61,24 @@ func _showArrow(direction: Vector2, lookingState: bool):
 		Vector2.RIGHT:
 			arrowIndicator[1].visible = true
 		Vector2.DOWN:
-			arrowIndicator[1].visible = true
-		Vector2.LEFT:
 			arrowIndicator[2].visible = true
+		Vector2.LEFT:
+			arrowIndicator[3].visible = true
 
 func _hideArrow():
 	for i in range(arrowIndicator.size()):
 		arrowIndicator[i].visible = false
 
-#func _playAnimations():
-#	# If the player hold the screen, Look first to the direction
-#	if playerVelocity.x > 0:
-#		animations.play("look_right")
-#	elif playerVelocity.x < 0:
-#		animations.play("look_left")
-#	if playerVelocity.y > 0:
-#		animations.play("look_backward")
-#	elif playerVelocity.y < 0:
-#		animations.play("look_forward")
+func _playAnimations():
+	# If the player hold the screen, Look first to the direction
+	if playerVelocity.x > 0:
+		animations.play("LookRight")
+	elif playerVelocity.x < 0:
+		animations.play("LookLeft")
+	if playerVelocity.y > 0:
+		animations.play("LookBackward")
+	elif playerVelocity.y < 0:
+		animations.play("LookForward")
 
 func _on_TouchScreenButton_swipeDirection(swipeDirection: Vector2):
 	if playerCanMove:
