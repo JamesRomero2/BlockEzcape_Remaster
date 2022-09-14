@@ -6,7 +6,7 @@ onready var horizontalCollision: CollisionShape2D = $HorizontalCollision
 onready var animations: AnimationPlayer = $AnimationPlayer
 
 var arrowIndicator: Array = []
-var playerCanMove: bool = true
+var playerCanMove: bool = true setget _setPlayerCanMove
 var characterLooking: bool = true
 var playerVelocity: Vector2 = Vector2.ZERO
 var playerSpeed: int = 8
@@ -18,6 +18,7 @@ func _ready():
 	_addArrowsToArray()
 
 func _physics_process(_delta):
+	print(playerVelocity)
 	_playAnimations()
 	
 	_showArrow(playerVelocity, characterLooking)
@@ -87,3 +88,6 @@ func _on_TouchScreenButton_swipeDirection(swipeDirection: Vector2):
 func _on_TouchScreenButton_characterState(characterState: bool):
 	if playerCanMove:
 		characterLooking = characterState
+
+func _setPlayerCanMove(value):
+	playerCanMove = value

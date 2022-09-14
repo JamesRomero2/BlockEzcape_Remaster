@@ -11,6 +11,7 @@ func _ready():
 
 func _on_Key_body_entered(body: Node):
 	if body.name == "Player" and !collected:
+		collected = true
 		emit_signal("KeyCollected")
 		print("Colelcted")
 		$AnimationPlayer.play("Collected")

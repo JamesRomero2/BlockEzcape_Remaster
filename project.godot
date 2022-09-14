@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Block Ezcape"
+run/main_scene="res://Scenes/Prototype.tscn"
 config/icon="res://Assets/Textures/GameIconLogo_2_192x192.png"
 
 [display]
@@ -58,6 +59,7 @@ pointing/emulate_touch_from_mouse=true
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Interactable"
+2d_physics/layer_3="Wall"
 
 [physics]
 
