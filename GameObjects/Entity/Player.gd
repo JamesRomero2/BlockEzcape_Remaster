@@ -6,7 +6,7 @@ onready var horizontalCollision: CollisionShape2D = $HorizontalCollision
 onready var animations: AnimationPlayer = $AnimationPlayer
 
 var arrowIndicator: Array = []
-var playerCanMove: bool = true setget _setPlayerCanMove
+var playerCanMove: bool = true setget _setPlayerCanMove, _getPlayerCanMove
 var characterLooking: bool = true
 var playerVelocity: Vector2 = Vector2.ZERO
 var playerSpeed: int = 8
@@ -18,7 +18,6 @@ func _ready():
 	_addArrowsToArray()
 
 func _physics_process(_delta):
-	print(playerVelocity)
 	_playAnimations()
 	
 	_showArrow(playerVelocity, characterLooking)
@@ -28,7 +27,7 @@ func _physics_process(_delta):
 
 	# Check if the character is in motion, if the character is in motion do not accept direction.
 	if playerVelocity != Vector2.ZERO:
-		playerCanMove = false
+		_setPlayerCanMove(false)
 
 	# Enable and Disbable Horizontal and Vertical Collisions
 	if playerVelocity.x != 0:
@@ -43,7 +42,7 @@ func _physics_process(_delta):
 
 	# If the player stops of collided with a wall, enable playerCanMove to accept another direction
 	if playerCollision != null:
-		playerCanMove = true
+		_setPlayerCanMove(true)
 
 func _addArrowsToArray():
 	for arrow in arrows.get_children():
@@ -82,12 +81,15 @@ func _playAnimations():
 		animations.play("LookForward")
 
 func _on_TouchScreenButton_swipeDirection(swipeDirection: Vector2):
-	if playerCanMove:
+	if _getPlayerCanMove():
 		playerVelocity = swipeDirection
 
 func _on_TouchScreenButton_characterState(characterState: bool):
-	if playerCanMove:
+	if _getPlayerCanMove():
 		characterLooking = characterState
 
 func _setPlayerCanMove(value):
 	playerCanMove = value
+
+func _getPlayerCanMove():
+	return playerCanMove
