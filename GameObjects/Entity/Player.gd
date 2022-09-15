@@ -8,7 +8,7 @@ onready var animations: AnimationPlayer = $AnimationPlayer
 var arrowIndicator: Array = []
 var playerCanMove: bool = true setget _setPlayerCanMove, _getPlayerCanMove
 var characterLooking: bool = true
-var playerVelocity: Vector2 = Vector2.ZERO
+var playerVelocity: Vector2 = Vector2.ZERO setget _setPlayerVelocity, _getPlayerVelocity
 var playerSpeed: int = 8
 
 func _ready():
@@ -20,25 +20,25 @@ func _ready():
 func _physics_process(_delta):
 	_playAnimations()
 	
-	_showArrow(playerVelocity, characterLooking)
+	_showArrow(_getPlayerVelocity(), characterLooking)
 	
 	# If the player let go of the screen proceed the character to the given direction
 	if characterLooking: return
 
 	# Check if the character is in motion, if the character is in motion do not accept direction.
-	if playerVelocity != Vector2.ZERO:
+	if _getPlayerVelocity() != Vector2.ZERO:
 		_setPlayerCanMove(false)
 
 	# Enable and Disbable Horizontal and Vertical Collisions
-	if playerVelocity.x != 0:
+	if _getPlayerVelocity().x != 0:
 		horizontalCollision.disabled = false
 		verticalCollision.disabled = true
-	elif playerVelocity.y != 0:
+	elif _getPlayerVelocity().y != 0:
 		horizontalCollision.disabled = true
 		verticalCollision.disabled = false
 
 	# Move the player
-	var playerCollision: KinematicCollision2D = move_and_collide(playerVelocity * playerSpeed)
+	var playerCollision: KinematicCollision2D = move_and_collide(_getPlayerVelocity() * playerSpeed)
 
 	# If the player stops of collided with a wall, enable playerCanMove to accept another direction
 	if playerCollision != null:
@@ -82,7 +82,7 @@ func _playAnimations():
 
 func _on_TouchScreenButton_swipeDirection(swipeDirection: Vector2):
 	if _getPlayerCanMove():
-		playerVelocity = swipeDirection
+		_setPlayerVelocity(swipeDirection)
 
 func _on_TouchScreenButton_characterState(characterState: bool):
 	if _getPlayerCanMove():
@@ -93,3 +93,9 @@ func _setPlayerCanMove(value):
 
 func _getPlayerCanMove():
 	return playerCanMove
+
+func _setPlayerVelocity(value):
+	playerVelocity = value
+
+func _getPlayerVelocity():
+	return playerVelocity

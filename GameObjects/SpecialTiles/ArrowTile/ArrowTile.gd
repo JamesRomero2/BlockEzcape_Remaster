@@ -20,10 +20,10 @@ func _ready():
 			sprite.rotation_degrees = 180
 		"Left":
 			sprite.rotation_degrees = 270
-	
 
-func _on_Area2D_body_entered(body):
-	if body.name == "Player":
-		body.position = position
-		body._setPlayerCanMove(true)
-		body._on_TouchScreenButton_swipeDirection(vectorDirection[direction])
+func _on_ArrowTile_area_entered(area):
+	if area.name == "Player":
+		var playerObject = area.get_parent()
+		playerObject.position = position
+		playerObject._setPlayerCanMove(true)
+		playerObject._on_TouchScreenButton_swipeDirection(vectorDirection[direction])

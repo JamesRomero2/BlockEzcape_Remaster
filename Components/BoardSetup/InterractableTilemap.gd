@@ -12,10 +12,10 @@ var interactableNodes: Dictionary = {
 }
 
 func _ready():
-	for cellPosition in self.get_used_cells():
-		var cell: int = self.get_cellv(cellPosition)
+	for cellPosition in get_used_cells():
+		var cell: int = get_cellv(cellPosition)
 		if interactableNodes.has(cell):
 			var objectNode: Node = interactableNodes[cell].instance()
-			objectNode.position = self.map_to_world(cellPosition) + Vector2(8,8)
+			objectNode.position = map_to_world(cellPosition) + Vector2(8,8)
 			add_child(objectNode)
 			self.set_cellv(cellPosition, -1)

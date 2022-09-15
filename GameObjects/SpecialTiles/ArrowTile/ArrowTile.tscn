@@ -7,6 +7,7 @@
 extents = Vector2( 7, 7 )
 
 [node name="ArrowTile" type="Area2D"]
+collision_layer = 8
 script = ExtResource( 1 )
 direction = "Left"
 
@@ -16,4 +17,4 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
+[connection signal="area_entered" from="." to="." method="_on_ArrowTile_area_entered"]

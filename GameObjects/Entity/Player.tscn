@@ -24,7 +24,7 @@ load_path = "res://.import/ArrowIndicator.png-58a7b2e7f272b3fd0bd29de3853fec19.s
 
 [node name="Player" type="KinematicBody2D"]
 z_index = 1
-collision_mask = 2
+collision_mask = 14
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
