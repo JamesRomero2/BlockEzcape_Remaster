@@ -14,6 +14,10 @@ config/name="Block Ezcape"
 run/main_scene="res://Scenes/Prototype.tscn"
 config/icon="res://Assets/Textures/GameIconLogo_2_192x192.png"
 
+[autoload]
+
+QuestionsLoader="*res://Temp/QuestionsLoader.gd"
+
 [display]
 
 window/size/width=640
