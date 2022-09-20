@@ -1,15 +1,18 @@
 extends Node
 
 onready var question = $Control/QuestionBG/Question
-onready var choices = $Control/ChoicesBG/Choices
 onready var cluePanel = $Control2/CluePanel
 onready var clue = $Control2/CluePanel/VBoxContainer/Clue
+onready var buttonChoices = $Control/ButtonContainer
 
 var randQuestion = {}
 var numberOfQuestions: int = 3
 var currentPanel = 1
+var correctAnswer = 0
+var canAnswer = true
 
 func _ready():
+	_connectButtons()
 	_createQuestions()
 	print(randQuestion)
 	_displayQuestionsAndChoices()
@@ -23,12 +26,12 @@ func _displayQuestionsAndChoices():
 	question.text = randQuestion[currentPanel]["Question"]
 	
 #	Display Choices
-	for choice in choices.get_children():
-		choice.text = randQuestion[currentPanel]["Choices"][str(choice.get_index() + 1)]
+	for choice in buttonChoices.get_children():
+		var choiceLabel = choice.get_child(0).get_child(0).get_child(1)
+		choiceLabel.text = randQuestion[currentPanel]["Choices"][str(choice.get_index() + 1)]
 	
 #	Display Clue
 	clue.text = randQuestion[currentPanel]["Clue"]
-	
 
 func _on_NextButton_pressed():
 	if currentPanel == numberOfQuestions:
@@ -37,26 +40,27 @@ func _on_NextButton_pressed():
 	
 	if currentPanel < numberOfQuestions:
 		currentPanel += 1
-
-	_displayQuestionsAndChoices()
-	_showFinishButton()
 	
-
-func _on_BackButton_pressed():
-	if currentPanel > 1:
-		currentPanel -= 1
-
 	_displayQuestionsAndChoices()
-	_showFinishButton()
 
 func _on_ClueButton_pressed():
 	cluePanel.visible = !cluePanel.visible
 
-func _showFinishButton():
-	if currentPanel == numberOfQuestions:
-		$Control/NextButton.text = "Finish"
-	else:
-		$Control/NextButton.text = "Next"
-
 func _levelEnd():
 	print("Run Method")
+	print("Score : %s / %s" % [str(correctAnswer), str(numberOfQuestions)])
+
+func _onPlayerSelects(button):
+	var playersAnswer = button.get_child(0).get_child(0).get_child(1).text
+	var rightAnswer = randQuestion[currentPanel]["Answer"]
+	if playersAnswer == rightAnswer:
+		correctAnswer += 1
+		print("Right")
+	else:
+		print("Wrong")
+	
+	_on_NextButton_pressed()
+
+func _connectButtons():
+	for i in buttonChoices.get_children():
+		i.connect("pressed", self, "_onPlayerSelects", [i])

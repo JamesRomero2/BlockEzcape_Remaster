@@ -1,25 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Textures/LightBackgroundPanel.png" type="Texture" id=2]
 [ext_resource path="res://Temp/QuizScript.gd" type="Script" id=3]
+[ext_resource path="res://Temp/Choices.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 48
-font_data = ExtResource( 1 )
-
-[sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/LightBackgroundPanel.png-9ff041d6d83139890fb20d8d75c4b162.stex"
-
-[sub_resource type="DynamicFont" id=5]
-size = 48
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 48
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=7]
 size = 48
 font_data = ExtResource( 1 )
 
@@ -54,58 +40,15 @@ text = "QUESTIONS"
 align = 1
 valign = 1
 
-[node name="ChoicesBG" type="NinePatchRect" parent="Control"]
+[node name="ButtonContainer" parent="Control" instance=ExtResource( 4 )]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -304.0
 margin_top = -116.0
+margin_right = 0.0
 margin_bottom = 116.0
-texture = SubResource( 4 )
-patch_margin_left = 6
-patch_margin_top = 8
-patch_margin_right = 6
-patch_margin_bottom = 10
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Choices" type="VBoxContainer" parent="Control/ChoicesBG"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 8.0
-margin_right = -8.0
-margin_bottom = -8.0
-alignment = 1
-
-[node name="A" type="Label" parent="Control/ChoicesBG/Choices"]
-margin_top = 18.0
-margin_right = 288.0
-margin_bottom = 75.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 5 )
-text = "CHOICES"
-valign = 1
-
-[node name="B" type="Label" parent="Control/ChoicesBG/Choices"]
-margin_top = 79.0
-margin_right = 288.0
-margin_bottom = 136.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
-text = "CHOICES"
-valign = 1
-
-[node name="C" type="Label" parent="Control/ChoicesBG/Choices"]
-margin_top = 140.0
-margin_right = 288.0
-margin_bottom = 197.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 7 )
-text = "CHOICES"
-valign = 1
 
 [node name="ClueButton" type="Button" parent="Control"]
 margin_right = 64.0
@@ -113,6 +56,7 @@ margin_bottom = 32.0
 text = "CLUE"
 
 [node name="NextButton" type="Button" parent="Control"]
+visible = false
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -124,6 +68,7 @@ margin_bottom = -24.0
 text = "NEXT"
 
 [node name="BackButton" type="Button" parent="Control"]
+visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 120.0
