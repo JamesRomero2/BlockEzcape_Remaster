@@ -94,7 +94,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Key" type="Area2D"]
+[node name="Key" type="Area2D" groups=["Key"]]
 collision_layer = 2
 script = ExtResource( 5 )
 

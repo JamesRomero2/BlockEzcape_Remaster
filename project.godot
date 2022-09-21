@@ -11,12 +11,12 @@ config_version=4
 [application]
 
 config/name="Block Ezcape"
-run/main_scene="res://Scenes/Prototype.tscn"
+run/main_scene="res://Temp/LevelTemplate.tscn"
 config/icon="res://Assets/Textures/GameIconLogo_2_192x192.png"
 
 [autoload]
 
-QuestionsLoader="*res://Temp/QuestionsLoader.gd"
+QuestionsLoader="*res://Scripts/QuestionsLoader.gd"
 
 [display]
 

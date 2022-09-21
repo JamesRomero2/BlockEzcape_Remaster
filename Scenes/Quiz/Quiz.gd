@@ -1,9 +1,9 @@
-extends Node
+extends CanvasLayer
 
-onready var question = $Control/QuestionBG/Question
-onready var cluePanel = $Control2/CluePanel
-onready var clue = $Control2/CluePanel/VBoxContainer/Clue
-onready var buttonChoices = $Control/ButtonContainer
+onready var question = $QuestionBG/Question
+onready var hintPanel = $HintPanel
+onready var buttonChoices = $ButtonContainer
+onready var timer := $Timer
 
 var randQuestion = {}
 var numberOfQuestions: int = 3
@@ -14,7 +14,6 @@ var canAnswer = true
 func _ready():
 	_connectButtons()
 	_createQuestions()
-	print(randQuestion)
 	_displayQuestionsAndChoices()
 
 func _createQuestions():
@@ -31,7 +30,7 @@ func _displayQuestionsAndChoices():
 		choiceLabel.text = randQuestion[currentPanel]["Choices"][str(choice.get_index() + 1)]
 	
 #	Display Clue
-	clue.text = randQuestion[currentPanel]["Clue"]
+	hintPanel._setHint(randQuestion[currentPanel]["Clue"])
 
 func _on_NextButton_pressed():
 	if currentPanel == numberOfQuestions:
@@ -44,7 +43,7 @@ func _on_NextButton_pressed():
 	_displayQuestionsAndChoices()
 
 func _on_ClueButton_pressed():
-	cluePanel.visible = !cluePanel.visible
+	hintPanel.visible = !hintPanel.visible
 
 func _levelEnd():
 	print("Run Method")
@@ -64,3 +63,6 @@ func _onPlayerSelects(button):
 func _connectButtons():
 	for i in buttonChoices.get_children():
 		i.connect("pressed", self, "_onPlayerSelects", [i])
+
+func _startTimer():
+	timer._startTimer()
