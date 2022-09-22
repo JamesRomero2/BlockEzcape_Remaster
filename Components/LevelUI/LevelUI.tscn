@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Textures/LightBackgroundPanel.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Textures/PauseIcon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/Keys.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/DarkBackgroundPanel.png" type="Texture" id=4]
+[ext_resource path="res://Components/Timer/Timer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Fonts/Amiko/Amiko-Bold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 34
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = -3
+extra_spacing_bottom = -8
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+extra_spacing_bottom = -12
+font_data = ExtResource( 6 )
+
+[node name="LevelUI" type="CanvasLayer"]
+layer = 5
+
+[node name="PauseButton" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -64.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = 64.0
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PauseButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+patch_margin_left = 6
+patch_margin_top = 8
+patch_margin_right = 6
+patch_margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="PauseButton/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="Timer" parent="." instance=ExtResource( 5 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_top = 24.0
+margin_right = 35.0
+margin_bottom = 56.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 153.0
+margin_bottom = 64.0
+texture = ExtResource( 4 )
+patch_margin_left = 4
+patch_margin_top = 6
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -20.0
+margin_right = 40.0
+margin_bottom = 20.0
+texture = ExtResource( 3 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -32.5
+margin_right = 9.5
+custom_fonts/font = SubResource( 1 )
+text = "10"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="NinePatchRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_right = -8.0
+custom_fonts/font = SubResource( 2 )
+text = "Left"
+valign = 1
+
+[node name="PausePanel" parent="." instance=ExtResource( 8 )]

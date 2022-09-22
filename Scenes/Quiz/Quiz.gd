@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal quizIsDone
+
 onready var question = $QuestionBG/Question
 onready var hintPanel = $HintPanel
 onready var buttonChoices = $ButtonContainer
@@ -15,6 +17,7 @@ func _ready():
 	_connectButtons()
 	_createQuestions()
 	_displayQuestionsAndChoices()
+	timer.connect("timesUp", self, "_onTimerTimesUp")
 
 func _createQuestions():
 	for i in numberOfQuestions:
@@ -34,7 +37,7 @@ func _displayQuestionsAndChoices():
 
 func _on_NextButton_pressed():
 	if currentPanel == numberOfQuestions:
-		_levelEnd()
+		timer._getTime()
 		return
 	
 	if currentPanel < numberOfQuestions:
@@ -45,9 +48,14 @@ func _on_NextButton_pressed():
 func _on_ClueButton_pressed():
 	hintPanel.visible = !hintPanel.visible
 
-func _levelEnd():
-	print("Run Method")
-	print("Score : %s / %s" % [str(correctAnswer), str(numberOfQuestions)])
+func _levelEnd(time):
+	self.visible = false
+	var score = "%s / %s" % [str(correctAnswer), str(numberOfQuestions)]
+	emit_signal("quizIsDone", score, time)
+
+func _onTimerTimesUp(value):
+	_levelEnd(value)
+
 
 func _onPlayerSelects(button):
 	var playersAnswer = button.get_child(0).get_child(0).get_child(1).text

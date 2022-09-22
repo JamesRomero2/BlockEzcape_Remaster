@@ -38,8 +38,19 @@ func _displayTimer(mins, secs):
 	else:
 		timerLabel.set_text("%s" % [secsText])
 
+func _getTime():
+	timer.stop()
+	var timeSpent
+	if minutes > 0:
+		if seconds <= 9:
+			timeSpent = "0" + str(60 - seconds) + "secs"
+		else:
+			timeSpent = str(60 - seconds) + "secs"
+	elif minutes == 0:
+		timeSpent = "1min : " + str(60 - seconds) + "secs"
+	emit_signal("timesUp", timeSpent)
+
 func _stopTimer(mins, secs):
 	if mins == 0 and secs == 0:
-		print("Time's Up")
-		emit_signal("timesUp")
+		emit_signal("timesUp", "2mins : 00secs")
 		timer.stop()
