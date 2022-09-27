@@ -52,6 +52,7 @@ margin_right = -16.0
 margin_bottom = 164.0
 
 [node name="ClueButton" parent="." instance=ExtResource( 2 )]
+visible = false
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 91.0
@@ -61,6 +62,7 @@ margin_bottom = 48.0
 visible = false
 
 [node name="Timer" parent="." instance=ExtResource( 4 )]
+visible = false
 margin_left = 104.0
 margin_top = 16.0
 margin_right = 179.0

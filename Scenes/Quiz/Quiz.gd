@@ -3,8 +3,8 @@ extends CanvasLayer
 signal quizIsDone
 
 onready var question = $QuestionBG/Question
-onready var hintPanel = $HintPanel
 onready var buttonChoices = $ButtonContainer
+onready var hintPanel = $HintPanel
 onready var timer := $Timer
 
 var randQuestion = {}
@@ -55,7 +55,6 @@ func _levelEnd(time):
 
 func _onTimerTimesUp(value):
 	_levelEnd(value)
-
 
 func _onPlayerSelects(button):
 	var playersAnswer = button.get_child(0).get_child(0).get_child(1).text

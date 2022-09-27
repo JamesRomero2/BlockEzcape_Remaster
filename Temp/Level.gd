@@ -31,7 +31,6 @@ func _onKeyCollected():
 	if _getNumberOfKeyInPuzzle() == 0:
 		templeNode._setDoorState(true)
 		templeNode._setTexture()
-		templeNode._emitParticle()
 		_setCanEnterTemple(true)
 
 func _onPlayerEnteredTemple():

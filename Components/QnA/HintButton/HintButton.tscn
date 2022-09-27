@@ -9,8 +9,8 @@ extra_spacing_bottom = -4
 font_data = ExtResource( 3 )
 
 [node name="HintButton" type="Button"]
-margin_right = 75.0
-margin_bottom = 32.0
+margin_right = 80.0
+margin_bottom = 40.0
 flat = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -39,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = -53.0
 margin_top = -16.0
+margin_right = -5.0
 margin_bottom = 16.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )

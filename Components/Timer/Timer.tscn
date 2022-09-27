@@ -10,7 +10,7 @@ font_data = ExtResource( 2 )
 
 [node name="Timer" type="NinePatchRect"]
 margin_right = 75.0
-margin_bottom = 32.0
+margin_bottom = 40.0
 texture = ExtResource( 1 )
 patch_margin_left = 12
 patch_margin_top = 12

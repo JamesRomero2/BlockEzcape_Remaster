@@ -151,17 +151,14 @@ valign = 1
 [node name="PuzzleTimer" type="VBoxContainer" parent="NinePatchRect"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 32.0
+margin_left = 24.0
 margin_top = 4.0
-margin_right = 121.0
+margin_right = 146.0
 margin_bottom = 46.0
 alignment = 1
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Label" type="Label" parent="NinePatchRect/PuzzleTimer"]
-margin_right = 89.0
+margin_right = 122.0
 margin_bottom = 19.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 4 )
@@ -171,11 +168,11 @@ valign = 1
 
 [node name="Time" type="Label" parent="NinePatchRect/PuzzleTimer"]
 margin_top = 23.0
-margin_right = 89.0
+margin_right = 122.0
 margin_bottom = 42.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
-text = "00:00"
+text = "00mins : 00secs"
 align = 1
 valign = 1
 
