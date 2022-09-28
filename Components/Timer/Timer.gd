@@ -12,7 +12,13 @@ func _ready():
 	_displayTimer(minutes, seconds)
 
 func _startTimer():
+	_restartTimer()
 	timer.start()
+
+func _restartTimer():
+	minutes = 2
+	seconds = 0
+	_countDownTimer()
 
 func _on_Timer_timeout():
 	seconds -= 1

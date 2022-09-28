@@ -1,62 +1,42 @@
 extends Node
 
-onready var templeNode := $BoardSetup/InteractableObjects/Temple
-onready var board := $BoardSetup
-onready var quizPanel := $QuizPanel
-onready var scorePanel := $ScorePanel
+signal quizIsDone
 
-var numberOfKeyInPuzzle: int = 0 setget _setNumberOfKeyInPuzzle, _getNumberOfKeyInPuzzle
-var canEnterTemple: bool = false setget _setCanEnterTemple, _getCanEnterTemple
+onready var scorePanel := $ScorePanel
+onready var levelPanel := $LevelUI
+
+var quizPanel
 
 func _ready():
-	_connectAllKeys()
-	_connectTempleSignal()
-	_connectQuizSignal()
-	_setNumberOfKeyInPuzzle(get_tree().get_nodes_in_group("Key").size())
-	quizPanel.visible = false
+	quizPanel = get_node("Level").get_child(0)
+	_connectSignals()
+	_addHintToPanel()
+	_addKeysToPanel()
+	levelPanel._startTimer()
 	scorePanel.visible = false
+	scorePanel._setLevelNumber(quizPanel.name)
 
-func _connectAllKeys():
-	for key in get_tree().get_nodes_in_group("Key"):
-		key.connect("KeyCollected", self, "_onKeyCollected")
-
-func _connectTempleSignal():
-	templeNode.connect("playerEnteredTemple", self, "_onPlayerEnteredTemple")
-
-func _connectQuizSignal():
-	quizPanel.connect("quizIsDone", self, "_showResult")
-
-func _onKeyCollected():
-	_setNumberOfKeyInPuzzle(_getNumberOfKeyInPuzzle() - 1)
-	if _getNumberOfKeyInPuzzle() == 0:
-		templeNode._setDoorState(true)
-		templeNode._setTexture()
-		_setCanEnterTemple(true)
-
-func _onPlayerEnteredTemple():
-	_disableBoard()
-	_activateQnA()
+func _connectSignals():
+	quizPanel.connect("keyUpdateUI", levelPanel, "_addNumberOfKeysToPanel")
+	quizPanel.connect("QnAActivate", levelPanel, "_activateQuizPhase")
+	quizPanel.connect("QuizDone", self, "_onGameIsDone")
+	levelPanel.connect("puzzleIsDone", scorePanel, "_setPuzzleTime")
+	self.connect("quizIsDone", scorePanel, "_setQuizTime")
 
 func _activateQnA():
 	quizPanel.visible = true
 	quizPanel._startTimer()
 
-func _disableBoard():
-	board.visible = false
+func _addHintToPanel():
+	levelPanel._attachClueToPanel(quizPanel._getHint())
 
-func _showResult(score, timeSpent):
+func _addKeysToPanel():
+	levelPanel._addNumberOfKeysToPanel(quizPanel._getNumberOfKeyInPuzzle())
+
+func _onGameIsDone(score):
+	scorePanel._setQuizScore(score)
+	levelPanel._recordTimer()
+	emit_signal("quizIsDone", levelPanel._getTimePast())
+	scorePanel._resultSetter()
 	scorePanel.visible = true
-	scorePanel._resultSetter("Level 1", score, "2:00", timeSpent)
-
-#SETTER AND GETTER FUNCTION
-func _setNumberOfKeyInPuzzle(value):
-	numberOfKeyInPuzzle = value
-
-func _getNumberOfKeyInPuzzle():
-	return numberOfKeyInPuzzle
-
-func _setCanEnterTemple(value):
-	canEnterTemple = value
-
-func _getCanEnterTemple():
-	return canEnterTemple
+	levelPanel.visible = false

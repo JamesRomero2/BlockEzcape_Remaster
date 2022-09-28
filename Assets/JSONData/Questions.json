@@ -105,5 +105,112 @@
                 "Clue": "Clue for Type3 Question3"
             }
         }
+    },
+    "Level2": {
+        "Question1": {
+            "Type1": {
+                "Question": "5 x 5 = ?",
+                "Answer": "25",
+                "Choices": {
+                    "1": "35",
+                    "2": "100",
+                    "3": "25",
+                    "4": "10,000"
+                },
+                "Clue": "Clue for Type1 Question1"
+            },
+            "Type2": {
+                "Question": "6 x 7 = ?",
+                "Answer": "42",
+                "Choices": {
+                    "1": "32",
+                    "2": "42",
+                    "3": "1900",
+                    "4": "89"
+                },
+                "Clue": "Clue for Type2 Question1"
+            },
+            "Type3": {
+                "Question": "100 / 10 = ?",
+                "Answer": "10",
+                "Choices": {
+                    "1": "20",
+                    "2": "40",
+                    "3": "60",
+                    "4": "10"
+                },
+                "Clue": "Clue for Type3 Question1"
+            }
+        },
+        "Question2": {
+            "Type1": {
+                "Question": "100 + 156 = ?",
+                "Answer": "256",
+                "Choices": {
+                    "1": "257",
+                    "2": "258",
+                    "3": "259",
+                    "4": "-256"
+                },
+                "Clue": "Clue for Type1 Question2"
+            },
+            "Type2": {
+                "Question": "100 - 2 = ?",
+                "Answer": "98",
+                "Choices": {
+                    "1": "-98",
+                    "2": "98",
+                    "3": "102",
+                    "4": "980"
+                },
+                "Clue": "Clue for Type2 Question2"
+            },
+            "Type3": {
+                "Question": "16 - 13 = ?",
+                "Answer": "3",
+                "Choices": {
+                    "1": "7",
+                    "2": "4",
+                    "3": "3",
+                    "4": "-3"
+                },
+                "Clue": "Clue for Type3 Question2"
+            }
+        },
+        "Question3": {
+            "Type1": {
+                "Question": "9 x 10 = ?",
+                "Answer": "90",
+                "Choices": {
+                    "1": "12",
+                    "2": "90",
+                    "3": "81",
+                    "4": "820"
+                },
+                "Clue": "Clue for Type1 Question3"
+            },
+            "Type2": {
+                "Question": "16 x 2 = ?",
+                "Answer": "32",
+                "Choices": {
+                    "1": "32",
+                    "2": "42",
+                    "3": "90",
+                    "4": "84"
+                },
+                "Clue": "Clue for Type2 Question3"
+            },
+            "Type3": {
+                "Question": "18 x 5 = ?",
+                "Answer": "90",
+                "Choices": {
+                    "1": "50",
+                    "2": "70",
+                    "3": "90",
+                    "4": "110"
+                },
+                "Clue": "Clue for Type3 Question3"
+            }
+        }
     }
 }

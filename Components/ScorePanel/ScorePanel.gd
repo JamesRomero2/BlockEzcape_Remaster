@@ -17,7 +17,7 @@ func _resultSetter():
 	quizTimeResult.text = _getQuizTime()
 
 func _setLevelNumber(value: String):
-	levelNumber = value
+	levelNumber = value.left(5) + " " + value.right(5)
 
 func _getLevelNumber():
 	return levelNumber

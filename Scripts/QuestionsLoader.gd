@@ -27,5 +27,5 @@ func loadQuestions():
 
 func _getRandomQuestion(levelNumber, questionNumber):
 	var randomNum = rng.randi_range(1, 3)
-	var randomQuestions = fileData[str(levelNumber)][questionNumber]["Type" + str(randomNum)]
+	var randomQuestions = fileData[str(levelNumber)]["Question" + str(questionNumber)]["Type" + str(randomNum)]
 	return randomQuestions
