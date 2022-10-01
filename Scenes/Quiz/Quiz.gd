@@ -7,6 +7,7 @@ onready var buttonChoices = $ButtonContainer
 
 var randQnA = {} setget _setRandQnA, _getRandQnA
 var numberOfQuestions: int = 1 setget _setNumberOfQuestions, _getNumberOfQuestions
+
 var currentPanel = 1
 var correctAnswer = 0
 

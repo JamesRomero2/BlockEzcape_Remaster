@@ -5,10 +5,10 @@ var interactableNodes: Dictionary = {
 #	FORMAT
 #	TILE INDEX : SCENE ABSOLUTE PATH
 	0: preload("res://GameObjects/Entity/Player.tscn"),
-	1: preload("res://GameObjects/Interactable/Temple/Temple.tscn"),
-	2: preload("res://GameObjects/Interactable/Key/Key.tscn"),
-	3: preload("res://GameObjects/Interactable/Coin/Coin.tscn"),
-	4: preload("res://GameObjects/Interactable/Point/Point.tscn")
+	1: preload("res://GameObjects/Collectable/Temple/Temple.tscn"),
+	2: preload("res://GameObjects/Collectable/Key/Key.tscn"),
+	3: preload("res://GameObjects/Collectable/Coin/Coin.tscn"),
+	4: preload("res://GameObjects/Collectable/Point/Point.tscn")
 }
 
 func _ready():

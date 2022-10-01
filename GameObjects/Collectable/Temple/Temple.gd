@@ -1,8 +1,9 @@
-extends Area2D
+extends Collectable
 
-signal playerEnteredTemple
+signal TempleEntered
 
 onready var spriteTexture: Sprite = $Sprite
+onready var animation: AnimationPlayer = $AnimationPlayer
 
 var doorState: bool = false setget _setDoorState, _getDoorState
 var doorTexture = {
@@ -12,17 +13,20 @@ var doorTexture = {
 func _ready():
 	_setTexture()
 
+func _setTexture():
+	spriteTexture.texture = doorTexture[_getDoorState()]
+	
+	if _getDoorState():
+		animation.play("OpenTemple")
+
+func _onAreaEntered(area: Area2D):
+	if area.name == "PlayerEffectArea" and _getDoorState():
+		emit_signal("TempleEntered")
+	else:
+		print("Temple Not Activated")
+
 func _setDoorState(value):
 	doorState = value
 
 func _getDoorState():
 	return doorState 
-
-func _setTexture():
-	spriteTexture.texture = doorTexture[_getDoorState()]
-
-func _on_Temple_area_entered(area):
-	if area.name == "Player" and _getDoorState():
-		emit_signal("playerEnteredTemple")
-	else:
-		print("Temple Not Activated")

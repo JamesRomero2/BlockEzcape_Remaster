@@ -5,25 +5,23 @@ onready var verticalCollision: CollisionShape2D = $VerticalCollision
 onready var horizontalCollision: CollisionShape2D = $HorizontalCollision
 onready var animations: AnimationPlayer = $AnimationPlayer
 
-var arrowIndicator: Array = []
 var playerCanMove: bool = true setget _setPlayerCanMove, _getPlayerCanMove
-var characterLooking: bool = true
+var characterLooking: bool = true setget _setCharacterLooking, _getCharacterLooking
 var playerVelocity: Vector2 = Vector2.ZERO setget _setPlayerVelocity, _getPlayerVelocity
+
+var arrowIndicator: Array = []
 var playerSpeed: int = 8
 
 func _ready():
-	var swipeControl = get_node("SwipeController/Control/TouchScreenButton")
-	swipeControl.connect("playerSwipeDirection", self, "_on_TouchScreenButton_swipeDirection")
-	swipeControl.connect("playerGestureState", self, "_on_TouchScreenButton_characterState")
+	_connectSignals()
 	_addArrowsToArray()
 
 func _physics_process(_delta):
 	_playAnimations()
-	
-	_showArrow(_getPlayerVelocity(), characterLooking)
+	_showArrow(_getPlayerVelocity(), _getCharacterLooking())
 	
 	# If the player let go of the screen proceed the character to the given direction
-	if characterLooking: return
+	if _getCharacterLooking(): return
 
 	# Check if the character is in motion, if the character is in motion do not accept direction.
 	if _getPlayerVelocity() != Vector2.ZERO:
@@ -43,6 +41,11 @@ func _physics_process(_delta):
 	# If the player stops of collided with a wall, enable playerCanMove to accept another direction
 	if playerCollision != null:
 		_setPlayerCanMove(true)
+
+func _connectSignals():
+	var swipeControl = get_node("SwipeController/Control/TouchScreenButton")
+	swipeControl.connect("playerSwipeDirection", self, "_onPlayerSwipeDirection")
+	swipeControl.connect("playerGestureState", self, "_onPlayerGestureState")
 
 func _addArrowsToArray():
 	for arrow in arrows.get_children():
@@ -80,19 +83,25 @@ func _playAnimations():
 	elif playerVelocity.y < 0:
 		animations.play("LookForward")
 
-func _on_TouchScreenButton_swipeDirection(swipeDirection: Vector2):
+func _onPlayerSwipeDirection(swipeDirection: Vector2):
 	if _getPlayerCanMove():
 		_setPlayerVelocity(swipeDirection)
 
-func _on_TouchScreenButton_characterState(characterState: bool):
+func _onPlayerGestureState(characterState: bool):
 	if _getPlayerCanMove():
-		characterLooking = characterState
+		_setCharacterLooking(characterState)
 
 func _setPlayerCanMove(value):
 	playerCanMove = value
 
 func _getPlayerCanMove():
 	return playerCanMove
+
+func _setCharacterLooking(value):
+	characterLooking = value
+
+func _getCharacterLooking():
+	return characterLooking
 
 func _setPlayerVelocity(value):
 	playerVelocity = value

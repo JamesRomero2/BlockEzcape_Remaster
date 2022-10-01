@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Collectable",
+"language": "GDScript",
+"path": "res://GameObjects/Collectable/Collectable.gd"
+} ]
+_global_script_class_icons={
+"Collectable": ""
+}
+
 [application]
 
 config/name="Block Ezcape"
@@ -16,7 +26,7 @@ config/icon="res://Assets/Textures/GameIconLogo_2_192x192.png"
 
 [autoload]
 
-QuestionsLoader="*res://Scripts/QuestionsLoader.gd"
+QuestionsLoader="*res://Scripts/GlobalScript/QuestionsLoader.gd"
 
 [display]
 
@@ -75,4 +85,3 @@ common/enable_pause_aware_picking=true
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 environment/default_clear_color=Color( 0.12549, 0.12549, 0.12549, 1 )
-environment/default_environment="res://default_env.tres"

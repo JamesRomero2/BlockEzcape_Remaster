@@ -2,6 +2,7 @@
 
 [resource]
 resource_name = "LookBackward"
+loop = true
 step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")

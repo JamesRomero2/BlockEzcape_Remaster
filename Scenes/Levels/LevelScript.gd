@@ -21,7 +21,7 @@ func _ready():
 
 func _connectAllSignals():
 #	Temple Signal
-	templeNode.connect("playerEnteredTemple", self, "_onPlayerEnteredTemple")
+	templeNode.connect("TempleEntered", self, "_onPlayerEnteredTemple")
 	quizPanel.connect("quizIsDone", self, "_onGameDone")
 	
 #	Key Signal

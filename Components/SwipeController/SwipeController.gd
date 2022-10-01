@@ -1,14 +1,12 @@
 extends TouchScreenButton
 
-signal playerSwipeDirection(direction)
-signal playerGestureState(holding)
+signal playerSwipeDirection(swipeDirection)
+signal playerGestureState(gestureState)
 
 var onArea: bool = false
 
-
 func _ready():
-	self.connect("pressed", self, "_on_self_pressed")
-	self.connect("released", self, "_on_self_released")
+	_connectSignals()
 
 func _input(event: InputEvent):
 	if event is InputEventScreenDrag:
@@ -20,6 +18,10 @@ func _input(event: InputEvent):
 			emit_signal("playerSwipeDirection", Vector2.RIGHT)
 		if getSwipeDirection(event.relative, 1.0) == Vector2.LEFT:
 			emit_signal("playerSwipeDirection", Vector2.LEFT)
+
+func _connectSignals():
+	self.connect("pressed", self, "_on_self_pressed")
+	self.connect("released", self, "_on_self_released")
 
 func getSwipeDirection(swipe: Vector2, swipe_margin: float):
 	var swipeDirection := Vector2.ZERO
