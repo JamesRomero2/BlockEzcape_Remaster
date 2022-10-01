@@ -1,4 +1,4 @@
-extends Area2D
+extends SpecialTile
 
 onready var sprite = $Sprite
 
@@ -21,9 +21,9 @@ func _ready():
 		"Left":
 			sprite.rotation_degrees = 270
 
-func _on_ArrowTile_area_entered(area):
-	if area.name == "Player":
+func _onAreaPlayerEntered(area: Area2D):
+	if area.name == "PlayerEffectArea":
 		var playerObject = area.get_parent()
 		playerObject.position = position
 		playerObject._setPlayerCanMove(true)
-		playerObject._on_TouchScreenButton_swipeDirection(vectorDirection[direction])
+		playerObject._onPlayerSwipeDirection(vectorDirection[direction])

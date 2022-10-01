@@ -40,7 +40,7 @@ hue_variation_random = 1.0
 anim_speed = 1.0
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 3.0
+radius = 6.0
 
 [node name="Key" type="Area2D" groups=["Key"]]
 collision_layer = 2

@@ -26,6 +26,7 @@ tile_data = PoolIntArray( -983064, 0, 0, -983060, 3, 0, -983058, 4, 0, -983056, 
 [node name="SpecialTiles" type="Node2D" parent="BoardSetup"]
 
 [node name="QuizPanel" parent="." instance=ExtResource( 3 )]
+layer = 7
 visible = false
 
 [editable path="BoardSetup"]

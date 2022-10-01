@@ -1,7 +1,6 @@
-extends Area2D
+extends SpecialTile
 
-func _on_SpringTile_area_entered(area):
-	if area.name == "Player":
+func _onAreaPlayerEntered(area: Area2D):
+	if area.name == "PlayerEffectArea":
 		var playerObject = area.get_parent()
 		playerObject.position = position + (playerObject._getPlayerVelocity() * 32)
-		

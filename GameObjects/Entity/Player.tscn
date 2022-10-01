@@ -17,7 +17,7 @@ extents = Vector2( 8, 1 )
 extents = Vector2( 1, 8 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 3, 3 )
+extents = Vector2( 1, 1 )
 
 [sub_resource type="StreamTexture" id=4]
 load_path = "res://.import/ArrowIndicator.png-58a7b2e7f272b3fd0bd29de3853fec19.stex"

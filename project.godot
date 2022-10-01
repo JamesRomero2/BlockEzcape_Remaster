@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Collectable",
 "language": "GDScript",
 "path": "res://GameObjects/Collectable/Collectable.gd"
+}, {
+"base": "Area2D",
+"class": "SpecialTile",
+"language": "GDScript",
+"path": "res://GameObjects/SpecialTiles/SpecialTiles.gd"
 } ]
 _global_script_class_icons={
-"Collectable": ""
+"Collectable": "",
+"SpecialTile": ""
 }
 
 [application]

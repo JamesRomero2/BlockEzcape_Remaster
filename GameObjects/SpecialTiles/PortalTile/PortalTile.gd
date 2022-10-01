@@ -1,4 +1,4 @@
-extends Node
+extends SpecialTile
 
 signal teleporting
 
@@ -14,9 +14,9 @@ func _ready():
 		if self.name != teleportPad.name:
 			teleportLocation = teleportPad.position
 
-func _on_TeleportTile_area_entered(area):
+func _onAreaPlayerEntered(area: Area2D):
 	if !teleportationEnable: return
-	if area.name == "Player" and !teleportationInProgress:
+	if area.name == "PlayerEffectArea" and !teleportationInProgress:
 		var playerObject = area.get_parent()
 		playerObject.position = teleportLocation
 		teleportationInProgress = true

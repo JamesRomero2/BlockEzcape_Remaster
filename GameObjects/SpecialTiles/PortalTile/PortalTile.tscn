@@ -1,10 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Textures/TeleportTile.png" type="Texture" id=1]
 [ext_resource path="res://GameObjects/SpecialTiles/PortalTile/PortalTile.gd" type="Script" id=2]
+[ext_resource path="res://GameObjects/SpecialTiles/PortalTile/TeleportTileAnimation.tres" type="Animation" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 6.0
+radius = 1.0
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
 
 [node name="PortalTile" type="Area2D" groups=["TeleportPad"]]
 collision_layer = 8
@@ -12,8 +28,12 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+hframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[connection signal="area_entered" from="." to="." method="_on_TeleportTile_area_entered"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "TeleportTileAnimation"
+anims/RESET = SubResource( 2 )
+anims/TeleportTileAnimation = ExtResource( 3 )
