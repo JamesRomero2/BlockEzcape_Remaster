@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-
-
 func _on_Unpause_pressed():
 	get_tree().paused = false
 	self.visible = !self.visible

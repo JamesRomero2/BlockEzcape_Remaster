@@ -1,6 +1,7 @@
 extends NinePatchRect
 
 signal timesUp
+signal timeOut
 
 onready var timerLabel = $Label
 onready var timer = $Timer
@@ -47,16 +48,24 @@ func _displayTimer(mins, secs):
 func _getTime():
 	timer.stop()
 	var timeSpent
-	if minutes > 0:
-		if seconds <= 9:
-			timeSpent = "0" + str(60 - seconds) + "secs"
-		else:
-			timeSpent = str(60 - seconds) + "secs"
-	elif minutes == 0:
-		timeSpent = "1min : " + str(60 - seconds) + "secs"
+	
+	if minutes == 2 and seconds == 0:
+		timeSpent = "0secs ?"
+	else:
+		if minutes > 0:
+			if seconds <= 9:
+				timeSpent = "0" + str(60 - seconds) + "secs"
+			else:
+				timeSpent = str(60 - seconds) + "secs"
+		elif minutes == 0:
+			if seconds <= 9:
+				timeSpent = "1min : " + "0" + str(60 - seconds) + "secs"
+			else:
+				timeSpent = "1min : " + str(60 - seconds) + "secs"
+		
 	emit_signal("timesUp", timeSpent)
 
 func _stopTimer(mins, secs):
 	if mins == 0 and secs == 0:
-		emit_signal("timesUp", "2mins : 00secs")
+		emit_signal("outOfTime", "2mins : 00secs")
 		timer.stop()

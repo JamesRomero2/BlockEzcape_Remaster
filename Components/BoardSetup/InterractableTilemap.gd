@@ -1,6 +1,5 @@
 extends TileMap
 
-var NODESCALE: Vector2 =  self.scale
 var interactableNodes: Dictionary = {
 #	FORMAT
 #	TILE INDEX : SCENE ABSOLUTE PATH

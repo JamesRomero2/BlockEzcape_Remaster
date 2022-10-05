@@ -1,7 +1,5 @@
 extends SpecialTile
 
-signal teleporting
-
 var teleportationInProgress: bool = false
 var teleportLocation: Vector2 = Vector2.ZERO
 var teleportationEnable: bool = true

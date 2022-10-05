@@ -1,6 +1,6 @@
 extends Collectable
 
-signal TempleEntered
+signal templeEntered
 
 onready var spriteTexture: Sprite = $Sprite
 onready var animation: AnimationPlayer = $AnimationPlayer
@@ -21,7 +21,8 @@ func _setTexture():
 
 func _onAreaEntered(area: Area2D):
 	if area.name == "PlayerEffectArea" and _getDoorState():
-		emit_signal("TempleEntered")
+		emit_signal("templeEntered")
+		print("Temple Activated")
 	else:
 		print("Temple Not Activated")
 

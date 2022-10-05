@@ -13,7 +13,7 @@ func _onAreaPlayerEntered(area: Area2D):
 		var playerObject = area.get_parent()
 		playerObject.position = position
 		playerObject._setPlayerCanMove(true)
-		playerObject._on_TouchScreenButton_swipeDirection(Vector2.ZERO)
+		playerObject._onPlayerSwipeDirection(Vector2.ZERO)
 		_setPlayerEntered(false)
 
 func _on_StopTile_area_exited(area: Area2D):
