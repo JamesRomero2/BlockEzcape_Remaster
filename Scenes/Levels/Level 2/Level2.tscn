@@ -5,11 +5,11 @@
 [ext_resource path="res://Scenes/Levels/Level.gd" type="Script" id=3]
 [ext_resource path="res://GameObjects/SpecialTiles/PortalTile/PortalTile.tscn" type="PackedScene" id=4]
 
-[node name="Level1" type="Node"]
+[node name="Level2" type="Node"]
 script = ExtResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -144, -120 )
+position = Vector2( -160, -120 )
 current = true
 zoom = Vector2( 0.4, 0.4 )
 

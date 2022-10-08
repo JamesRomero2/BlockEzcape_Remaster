@@ -1,0 +1,496 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://Assets/Fonts/Backto1982/BACKTO1982.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/MainMenu/Parallax/BackgroundMM.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Audio/Music/Ageless 20Change.wav" type="AudioStream" id=3]
+[ext_resource path="res://Components/UIButtons/MainMenuButtonGroup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/FinalAssets/Minus.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Fonts/terminal-font.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/FinalAssets/Labyrinth.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Bold.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/FinalAssets/Plus.png" type="Texture" id=9]
+[ext_resource path="res://Assets/FinalAssets/Numbers.png" type="Texture" id=10]
+[ext_resource path="res://Assets/FinalAssets/times.png" type="Texture" id=11]
+[ext_resource path="res://Assets/FinalAssets/dibayd.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/BlackBackDrop.png" type="Texture" id=13]
+[ext_resource path="res://Components/SettingsUI/Backdrop.tres" type="Material" id=14]
+[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Black.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Scenes/MainMenu/MainMenu.gd" type="Script" id=16]
+
+[sub_resource type="Animation" id=12]
+resource_name = "LabyrinthAnim"
+length = 6.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -443, 67 ), Vector2( -360, 69 ), Vector2( -387, -25 ), Vector2( -443, 67 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Divide:rect_position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 298.002, 72 ), Vector2( 285, 45 ), Vector2( 290, 91 ), Vector2( 298.002, 72 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Multiply:rect_position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 66.0018, 104 ), Vector2( 82, 88 ), Vector2( 92, 80 ), Vector2( 66.0018, 104 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Plus:rect_position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2, 4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 17.0018, 173 ), Vector2( 7, 148 ), Vector2( 40, 174 ), Vector2( 17.0018, 173 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Minus:rect_position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2, 4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 330.002, 164 ), Vector2( 305, 131 ), Vector2( 347, 176 ), Vector2( 330.002, 164 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 248, 22 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Divide:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 298.002, 72 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Multiply:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 66.0018, 104 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Plus:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 17.0018, 173 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Minus:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 330.002, 164 ) ]
+}
+
+[sub_resource type="DynamicFont" id=14]
+size = 37
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="CanvasItemMaterial" id=7]
+particles_animation = true
+particles_anim_h_frames = 10
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=8]
+interpolation_mode = 1
+offsets = PoolRealArray( 0, 0.339806, 0.718447 )
+colors = PoolColorArray( 0.566406, 0.566406, 0.566406, 1, 0.289063, 1, 0, 1, 0.804688, 0, 1, 1 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
+
+[sub_resource type="Gradient" id=10]
+colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 10 )
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 1 ), 0.0, -0.753979, 0, 0, Vector2( 1, 0 ), -1.06478, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 150, 1, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+gravity = Vector3( 0, 70, 0 )
+initial_velocity = 20.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 10.0
+linear_accel_random = 1.0
+damping = 20.0
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.1
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 11 )
+color_initial_ramp = SubResource( 9 )
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[sub_resource type="DynamicFont" id=15]
+size = 62
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="Theme" id=17]
+
+[sub_resource type="StyleBoxTexture" id=20]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 24
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="Shader" id=18]
+code = "shader_type canvas_item;
+
+uniform vec4 BGColor: hint_color;
+uniform float alph: hint_range(0.0, 1.0);
+
+void fragment() {
+	COLOR.rgba = BGColor;
+	COLOR.a = alph;
+}"
+
+[sub_resource type="ShaderMaterial" id=21]
+resource_local_to_scene = true
+shader = SubResource( 18 )
+shader_param/BGColor = Color( 0.4, 0.768627, 0.803922, 1 )
+shader_param/alph = 0.25
+
+[sub_resource type="StyleBoxTexture" id=22]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="ShaderMaterial" id=23]
+resource_local_to_scene = true
+shader = SubResource( 18 )
+shader_param/BGColor = Color( 0.4, 0.768627, 0.803922, 1 )
+shader_param/alph = 0.25
+
+[sub_resource type="StyleBoxTexture" id=24]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 20
+font_data = ExtResource( 15 )
+
+[node name="MainMenu" type="Node"]
+script = ExtResource( 16 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "LabyrinthAnim"
+anims/LabyrinthAnim = SubResource( 12 )
+anims/RESET = SubResource( 13 )
+
+[node name="MainMenuUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="MainMenuUI"]
+margin_left = 16.0
+margin_top = 48.0
+margin_right = 389.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 14 )
+text = "BLOCKEZCAPE"
+
+[node name="LabyrinthImage" type="Control" parent="MainMenuUI"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -180.0
+margin_bottom = 180.0
+
+[node name="Labyrinth" type="TextureRect" parent="MainMenuUI/LabyrinthImage"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 248.0
+margin_top = -158.0
+margin_right = 648.005
+margin_bottom = 236.0
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 7
+
+[node name="Particles2D" type="Particles2D" parent="MainMenuUI/LabyrinthImage/Labyrinth"]
+material = SubResource( 7 )
+position = Vector2( 199, 261 )
+z_index = -1
+amount = 10
+lifetime = 2.0
+process_material = SubResource( 2 )
+texture = ExtResource( 10 )
+
+[node name="Divide" type="TextureRect" parent="MainMenuUI/LabyrinthImage/Labyrinth"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 97.9995
+margin_top = -125.0
+margin_right = 138.0
+margin_bottom = -85.001
+texture = ExtResource( 12 )
+stretch_mode = 6
+
+[node name="Multiply" type="TextureRect" parent="MainMenuUI/LabyrinthImage/Labyrinth"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.001
+margin_top = -93.0
+margin_right = -94.0019
+margin_bottom = -52.999
+texture = ExtResource( 11 )
+stretch_mode = 6
+
+[node name="Plus" type="TextureRect" parent="MainMenuUI/LabyrinthImage/Labyrinth"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -183.001
+margin_top = -24.0
+margin_right = -143.001
+margin_bottom = 16.0
+texture = ExtResource( 9 )
+stretch_mode = 6
+
+[node name="Minus" type="TextureRect" parent="MainMenuUI/LabyrinthImage/Labyrinth"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 130.0
+margin_top = -33.0
+margin_right = 170.0
+margin_bottom = 7.0
+texture = ExtResource( 5 )
+stretch_mode = 6
+
+[node name="Buttons" type="Control" parent="MainMenuUI"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+
+[node name="ButtonGroup" parent="MainMenuUI/Buttons" instance=ExtResource( 4 )]
+margin_left = 32.0
+margin_top = -55.0
+margin_right = 32.0
+margin_bottom = -55.0
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Settings"]
+margin_left = 32.0
+margin_top = 24.0
+margin_right = 405.0
+margin_bottom = 87.0
+custom_fonts/font = SubResource( 15 )
+text = "Settings"
+
+[node name="Control" type="Control" parent="Settings"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -61.0
+margin_bottom = -61.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_right = -32.0
+theme = SubResource( 17 )
+custom_constants/separation = 5
+alignment = 1
+
+[node name="Display" type="Panel" parent="Settings/Control/VBoxContainer"]
+material = ExtResource( 14 )
+margin_right = 576.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+custom_styles/panel = SubResource( 20 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Control/VBoxContainer/Display"]
+margin_left = 32.0
+margin_right = 544.0
+
+[node name="Label" type="Label" parent="Settings/Control/VBoxContainer/Display/HBoxContainer"]
+margin_right = 142.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 16 )
+text = "Display Mode"
+
+[node name="Music" type="Panel" parent="Settings/Control/VBoxContainer"]
+material = SubResource( 21 )
+margin_top = 37.0
+margin_right = 576.0
+margin_bottom = 69.0
+rect_min_size = Vector2( 0, 32 )
+custom_styles/panel = SubResource( 22 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Control/VBoxContainer/Music"]
+margin_left = 32.0
+margin_right = 544.0
+
+[node name="Label" type="Label" parent="Settings/Control/VBoxContainer/Music/HBoxContainer"]
+margin_right = 146.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 16 )
+text = "Music Volume"
+
+[node name="SFX" type="Panel" parent="Settings/Control/VBoxContainer"]
+material = SubResource( 23 )
+margin_top = 74.0
+margin_right = 576.0
+margin_bottom = 106.0
+rect_min_size = Vector2( 0, 32 )
+custom_styles/panel = SubResource( 24 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Control/VBoxContainer/SFX"]
+margin_left = 32.0
+margin_right = 544.0
+
+[node name="Label" type="Label" parent="Settings/Control/VBoxContainer/SFX/HBoxContainer"]
+margin_right = 230.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 16 )
+text = "Sound Effects Volume"
+
+[node name="Control" type="Control" parent="Settings/Control/VBoxContainer"]
+margin_top = 111.0
+margin_right = 576.0
+margin_bottom = 143.0
+rect_min_size = Vector2( 0, 32 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Control/VBoxContainer/Control"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -184.0
+margin_top = -16.0
+margin_bottom = 16.0
+
+[node name="Button" type="Button" parent="Settings/Control/VBoxContainer/Control/HBoxContainer"]
+margin_right = 90.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 90, 32 )
+custom_fonts/font = SubResource( 25 )
+text = "Apply"
+
+[node name="Cancel" type="Button" parent="Settings/Control/VBoxContainer/Control/HBoxContainer"]
+margin_left = 94.0
+margin_right = 184.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 90, 32 )
+custom_fonts/font = SubResource( 25 )
+text = "Back"
+
+[node name="Label2" type="Label" parent="Settings"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = -96.0
+margin_right = 210.0
+margin_bottom = -64.0
+custom_fonts/font = SubResource( 16 )
+text = "Credits"
+valign = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -80.0
+autoplay = true
+
+[connection signal="pressed" from="Settings/Control/VBoxContainer/Control/HBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]

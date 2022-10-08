@@ -1,5 +1,7 @@
 extends SpecialTile
 
+export var partnerID: int
+
 var teleportationInProgress: bool = false
 var teleportLocation: Vector2 = Vector2.ZERO
 var teleportationEnable: bool = true
@@ -10,7 +12,8 @@ func _ready():
 
 	for teleportPad in teleportPadGroup:
 		if self.name != teleportPad.name:
-			teleportLocation = teleportPad.position
+			if partnerID == teleportPad.partnerID:
+				teleportLocation = teleportPad.position
 
 func _onAreaPlayerEntered(area: Area2D):
 	if !teleportationEnable: return

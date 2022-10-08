@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=18]
+code = "shader_type canvas_item;
+
+uniform vec4 BGColor: hint_color;
+uniform float alph: hint_range(0.0, 1.0);
+
+void fragment() {
+	COLOR.rgba = BGColor;
+	COLOR.a = alph;
+}"
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource( 18 )
+shader_param/BGColor = Color( 0.4, 0.768627, 0.803922, 1 )
+shader_param/alph = 0.25
