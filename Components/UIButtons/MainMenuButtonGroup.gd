@@ -4,12 +4,7 @@ signal buttonPressedName(buttonName)
 
 func _ready():
 	for button in $Buttons.get_children():
-		button.connect("mouse_entered", self, "_playOnHoverSFX")
-		button.connect("pressed", self, "_playOnClickSFX", [button])
+		button.connect("buttonPressed", self, "_buttonClicked")
 
-func _playOnHoverSFX():
-	$OnHoverSounds.play()
-
-func _playOnClickSFX(button):
-	emit_signal("buttonPressedName", button.name)
-	$OnClickSounds.play()
+func _buttonClicked(button):
+	emit_signal("buttonPressedName", button)

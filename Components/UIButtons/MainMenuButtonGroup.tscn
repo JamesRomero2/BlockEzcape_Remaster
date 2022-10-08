@@ -1,37 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Components/UIButtons/MainMenuButtonGroup.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Audio/SFX/buttonOnHover.wav" type="AudioStream" id=3]
-[ext_resource path="res://Assets/Audio/SFX/buttonOnClick.wav" type="AudioStream" id=4]
-
-[sub_resource type="DynamicFont" id=14]
-size = 24
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=15]
-size = 24
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=16]
-size = 24
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=17]
-size = 24
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
+[ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=5]
 
 [node name="ButtonGroup" type="Control"]
-margin_right = 128.0
-margin_bottom = 160.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -41,62 +13,36 @@ __meta__ = {
 margin_right = 128.0
 margin_bottom = 160.0
 
-[node name="Continue" type="Button" parent="Buttons"]
-margin_right = 141.0
-margin_bottom = 37.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.870588, 0.921569, 0.431373, 1 )
-custom_fonts/font = SubResource( 14 )
+[node name="Continue" parent="Buttons" instance=ExtResource( 5 )]
+margin_right = 145.0
 text = "Continue"
-flat = true
-align = 0
 
-[node name="NewGame" type="Button" parent="Buttons"]
+[node name="NewGame" parent="Buttons" instance=ExtResource( 5 )]
 margin_top = 41.0
-margin_right = 141.0
+margin_right = 145.0
 margin_bottom = 78.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.870588, 0.921569, 0.431373, 1 )
-custom_fonts/font = SubResource( 15 )
 text = "New Game"
-flat = true
-align = 0
 
-[node name="HowToPlay" type="Button" parent="Buttons"]
+[node name="HowToPlay" parent="Buttons" instance=ExtResource( 5 )]
 margin_top = 82.0
-margin_right = 141.0
+margin_right = 145.0
 margin_bottom = 119.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.870588, 0.921569, 0.431373, 1 )
-custom_fonts/font = SubResource( 15 )
-text = "How to Play"
-flat = true
-align = 0
+text = "How To Play"
 
-[node name="Settings" type="Button" parent="Buttons"]
+[node name="Settings" parent="Buttons" instance=ExtResource( 5 )]
 margin_top = 123.0
-margin_right = 141.0
+margin_right = 145.0
 margin_bottom = 160.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.870588, 0.921569, 0.431373, 1 )
-custom_fonts/font = SubResource( 16 )
 text = "Settings"
-flat = true
-align = 0
 
-[node name="Exit" type="Button" parent="Buttons"]
+[node name="Credits" parent="Buttons" instance=ExtResource( 5 )]
 margin_top = 164.0
-margin_right = 141.0
+margin_right = 145.0
 margin_bottom = 201.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_colors/font_color_hover = Color( 0.870588, 0.921569, 0.431373, 1 )
-custom_fonts/font = SubResource( 17 )
+text = "Credits"
+
+[node name="Exit" parent="Buttons" instance=ExtResource( 5 )]
+margin_top = 205.0
+margin_right = 145.0
+margin_bottom = 242.0
 text = "Exit"
-flat = true
-align = 0
-
-[node name="OnHoverSounds" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-
-[node name="OnClickSounds" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )

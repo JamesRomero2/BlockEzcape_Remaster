@@ -12,7 +12,6 @@ void fragment() {
 }"
 
 [resource]
-resource_local_to_scene = true
 shader = SubResource( 18 )
-shader_param/BGColor = Color( 0.4, 0.768627, 0.803922, 1 )
-shader_param/alph = 0.25
+shader_param/BGColor = Color( 0.0941176, 0.117647, 0.207843, 1 )
+shader_param/alph = 0.5
