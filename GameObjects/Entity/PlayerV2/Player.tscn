@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://GameObjects/Entity/PlayerV2/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Animations/Player/LookRight.tres" type="Animation" id=2]
+[ext_resource path="res://Assets/Animations/Player/LookForward.tres" type="Animation" id=3]
+[ext_resource path="res://Assets/Animations/Player/LookLeft.tres" type="Animation" id=4]
+[ext_resource path="res://Assets/Animations/Player/RESET.tres" type="Animation" id=5]
+[ext_resource path="res://Assets/Textures/PlayerSpriteSheet.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Animations/Player/LookBackward.tres" type="Animation" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[node name="Player" type="KinematicBody2D"]
+z_index = 1
+collision_mask = 14
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+hframes = 9
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 16 )
+collision_mask = 14
+collide_with_areas = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "LookBackward"
+anims/LookBackward = ExtResource( 8 )
+anims/LookForward = ExtResource( 3 )
+anims/LookLeft = ExtResource( 4 )
+anims/LookRight = ExtResource( 2 )
+anims/RESET = ExtResource( 5 )
