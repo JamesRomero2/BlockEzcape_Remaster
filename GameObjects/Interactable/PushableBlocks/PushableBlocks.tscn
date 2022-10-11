@@ -1,0 +1,63 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Textures/NumberSprites.png" type="Texture" id=1]
+[ext_resource path="res://GameObjects/Interactable/PushableBlocks/Animations/BoxThreeAnimation.tres" type="Animation" id=2]
+[ext_resource path="res://GameObjects/Interactable/PushableBlocks/Animations/BoxNineAnimation.tres" type="Animation" id=3]
+[ext_resource path="res://GameObjects/Interactable/PushableBlocks/Animations/BoxEightAnimation.tres" type="Animation" id=4]
+[ext_resource path="res://GameObjects/Interactable/PushableBlocks/Animations/BoxSevenAnimation.tres" type="Animation" id=5]
+[ext_resource path="res://GameObjects/Interactable/PushableBlocks/Animations/BoxFiveAnimation.tres" type="Animation" id=6]
+[ext_resource path="res://GameObjects/Interactable/PushableBlocks/Animations/BoxSixAnimation.tres" type="Animation" id=7]
+[ext_resource path="res://GameObjects/Interactable/PushableBlocks/Animations/BoxZeroAnimation.tres" type="Animation" id=8]
+[ext_resource path="res://GameObjects/Interactable/PushableBlocks/Animations/BoxOneAnimation.tres" type="Animation" id=9]
+[ext_resource path="res://GameObjects/Interactable/PushableBlocks/Animations/BoxFourAnimation.tres" type="Animation" id=10]
+[ext_resource path="res://GameObjects/Interactable/PushableBlocks/Animations/BoxTwoAnimation.tres" type="Animation" id=11]
+[ext_resource path="res://GameObjects/Interactable/PushableBlocks/PushableBlocks.gd" type="Script" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 4 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 19 ]
+}
+
+[node name="Box" type="KinematicBody2D" groups=["Box"]]
+collision_layer = 8
+script = ExtResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+hframes = 10
+vframes = 2
+frame = 19
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+cast_to = Vector2( 0, 16 )
+collision_mask = 14
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/EightAnimation = ExtResource( 4 )
+anims/FiveAnimation = ExtResource( 6 )
+anims/FourAnimation = ExtResource( 10 )
+anims/NineAnimation = ExtResource( 3 )
+anims/OneAnimation = ExtResource( 9 )
+anims/RESET = SubResource( 2 )
+anims/SevenAnimation = ExtResource( 5 )
+anims/SixAnimation = ExtResource( 7 )
+anims/ThreeAnimation = ExtResource( 2 )
+anims/TwoAnimation = ExtResource( 11 )
+anims/ZeroAnimation = ExtResource( 8 )

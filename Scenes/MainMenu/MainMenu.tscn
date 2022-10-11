@@ -1,8 +1,7 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/Fonts/Backto1982/BACKTO1982.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/MainMenu/Parallax/BackgroundMM.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Audio/Music/Ageless 20Change.wav" type="AudioStream" id=3]
 [ext_resource path="res://Components/UIButtons/MainMenuButtonGroup.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/FinalAssets/Minus.png" type="Texture" id=5]
 [ext_resource path="res://Components/SettingsUI/Settings.tscn" type="PackedScene" id=6]
@@ -234,9 +233,9 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_left = 248.0
-margin_top = -158.0
+margin_top = 22.0
 margin_right = 648.005
-margin_bottom = 236.0
+margin_bottom = 416.0
 texture = ExtResource( 7 )
 expand = true
 stretch_mode = 7
@@ -255,10 +254,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 97.9995
-margin_top = -125.0
-margin_right = 138.0
-margin_bottom = -85.001
+margin_left = 298.002
+margin_top = 72.0
+margin_right = 338.003
+margin_bottom = 111.999
 texture = ExtResource( 12 )
 stretch_mode = 6
 
@@ -267,10 +266,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -134.001
-margin_top = -93.0
-margin_right = -94.001
-margin_bottom = -52.999
+margin_left = 66.0018
+margin_top = 104.0
+margin_right = 106.002
+margin_bottom = 144.001
 texture = ExtResource( 11 )
 stretch_mode = 6
 
@@ -279,10 +278,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -183.001
-margin_top = -24.0
-margin_right = -143.001
-margin_bottom = 16.0
+margin_left = 17.0018
+margin_top = 173.0
+margin_right = 57.0018
+margin_bottom = 213.0
 texture = ExtResource( 9 )
 stretch_mode = 6
 
@@ -291,10 +290,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 130.0
-margin_top = -33.0
-margin_right = 170.0
-margin_bottom = 7.0
+margin_left = 330.002
+margin_top = 164.0
+margin_right = 370.002
+margin_bottom = 204.0
 texture = ExtResource( 5 )
 stretch_mode = 6
 
@@ -310,8 +309,3 @@ margin_bottom = -77.0
 
 [node name="Settings" parent="." instance=ExtResource( 6 )]
 visible = false
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-autoplay = true
-bus = "BGMusic"

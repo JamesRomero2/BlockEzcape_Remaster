@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://GameObjects/Entity/PlayerV2/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Animations/Player/LookRight.tres" type="Animation" id=2]
@@ -6,7 +6,9 @@
 [ext_resource path="res://Assets/Animations/Player/LookLeft.tres" type="Animation" id=4]
 [ext_resource path="res://Assets/Animations/Player/RESET.tres" type="Animation" id=5]
 [ext_resource path="res://Assets/Textures/PlayerSpriteSheet.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Audio/SFX/playerWalk.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Animations/Player/LookBackward.tres" type="Animation" id=8]
+[ext_resource path="res://Assets/Audio/SFX/playerUndoWalk.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -36,3 +38,13 @@ anims/LookForward = ExtResource( 3 )
 anims/LookLeft = ExtResource( 4 )
 anims/LookRight = ExtResource( 2 )
 anims/RESET = ExtResource( 5 )
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="WalkSFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 7 )
+bus = "SFX"
+
+[node name="UndoWalkSFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 9 )
+bus = "SFX"

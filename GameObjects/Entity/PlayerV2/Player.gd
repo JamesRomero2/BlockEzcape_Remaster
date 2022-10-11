@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 onready var raycast := $RayCast2D
 onready var animation := $AnimationPlayer
+onready var walkSFX := $SFX/WalkSFX
+onready var undoWalkSFX := $SFX/UndoWalkSFX
 
 var gridSize: int = 16
 var inputs = {
@@ -10,14 +12,20 @@ var inputs = {
 	"left": Vector2.LEFT,
 	"right": Vector2.RIGHT
 }
+var playerPositions := Array()
+
 func _unhandled_input(event):
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
 			move(dir)
-			animatePlayer(inputs[dir])
+	if event.is_action_pressed("undo"):
+		undo()
 
 func move(direction):
 	var vectorPos = inputs[direction] * gridSize
+	walkSFX.play()
+	animatePlayer(vectorPos)
+	playerPositions.append(vectorPos)
 	raycast.cast_to = vectorPos
 	raycast.force_raycast_update()
 	if !raycast.is_colliding():
@@ -28,14 +36,24 @@ func move(direction):
 			if collider.move(direction):
 				position += vectorPos
 
-func animatePlayer(facing):
-	match facing:
-		Vector2.UP:
-			animation.play("LookForward")
-		Vector2.DOWN:
-			animation.play("LookBackward")
-		Vector2.LEFT:
-			animation.play("LookLeft")
-		Vector2.RIGHT:
-			animation.play("LookRight")
+func undo():
+	if playerPositions.empty(): return
+	var vectorPos = playerPositions.pop_back() * -1
+	undoWalkSFX.play()
+	animatePlayer(vectorPos)
+	raycast.cast_to = vectorPos
+	raycast.force_raycast_update()
+	if !raycast.is_colliding():
+		position += vectorPos
+		
+
+func animatePlayer(vector):
+	if vector.x > 0:
+		animation.play("LookRight")
+	elif vector.x < 0:
+		animation.play("LookLeft")
+	if vector.y > 0:
+		animation.play("LookBackward")
+	elif vector.y < 0:
+		animation.play("LookForward")
 	

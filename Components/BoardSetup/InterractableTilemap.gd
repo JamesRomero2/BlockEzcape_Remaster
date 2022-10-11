@@ -3,11 +3,9 @@ extends TileMap
 var interactableNodes: Dictionary = {
 #	FORMAT
 #	TILE INDEX : SCENE ABSOLUTE PATH
-	0: preload("res://GameObjects/Entity/PlayerV1/Player.tscn"),
-	1: preload("res://GameObjects/Collectable/Temple/Temple.tscn"),
-	2: preload("res://GameObjects/Collectable/Key/Key.tscn"),
-	3: preload("res://GameObjects/Collectable/Coin/Coin.tscn"),
-	4: preload("res://GameObjects/Collectable/Point/Point.tscn")
+	0: preload("res://GameObjects/Entity/PlayerV2/Player.tscn"),
+	5: preload("res://GameObjects/Entity/ReaderSlot/ReaderSlot.tscn"),
+	9: preload("res://GameObjects/Interactable/ImmovableTile/ImmovableTile.tscn")
 }
 
 func _ready():
