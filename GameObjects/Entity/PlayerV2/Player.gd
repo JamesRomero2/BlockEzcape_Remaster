@@ -13,13 +13,16 @@ var inputs = {
 	"right": Vector2.RIGHT
 }
 var playerPositions := Array()
+var switchState: bool = true
 
 func _unhandled_input(event):
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
-			move(dir)
+				move(dir)
 	if event.is_action_pressed("undo"):
 		undo()
+	if event.is_action_pressed("space"):
+		switchState = !switchState
 
 func move(direction):
 	var vectorPos = inputs[direction] * gridSize

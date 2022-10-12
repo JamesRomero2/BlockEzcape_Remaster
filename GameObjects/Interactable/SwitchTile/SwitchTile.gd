@@ -9,6 +9,9 @@ onready var anim2: = $Anim2
 
 var switchState: bool = true
 
+#func _ready():
+#	emit_signal("switchStateSignal", switchState)
+
 func _on_Switch_body_entered(body):
 	if body.name == "Player":
 		switchState = !switchState

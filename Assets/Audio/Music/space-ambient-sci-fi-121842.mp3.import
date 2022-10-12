@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/space-ambient-sci-fi-121842.mp3-7761825036e79ffc6ee63b0d9ee932e1.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/space-ambient-sci-fi-121842.mp3"
+dest_files=[ "res://.import/space-ambient-sci-fi-121842.mp3-7761825036e79ffc6ee63b0d9ee932e1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

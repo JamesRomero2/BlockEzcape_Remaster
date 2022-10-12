@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Fonts/Backto1982/BACKTO1982.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/MainMenu/Parallax/BackgroundMM.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Components/ExitPanel/ExitPanel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Components/UIButtons/MainMenuButtonGroup.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/FinalAssets/Minus.png" type="Texture" id=5]
 [ext_resource path="res://Components/SettingsUI/Settings.tscn" type="PackedScene" id=6]
@@ -31,7 +32,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Divide:rect_position")
-tracks/1/interp = 2
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
@@ -43,7 +44,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Multiply:rect_position")
-tracks/2/interp = 2
+tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
@@ -55,7 +56,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Plus:rect_position")
-tracks/3/interp = 2
+tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
@@ -67,7 +68,7 @@ tracks/3/keys = {
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("MainMenuUI/LabyrinthImage/Labyrinth/Minus:rect_position")
-tracks/4/interp = 2
+tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
@@ -308,4 +309,7 @@ margin_right = 32.0
 margin_bottom = -77.0
 
 [node name="Settings" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="ExitPanel" parent="." instance=ExtResource( 3 )]
 visible = false

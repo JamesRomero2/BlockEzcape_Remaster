@@ -13,16 +13,16 @@ const SFXBUS = "SFX"
 
 func _setMusicVolume(value):
 	var bus = AudioServer.get_bus_index(BGMUSICBUS)
-	if value == -50:
+	if value == 0:
 		AudioServer.set_bus_mute(bus, true)
 	else:
 		AudioServer.set_bus_mute(bus, false)
-		AudioServer.set_bus_volume_db(bus, value - 15)
+		AudioServer.set_bus_volume_db(bus, linear2db(value))
 
 func _setSFXVolume(value):
 	var bus = AudioServer.get_bus_index(SFXBUS)
-	if value == -50:
+	if value == 0:
 		AudioServer.set_bus_mute(bus, true)
 	else:
 		AudioServer.set_bus_mute(bus, false)
-		AudioServer.set_bus_volume_db(bus, value - 15)
+		AudioServer.set_bus_volume_db(bus, linear2db(value))

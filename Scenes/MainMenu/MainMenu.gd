@@ -2,10 +2,14 @@ extends Node
 
 onready var buttonGroup = $MainMenuUI/Buttons/ButtonGroup
 onready var settings = $Settings
+onready var exitPanel := $ExitPanel
 
 var creditsScene = preload("res://Scenes/Credits/Credits.tscn")
+var mainMenuBGMusic = "res://Assets/Audio/Music/space-120280.mp3"
 
 func _ready():
+	if mainMenuBGMusic != GlobalMusic._getMusic():
+		GlobalMusic._changeMusic(load(mainMenuBGMusic))
 	_connectSignals()
 
 func _connectSignals():
@@ -18,15 +22,13 @@ func _buttonPressed(name):
 			print("Continue Button Pressed")
 		"NewGame":
 			print("NewGame Button Pressed")
-		"HowToPlay":
-			print("HowToPlay Button Pressed")
 		"Settings":
 			$Settings.visible = true
+			$MainMenuUI.visible = false
 		"Credits":
 			_openCredits()
 		"Exit":
-			get_tree().quit()
-	$MainMenuUI.visible = false
+			exitPanel.visible = true
 
 func _openCredits():
 	var ERR = get_tree().change_scene_to(creditsScene)

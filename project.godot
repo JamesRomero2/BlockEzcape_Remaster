@@ -111,11 +111,10 @@ GlobalMusic="*res://Autoloads/GlobalScenes/GlobalMusic/GlobalMusic.tscn"
 
 window/size/width=640
 window/size/height=360
-window/size/resizable=false
 window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="2d"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 

@@ -14,35 +14,28 @@ margin_right = 128.0
 margin_bottom = 160.0
 
 [node name="Continue" parent="Buttons" instance=ExtResource( 5 )]
-margin_right = 145.0
+visible = false
+margin_right = 128.0
 text = "Continue"
 
 [node name="NewGame" parent="Buttons" instance=ExtResource( 5 )]
-margin_top = 41.0
-margin_right = 145.0
-margin_bottom = 78.0
+margin_right = 128.0
 text = "New Game"
 
-[node name="HowToPlay" parent="Buttons" instance=ExtResource( 5 )]
-margin_top = 82.0
-margin_right = 145.0
-margin_bottom = 119.0
-text = "How To Play"
-
 [node name="Settings" parent="Buttons" instance=ExtResource( 5 )]
-margin_top = 123.0
-margin_right = 145.0
-margin_bottom = 160.0
+margin_top = 41.0
+margin_right = 128.0
+margin_bottom = 78.0
 text = "Settings"
 
 [node name="Credits" parent="Buttons" instance=ExtResource( 5 )]
-margin_top = 164.0
-margin_right = 145.0
-margin_bottom = 201.0
+margin_top = 82.0
+margin_right = 128.0
+margin_bottom = 119.0
 text = "Credits"
 
 [node name="Exit" parent="Buttons" instance=ExtResource( 5 )]
-margin_top = 205.0
-margin_right = 145.0
-margin_bottom = 242.0
+margin_top = 123.0
+margin_right = 128.0
+margin_bottom = 160.0
 text = "Exit"

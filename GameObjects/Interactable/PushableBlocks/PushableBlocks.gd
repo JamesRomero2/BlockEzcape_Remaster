@@ -28,10 +28,6 @@ var inputs := {
 func _ready():
 	_setSpriteBasedOnValue()
 
-#func _unhandled_input(event):
-#	if event.is_action_pressed("undo"):
-#		print("Yes")
-
 func move(direction):
 	var vectorPos = inputs[direction] * gridSize
 	raycast.cast_to = vectorPos
@@ -44,15 +40,3 @@ func move(direction):
 func _setSpriteBasedOnValue():
 	animation.play(str(boxValueText[boxValue]) + "Animation")
 
-#func animatePlayer(facing):
-#	match facing:
-#		Vector2.UP:
-#			print("ye")
-#			animation.play("LookForward")
-#		Vector2.DOWN:
-#			animation.play("LookBackward")
-#		Vector2.LEFT:
-#			animation.play("LookLeft")
-#		Vector2.RIGHT:
-#			animation.play("LookRight")
-	

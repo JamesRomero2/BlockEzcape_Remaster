@@ -11,3 +11,6 @@ func _muteMusic():
 
 func _playMusic():
 	music.play()
+
+func _getMusic():
+	return music.stream.resource_path

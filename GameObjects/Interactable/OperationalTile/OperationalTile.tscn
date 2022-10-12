@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://GameObjects/Interactable/OperationalTile/OperationalTile.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/ObjectTileset.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/OperationTile.png" type="Texture" id=3]
+[ext_resource path="res://GameObjects/Interactable/OperationalTile/OperationalTileIdle.tres" type="Animation" id=4]
+[ext_resource path="res://GameObjects/Interactable/OperationalTile/OperationalTileCollected.tres" type="Animation" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 7 )
+
+[node name="OperationalTile" type="Area2D"]
+script = ExtResource( 1 )
+operation = 2
+num = 1
+
+[node name="Number" type="Sprite" parent="."]
+position = Vector2( 3, 0 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 24
+frame = 2
+
+[node name="Operation" type="Sprite" parent="."]
+position = Vector2( -4, 0 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 3 )
+hframes = 4
+vframes = 2
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "OperationalTileIdle"
+anims/Collected = ExtResource( 5 )
+anims/OperationalTileIdle = ExtResource( 4 )
+
+[connection signal="body_entered" from="." to="." method="_on_OperationalTile_body_entered"]

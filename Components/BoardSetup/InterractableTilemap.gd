@@ -4,7 +4,7 @@ var interactableNodes: Dictionary = {
 #	FORMAT
 #	TILE INDEX : SCENE ABSOLUTE PATH
 	0: preload("res://GameObjects/Entity/PlayerV2/Player.tscn"),
-	5: preload("res://GameObjects/Entity/ReaderSlot/ReaderSlot.tscn"),
+	5: preload("res://GameObjects/Interactable/ReaderSlot/ReaderSlot.tscn"),
 	9: preload("res://GameObjects/Interactable/ImmovableTile/ImmovableTile.tscn")
 }
 

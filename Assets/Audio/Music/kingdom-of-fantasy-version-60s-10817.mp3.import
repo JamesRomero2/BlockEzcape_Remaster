@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/kingdom-of-fantasy-version-60s-10817.mp3-2c0f8682d9e37c16179b024514f763c5.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/kingdom-of-fantasy-version-60s-10817.mp3"
+dest_files=[ "res://.import/kingdom-of-fantasy-version-60s-10817.mp3-2c0f8682d9e37c16179b024514f763c5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
