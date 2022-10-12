@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Textures/LevelSelector.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/WorldMap/LevelSelector/LevelSelector.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Audio/SFX/playerWalk.wav" type="AudioStream" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 5.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "LevelSelectorIdle"
+length = 0.5
+loop = true
+step = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[node name="LevelSelector" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 16 )
+collision_mask = 14
+collide_with_areas = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "LevelSelectorIdle"
+anims/LevelSelectorIdle = SubResource( 2 )
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="WalkSFX" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 4 )
+bus = "SFX"
