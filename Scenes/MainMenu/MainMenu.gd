@@ -5,6 +5,7 @@ onready var settings = $Settings
 onready var exitPanel := $ExitPanel
 
 var creditsScene = preload("res://Scenes/Credits/Credits.tscn")
+var worldMapScene = preload("res://Scenes/WorldMap/WorldMap.tscn")
 var mainMenuBGMusic = "res://Assets/Audio/Music/space-120280.mp3"
 
 func _ready():
@@ -21,17 +22,17 @@ func _buttonPressed(name):
 		"Continue":
 			print("Continue Button Pressed")
 		"NewGame":
-			print("NewGame Button Pressed")
+			_openScenes(worldMapScene)
 		"Settings":
 			$Settings.visible = true
 			$MainMenuUI.visible = false
 		"Credits":
-			_openCredits()
+			_openScenes(creditsScene)
 		"Exit":
 			exitPanel.visible = true
 
-func _openCredits():
-	var ERR = get_tree().change_scene_to(creditsScene)
+func _openScenes(value):
+	var ERR = get_tree().change_scene_to(value)
 	
 	if ERR != OK:
 		print("Something is wrong")

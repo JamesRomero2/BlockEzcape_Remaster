@@ -5,6 +5,7 @@ export(Color) var colorTheme
 onready var themeColor := $CanvasLayer/Color
 
 var unwalkables := Array()
+var mainMenuScene = load("res://Scenes/MainMenu/MainMenu.tscn")
 
 func _ready():
 	_changeTheme()
@@ -23,6 +24,8 @@ func _unhandled_input(event):
 		if event.is_action_pressed("space"):
 			_getAllBridgeState()
 			print(_getAllBridgeState())
+		if event.is_action_pressed("escape"):
+			 _openScenes(mainMenuScene)
 
 func _changeTheme():
 	themeColor.color = colorTheme
@@ -48,3 +51,10 @@ func _getAllBridgeState():
 func _getAllUnwalkable():
 	for unWalkable in get_tree().get_nodes_in_group("Unwalkable"):
 		unwalkables.append(unWalkable)
+
+func _openScenes(value):
+	var ERR = get_tree().change_scene_to(value)
+	
+	if ERR != OK:
+		print("Something is wrong")
+		get_tree().quit()
