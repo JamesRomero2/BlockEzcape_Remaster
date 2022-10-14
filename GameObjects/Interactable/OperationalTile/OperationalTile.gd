@@ -3,6 +3,7 @@ extends Area2D
 onready var numberSprite := $Number
 onready var operationSprite := $Operation
 onready var animation := $AnimationPlayer
+onready var sfx := $AudioStreamPlayer
 
 export(int, "Add", "Minus", "Times", "Divide") var operation
 export(int, "1", "2", "3") var num
@@ -29,9 +30,9 @@ func calculate(value):
 
 func _on_OperationalTile_body_entered(body):
 	if body.is_in_group("Box") and !collected:
-		body.boxValue = calculate(body.boxValue)
-		body._setSpriteBasedOnValue()
+		body._changeBoxValue(calculate(body.boxValue))
 		collected = true
+		sfx.play()
 		animation.play("Collected")
 		
 

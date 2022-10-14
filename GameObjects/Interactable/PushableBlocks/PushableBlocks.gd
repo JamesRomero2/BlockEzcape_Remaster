@@ -1,21 +1,9 @@
 extends KinematicBody2D
 
 onready var raycast := $RayCast2D
-onready var animation := $AnimationPlayer
-export(int) var boxValue := 0
+onready var digits := $DoubleDigits
 
-var boxValueText := {
-	0: "Zero",
-	1: "One",
-	2: "Two",
-	3: "Three",
-	4: "Four",
-	5: "Five",
-	6: "Six",
-	7: "Seven",
-	8: "Eight",
-	9: "Nine"
-}
+export(int) var boxValue := 00
 
 var gridSize: int = 16
 var inputs := {
@@ -26,7 +14,7 @@ var inputs := {
 }
 
 func _ready():
-	_setSpriteBasedOnValue()
+	_changeBoxValue(boxValue)
 
 func move(direction):
 	var vectorPos = inputs[direction] * gridSize
@@ -37,6 +25,15 @@ func move(direction):
 		return true
 	return false
 
-func _setSpriteBasedOnValue():
-	animation.play(str(boxValueText[boxValue]) + "Animation")
+func _changeBoxValue(value):
+	if value < 0:
+		boxValue = 0
+	elif value > 99:
+		boxValue = 99
+	else:
+		boxValue = value
+	_setBoxValue(boxValue)
 
+func _setBoxValue(value):
+	digits._setValue(value)
+	digits._setDigit()

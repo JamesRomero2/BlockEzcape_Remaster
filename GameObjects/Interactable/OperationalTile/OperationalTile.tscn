@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GameObjects/Interactable/OperationalTile/OperationalTile.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/ObjectTileset.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/OperationTile.png" type="Texture" id=3]
 [ext_resource path="res://GameObjects/Interactable/OperationalTile/OperationalTileIdle.tres" type="Animation" id=4]
 [ext_resource path="res://GameObjects/Interactable/OperationalTile/OperationalTileCollected.tres" type="Animation" id=5]
+[ext_resource path="res://Assets/Audio/SFX/PickUpOperationalTile.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 7 )
@@ -36,5 +37,9 @@ shape = SubResource( 1 )
 autoplay = "OperationalTileIdle"
 anims/Collected = ExtResource( 5 )
 anims/OperationalTileIdle = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_OperationalTile_body_entered"]

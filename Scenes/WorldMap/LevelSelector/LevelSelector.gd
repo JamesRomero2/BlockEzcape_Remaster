@@ -11,12 +11,16 @@ var inputs = {
 	"right": Vector2.RIGHT
 }
 var level:PackedScene setget _setLevel, _getLevel
+var levelState: bool = false setget _setLevelState, _getLevelState
 
 func _unhandled_input(event):
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
 			move(dir)
 		if event.is_action_pressed("space"):
+			if !levelState: return
+			if _getLevel() == null: return
+			
 			var ERR = get_tree().change_scene_to(_getLevel())
 	
 			if ERR != OK:
@@ -36,3 +40,9 @@ func _setLevel(value):
 
 func _getLevel():
 	return level
+
+func _setLevelState(value):
+	levelState = value
+
+func _getLevelState():
+	return levelState

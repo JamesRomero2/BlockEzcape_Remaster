@@ -6,6 +6,7 @@ onready var themeColor := $CanvasLayer/Color
 
 var unwalkables := Array()
 var mainMenuScene = load("res://Scenes/MainMenu/MainMenu.tscn")
+var answer : bool = false
 
 func _ready():
 	_changeTheme()
@@ -58,3 +59,15 @@ func _openScenes(value):
 	if ERR != OK:
 		print("Something is wrong")
 		get_tree().quit()
+
+func _on_ReaderSlot_boxValue(valueNumber):
+	if valueNumber == null:
+		$MathPanel/Control/Panel/HBoxContainer/Control/TextureRect.visible = true
+		$MathPanel/Control/Panel/HBoxContainer/Control/Label5.text = ""
+	else:
+		$MathPanel/Control/Panel/HBoxContainer/Control/TextureRect.visible = false
+		$MathPanel/Control/Panel/HBoxContainer/Control/Label5.text = str(valueNumber)
+		if valueNumber == 5:
+			$Temple.answer = true
+		else:
+			$Temple.answer = false

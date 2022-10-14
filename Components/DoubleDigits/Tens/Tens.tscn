@@ -1,0 +1,50 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Components/DoubleDigits/Tens/Tens.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Textures/NumberSprites2.png" type="Texture" id=2]
+[ext_resource path="res://Components/DoubleDigits/Tens/Animations/TensZeroAnim.tres" type="Animation" id=3]
+[ext_resource path="res://Components/DoubleDigits/Tens/Animations/TensFourAnim.tres" type="Animation" id=4]
+[ext_resource path="res://Components/DoubleDigits/Tens/Animations/TensNineAnim.tres" type="Animation" id=5]
+[ext_resource path="res://Components/DoubleDigits/Tens/Animations/TensSevenAnim.tres" type="Animation" id=6]
+[ext_resource path="res://Components/DoubleDigits/Tens/Animations/TensSixAnim.tres" type="Animation" id=7]
+[ext_resource path="res://Components/DoubleDigits/Tens/Animations/TensTwoAnim.tres" type="Animation" id=8]
+[ext_resource path="res://Components/DoubleDigits/Tens/Animations/TensEightAnim.tres" type="Animation" id=9]
+[ext_resource path="res://Components/DoubleDigits/Tens/Animations/TensFiveAnim.tres" type="Animation" id=10]
+[ext_resource path="res://Components/DoubleDigits/Tens/Animations/TensOneAnim.tres" type="Animation" id=11]
+[ext_resource path="res://Components/DoubleDigits/Tens/Animations/TensThreeAnim.tres" type="Animation" id=12]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 10 ]
+}
+
+[node name="Tens" type="Sprite"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 10
+vframes = 2
+frame = 10
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/TensEightAnim = ExtResource( 9 )
+anims/TensFiveAnim = ExtResource( 10 )
+anims/TensFourAnim = ExtResource( 4 )
+anims/TensNineAnim = ExtResource( 5 )
+anims/TensOneAnim = ExtResource( 11 )
+anims/TensSevenAnim = ExtResource( 6 )
+anims/TensSixAnim = ExtResource( 7 )
+anims/TensThreeAnim = ExtResource( 12 )
+anims/TensTwoAnim = ExtResource( 8 )
+anims/TensZeroAnim = ExtResource( 3 )
