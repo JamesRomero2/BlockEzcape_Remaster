@@ -22,9 +22,6 @@ func _unhandled_input(event):
 			GlobalMusic._muteMusic()
 		if event.is_action_pressed("unmute"):
 			GlobalMusic._playMusic()
-		if event.is_action_pressed("space"):
-			_getAllBridgeState()
-			print(_getAllBridgeState())
 		if event.is_action_pressed("escape"):
 			 _openScenes(mainMenuScene)
 

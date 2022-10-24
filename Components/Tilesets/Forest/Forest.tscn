@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Components/Tilesets/Forest/Tileset/ForestTileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Components/Tilesets/Forest/Tileset/ForestBlocksTileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Components/Tilesets/Forest/Forest.gd" type="Script" id=3]
+
+[node name="ForestTilemap" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+
+[node name="Blocks" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1

@@ -1,8 +1,41 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Splash/Splash.gd" type="Script" id=1]
-[ext_resource path="res://GameObjects/Collectable/Key/Key.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Splash/SplashAnim.tres" type="Animation" id=3]
+[ext_resource path="res://Assets/Textures/Keys.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Splash/Animation/SplashAnim.tres" type="Animation" id=3]
+[ext_resource path="res://Assets/Textures/DUMMY_Particles.png" type="Texture" id=4]
+
+[sub_resource type="CanvasItemMaterial" id=5]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = true
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.375, 1 )
+colors = PoolColorArray( 0.050518, 0.137902, 0.680664, 1, 0.141176, 0.623529, 0.870588, 1, 1, 0.988235, 0.25098, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 1
+emission_sphere_radius = 4.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 25.0
+angular_velocity = 100.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+color_ramp = SubResource( 4 )
+hue_variation = 0.01
+hue_variation_random = 1.0
+anim_speed = 1.0
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -31,9 +64,17 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2( 320, 180 )
+scale = Vector2( 5, 5 )
 
-[node name="Key" parent="Node2D" instance=ExtResource( 2 )]
-scale = Vector2( 10, 10 )
+[node name="Particles2D" type="Particles2D" parent="Node2D"]
+material = SubResource( 5 )
+amount = 16
+explosiveness = 0.3
+process_material = SubResource( 7 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+texture = ExtResource( 2 )
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )

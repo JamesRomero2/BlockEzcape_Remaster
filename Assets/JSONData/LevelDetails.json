@@ -1,0 +1,17 @@
+{
+    "Level1" : {
+        "Title" : "The Labyrinth",
+        "LevelPanel" : "Level 1",
+        "PanelImage": "",
+        "Storyline": "The Labyrinth is a mysterious place, What happened ? Where am I and What should I do to go back! I'm Scared. There are numbers floating Everywhere ! Seems like this place is filled with Mathematical Operations and numbers"
+    }
+}
+[
+    {
+        1:[Player:[KinematicBody2D:1443], (16, 0)], 
+        2:[Player:[KinematicBody2D:1443], (-16, 0)], 
+        3:[Player:[KinematicBody2D:1443], (0, 16)], 
+        4:[Player:[KinematicBody2D:1443], (0, 16)]
+    }, 
+        {1:[Player:[KinematicBody2D:1443], (16, 0)], 2:[Player:[KinematicBody2D:1443], (-16, 0)], 3:[Player:[KinematicBody2D:1443], (0, 16)], 4:[Player:[KinematicBody2D:1443], (0, 16)]}, {1:[Player:[KinematicBody2D:1443], (16, 0)], 2:[Player:[KinematicBody2D:1443], (-16, 0)], 3:[Player:[KinematicBody2D:1443], (0, 16)], 4:[Player:[KinematicBody2D:1443], (0, 16)]}, {1:[Player:[KinematicBody2D:1443], (16, 0)], 2:[Player:[KinematicBody2D:1443], (-16, 0)], 3:[Player:[KinematicBody2D:1443], (0, 16)], 4:[Player:[KinematicBody2D:1443], (0, 16)]}, {1:[Player:[KinematicBody2D:1443], (16, 0)], 2:[Player:[KinematicBody2D:1443], (-16, 0)], 3:[Player:[KinematicBody2D:1443], (0, 16)], 4:[Player:[KinematicBody2D:1443], (0, 16)]}, {1:[Player:[KinematicBody2D:1443], (16, 0)], 2:[Player:[KinematicBody2D:1443], (-16, 0)], 3:[Player:[KinematicBody2D:1443], (0, 16)], 4:[Player:[KinematicBody2D:1443], (0, 16)]}
+]

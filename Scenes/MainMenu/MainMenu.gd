@@ -1,11 +1,11 @@
 extends Node
 
-onready var buttonGroup = $MainMenuUI/Buttons/ButtonGroup
-onready var settings = $Settings
-onready var exitPanel := $ExitPanel
+onready var buttonGroup = $MainMenuContainer/MainMenuUI/Buttons/ButtonGroup
+onready var settings = $MainMenuContainer/Settings
+onready var exitPanel := $MainMenuContainer/ExitPanel
 
-var creditsScene = preload("res://Scenes/Credits/Credits.tscn")
-var worldMapScene = preload("res://Scenes/WorldMap/WorldMap.tscn")
+var creditsScene = "res://Scenes/Credits/Credits.tscn"
+var worldMapScene = "res://Scenes/WorldMap/WorldMap.tscn"
 var mainMenuBGMusic = "res://Assets/Audio/Music/space-120280.mp3"
 
 func _ready():
@@ -22,22 +22,15 @@ func _buttonPressed(name):
 		"Continue":
 			print("Continue Button Pressed")
 		"NewGame":
-			_openScenes(worldMapScene)
+			SceneTransition._changeScene(worldMapScene)
 		"Settings":
-			$Settings.visible = true
-			$MainMenuUI.visible = false
+			settings.visible = true
+			$MainMenuContainer/MainMenuUI.visible = false
 		"Credits":
-			_openScenes(creditsScene)
+			SceneTransition._changeScene(creditsScene)
 		"Exit":
 			exitPanel.visible = true
 
-func _openScenes(value):
-	var ERR = get_tree().change_scene_to(value)
-	
-	if ERR != OK:
-		print("Something is wrong")
-		get_tree().quit()
-
 func _onBackButton(name):
-	$Settings.visible = false
-	$MainMenuUI.visible = true
+	settings.visible = false
+	$MainMenuContainer/MainMenuUI.visible = true

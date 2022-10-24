@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Area2D",
-"class": "Collectable",
-"language": "GDScript",
-"path": "res://GameObjects/Collectable/Collectable.gd"
-}, {
 "base": "Reference",
 "class": "DTS",
 "language": "GDScript",
@@ -68,14 +63,8 @@ _global_script_classes=[ {
 "class": "HistoryRow",
 "language": "GDScript",
 "path": "res://addons/dialogic/Example Assets/History/HistoryRow.gd"
-}, {
-"base": "Area2D",
-"class": "SpecialTile",
-"language": "GDScript",
-"path": "res://GameObjects/SpecialTiles/SpecialTiles.gd"
 } ]
 _global_script_class_icons={
-"Collectable": "",
 "DTS": "",
 "Dialogic": "",
 "DialogicAnimaPropertiesHelper": "",
@@ -86,8 +75,7 @@ _global_script_class_icons={
 "DialogicParser": "",
 "DialogicResources": "",
 "DialogicUtil": "",
-"HistoryRow": "",
-"SpecialTile": ""
+"HistoryRow": ""
 }
 
 [application]
@@ -106,6 +94,7 @@ QuestionsLoader="*res://Autoloads/GlobalScript/QuestionsLoader.gd"
 GameManager="*res://Autoloads/GlobalScript/GameManager.gd"
 GlobalSettings="*res://Autoloads/GlobalScript/GlobalSettings.gd"
 GlobalMusic="*res://Autoloads/GlobalScenes/GlobalMusic/GlobalMusic.tscn"
+SceneTransition="*res://Autoloads/GlobalScenes/SceneTransition/SceneTransition.tscn"
 
 [display]
 
@@ -113,6 +102,8 @@ window/size/width=640
 window/size/height=360
 window/size/test_width=1280
 window/size/test_height=720
+mouse_cursor/custom_image="res://Assets/Textures/Cursor.png"
+mouse_cursor/custom_image_hotspot=Vector2( 16, 16 )
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -221,6 +212,12 @@ escape={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+reset={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":82,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [input_devices]
 
@@ -228,10 +225,10 @@ pointing/emulate_touch_from_mouse=true
 
 [layer_names]
 
-2d_physics/layer_1="Player"
-2d_physics/layer_2="Interactable"
-2d_physics/layer_3="Wall"
-2d_physics/layer_4="Special Tile"
+2d_physics/layer_1="Environment"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Blocks"
+2d_physics/layer_4="Tiles"
 
 [physics]
 
@@ -239,6 +236,8 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+2d/options/use_nvidia_rect_flicker_workaround=true
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
+2d/snapping/use_gpu_pixel_snap=true
 environment/default_clear_color=Color( 0.12549, 0.12549, 0.12549, 1 )

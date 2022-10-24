@@ -1,0 +1,135 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://GameObjects/Tiles/OperationalTile/OperationalTile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Components/Tilesets/Forest/Forest.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=7]
+[ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Components/Card/Card.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Components/CustomLabel/Label.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Textures/ForestPanel.png" type="Texture" id=13]
+
+[node name="Level 02" type="Node"]
+script = ExtResource( 7 )
+answers = {
+0: "+",
+1: 9,
+2: null,
+3: null
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="Color" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.0156863, 1, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.901961 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -384, 104 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="ForestTilemap" parent="." instance=ExtResource( 2 )]
+
+[node name="Background" parent="ForestTilemap" index="0"]
+tile_data = PoolIntArray( 65507, 0, 2, 65508, 0, 3, 65509, 0, 3, 65510, 0, 3, 65511, 0, 3, 65512, 0, 3, 65513, 0, 3, 65514, 0, 3, 65515, 0, 3, 65516, 0, 3, 65517, 0, 4, 131043, 0, 65538, 131044, 0, 65539, 131045, 0, 65539, 131046, 0, 65539, 131047, 0, 65539, 131048, 0, 65539, 131049, 0, 65539, 131050, 0, 65539, 131051, 0, 65539, 131052, 0, 65539, 131053, 0, 65540, 196579, 0, 65538, 196580, 0, 65539, 196581, 0, 65539, 196582, 0, 65539, 196583, 0, 65539, 196584, 0, 65539, 196585, 0, 65539, 196586, 0, 65539, 196587, 0, 65539, 196588, 0, 65539, 196589, 0, 65540, 262115, 0, 65538, 262116, 0, 65539, 262117, 0, 65539, 262118, 0, 65539, 262119, 0, 65539, 262120, 0, 65539, 262121, 0, 65539, 262122, 0, 65539, 262123, 0, 65539, 262124, 0, 65539, 262125, 0, 65540, 327651, 0, 65538, 327652, 0, 65539, 327653, 0, 65539, 327654, 0, 65539, 327655, 0, 65539, 327656, 0, 65539, 327657, 0, 65539, 327658, 0, 65539, 327659, 0, 65539, 327660, 0, 65539, 327661, 0, 65540, 393187, 0, 65538, 393188, 0, 65539, 393189, 0, 65539, 393190, 0, 65539, 393191, 0, 65539, 393192, 0, 65539, 393193, 0, 65539, 393194, 0, 65539, 393195, 0, 65539, 393196, 0, 65539, 393197, 0, 65540, 458723, 0, 65538, 458724, 0, 65539, 458725, 0, 65539, 458726, 0, 65539, 458727, 0, 65539, 458728, 0, 65539, 458729, 0, 65539, 458730, 0, 65539, 458731, 0, 65539, 458732, 0, 65539, 458733, 0, 65540, 524259, 0, 65538, 524260, 0, 65539, 524261, 0, 65539, 524262, 0, 65539, 524263, 0, 65539, 524264, 0, 65539, 524265, 0, 65539, 524266, 0, 65539, 524267, 0, 65539, 524268, 0, 65539, 524269, 0, 65540, 589795, 0, 65538, 589796, 0, 65539, 589797, 0, 65539, 589798, 0, 65539, 589799, 0, 65539, 589800, 0, 65539, 589801, 0, 65539, 589802, 0, 65539, 589803, 0, 65539, 589804, 0, 65539, 589805, 0, 65540, 655331, 0, 65538, 655332, 0, 65539, 655333, 0, 65539, 655334, 0, 65539, 655335, 0, 65539, 655336, 0, 65539, 655337, 0, 65539, 655338, 0, 65539, 655339, 0, 65539, 655340, 0, 65539, 655341, 0, 65540, 720867, 0, 131074, 720868, 0, 131075, 720869, 0, 131075, 720870, 0, 131075, 720871, 0, 131075, 720872, 0, 131075, 720873, 0, 131075, 720874, 0, 131075, 720875, 0, 131075, 720876, 0, 131075, 720877, 0, 131076 )
+
+[node name="Blocks" parent="ForestTilemap" index="1"]
+tile_data = PoolIntArray( 196581, 0, 0, 196582, 0, 0, 196583, 0, 0, 196584, 0, 0, 196585, 0, 0, 196586, 0, 0, 196587, 0, 0, 262117, 0, 0, 262118, 0, 0, 262119, 0, 0, 262122, 0, 0, 262123, 0, 0, 327653, 0, 0, 327658, 0, 0, 327659, 0, 0, 393189, 0, 0, 393195, 0, 0, 458725, 0, 0, 458727, 0, 0, 458731, 0, 0, 524261, 0, 0, 524267, 0, 0, 589797, 0, 0, 589798, 0, 0, 589799, 0, 0, 589800, 0, 0, 589801, 0, 0, 589802, 0, 0, 589803, 0, 0 )
+
+[node name="GameObjects" type="Node2D" parent="."]
+
+[node name="Box2" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -360, 72 )
+boxValue = 5
+
+[node name="Player" parent="GameObjects" instance=ExtResource( 3 )]
+position = Vector2( -408, 72 )
+
+[node name="Temple" parent="GameObjects" instance=ExtResource( 6 )]
+position = Vector2( -360, 56 )
+
+[node name="ScannerTile2" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -408, 120 )
+
+[node name="ScannerTile3" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -376, 72 )
+scannerID = 1
+
+[node name="OperationalTile2" parent="GameObjects" instance=ExtResource( 1 )]
+position = Vector2( -392, 88 )
+operationalValue = 4
+
+[node name="SymbolBlocks" parent="GameObjects" instance=ExtResource( 5 )]
+position = Vector2( -360, 88 )
+
+[node name="QuestionLayer" type="CanvasLayer" parent="."]
+
+[node name="QuestionPanel" type="NinePatchRect" parent="QuestionLayer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 192.0
+margin_top = -80.0
+margin_right = -192.0
+margin_bottom = -16.0
+texture = ExtResource( 13 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestionLayer/QuestionPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.0
+margin_top = -24.0
+margin_right = 95.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="Digit6" parent="QuestionLayer/QuestionPanel/HBoxContainer" instance=ExtResource( 11 )]
+margin_left = 16.0
+margin_top = 9.0
+margin_right = 42.0
+margin_bottom = 38.0
+text = "16"
+
+[node name="Card" parent="QuestionLayer/QuestionPanel/HBoxContainer" instance=ExtResource( 10 )]
+margin_left = 46.0
+margin_right = 82.0
+
+[node name="Card2" parent="QuestionLayer/QuestionPanel/HBoxContainer" instance=ExtResource( 10 )]
+margin_left = 86.0
+margin_right = 122.0
+cardID = 1
+
+[node name="Digit4" parent="QuestionLayer/QuestionPanel/HBoxContainer" instance=ExtResource( 11 )]
+margin_left = 126.0
+margin_top = 9.0
+margin_right = 140.0
+margin_bottom = 38.0
+text = "="
+
+[node name="Digit3" parent="QuestionLayer/QuestionPanel/HBoxContainer" instance=ExtResource( 11 )]
+margin_left = 144.0
+margin_top = 9.0
+margin_right = 174.0
+margin_bottom = 38.0
+text = "25"
+
+[editable path="ForestTilemap"]

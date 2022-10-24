@@ -1,9 +1,16 @@
 extends Node
 
-var levelScene : PackedScene = preload("res://Scenes/Levels/Level 2/Level2.tscn") setget _setWhereLevelScene, _getWhereLevelScene
+var gamePaused := false setget _setGamePaused, _getGamePause
+var gameOver := true setget _setGameOver, _getGameOver
 
-func _setWhereLevelScene(value: PackedScene):
-	levelScene = value
+func _setGamePaused(value):
+	gamePaused = value
 
-func _getWhereLevelScene():
-	return levelScene
+func _getGamePause():
+	return gamePaused
+
+func _setGameOver(value):
+	gameOver = value
+
+func _getGameOver():
+	return gameOver

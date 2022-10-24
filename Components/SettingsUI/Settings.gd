@@ -1,6 +1,7 @@
 extends Control
 
 onready var backButton = $Control/VBoxContainer/Control/Back
+onready var displayModeButton = $Control/VBoxContainer/HBoxContainer/Control/DisplayModeButton
 
 func _ready():
 	GlobalSettings._setMusicVolume(0.5)
@@ -10,10 +11,10 @@ func _on_DisplayModeButton_pressed():
 	GlobalSettings.displayMode = !GlobalSettings.displayMode
 	if GlobalSettings.displayMode:
 		OS.window_fullscreen = true
-		$Control/VBoxContainer/Display/HBoxContainer/Control/DisplayModeButton.text = "FULLSCREEN"
+		displayModeButton.text = "FULLSCREEN"
 	elif !GlobalSettings.displayMode:
 		OS.window_fullscreen = false
-		$Control/VBoxContainer/Display/HBoxContainer/Control/DisplayModeButton.text = "WINDOWED"
+		displayModeButton.text = "WINDOWED"
 
 func _on_MusicVolume_value_changed(value):
 	GlobalSettings._setMusicVolume(value)

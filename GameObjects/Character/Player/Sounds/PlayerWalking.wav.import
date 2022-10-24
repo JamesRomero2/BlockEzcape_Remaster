@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PlayerWalking.wav-f7366d78c67dd9a58a63d92061ccd584.sample"
+
+[deps]
+
+source_file="res://GameObjects/Character/Player/Sounds/PlayerWalking.wav"
+dest_files=[ "res://.import/PlayerWalking.wav-f7366d78c67dd9a58a63d92061ccd584.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

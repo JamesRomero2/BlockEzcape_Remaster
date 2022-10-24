@@ -1,11 +1,14 @@
 extends CanvasLayer
 
 func _on_Unpause_pressed():
-	get_tree().paused = false
-	self.visible = !self.visible
+	if self.visible:
+		GameManager._setGamePaused(false)
+		self.visible = !self.visible
 
+func _on_MainMenuButton_pressed():
+	_on_Unpause_pressed()
+	SceneTransition._changeScene("res://Scenes/MainMenu/MainMenu.tscn")
 
-func _on_MainMenu_pressed():
-	get_tree().paused = false
-	self.visible = !self.visible
-#	GO BACK TO MAP SCENE
+func _on_MapButton_pressed():
+	_on_Unpause_pressed()
+	SceneTransition._changeScene("res://Scenes/WorldMap/WorldMap.tscn")

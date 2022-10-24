@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-onready var parallax = $ParallaxBackground
+onready var parallax = $PlanA
 
 const SPEED: int = 300
 

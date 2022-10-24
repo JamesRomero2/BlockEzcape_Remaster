@@ -17,12 +17,11 @@ func _ready():
 func _on_LevelContainer_body_entered(body):
 	if !levelOpen: return
 	if body.name == "LevelSelector" and get_overlapping_bodies().size() > 0:
-		body._setLevelState(levelOpen)
 		body._setLevel(targetLevel)
 
 func _on_LevelContainer_body_exited(body):
 	if !levelOpen: return
-	if body.name == "LevelSelector" and get_overlapping_bodies().size() > 0:
+	if body.name == "LevelSelector":
 		body._setLevel(null)
 
 func _setLevelNum(value):

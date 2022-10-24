@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Textures/LightBackgroundPanel.png" type="Texture" id=1]
+[ext_resource path="res://GameObjects/Tiles/LeverTile/Texture/LeverTexture.png" type="Texture" id=1]
 [ext_resource path="res://Components/ExitPanel/ExitPanel.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Black.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=4]
