@@ -4,7 +4,7 @@ onready var raycast := $RayCast2D
 onready var animation := $AnimationPlayer
 onready var walkSFX := $SFX/WalkSFX
 
-var level:PackedScene setget _setLevel, _getLevel
+var level setget _setLevel, _getLevel
 var levelState: bool = false setget _setLevelState, _getLevelState
 
 var moving: bool = false
@@ -26,11 +26,7 @@ func _unhandled_input(event):
 	if event.is_action_pressed("space"):
 		if _getLevel() == null: return
 		
-		var ERR = get_tree().change_scene_to(_getLevel())
-
-		if ERR != OK:
-			print("Something is wrong")
-			get_tree().quit()
+		SceneTransition._changeScene(_getLevel())
 
 func _move(direction):
 	var vectorPos = inputs[direction] * gridSize

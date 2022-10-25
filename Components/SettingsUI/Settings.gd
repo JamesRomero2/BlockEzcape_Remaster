@@ -3,10 +3,6 @@ extends Control
 onready var backButton = $Control/VBoxContainer/Control/Back
 onready var displayModeButton = $Control/VBoxContainer/HBoxContainer/Control/DisplayModeButton
 
-func _ready():
-	GlobalSettings._setMusicVolume(0.5)
-	GlobalSettings._setSFXVolume(0.5)
-
 func _on_DisplayModeButton_pressed():
 	GlobalSettings.displayMode = !GlobalSettings.displayMode
 	if GlobalSettings.displayMode:

@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Textures/BlackBackDrop.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Black.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://GameObjects/Tiles/LeverTile/Texture/LeverTexture.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Medium.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Components/PausePanel/PausePanel.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Textures/Keys.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Bold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -22,6 +25,45 @@ size = 18
 outline_size = 1
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="StyleBoxLine" id=5]
+color = Color( 1, 1, 1, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=6]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=7]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="StreamTexture" id=8]
+load_path = "res://.import/Keys.png-13469275d5aab9ee433265296e1dd612.stex"
+
+[sub_resource type="StyleBoxLine" id=9]
+color = Color( 1, 1, 1, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=10]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=11]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="DynamicFont" id=12]
+size = 22
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
 [node name="PausePanel" type="CanvasLayer"]
 pause_mode = 2
 layer = 10
@@ -38,39 +80,38 @@ anchor_bottom = 1.0
 texture = ExtResource( 1 )
 stretch_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -128.0
-margin_top = -111.0
-margin_right = 128.0
-margin_bottom = 111.0
-custom_constants/separation = 7
-alignment = 1
-
-[node name="Label" type="Label" parent="Control/VBoxContainer"]
-margin_right = 256.0
-margin_bottom = 55.0
+[node name="Label" type="Label" parent="Control"]
+margin_left = 192.0
+margin_top = 16.0
+margin_right = 448.0
+margin_bottom = 71.0
 custom_fonts/font = SubResource( 1 )
 text = "PAUSED"
 align = 1
 valign = 1
 
-[node name="Label2" type="Label" parent="Control/VBoxContainer"]
-margin_top = 62.0
-margin_right = 256.0
-margin_bottom = 81.0
+[node name="Label2" type="Label" parent="Control"]
+margin_left = 192.0
+margin_top = 64.0
+margin_right = 448.0
+margin_bottom = 83.0
 custom_fonts/font = SubResource( 3 )
 text = "Press Space to Resume"
 align = 1
 valign = 1
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+margin_left = 64.0
+margin_top = 104.0
+margin_right = 320.0
+margin_bottom = 293.0
+rect_min_size = Vector2( 0, 189 )
+custom_constants/separation = 7
+alignment = 1
+
 [node name="Unpause" type="Button" parent="Control/VBoxContainer"]
-margin_top = 88.0
 margin_right = 256.0
-margin_bottom = 128.0
+margin_bottom = 58.0
 rect_min_size = Vector2( 256, 40 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -95,9 +136,9 @@ align = 1
 valign = 1
 
 [node name="MapButton" type="Button" parent="Control/VBoxContainer"]
-margin_top = 135.0
+margin_top = 65.0
 margin_right = 256.0
-margin_bottom = 175.0
+margin_bottom = 123.0
 rect_min_size = Vector2( 256, 40 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -122,9 +163,9 @@ align = 1
 valign = 1
 
 [node name="MainMenuButton" type="Button" parent="Control/VBoxContainer"]
-margin_top = 182.0
+margin_top = 130.0
 margin_right = 256.0
-margin_bottom = 222.0
+margin_bottom = 189.0
 rect_min_size = Vector2( 256, 40 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -148,6 +189,100 @@ text = "Return to Main Menu"
 align = 1
 valign = 1
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 51.0
+margin_top = -73.0
+margin_right = 222.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 171, 0 )
+alignment = 1
+
+[node name="Music" type="VBoxContainer" parent="Control/VBoxContainer2"]
+margin_top = 1.0
+margin_right = 171.0
+margin_bottom = 60.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/VBoxContainer2/Music"]
+margin_right = 171.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 4 )
+text = "Music Volume"
+align = 1
+valign = 1
+
+[node name="MusicVolume" type="HSlider" parent="Control/VBoxContainer2/Music"]
+margin_top = 27.0
+margin_right = 171.0
+margin_bottom = 59.0
+custom_icons/tick = ExtResource( 6 )
+custom_icons/grabber_highlight = ExtResource( 6 )
+custom_icons/grabber = ExtResource( 6 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area_highlight = SubResource( 6 )
+custom_styles/grabber_area = SubResource( 7 )
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="SoundEffects" type="VBoxContainer" parent="Control/VBoxContainer2"]
+margin_top = 64.0
+margin_right = 171.0
+margin_bottom = 123.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/VBoxContainer2/SoundEffects"]
+margin_right = 171.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 4 )
+text = "Sound Effects Volume"
+align = 1
+valign = 1
+
+[node name="SFXVolume" type="HSlider" parent="Control/VBoxContainer2/SoundEffects"]
+margin_top = 27.0
+margin_right = 171.0
+margin_bottom = 59.0
+custom_icons/tick = SubResource( 8 )
+custom_icons/grabber_highlight = SubResource( 8 )
+custom_icons/grabber = SubResource( 8 )
+custom_styles/slider = SubResource( 9 )
+custom_styles/grabber_area_highlight = SubResource( 10 )
+custom_styles/grabber_area = SubResource( 11 )
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="Display" type="VBoxContainer" parent="Control/VBoxContainer2"]
+margin_top = 127.0
+margin_right = 171.0
+margin_bottom = 187.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/VBoxContainer2/Display"]
+margin_right = 171.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 4 )
+text = "Display Mode"
+align = 1
+valign = 1
+
+[node name="DisplayModeButton" type="Button" parent="Control/VBoxContainer2/Display"]
+margin_top = 27.0
+margin_right = 171.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 12 )
+text = "WINDOWED"
+flat = true
+
 [connection signal="pressed" from="Control/VBoxContainer/Unpause" to="." method="_on_Unpause_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/MapButton" to="." method="_on_MapButton_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+[connection signal="value_changed" from="Control/VBoxContainer2/Music/MusicVolume" to="." method="_on_MusicVolume_value_changed"]
+[connection signal="value_changed" from="Control/VBoxContainer2/SoundEffects/SFXVolume" to="." method="_on_SFXVolume_value_changed"]
+[connection signal="pressed" from="Control/VBoxContainer2/Display/DisplayModeButton" to="." method="_on_DisplayModeButton_pressed"]

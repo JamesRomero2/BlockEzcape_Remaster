@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Forest/Forest.tscn" type="PackedScene" id=2]
@@ -45,6 +45,12 @@ shader = SubResource( 6 )
 shader_param/color = Color( 0, 0, 0, 1 )
 shader_param/multiplier = 0.208
 shader_param/softness = 1.005
+
+[sub_resource type="DynamicFont" id=14]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -96,10 +102,22 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Control/Label3:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=13]
 resource_name = "ResultAnimation"
-length = 5.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Control/Label2:rect_position")
 tracks/0/interp = 1
@@ -136,6 +154,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("..:resultAnimating")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Control/Label3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 4, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Level 00" type="Node"]
 script = ExtResource( 1 )
@@ -146,6 +188,7 @@ answers = {
 2: null,
 3: null
 }
+resultAnimating = true
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -354,12 +397,26 @@ anchor_bottom = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="Label3" type="Label" parent="ResultLayer/Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -117.0
+margin_top = -64.0
+margin_right = 117.0
+margin_bottom = -42.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Space to go to World Map..."
+
 [node name="Label2" type="Label" parent="ResultLayer/Control"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -258.0
+margin_left = 62.0
 margin_top = -64.0
-margin_right = 258.0
+margin_right = 578.0
 margin_bottom = -23.0
 custom_fonts/font = SubResource( 1 )
 text = "Puzzle Complete"
@@ -378,9 +435,9 @@ margin_bottom = 140.0
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = -232.0
-margin_top = -14.5
+margin_top = 81.5
 margin_right = -82.0
-margin_bottom = 14.5
+margin_bottom = 110.5
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 11 )
 text = "Time Spend :"

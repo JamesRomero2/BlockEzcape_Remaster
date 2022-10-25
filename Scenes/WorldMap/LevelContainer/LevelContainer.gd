@@ -3,7 +3,7 @@ extends Area2D
 onready var digits := $DoubleDigits
 onready var animation := $AnimationPlayer
 
-export(PackedScene) var targetLevel setget , _getTargetLevel
+export(String) var targetLevel setget , _getTargetLevel
 export(String) var levelTitle := ""
 export(int) var levelNumber := 00
 export(bool) var levelOpen: bool = false

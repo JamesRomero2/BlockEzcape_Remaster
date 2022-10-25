@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-
 func _changeScene(target: String):
 	$AnimationPlayer.play("DissolveAnim")
 	yield($AnimationPlayer, "animation_finished")

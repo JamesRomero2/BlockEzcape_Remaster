@@ -12,6 +12,7 @@ export var answers := {
 	2: null,
 	3: null,
 }
+export(bool) var resultAnimating: bool = false
 
 var moveCount: int = 0
 var result = Array()
@@ -51,8 +52,11 @@ func _connectSignal():
 
 func _unhandled_input(event):
 	if event.is_pressed():
-		if event.is_action_pressed("escape"):
+		if event.is_action_pressed("escape") and !GameManager._getGameOver():
 			_changeGameState()
+		if event.is_action_pressed("space"):
+			if GameManager._getGameOver() and !resultAnimating:
+				SceneTransition._changeScene("res://Scenes/WorldMap/WorldMap.tscn")
 
 func _process(delta):
 	if timerActive:
@@ -65,12 +69,8 @@ func _process(delta):
 	
 	timeSpent = "%02d : %02d : %02d : %03d" % [hours, mins, secs, milliSecs]
 	
-	if !GameManager._getGameOver():
-		if Input.is_action_pressed("undo") and !player.moving:
-			if canUndo:
-				_undoMoves()
-				canUndo = false
-				$Timer.start()
+	if Input.is_action_pressed("undo"):
+		_undoSystem()
 
 func _changeTheme():
 	themeColor.color = colorTheme
@@ -94,7 +94,7 @@ func _onScannerInput(value, id, scannerNode):
 	for answerId in answers.size():
 		if answers[answerId] != null:
 			if answerId == id:
-				if value == answers[answerId]:
+				if str(value) == str(answers[answerId]):
 					scannerNode._setResult(true)
 				else:
 					scannerNode._setResult(false)
@@ -117,6 +117,7 @@ func _getAllBridgeState():
 	return bridges
 
 func _changeGameState():
+	timerActive = !timerActive
 	GameManager._setGamePaused(!GameManager._getGamePause())
 	pause.visible = !pause.visible
 
@@ -146,9 +147,6 @@ func _onOperationalStateChange(object):
 	
 	undoRedoJournal.commit_action()
 
-func _undoMoves():
-	undoRedoJournal.undo()
-
 func _on_PauseButton_pressed():
 	_changeGameState()
 
@@ -156,9 +154,14 @@ func _on_Timer_timeout():
 	canUndo = true
 
 func _on_UndoButton_pressed():
+	_undoSystem()
+
+func _undoSystem():
 	if !GameManager._getGameOver():
-		if Input.is_action_pressed("undo") and !player.moving:
+		if !player.moving:
 			if canUndo:
-				_undoMoves()
-				canUndo = false
-				$Timer.start()
+				if undoRedoJournal.has_undo():
+					print(undoRedoJournal.get_current_action_name())
+					undoRedoJournal.undo()
+					canUndo = false
+					$Timer.start()
