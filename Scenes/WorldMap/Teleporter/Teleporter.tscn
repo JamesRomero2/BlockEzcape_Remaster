@@ -38,7 +38,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[node name="Teleporter" type="Area2D" groups=["TeleportPad"]]
+[node name="Teleporter" type="Area2D" groups=["Portal"]]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource( 1 )
@@ -51,10 +51,8 @@ texture = ExtResource( 2 )
 hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "TeleportActive"
 anims/RESET = SubResource( 3 )
 anims/TeleportActive = SubResource( 2 )
-
-[node name="LandingPosition" type="Node2D" parent="."]
-position = Vector2( 0, -16 )
 
 [connection signal="body_entered" from="." to="." method="_on_Teleporter_body_entered"]

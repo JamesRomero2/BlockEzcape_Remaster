@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Forest/Forest.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameObjects/Blocks/PhantomBlocks/PhantomBlock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Textures/Meadow.png" type="Texture" id=7]
 [ext_resource path="res://GameObjects/Tiles/LeverTile/LeverTile.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Components/Card/Card.tscn" type="PackedScene" id=10]
@@ -192,15 +193,12 @@ resultAnimating = true
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10
 
-[node name="Color" type="ColorRect" parent="BackgroundLayer"]
+[node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0.0156863, 1, 1 )
-
-[node name="ColorRect2" type="ColorRect" parent="BackgroundLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.901961 )
+texture = ExtResource( 7 )
+expand = true
+stretch_mode = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -392, 144 )

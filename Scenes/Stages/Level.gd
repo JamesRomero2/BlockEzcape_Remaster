@@ -1,6 +1,5 @@
 extends Node
 
-onready var themeColor := $BackgroundLayer/Color
 onready var player := $GameObjects/Player
 onready var temple := $GameObjects/Temple
 onready var pause := $PausePanel
@@ -29,12 +28,12 @@ var canUndo: bool = true
 
 func _ready():
 	GameManager._setGameOver(false)
-	_changeTheme()
 	_connectSignal()
 	timerActive = true
 
 func _connectSignal():
 	player.connect("objectStateChange", self, "_playerJournal")
+	player.connect("playerPushed", self, "_playerPushJournal")
 	temple.connect("levelAccomplish", self, "_onLevelAccomplish")
 	
 	for box in get_tree().get_nodes_in_group("Box"):
@@ -72,9 +71,6 @@ func _process(delta):
 	if Input.is_action_pressed("undo"):
 		_undoSystem()
 
-func _changeTheme():
-	themeColor.color = colorTheme
-
 func _onPhantomTileStateChange():
 	for unWalkable in get_tree().get_nodes_in_group("Unwalkable"):
 		if _getAllBridgeState().has(true):
@@ -84,6 +80,13 @@ func _onPhantomTileStateChange():
 
 func _onScannerInput(value, id, scannerNode):
 	result.clear()
+	
+	for crystal in get_tree().get_nodes_in_group("Crystal"):
+		if id == crystal.scannerID:
+			if value == null:
+				crystal._crystalHasValue(false, value)
+			else:
+				crystal._crystalHasValue(true, value)
 	
 	for card in get_tree().get_nodes_in_group("Card"):
 		if value == null:
@@ -129,20 +132,26 @@ func _onLevelAccomplish():
 	$ResultLayer/AnimationPlayer.play("ResultAnimation")
 
 func _playerJournal(object):
-	undoRedoJournal.create_action("Player Move")
+	undoRedoJournal.create_action("Move")
+	undoRedoJournal.add_undo_method(object, "undoMovement")
+
+	undoRedoJournal.commit_action()
+
+func _playerPushJournal(object):
+	undoRedoJournal.create_action("Pushing")
 	undoRedoJournal.add_undo_method(object, "undoMovement")
 
 	undoRedoJournal.commit_action()
 
 func _boxJournal(object):
-	undoRedoJournal.create_action("Box Move")
+	undoRedoJournal.create_action("Pushed")
 	undoRedoJournal.add_undo_method(object, "undoBoxPosition")
 	undoRedoJournal.add_undo_method(object, "undoBoxValue", object.boxValue)
 
 	undoRedoJournal.commit_action()
 
 func _onOperationalStateChange(object):
-	undoRedoJournal.create_action("Operational Tile Change State")
+	undoRedoJournal.create_action("Operational Added")
 	undoRedoJournal.add_undo_method(object, "_undoOperationalTile")
 	
 	undoRedoJournal.commit_action()
@@ -161,7 +170,14 @@ func _undoSystem():
 		if !player.moving:
 			if canUndo:
 				if undoRedoJournal.has_undo():
-					print(undoRedoJournal.get_current_action_name())
-					undoRedoJournal.undo()
+					match undoRedoJournal.get_current_action_name():
+						"Move":
+							undoRedoJournal.undo()
+						"Pushing":
+							for i in 2:	
+								undoRedoJournal.undo()
+						"Operational Added":
+							for i in 3:	
+								undoRedoJournal.undo()
 					canUndo = false
 					$Timer.start()

@@ -66,4 +66,3 @@ func _on_OperationalTile_body_exited(body):
 #		collisions.set_deferred("disabled", false)
 		yield()
 		collected = false
-	pass

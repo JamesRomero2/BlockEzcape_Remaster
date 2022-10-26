@@ -17,12 +17,16 @@ var inputs = {
 }
 
 func _process(delta):
+	if GameManager._getGamePause():
+		return
 	for dir in inputs.keys():
 		if Input.is_action_pressed(dir):
 			if !moving:
 				_move(dir)
 
 func _unhandled_input(event):
+	if GameManager._getGamePause():
+		return
 	if event.is_action_pressed("space"):
 		if _getLevel() == null: return
 		

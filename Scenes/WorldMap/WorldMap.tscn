@@ -1,11 +1,107 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Scenes/WorldMap/WorldMap.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WorldMap/LevelSelector/LevelSelector.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/WorldMap/LevelContainer/LevelContainer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Textures/Clouds.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Textures/ForestArea.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Textures/spotlight_1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/MovementPanel.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/UndergroundArea.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/WorldMap/Blocker/Blocker.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Textures/WorldMapRoad.png" type="Texture" id=10]
+[ext_resource path="res://GameObjects/Tiles/LeverTile/Texture/LeverTexture.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/Keys.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/BlackBackDrop.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Bold.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Assets/Fonts/Rubik/Rubik-Medium.ttf" type="DynamicFontData" id=16]
+
+[sub_resource type="TileSet" id=36]
+0/name = "WorldMapRoad.png 0"
+0/texture = ExtResource( 10 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "WorldMapRoad.png 1"
+1/texture = ExtResource( 10 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 32, 0, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "WorldMapRoad.png 2"
+2/texture = ExtResource( 10 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 64, 0, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "WorldMapRoad.png 3"
+3/texture = ExtResource( 10 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 64, 32, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "WorldMapRoad.png 4"
+4/texture = ExtResource( 10 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 32, 32, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "WorldMapRoad.png 5"
+5/texture = ExtResource( 10 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 32, 32, 32 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
 
 [sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 1
@@ -84,6 +180,65 @@ color_ramp = SubResource( 20 )
 flags = 4
 load_path = "res://.import/offset_glow.png-4a64e79ca1a292e7d5fe8e7c4448333e.stex"
 
+[sub_resource type="CanvasItemMaterial" id=25]
+blend_mode = 1
+
+[sub_resource type="StreamTexture" id=26]
+load_path = "res://.import/spotlight_1.png-6c06cfb6da324d2658dd2ceeacedde65.stex"
+
+[sub_resource type="CanvasItemMaterial" id=27]
+blend_mode = 1
+
+[sub_resource type="ParticlesMaterial" id=28]
+emission_shape = 1
+emission_sphere_radius = 128.0
+flag_disable_z = true
+gravity = Vector3( 0, -200, 0 )
+angular_velocity = 1.0
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 4 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.5
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 15 )
+
+[sub_resource type="StreamTexture" id=29]
+flags = 4
+load_path = "res://.import/offset_glow.png-4a64e79ca1a292e7d5fe8e7c4448333e.stex"
+
+[sub_resource type="CanvasItemMaterial" id=30]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=33]
+offsets = PoolRealArray( 0, 0.870229, 1 )
+colors = PoolColorArray( 0.648438, 0.33815, 0.116516, 1, 0.190121, 0.188265, 0, 0.221374, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=34]
+gradient = SubResource( 33 )
+
+[sub_resource type="ParticlesMaterial" id=35]
+emission_shape = 1
+emission_sphere_radius = 128.0
+flag_disable_z = true
+gravity = Vector3( 0, -200, 0 )
+angular_velocity = 1.0
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 4 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.5
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 34 )
+
+[sub_resource type="StreamTexture" id=32]
+flags = 4
+load_path = "res://.import/offset_glow.png-4a64e79ca1a292e7d5fe8e7c4448333e.stex"
+
 [sub_resource type="Animation" id=23]
 length = 0.001
 tracks/0/type = "value"
@@ -110,10 +265,22 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 2.5, 2.5 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Map/UndergroundArea/Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.5, 2.5 ) ]
+}
 
 [sub_resource type="Animation" id=24]
 resource_name = "WorldMapAnimation"
-length = 7.0
+length = 8.0
 loop = true
 step = 0.5
 tracks/0/type = "value"
@@ -123,10 +290,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2, 5, 7 ),
+"times": PoolRealArray( 0, 2, 4, 6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -64 ), Vector2( 0, 64 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 120 ), Vector2( 0, -40 ), Vector2( 0, 96 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Map/ForestArea/Sprite:scale")
@@ -135,39 +302,110 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 3 ),
+"times": PoolRealArray( 0, 4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2, 2 ), Vector2( 2.5, 2.5 ) ]
+"values": [ Vector2( 2.5, 2.5 ), Vector2( 2, 2 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Map/UndergroundArea/Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2.5, 2.5 ), Vector2( 2, 2 ) ]
+}
+
+[sub_resource type="DynamicFont" id=37]
+size = 18
+outline_size = 1
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=38]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxLine" id=39]
+color = Color( 1, 1, 1, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=40]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=41]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="StreamTexture" id=42]
+load_path = "res://.import/Keys.png-13469275d5aab9ee433265296e1dd612.stex"
+
+[sub_resource type="StyleBoxLine" id=43]
+color = Color( 1, 1, 1, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=44]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=45]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="DynamicFont" id=46]
+size = 22
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
 
 [node name="WorldMap" type="Node"]
 script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
-visible = false
 
 [node name="WorldMapUI" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/WorldMapUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -16.0
+margin_bottom = 8.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 7
+
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/WorldMapUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.607843, 0.615686, 1, 1 )
+color = Color( 0, 0, 0, 0.431373 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -112 )
+position = Vector2( 0, -72 )
 current = true
 zoom = Vector2( 2, 2 )
 
 [node name="Map" type="Node2D" parent="."]
 
+[node name="TileMap" type="TileMap" parent="Map"]
+tile_set = SubResource( 36 )
+cell_size = Vector2( 8, 8 )
+cell_custom_transform = Transform2D( 8, 0, 0, 8, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -1835040, 1, 0, -1835039, 1, 0, -1835038, 1, 0, -1835037, 1, 0, -1835036, 1, 0, -1835035, 1, 0, -1835034, 1, 0, -1835033, 1, 0, -1835032, 1, 0, -1835028, 4, 0, -1572884, 0, 0, -1507348, 0, 0, -1441812, 0, 0, -1376276, 0, 0, -1310740, 0, 0, -1245204, 0, 0 )
+
 [node name="ForestArea" type="Node2D" parent="Map"]
 
 [node name="Sprite" type="Sprite" parent="Map/ForestArea"]
-modulate = Color( 0.266667, 1, 0.278431, 1 )
+modulate = Color( 0, 1, 0.0901961, 1 )
 material = SubResource( 3 )
 position = Vector2( -384, -232 )
 scale = Vector2( 2.5, 2.5 )
@@ -234,85 +472,539 @@ scale = Vector2( 0.8, 0.8 )
 process_material = SubResource( 21 )
 texture = SubResource( 22 )
 
-[node name="Blocker" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -400, -344 )
-scale = Vector2( 2, 2 )
+[node name="UndergroundArea" type="Node2D" parent="Map"]
+position = Vector2( -144, 64 )
 
-[node name="Blocker2" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -368, -344 )
-scale = Vector2( 2, 2 )
+[node name="Sprite" type="Sprite" parent="Map/UndergroundArea"]
+modulate = Color( 0.803922, 0.627451, 0, 1 )
+material = SubResource( 25 )
+position = Vector2( 0, -32 )
+scale = Vector2( 2.5, 2.5 )
+texture = SubResource( 26 )
 
-[node name="Blocker3" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -432, -344 )
+[node name="Forest" type="Sprite" parent="Map/UndergroundArea"]
 scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
 
-[node name="Blocker4" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -336, -344 )
+[node name="LevelContainer" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
+position = Vector2( 64, -56 )
 scale = Vector2( 2, 2 )
+targetLevel = "res://Scenes/Stages/Underground/Level 06.tscn"
+levelNumber = 6
+levelOpen = true
 
-[node name="Blocker5" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -464, -312 )
+[node name="LevelContainer2" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
+position = Vector2( 0, -88 )
 scale = Vector2( 2, 2 )
+targetLevel = "res://Scenes/Stages/Underground/Level 07.tscn"
+levelNumber = 7
+levelOpen = true
 
-[node name="Blocker6" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -496, -280 )
+[node name="LevelContainer3" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
+position = Vector2( -64, -56 )
 scale = Vector2( 2, 2 )
+targetLevel = "res://Scenes/Stages/Underground/Level 08.tscn"
+levelNumber = 8
+levelOpen = true
 
-[node name="Blocker7" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -496, -248 )
+[node name="LevelContainer4" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
+position = Vector2( -64, 8 )
 scale = Vector2( 2, 2 )
+targetLevel = "res://Scenes/Stages/Underground/Level 09.tscn"
+levelNumber = 9
+levelOpen = true
 
-[node name="Blocker8" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -496, -216 )
+[node name="LevelContainer5" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
+position = Vector2( 0, 40 )
 scale = Vector2( 2, 2 )
+targetLevel = "res://Scenes/Stages/Underground/Level 10.tscn"
+levelNumber = 10
+levelOpen = true
 
-[node name="Blocker9" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -464, -184 )
-scale = Vector2( 2, 2 )
+[node name="Particles2D2" type="Particles2D" parent="Map/UndergroundArea"]
+material = SubResource( 27 )
+scale = Vector2( 0.8, 0.8 )
+amount = 16
+process_material = SubResource( 28 )
+texture = SubResource( 29 )
 
-[node name="Blocker10" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -432, -152 )
-scale = Vector2( 2, 2 )
-
-[node name="Blocker11" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -400, -152 )
-scale = Vector2( 2, 2 )
-
-[node name="Blocker13" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -336, -152 )
-scale = Vector2( 2, 2 )
-
-[node name="Blocker19" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -368, -152 )
-scale = Vector2( 2, 2 )
-
-[node name="Blocker14" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -304, -184 )
-scale = Vector2( 2, 2 )
-
-[node name="Blocker15" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -272, -216 )
-scale = Vector2( 2, 2 )
-
-[node name="Blocker16" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -272, -248 )
-scale = Vector2( 2, 2 )
-
-[node name="Blocker17" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -272, -280 )
-scale = Vector2( 2, 2 )
-
-[node name="Blocker18" parent="Map/ForestArea" instance=ExtResource( 9 )]
-position = Vector2( -304, -312 )
-scale = Vector2( 2, 2 )
-
-[node name="UnderGround" type="Node2D" parent="Map"]
+[node name="Particles2D3" type="Particles2D" parent="Map/UndergroundArea"]
+material = SubResource( 30 )
+scale = Vector2( 0.8, 0.8 )
+process_material = SubResource( 35 )
+texture = SubResource( 32 )
 
 [node name="LevelSelector" parent="Map" instance=ExtResource( 2 )]
 position = Vector2( -432, -312 )
 scale = Vector2( 2, 2 )
 
+[node name="Blockers" type="Node2D" parent="Map"]
+
+[node name="Blocker" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -400, -344 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker2" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -368, -344 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker3" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -432, -344 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker4" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -336, -344 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker5" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -464, -312 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker6" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -496, -280 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker7" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -496, -248 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker8" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -496, -216 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker9" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -464, -184 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker10" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -432, -152 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker11" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -400, -152 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker13" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -336, -152 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker19" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -368, -152 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker14" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -304, -184 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker15" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -272, -184 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker41" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -240, -184 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker42" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -208, -184 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker43" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -176, -184 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker51" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -176, -152 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker52" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -112, -152 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker44" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -240, -248 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker45" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -208, -248 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker46" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -176, -248 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker47" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -144, -248 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker48" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -112, -248 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker49" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -112, -216 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker50" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -112, -184 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker16" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -272, -248 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker17" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -272, -280 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker18" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -304, -312 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker12" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -144, 168 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker20" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -176, 168 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker21" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -112, 168 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker22" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -80, 136 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker23" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -208, 136 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker24" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -240, 104 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker25" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -48, 104 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker26" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -272, 72 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker27" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -16, 72 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker28" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -272, 40 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker29" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -16, 40 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker30" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -272, 8 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker31" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -16, 8 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker32" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -272, -24 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker33" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -16, -24 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker34" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -240, -56 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker35" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -48, -56 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker36" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -208, -88 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker37" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -80, -88 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker38" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -176, -120 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker39" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -112, -120 )
+scale = Vector2( 2, 2 )
+
+[node name="Instructions" type="Node2D" parent="."]
+
+[node name="Movement" type="Sprite" parent="Instructions"]
+position = Vector2( -472, 192 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+hframes = 4
+vframes = 3
+
+[node name="Movement2" type="Sprite" parent="Instructions"]
+position = Vector2( -392, 136 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+hframes = 4
+vframes = 3
+frame = 1
+
+[node name="Movement3" type="Sprite" parent="Instructions"]
+position = Vector2( -472, 80 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+hframes = 4
+vframes = 3
+frame = 4
+
+[node name="Movement4" type="Sprite" parent="Instructions"]
+position = Vector2( -552, 136 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+hframes = 4
+vframes = 3
+frame = 5
+
+[node name="Movement5" type="Sprite" parent="Instructions"]
+position = Vector2( -472, 240 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+hframes = 4
+vframes = 3
+frame = 2
+
+[node name="Movement6" type="Sprite" parent="Instructions"]
+position = Vector2( -344, 136 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+hframes = 4
+vframes = 3
+frame = 3
+
+[node name="Movement7" type="Sprite" parent="Instructions"]
+position = Vector2( -472, 32 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+hframes = 4
+vframes = 3
+frame = 6
+
+[node name="Movement8" type="Sprite" parent="Instructions"]
+position = Vector2( -600, 136 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+hframes = 4
+vframes = 3
+frame = 7
+
+[node name="Movement9" type="Sprite" parent="Instructions"]
+position = Vector2( -472, 136 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+hframes = 2
+vframes = 3
+frame = 4
+
+[node name="Movement10" type="Sprite" parent="Instructions"]
+position = Vector2( -576, 56 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+hframes = 2
+vframes = 3
+frame = 5
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "WorldMapAnimation"
 anims/RESET = SubResource( 23 )
 anims/WorldMapAnimation = SubResource( 24 )
+
+[node name="MainMenuNavigation" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="MainMenuNavigation"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Backdrop" type="TextureRect" parent="MainMenuNavigation/Control"]
+modulate = Color( 1, 1, 1, 0.54902 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 13 )
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenuNavigation/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -12.0
+margin_right = 128.0
+margin_bottom = 92.0
+custom_constants/separation = 7
+alignment = 1
+
+[node name="Unpause" type="Button" parent="MainMenuNavigation/Control/VBoxContainer"]
+margin_right = 256.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 256, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MainMenuNavigation/Control/VBoxContainer/Unpause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+patch_margin_left = 6
+patch_margin_top = 8
+patch_margin_right = 6
+patch_margin_bottom = 10
+
+[node name="Label" type="Label" parent="MainMenuNavigation/Control/VBoxContainer/Unpause/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 37 )
+text = "Go Back"
+align = 1
+valign = 1
+
+[node name="MapButton" type="Button" parent="MainMenuNavigation/Control/VBoxContainer"]
+margin_top = 55.0
+margin_right = 256.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 256, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MainMenuNavigation/Control/VBoxContainer/MapButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+patch_margin_left = 6
+patch_margin_top = 8
+patch_margin_right = 6
+patch_margin_bottom = 10
+
+[node name="Label" type="Label" parent="MainMenuNavigation/Control/VBoxContainer/MapButton/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 37 )
+text = "Return to Main Menu"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="MainMenuNavigation/Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -290.0
+margin_right = 290.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 171, 0 )
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Music" type="VBoxContainer" parent="MainMenuNavigation/Control/VBoxContainer2"]
+margin_right = 180.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 180, 0 )
+alignment = 1
+
+[node name="Label" type="Label" parent="MainMenuNavigation/Control/VBoxContainer2/Music"]
+margin_top = 26.0
+margin_right = 180.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 38 )
+text = "Music Volume"
+align = 1
+valign = 1
+
+[node name="MusicVolume" type="HSlider" parent="MainMenuNavigation/Control/VBoxContainer2/Music"]
+margin_top = 53.0
+margin_right = 180.0
+margin_bottom = 85.0
+custom_icons/tick = ExtResource( 12 )
+custom_icons/grabber_highlight = ExtResource( 12 )
+custom_icons/grabber = ExtResource( 12 )
+custom_styles/slider = SubResource( 39 )
+custom_styles/grabber_area_highlight = SubResource( 40 )
+custom_styles/grabber_area = SubResource( 41 )
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="SoundEffects" type="VBoxContainer" parent="MainMenuNavigation/Control/VBoxContainer2"]
+margin_left = 200.0
+margin_right = 380.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 180, 0 )
+alignment = 1
+
+[node name="Label" type="Label" parent="MainMenuNavigation/Control/VBoxContainer2/SoundEffects"]
+margin_top = 26.0
+margin_right = 180.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 38 )
+text = "Sound Effects Volume"
+align = 1
+valign = 1
+
+[node name="SFXVolume" type="HSlider" parent="MainMenuNavigation/Control/VBoxContainer2/SoundEffects"]
+margin_top = 53.0
+margin_right = 180.0
+margin_bottom = 85.0
+custom_icons/tick = SubResource( 42 )
+custom_icons/grabber_highlight = SubResource( 42 )
+custom_icons/grabber = SubResource( 42 )
+custom_styles/slider = SubResource( 43 )
+custom_styles/grabber_area_highlight = SubResource( 44 )
+custom_styles/grabber_area = SubResource( 45 )
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="Display" type="VBoxContainer" parent="MainMenuNavigation/Control/VBoxContainer2"]
+margin_left = 400.0
+margin_right = 580.0
+margin_bottom = 112.0
+rect_min_size = Vector2( 180, 0 )
+alignment = 1
+
+[node name="Label" type="Label" parent="MainMenuNavigation/Control/VBoxContainer2/Display"]
+margin_top = 26.0
+margin_right = 180.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 38 )
+text = "Display Mode"
+align = 1
+valign = 1
+
+[node name="DisplayModeButton" type="Button" parent="MainMenuNavigation/Control/VBoxContainer2/Display"]
+margin_top = 53.0
+margin_right = 180.0
+margin_bottom = 86.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 46 )
+text = "WINDOWED"
+flat = true
+
+[connection signal="pressed" from="MainMenuNavigation/Control/VBoxContainer/Unpause" to="." method="_on_Unpause_pressed"]
+[connection signal="pressed" from="MainMenuNavigation/Control/VBoxContainer/MapButton" to="." method="_on_MapButton_pressed"]
+[connection signal="value_changed" from="MainMenuNavigation/Control/VBoxContainer2/Music/MusicVolume" to="." method="_on_MusicVolume_value_changed"]
+[connection signal="value_changed" from="MainMenuNavigation/Control/VBoxContainer2/SoundEffects/SFXVolume" to="." method="_on_SFXVolume_value_changed"]
+[connection signal="pressed" from="MainMenuNavigation/Control/VBoxContainer2/Display/DisplayModeButton" to="." method="_on_DisplayModeButton_pressed"]

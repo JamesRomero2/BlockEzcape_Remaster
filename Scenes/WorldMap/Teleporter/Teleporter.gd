@@ -1,20 +1,21 @@
-extends Area2D
+extends Node2D
 
-export var partnerID: int
+export(int) var id = 0
 
-onready var landing := $LandingPosition
+var lockPortal = false
 
-var teleportationInProgress: bool = false
-var teleportLocation: Vector2 = Vector2.ZERO
-var teleportationEnable: bool = true
 
-func _ready():
-	var teleportPadGroup = get_tree().get_nodes_in_group("TeleportPad")
-	for teleportPad in teleportPadGroup:
-		if partnerID == teleportPad.partnerID:
-			teleportLocation = teleportPad.landing.position
-#	teleportLocation = targetPos.position
+
+func doLock():
+	lockPortal = true
+	yield(get_tree().create_timer(0.3), "timeout")
+	lockPortal = false
 
 func _on_Teleporter_body_entered(body):
-	if body.name == "LevelSelector":
-		body.position = teleportLocation
+	for portal in get_tree().get_nodes_in_group("Portal"):
+		print(portal.position)
+		if self.name != portal.name:
+			if id == portal.id:
+				if !portal.lockPortal:
+					doLock()
+					body.position = portal.position

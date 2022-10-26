@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Forest/Forest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Textures/Meadow.png" type="Texture" id=5]
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Components/Card/Card.tscn" type="PackedScene" id=10]
@@ -190,15 +191,12 @@ resultAnimating = true
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10
 
-[node name="Color" type="ColorRect" parent="BackgroundLayer"]
+[node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0.0156863, 1, 1 )
-
-[node name="ColorRect2" type="ColorRect" parent="BackgroundLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.901961 )
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -376, 112 )
@@ -412,9 +410,9 @@ text = "Space to go to World Map..."
 [node name="Label2" type="Label" parent="ResultLayer/Control"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -258.0
+margin_left = 62.0
 margin_top = -64.0
-margin_right = 258.0
+margin_right = 578.0
 margin_bottom = -23.0
 custom_fonts/font = SubResource( 1 )
 text = "Puzzle Complete"
@@ -433,9 +431,9 @@ margin_bottom = 140.0
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = -232.0
-margin_top = -14.5
+margin_top = 81.5
 margin_right = -82.0
-margin_bottom = 14.5
+margin_bottom = 110.5
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 11 )
 text = "Time Spend :"

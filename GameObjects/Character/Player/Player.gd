@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal objectStateChange(node)
+signal playerPushed(node)
 
 onready var raycast := $RayCast2D
 onready var animation := $AnimationPlayer
@@ -60,7 +61,7 @@ func _pushBlocks(pos, dir, vPos):
 		if collider._moveBoxToNextPos(dir):
 			_moveToNextPos(pos)
 			_objectStateJournal(vPos)
-			emit_signal("objectStateChange", self)
+			emit_signal("playerPushed", self)
 
 func undoMovement():
 	if journal.empty(): return
