@@ -1,9 +1,9 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Scenes/WorldMap/WorldMap.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WorldMap/LevelSelector/LevelSelector.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/WorldMap/LevelContainer/LevelContainer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Textures/Clouds.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/Mountains5.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Textures/ForestArea.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Textures/spotlight_1.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Textures/MovementPanel.png" type="Texture" id=7]
@@ -16,6 +16,9 @@
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Bold.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Medium.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://Scenes/WorldMap/BackgroundChanger/BGChanger.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Textures/caveBG.jpg" type="Texture" id=18]
+[ext_resource path="res://Assets/Textures/Clouds.png" type="Texture" id=19]
 
 [sub_resource type="TileSet" id=36]
 0/name = "WorldMapRoad.png 0"
@@ -284,36 +287,24 @@ length = 8.0
 loop = true
 step = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Map:position")
+tracks/0/path = NodePath("Map/ForestArea/Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2, 4, 6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 120 ), Vector2( 0, -40 ), Vector2( 0, 96 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Map/ForestArea/Sprite:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0, 4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 2.5, 2.5 ), Vector2( 2, 2 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("Map/UndergroundArea/Sprite:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("Map/UndergroundArea/Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 2, 6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -374,10 +365,32 @@ layer = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/WorldMapUI"]
+[node name="Backgrounds" type="Control" parent="CanvasLayer/WorldMapUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -16.0
+
+[node name="Default" type="TextureRect" parent="CanvasLayer/WorldMapUI/Backgrounds"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -104.0
+margin_bottom = 16.0
+texture = ExtResource( 19 )
+expand = true
+stretch_mode = 7
+
+[node name="Underground" type="TextureRect" parent="CanvasLayer/WorldMapUI/Backgrounds"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -104.0
+margin_bottom = 16.0
+texture = ExtResource( 18 )
+expand = true
+stretch_mode = 7
+
+[node name="Forest" type="TextureRect" parent="CanvasLayer/WorldMapUI/Backgrounds"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -112.0
 margin_bottom = 8.0
 texture = ExtResource( 4 )
 expand = true
@@ -386,7 +399,9 @@ stretch_mode = 7
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/WorldMapUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.431373 )
+color = Color( 0, 0, 0, 0.588235 )
+
+[node name="Tween" type="Tween" parent="CanvasLayer/WorldMapUI"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -72 )
@@ -415,6 +430,10 @@ texture = ExtResource( 6 )
 position = Vector2( -384, -232 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
+
+[node name="BG Changer" parent="Map/ForestArea" instance=ExtResource( 17 )]
+position = Vector2( -384, -248 )
+areas = "Forest"
 
 [node name="LevelContainer" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -400, -312 )
@@ -485,6 +504,10 @@ texture = SubResource( 26 )
 [node name="Forest" type="Sprite" parent="Map/UndergroundArea"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 8 )
+
+[node name="BG Changer2" parent="Map/UndergroundArea" instance=ExtResource( 17 )]
+position = Vector2( 0, -40 )
+areas = "Underground"
 
 [node name="LevelContainer" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( 64, -56 )
@@ -745,6 +768,7 @@ position = Vector2( -112, -120 )
 scale = Vector2( 2, 2 )
 
 [node name="Instructions" type="Node2D" parent="."]
+visible = false
 
 [node name="Movement" type="Sprite" parent="Instructions"]
 position = Vector2( -472, 192 )

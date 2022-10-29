@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Temp/Crystal/Crystal.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Textures/Crystal.png" type="Texture" id=3]
+[ext_resource path="res://Components/OperationalSigns/OperationalSigns.tscn" type="PackedScene" id=4]
 
 [node name="Crystal" type="Node2D" groups=["Crystal"]]
 script = ExtResource( 2 )
 
 [node name="DoubleDigits" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="OperationalSigns" parent="." instance=ExtResource( 4 )]
+visible = false
 
 [node name="Sprite" type="Sprite" parent="."]
-visible = false
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )

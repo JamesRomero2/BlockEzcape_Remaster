@@ -37,7 +37,6 @@ func _playerMove(direction):
 		_moveToNextPos(nextPos)
 		_objectStateJournal(vectorPos)
 		emit_signal("objectStateChange", self)
-#		print(direction)
 	else:
 		_pushBlocks(nextPos, direction, vectorPos)
 
@@ -57,7 +56,7 @@ func _moveToNextPos(pos):
 
 func _pushBlocks(pos, dir, vPos):
 	var collider = raycast.get_collider()
-	if collider.is_in_group("Box"):
+	if collider.is_in_group("Box") || collider.is_in_group("Symbols"):
 		if collider._moveBoxToNextPos(dir):
 			_moveToNextPos(pos)
 			_objectStateJournal(vPos)

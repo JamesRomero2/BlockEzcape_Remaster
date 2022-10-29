@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Textures/OperationTile.png" type="Texture" id=1]
+[ext_resource path="res://Components/OperationalSigns/OperationalSigns.gd" type="Script" id=2]
+[ext_resource path="res://Components/OperationalSigns/Animation/Plus.tres" type="Animation" id=3]
+[ext_resource path="res://Components/OperationalSigns/Animation/Minus.tres" type="Animation" id=4]
+[ext_resource path="res://Components/OperationalSigns/Animation/Times.tres" type="Animation" id=5]
+[ext_resource path="res://Components/OperationalSigns/Animation/Equals.tres" type="Animation" id=6]
+[ext_resource path="res://Components/OperationalSigns/Animation/Divide.tres" type="Animation" id=7]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 5 ]
+}
+
+[node name="OperationalSigns" type="Sprite"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+hframes = 5
+vframes = 2
+frame = 5
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Divide = ExtResource( 7 )
+anims/Equals = ExtResource( 6 )
+anims/Minus = ExtResource( 4 )
+anims/Plus = ExtResource( 3 )
+anims/RESET = SubResource( 1 )
+anims/Times = ExtResource( 5 )

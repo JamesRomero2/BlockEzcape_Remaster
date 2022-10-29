@@ -39,6 +39,9 @@ func _connectSignal():
 	for box in get_tree().get_nodes_in_group("Box"):
 		box.connect("boxMoves", self, "_boxJournal")
 	
+	for symbol in get_tree().get_nodes_in_group("Symbols"):
+		symbol.connect("boxMoves", self, "_operationalBoxJournal")
+	
 	for phantom in get_tree().get_nodes_in_group("Bridge"):
 		phantom.connect("UnwalkableState", self, "_onPhantomTileStateChange")
 	
@@ -81,9 +84,11 @@ func _onPhantomTileStateChange():
 func _onScannerInput(value, id, scannerNode):
 	result.clear()
 	
+	var valueString = str(value)
+	
 	for crystal in get_tree().get_nodes_in_group("Crystal"):
 		if id == crystal.scannerID:
-			if value == null:
+			if valueString == "Null":
 				crystal._crystalHasValue(false, value)
 			else:
 				crystal._crystalHasValue(true, value)
@@ -148,6 +153,12 @@ func _boxJournal(object):
 	undoRedoJournal.add_undo_method(object, "undoBoxPosition")
 	undoRedoJournal.add_undo_method(object, "undoBoxValue", object.boxValue)
 
+	undoRedoJournal.commit_action()
+
+func _operationalBoxJournal(object):
+	undoRedoJournal.create_action("Pushed")
+	undoRedoJournal.add_undo_method(object, "undoBoxPosition")
+	
 	undoRedoJournal.commit_action()
 
 func _onOperationalStateChange(object):

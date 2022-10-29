@@ -14,13 +14,13 @@ func _ready():
 	sprite.frame = scannerID
 
 func _on_ReaderSlot_body_entered(body):
-	if body.is_in_group("Box"):
+	if body.is_in_group("Box") or body.is_in_group("Symbols"):
 		occupied = true
 		emit_signal("boxValue", body.boxValue, scannerID, self)
 		sfx.play()
 
 func _on_ReaderSlot_body_exited(body):
-	if body.is_in_group("Box"):
+	if body.is_in_group("Box") or body.is_in_group("Symbols"):
 		emit_signal("boxValue", null, scannerID, self)
 		_setResult(false)
 		occupied = false

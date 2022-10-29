@@ -3,11 +3,12 @@ extends KinematicBody2D
 signal boxMoves(node)
 
 onready var raycast := $RayCast2D
-onready var sprite := $Sprite
+onready var sprite := $OperationalSigns
 
-export(int, "Add", "Minus", "Times", "Divide") var operation
+export(String, "Plus", "Minus", "Times", "Divide", "Equals") var operation
+
 var boxValue
-
+var journal: Array = Array()
 var moving: bool = false
 var gridSize: int = 16
 var inputs := {
@@ -18,17 +19,19 @@ var inputs := {
 }
 
 func _ready():
-	sprite.frame = operation
+	sprite._setSign(operation)
 	
 	match operation:
-		0:
+		"Plus":
 			boxValue = "+"
-		1:
+		"Minus":
 			boxValue = "-"
-		2:
+		"Times":
 			boxValue = "x"
-		3:
-			boxValue = "÷"
+		"Divide":
+			boxValue = "/"
+		"Equals":
+			boxValue = "="
 
 func _moveBoxToNextPos(direction):
 	var vectorPos = inputs[direction] * gridSize
@@ -37,8 +40,8 @@ func _moveBoxToNextPos(direction):
 	var nextPos = position + vectorPos
 	if !raycast.is_colliding():
 		_moveToNextPos(nextPos)
+		_objectStateJournal(vectorPos)
 		emit_signal("boxMoves", self)
-#		print("box moce")
 		return true
 	return false
 
@@ -57,3 +60,12 @@ func _moveToNextPos(pos):
 
 func _on_Tween_tween_completed(object, key):
 	moving = false
+
+func undoBoxPosition():
+	if journal.empty(): return
+	var vectorPos = journal.pop_back() * -1
+	var nextPos = position + vectorPos
+	_moveToNextPos(nextPos)
+
+func _objectStateJournal(boxPosition):
+	journal.append(boxPosition)

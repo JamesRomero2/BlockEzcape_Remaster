@@ -90,6 +90,7 @@ default_bus_layout="res://SoundServer.tres"
 
 [autoload]
 
+SaveSettings="*res://Autoloads/GlobalScript/SaveSettings.gd"
 QuestionsLoader="*res://Autoloads/GlobalScript/QuestionsLoader.gd"
 GameManager="*res://Autoloads/GlobalScript/GameManager.gd"
 GlobalSettings="*res://Autoloads/GlobalScript/GlobalSettings.gd"

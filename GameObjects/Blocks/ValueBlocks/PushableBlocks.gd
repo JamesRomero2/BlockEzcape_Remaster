@@ -29,7 +29,6 @@ func _moveBoxToNextPos(direction):
 		_moveToNextPos(nextPos)
 		_objectStateJournal(vectorPos)
 		emit_signal("boxMoves", self)
-#		print("box moce")
 		return true
 	return false
 

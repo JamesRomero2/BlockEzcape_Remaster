@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Forest/Forest.tscn" type="PackedScene" id=2]
@@ -9,10 +9,8 @@
 [ext_resource path="res://GameObjects/Tiles/OperationalTile/OperationalTile.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameObjects/Tiles/LeverTile/LeverTile.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Components/Card/Card.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Components/CustomLabel/Label.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Fonts/Backto1982/BACKTO1982.TTF" type="DynamicFontData" id=12]
-[ext_resource path="res://Assets/Textures/ForestPanel.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Textures/Background_2.png" type="Texture" id=14]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
@@ -225,6 +223,14 @@ boxValue = 2
 position = Vector2( -424, 104 )
 boxValue = 5
 
+[node name="Box3" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -360, 216 )
+boxValue = 3
+
+[node name="Box4" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -392, 216 )
+boxValue = 1
+
 [node name="Player" parent="GameObjects" instance=ExtResource( 3 )]
 position = Vector2( -424, 88 )
 
@@ -236,10 +242,6 @@ position = Vector2( -408, 168 )
 
 [node name="ScannerTile2" parent="GameObjects" instance=ExtResource( 9 )]
 position = Vector2( -296, 136 )
-
-[node name="ScannerTile3" parent="GameObjects" instance=ExtResource( 9 )]
-position = Vector2( -424, 152 )
-scannerID = 1
 
 [node name="OperationalTile" parent="GameObjects" instance=ExtResource( 7 )]
 position = Vector2( -328, 136 )
@@ -254,74 +256,20 @@ position = Vector2( -312, 152 )
 [node name="PhantomBlock9" parent="GameObjects" instance=ExtResource( 5 )]
 position = Vector2( -392, 136 )
 
-[node name="Crystal" parent="GameObjects" instance=ExtResource( 21 )]
-position = Vector2( -408, 216 )
+[node name="SymbolBlocks" parent="GameObjects" instance=ExtResource( 10 )]
+position = Vector2( -360, 104 )
+operation = "Minus"
 
-[node name="Crystal2" parent="GameObjects" instance=ExtResource( 21 )]
+[node name="SymbolBlocks2" parent="GameObjects" instance=ExtResource( 10 )]
 position = Vector2( -376, 216 )
-scannerID = 1
+operation = "Plus"
 
-[node name="QuestionLayer" type="CanvasLayer" parent="."]
-layer = 0
+[node name="SymbolBlocks3" parent="GameObjects" instance=ExtResource( 10 )]
+position = Vector2( -344, 216 )
+operation = "Equals"
 
-[node name="QuestionPanel" type="NinePatchRect" parent="QuestionLayer"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 192.0
-margin_top = -80.0
-margin_right = -192.0
-margin_bottom = -16.0
-texture = ExtResource( 13 )
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="QuestionLayer/QuestionPanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -95.0
-margin_top = -24.0
-margin_right = 95.0
-margin_bottom = 24.0
-alignment = 1
-
-[node name="Digit" parent="QuestionLayer/QuestionPanel/HBoxContainer" instance=ExtResource( 11 )]
-margin_left = 41.0
-margin_top = 9.0
-margin_right = 52.0
-margin_bottom = 38.0
-text = "1"
-
-[node name="Digit2" parent="QuestionLayer/QuestionPanel/HBoxContainer" instance=ExtResource( 11 )]
-margin_left = 56.0
-margin_top = 9.0
-margin_right = 71.0
-margin_bottom = 38.0
-text = "+"
-
-[node name="Digit3" parent="QuestionLayer/QuestionPanel/HBoxContainer" instance=ExtResource( 11 )]
-margin_left = 75.0
-margin_top = 9.0
-margin_right = 90.0
-margin_bottom = 38.0
-text = "3"
-
-[node name="Digit4" parent="QuestionLayer/QuestionPanel/HBoxContainer" instance=ExtResource( 11 )]
-margin_left = 94.0
-margin_top = 9.0
-margin_right = 108.0
-margin_bottom = 38.0
-text = "="
-
-[node name="Card" parent="QuestionLayer/QuestionPanel/HBoxContainer" instance=ExtResource( 10 )]
-margin_left = 112.0
-margin_right = 148.0
+[node name="Crystal" parent="GameObjects" instance=ExtResource( 21 )]
+position = Vector2( -328, 216 )
 
 [node name="PausePanel" parent="." instance=ExtResource( 15 )]
 visible = false
@@ -424,9 +372,9 @@ text = "Space to go to World Map..."
 [node name="Label2" type="Label" parent="ResultLayer/Control"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -258.0
+margin_left = 62.0
 margin_top = -64.0
-margin_right = 258.0
+margin_right = 578.0
 margin_bottom = -23.0
 custom_fonts/font = SubResource( 1 )
 text = "Puzzle Complete"
@@ -445,9 +393,9 @@ margin_bottom = 140.0
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = -232.0
-margin_top = -14.5
+margin_top = 81.5
 margin_right = -82.0
-margin_bottom = 14.5
+margin_bottom = 110.5
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 11 )
 text = "Time Spend :"
