@@ -31,6 +31,7 @@ func _unhandled_input(event):
 		if _getLevel() == null: return
 		
 		SceneTransition._changeScene(_getLevel())
+		GameManager._setWorldSelectorPosition(position)
 
 func _move(direction):
 	var vectorPos = inputs[direction] * gridSize

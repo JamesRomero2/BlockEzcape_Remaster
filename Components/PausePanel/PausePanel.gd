@@ -2,9 +2,15 @@ extends CanvasLayer
 
 onready var displayModeButton = $Control/VBoxContainer2/Display/DisplayModeButton
 
+func _ready():
+	_windowsButtonToggle()
+	$Control/VBoxContainer2/Music/MusicVolume.value = GlobalSettings._getMusicVolume()
+	$Control/VBoxContainer2/SoundEffects/SFXVolume.value = GlobalSettings._getSFXVolume()
+
 func _on_Unpause_pressed():
 	if self.visible:
 		GameManager._setGamePaused(false)
+		GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
 		self.visible = !self.visible
 
 func _on_MainMenuButton_pressed():
@@ -16,12 +22,13 @@ func _on_MapButton_pressed():
 	SceneTransition._changeScene("res://Scenes/WorldMap/WorldMap.tscn")
 
 func _on_DisplayModeButton_pressed():
-	GlobalSettings.displayMode = !GlobalSettings.displayMode
-	if GlobalSettings.displayMode:
-		OS.window_fullscreen = true
+	GlobalSettings._setWindowDisplay(!GlobalSettings._getWindowDisplay())
+	_windowsButtonToggle()
+
+func _windowsButtonToggle():
+	if GlobalSettings._getWindowDisplay():
 		displayModeButton.text = "FULLSCREEN"
-	elif !GlobalSettings.displayMode:
-		OS.window_fullscreen = false
+	elif !GlobalSettings._getWindowDisplay():
 		displayModeButton.text = "WINDOWED"
 
 func _on_MusicVolume_value_changed(value):

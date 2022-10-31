@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Forest/Forest.tscn" type="PackedScene" id=2]
@@ -10,13 +10,11 @@
 [ext_resource path="res://GameObjects/Tiles/LeverTile/LeverTile.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
 [ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Fonts/Backto1982/BACKTO1982.TTF" type="DynamicFontData" id=12]
-[ext_resource path="res://Assets/Textures/Background_2.png" type="Texture" id=14]
+[ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=17]
 [ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Fonts/Rubik/Rubik-Medium.ttf" type="DynamicFontData" id=19]
 [ext_resource path="res://Assets/Textures/Meadow.png" type="Texture" id=20]
 [ext_resource path="res://Temp/Crystal/Crystal.tscn" type="PackedScene" id=21]
 
@@ -27,157 +25,6 @@ font_data = ExtResource( 17 )
 [sub_resource type="DynamicFont" id=10]
 size = 12
 font_data = ExtResource( 17 )
-
-[sub_resource type="Shader" id=6]
-code = "shader_type canvas_item;
-
-uniform vec4 color: hint_color;
-uniform float multiplier = 0.2;
-uniform float softness = 3.0;
-
-void fragment() {
-	float value = distance(UV, vec2(0.5));
-	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
-}"
-
-[sub_resource type="ShaderMaterial" id=7]
-shader = SubResource( 6 )
-shader_param/color = Color( 0, 0, 0, 1 )
-shader_param/multiplier = 0.208
-shader_param/softness = 1.005
-
-[sub_resource type="DynamicFont" id=14]
-size = 18
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 19 )
-
-[sub_resource type="DynamicFont" id=1]
-size = 40
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 12 )
-
-[sub_resource type="DynamicFont" id=11]
-size = 24
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 19 )
-
-[sub_resource type="Animation" id=12]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Control/Label2:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 62, -64 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Control/Control/Label:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -232, 81.5 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Control/Control/Label2:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Control/Label3:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=13]
-resource_name = "ResultAnimation"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("Control/Label2:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 62, -72 ), Vector2( 62, 64 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Control/Control/Label:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 1, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -264, 81.5 ), Vector2( 0, 81.5 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Control/Control/Label2:self_modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 2, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("..:resultAnimating")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Control/Label3:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 4, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [node name="Level 00" type="Node"]
 script = ExtResource( 1 )
@@ -337,84 +184,8 @@ text = "Undo"
 align = 1
 valign = 1
 
-[node name="ResultLayer" type="CanvasLayer" parent="."]
+[node name="ResultPanel" parent="." instance=ExtResource( 11 )]
 visible = false
-
-[node name="TextureRect2" type="TextureRect" parent="ResultLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 14 )
-stretch_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="ResultLayer"]
-material = SubResource( 7 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Control" type="Control" parent="ResultLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Label3" type="Label" parent="ResultLayer/Control"]
-modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -117.0
-margin_top = -64.0
-margin_right = 117.0
-margin_bottom = -42.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 14 )
-text = "Space to go to World Map..."
-
-[node name="Label2" type="Label" parent="ResultLayer/Control"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 62.0
-margin_top = -64.0
-margin_right = 578.0
-margin_bottom = -23.0
-custom_fonts/font = SubResource( 1 )
-text = "Puzzle Complete"
-
-[node name="Control" type="Control" parent="ResultLayer/Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -256.0
-margin_top = -52.0
-margin_right = 256.0
-margin_bottom = 140.0
-
-[node name="Label" type="Label" parent="ResultLayer/Control/Control"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = -232.0
-margin_top = 81.5
-margin_right = -82.0
-margin_bottom = 110.5
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 11 )
-text = "Time Spend :"
-
-[node name="Label2" type="Label" parent="ResultLayer/Control/Control"]
-self_modulate = Color( 1, 1, 1, 0 )
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 160.0
-margin_top = -14.5
-margin_right = 297.0
-margin_bottom = 14.5
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 11 )
-text = "00:00:00:000"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ResultLayer"]
-anims/RESET = SubResource( 12 )
-anims/ResultAnimation = SubResource( 13 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2

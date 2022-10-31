@@ -5,18 +5,17 @@ onready var displayModeButton = $Control/VBoxContainer/HBoxContainer/Control/Dis
 
 func _ready():
 	_windowsButtonToggle()
-	$Control/VBoxContainer/HBoxContainer2/Control/MusicVolume.value = GlobalSettings.musicVolume
-	$Control/VBoxContainer/HBoxContainer3/Control/SFXVolume.value = GlobalSettings.soundEffectVolume
+	$Control/VBoxContainer/HBoxContainer2/Control/MusicVolume.value = GlobalSettings._getMusicVolume()
+	$Control/VBoxContainer/HBoxContainer3/Control/SFXVolume.value = GlobalSettings._getSFXVolume()
 
 func _on_DisplayModeButton_pressed():
-	GlobalSettings.displayMode = !GlobalSettings.displayMode
-	GlobalSettings._setWindowDisplay(GlobalSettings.displayMode)
+	GlobalSettings._setWindowDisplay(!GlobalSettings._getWindowDisplay())
 	_windowsButtonToggle()
 
 func _windowsButtonToggle():
-	if GlobalSettings.displayMode:
+	if GlobalSettings._getWindowDisplay():
 		displayModeButton.text = "FULLSCREEN"
-	elif !GlobalSettings.displayMode:
+	elif !GlobalSettings._getWindowDisplay():
 		displayModeButton.text = "WINDOWED"
 
 func _on_MusicVolume_value_changed(value):

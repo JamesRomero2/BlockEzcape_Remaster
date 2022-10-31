@@ -2,22 +2,24 @@ extends Node
 
 onready var saveFile = SaveSettings.settingsData
 
-var musicEnabled: bool
-var soundEffectEnabled: bool
+var musicVolume: float setget _setMusicVolume, _getMusicVolume
+var sfxVolume: float setget _setSFXVolume, _getSFXVolume
 
-var musicVolume: float
-var soundEffectVolume: float
-
-var displayMode: bool = false
+var windowDisplay: bool = false setget _setWindowDisplay, _getWindowDisplay
 
 const BGMUSICBUS = "BGMusic"
 const SFXBUS = "SFX"
 
 func _setWindowDisplay(value):
 	saveFile.fullScreen = value
+	windowDisplay = value
 	SaveSettings._saveSettings()
 	
 	OS.window_fullscreen = value
+
+func _getWindowDisplay():
+	windowDisplay = saveFile.fullScreen
+	return windowDisplay
 
 func _setMusicVolume(value):
 	saveFile.musicVolume = value
@@ -31,10 +33,13 @@ func _setMusicVolume(value):
 		AudioServer.set_bus_mute(bus, false)
 		AudioServer.set_bus_volume_db(bus, linear2db(value))
 
+func _getMusicVolume():
+	musicVolume = saveFile.musicVolume
+	return musicVolume
 
 func _setSFXVolume(value):
 	saveFile.sfxVolume = value
-	soundEffectVolume = value
+	sfxVolume = value
 	SaveSettings._saveSettings()
 	
 	var bus = AudioServer.get_bus_index(SFXBUS)
@@ -44,3 +49,6 @@ func _setSFXVolume(value):
 		AudioServer.set_bus_mute(bus, false)
 		AudioServer.set_bus_volume_db(bus, linear2db(value))
 
+func _getSFXVolume():
+	sfxVolume = saveFile.sfxVolume
+	return sfxVolume

@@ -3,6 +3,7 @@ extends Node
 onready var player := $GameObjects/Player
 onready var temple := $GameObjects/Temple
 onready var pause := $PausePanel
+onready var resultPanel := $ResultPanel
 
 export(Color) var colorTheme
 export var answers := {
@@ -12,16 +13,13 @@ export var answers := {
 	3: null,
 }
 export(bool) var resultAnimating: bool = false
+export(int, 0, 4) var requiredMedal = 0
 
 var moveCount: int = 0
 var result = Array()
 var time = 0
-var timerActive = false
-var timeSpent: String
-
-var gameJournal = {}
-var objectJournal = Array()
-var stateCounter: int = 0
+var secs
+var mins
 
 var undoRedoJournal: UndoRedo = UndoRedo.new()
 var canUndo: bool = true
@@ -29,7 +27,7 @@ var canUndo: bool = true
 func _ready():
 	GameManager._setGameOver(false)
 	_connectSignal()
-	timerActive = true
+	GameManager._setGameTimerActive(true)
 
 func _connectSignal():
 	player.connect("objectStateChange", self, "_playerJournal")
@@ -61,18 +59,17 @@ func _unhandled_input(event):
 				SceneTransition._changeScene("res://Scenes/WorldMap/WorldMap.tscn")
 
 func _process(delta):
-	if timerActive:
-		time += delta
-	
-	var milliSecs = fmod(time, 1) * 1000
-	var secs = fmod(time, 60)
-	var mins = fmod(time, 60 * 60) / 60
-	var hours = fmod(fmod(time, 3600 * 60) / 3600, 24)
-	
-	timeSpent = "%02d : %02d : %02d : %03d" % [hours, mins, secs, milliSecs]
-	
+	_gameTimer(delta)
+
 	if Input.is_action_pressed("undo"):
 		_undoSystem()
+
+func _gameTimer(value):
+	if GameManager._getGameTimerActive():
+		time += value
+	
+	secs = fmod(time, 60)
+	mins = fmod(time, 60 * 60) / 60
 
 func _onPhantomTileStateChange():
 	for unWalkable in get_tree().get_nodes_in_group("Unwalkable"):
@@ -83,33 +80,27 @@ func _onPhantomTileStateChange():
 
 func _onScannerInput(value, id, scannerNode):
 	result.clear()
-	
+
 	var valueString = str(value)
-	
+
 	for crystal in get_tree().get_nodes_in_group("Crystal"):
 		if id == crystal.scannerID:
 			if valueString == "Null":
 				crystal._crystalHasValue(false, value)
 			else:
 				crystal._crystalHasValue(true, value)
-	
-	for card in get_tree().get_nodes_in_group("Card"):
-		if value == null:
-			card._checkID(id, value, false)
-		else:
-			card._checkID(id, value, true)
-	
+
 	for answerId in answers.size():
 		if answers[answerId] != null:
 			if answerId == id:
-				if str(value) == str(answers[answerId]):
+				if valueString == str(answers[answerId]):
 					scannerNode._setResult(true)
 				else:
 					scannerNode._setResult(false)
-	
+
 	for scanner in get_tree().get_nodes_in_group("Reader"):
 		result.append(scanner._getResult())
-	
+
 	if result.has(false):
 		$GameObjects.find_node("Temple")._setAnswer(false)
 		$GameObjects.find_node("Temple")._setDoorState(false)
@@ -125,16 +116,22 @@ func _getAllBridgeState():
 	return bridges
 
 func _changeGameState():
-	timerActive = !timerActive
+	GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
 	GameManager._setGamePaused(!GameManager._getGamePause())
 	pause.visible = !pause.visible
 
 func _onLevelAccomplish():
 	GameManager._setGameOver(true)
-	timerActive = false
-	$ResultLayer.visible = !$ResultLayer.visible
-	$ResultLayer/Control/Control/Label2.text = timeSpent
-	$ResultLayer/AnimationPlayer.play("ResultAnimation")
+	GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
+	resultPanel._showResult(mins, secs)
+	
+	if(resultPanel._newLevelUnlocked(requiredMedal)):
+		print("Level Unlocked")
+		print(self.name.right(5).to_int() + 1)
+#		Append Level
+		pass
+	else:
+		print("Level lock")
 
 func _playerJournal(object):
 	undoRedoJournal.create_action("Move")

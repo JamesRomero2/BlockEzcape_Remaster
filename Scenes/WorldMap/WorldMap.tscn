@@ -6,10 +6,9 @@
 [ext_resource path="res://Assets/Textures/Mountains5.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Textures/ForestArea.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Textures/spotlight_1.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Textures/MovementPanel.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Textures/UndergroundArea.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/WorldMap/Blocker/Blocker.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Textures/WorldMapRoad.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/Chevron-Arrow.png" type="Texture" id=10]
 [ext_resource path="res://GameObjects/Tiles/LeverTile/Texture/LeverTexture.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Textures/Keys.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Textures/BlackBackDrop.png" type="Texture" id=13]
@@ -19,92 +18,8 @@
 [ext_resource path="res://Scenes/WorldMap/BackgroundChanger/BGChanger.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Textures/caveBG.jpg" type="Texture" id=18]
 [ext_resource path="res://Assets/Textures/Clouds.png" type="Texture" id=19]
-
-[sub_resource type="TileSet" id=36]
-0/name = "WorldMapRoad.png 0"
-0/texture = ExtResource( 10 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 32, 32 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-1/name = "WorldMapRoad.png 1"
-1/texture = ExtResource( 10 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 32, 0, 32, 32 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
-2/name = "WorldMapRoad.png 2"
-2/texture = ExtResource( 10 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 64, 0, 32, 32 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
-2/z_index = 0
-3/name = "WorldMapRoad.png 3"
-3/texture = ExtResource( 10 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 64, 32, 32, 32 )
-3/tile_mode = 0
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shape_offset = Vector2( 0, 0 )
-3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-3/shape_one_way = false
-3/shape_one_way_margin = 0.0
-3/shapes = [  ]
-3/z_index = 0
-4/name = "WorldMapRoad.png 4"
-4/texture = ExtResource( 10 )
-4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 32, 32, 32, 32 )
-4/tile_mode = 0
-4/occluder_offset = Vector2( 0, 0 )
-4/navigation_offset = Vector2( 0, 0 )
-4/shape_offset = Vector2( 0, 0 )
-4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-4/shape_one_way = false
-4/shape_one_way_margin = 0.0
-4/shapes = [  ]
-4/z_index = 0
-5/name = "WorldMapRoad.png 5"
-5/texture = ExtResource( 10 )
-5/tex_offset = Vector2( 0, 0 )
-5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 0, 32, 32, 32 )
-5/tile_mode = 0
-5/occluder_offset = Vector2( 0, 0 )
-5/navigation_offset = Vector2( 0, 0 )
-5/shape_offset = Vector2( 0, 0 )
-5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape_one_way = false
-5/shape_one_way_margin = 0.0
-5/shapes = [  ]
-5/z_index = 0
+[ext_resource path="res://Assets/Textures/VoidBG.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Textures/RuinBg.png" type="Texture" id=21]
 
 [sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 1
@@ -369,7 +284,18 @@ anchor_bottom = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="Forest" type="TextureRect" parent="CanvasLayer/WorldMapUI/Backgrounds"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -112.0
+margin_bottom = 8.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 7
+
 [node name="Default" type="TextureRect" parent="CanvasLayer/WorldMapUI/Backgrounds"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -104.0
@@ -379,6 +305,7 @@ expand = true
 stretch_mode = 7
 
 [node name="Underground" type="TextureRect" parent="CanvasLayer/WorldMapUI/Backgrounds"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -104.0
@@ -387,12 +314,22 @@ texture = ExtResource( 18 )
 expand = true
 stretch_mode = 7
 
-[node name="Forest" type="TextureRect" parent="CanvasLayer/WorldMapUI/Backgrounds"]
+[node name="Ruins" type="TextureRect" parent="CanvasLayer/WorldMapUI/Backgrounds"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -112.0
-margin_bottom = 8.0
-texture = ExtResource( 4 )
+margin_bottom = 120.0
+texture = ExtResource( 21 )
+expand = true
+stretch_mode = 7
+
+[node name="Void" type="TextureRect" parent="CanvasLayer/WorldMapUI/Backgrounds"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -64.0
+margin_bottom = 56.0
+texture = ExtResource( 20 )
 expand = true
 stretch_mode = 7
 
@@ -409,13 +346,6 @@ current = true
 zoom = Vector2( 2, 2 )
 
 [node name="Map" type="Node2D" parent="."]
-
-[node name="TileMap" type="TileMap" parent="Map"]
-tile_set = SubResource( 36 )
-cell_size = Vector2( 8, 8 )
-cell_custom_transform = Transform2D( 8, 0, 0, 8, 0, 0 )
-format = 1
-tile_data = PoolIntArray( -1835040, 1, 0, -1835039, 1, 0, -1835038, 1, 0, -1835037, 1, 0, -1835036, 1, 0, -1835035, 1, 0, -1835034, 1, 0, -1835033, 1, 0, -1835032, 1, 0, -1835028, 4, 0, -1572884, 0, 0, -1507348, 0, 0, -1441812, 0, 0, -1376276, 0, 0, -1310740, 0, 0, -1245204, 0, 0 )
 
 [node name="ForestArea" type="Node2D" parent="Map"]
 
@@ -558,8 +488,27 @@ process_material = SubResource( 35 )
 texture = SubResource( 32 )
 
 [node name="LevelSelector" parent="Map" instance=ExtResource( 2 )]
-position = Vector2( -432, -312 )
 scale = Vector2( 2, 2 )
+
+[node name="BG Changer2" parent="Map" instance=ExtResource( 17 )]
+position = Vector2( -124, -234 )
+areas = "Default"
+
+[node name="BG Changer3" parent="Map" instance=ExtResource( 17 )]
+position = Vector2( 128, 16 )
+areas = "Default"
+
+[node name="BG Changer4" parent="Map" instance=ExtResource( 17 )]
+position = Vector2( 128, -232 )
+areas = "Ruins"
+
+[node name="BG Changer5" parent="Map" instance=ExtResource( 17 )]
+position = Vector2( 384, -232 )
+areas = "Default"
+
+[node name="BG Changer6" parent="Map" instance=ExtResource( 17 )]
+position = Vector2( 384, 24 )
+areas = "Void"
 
 [node name="Blockers" type="Node2D" parent="Map"]
 
@@ -723,10 +672,6 @@ scale = Vector2( 2, 2 )
 position = Vector2( -272, 40 )
 scale = Vector2( 2, 2 )
 
-[node name="Blocker29" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -16, 40 )
-scale = Vector2( 2, 2 )
-
 [node name="Blocker30" parent="Map/Blockers" instance=ExtResource( 9 )]
 position = Vector2( -272, 8 )
 scale = Vector2( 2, 2 )
@@ -767,87 +712,45 @@ scale = Vector2( 2, 2 )
 position = Vector2( -112, -120 )
 scale = Vector2( 2, 2 )
 
-[node name="Instructions" type="Node2D" parent="."]
-visible = false
+[node name="Arrows" type="Node2D" parent="Map"]
 
-[node name="Movement" type="Sprite" parent="Instructions"]
-position = Vector2( -472, 192 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 7 )
-hframes = 4
-vframes = 3
+[node name="Arr" type="Sprite" parent="Map/Arrows"]
+position = Vector2( -240, -216 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
 
-[node name="Movement2" type="Sprite" parent="Instructions"]
-position = Vector2( -392, 136 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 7 )
-hframes = 4
-vframes = 3
-frame = 1
+[node name="Arr2" type="Sprite" parent="Map/Arrows"]
+position = Vector2( -216, -216 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
 
-[node name="Movement3" type="Sprite" parent="Instructions"]
-position = Vector2( -472, 80 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 7 )
-hframes = 4
-vframes = 3
-frame = 4
+[node name="Arr3" type="Sprite" parent="Map/Arrows"]
+position = Vector2( -192, -216 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
 
-[node name="Movement4" type="Sprite" parent="Instructions"]
-position = Vector2( -552, 136 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 7 )
-hframes = 4
-vframes = 3
-frame = 5
+[node name="Arr4" type="Sprite" parent="Map/Arrows"]
+position = Vector2( -168, -216 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
 
-[node name="Movement5" type="Sprite" parent="Instructions"]
-position = Vector2( -472, 240 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 7 )
-hframes = 4
-vframes = 3
-frame = 2
+[node name="Arr6" type="Sprite" parent="Map/Arrows"]
+position = Vector2( -144, -191 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
 
-[node name="Movement6" type="Sprite" parent="Instructions"]
-position = Vector2( -344, 136 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 7 )
-hframes = 4
-vframes = 3
-frame = 3
+[node name="Arr8" type="Sprite" parent="Map/Arrows"]
+position = Vector2( -144, -167 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
 
-[node name="Movement7" type="Sprite" parent="Instructions"]
-position = Vector2( -472, 32 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 7 )
-hframes = 4
-vframes = 3
-frame = 6
-
-[node name="Movement8" type="Sprite" parent="Instructions"]
-position = Vector2( -600, 136 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 7 )
-hframes = 4
-vframes = 3
-frame = 7
-
-[node name="Movement9" type="Sprite" parent="Instructions"]
-position = Vector2( -472, 136 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 7 )
-hframes = 2
-vframes = 3
-frame = 4
-
-[node name="Movement10" type="Sprite" parent="Instructions"]
-position = Vector2( -576, 56 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 7 )
-hframes = 2
-vframes = 3
-frame = 5
+[node name="Arr9" type="Sprite" parent="Map/Arrows"]
+position = Vector2( -144, -215 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "WorldMapAnimation"

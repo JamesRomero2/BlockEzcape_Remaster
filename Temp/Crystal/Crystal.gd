@@ -41,8 +41,6 @@ func _crystalHasValue(state, value):
 					operations._setSign("Divide")
 				"=":
 					operations._setSign("Equals")
-			
-	
 	else:
 		_setReading(false)
 		crystalSprite.visible = true

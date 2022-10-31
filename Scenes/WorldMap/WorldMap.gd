@@ -2,6 +2,7 @@ extends Node
 
 onready var displayModeButton = $MainMenuNavigation/Control/VBoxContainer2/Display/DisplayModeButton
 onready var pause = $MainMenuNavigation
+onready var levelSelector = $Map/LevelSelector
 
 var mapMusic = load("res://Assets/Audio/Music/Music1.ogg")
 var forestBG = load("res://Assets/Textures/Mountains5.png")
@@ -9,9 +10,21 @@ var undergroundBG = load("res://Assets/Textures/caveBG.jpg")
 
 func _ready():
 	GlobalMusic._changeMusic(mapMusic)
-	$MainMenuNavigation/Control/VBoxContainer2/Music/MusicVolume.value = GlobalSettings.musicVolume
-	$MainMenuNavigation/Control/VBoxContainer2/SoundEffects/SFXVolume.value = GlobalSettings.soundEffectVolume
+	$MainMenuNavigation/Control/VBoxContainer2/Music/MusicVolume.value = GlobalSettings._getMusicVolume()
+	$MainMenuNavigation/Control/VBoxContainer2/SoundEffects/SFXVolume.value = GlobalSettings._getSFXVolume()
+	GlobalSettings._setWindowDisplay(GlobalSettings._getWindowDisplay())
 	_windowsButtonToggle()
+	
+	levelSelector.position = GameManager._getWorldSelectorPosition()
+	
+	for level in get_tree().get_nodes_in_group("Levels"):
+		if GameManager._getOpenLevels().has(level.levelNumber):
+			level.levelOpen = true
+			level._setLevelState(level.levelOpen)
+		else:
+			level.levelOpen = false
+			level._setLevelState(level.levelOpen)
+			
 	_connectSignals()
 
 func _connectSignals():
@@ -22,6 +35,7 @@ func _unhandled_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("escape"):
 			_changeGameState()
+			GameManager._setWorldSelectorPosition(levelSelector.position)
 
 func _on_Unpause_pressed():
 	if pause.visible:
@@ -33,14 +47,13 @@ func _on_MapButton_pressed():
 	SceneTransition._changeScene("res://Scenes/MainMenu/MainMenu.tscn")
 
 func _on_DisplayModeButton_pressed():
-	GlobalSettings.displayMode = !GlobalSettings.displayMode
-	GlobalSettings._setWindowDisplay(GlobalSettings.displayMode)
+	GlobalSettings._setWindowDisplay(!GlobalSettings._getWindowDisplay())
 	_windowsButtonToggle()
 
 func _windowsButtonToggle():
-	if GlobalSettings.displayMode:
+	if GlobalSettings._getWindowDisplay():
 		displayModeButton.text = "FULLSCREEN"
-	elif !GlobalSettings.displayMode:
+	elif !GlobalSettings._getWindowDisplay():
 		displayModeButton.text = "WINDOWED"
 
 func _on_MusicVolume_value_changed(value):
@@ -66,7 +79,7 @@ func _changeBackground(areas):
 			.5, 
 			Tween.TRANS_LINEAR, 
 			Tween.EASE_IN_OUT)
-		
+
 		if bg.name == areas:
 			tween.interpolate_property(
 				bg, 

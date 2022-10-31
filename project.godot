@@ -91,6 +91,7 @@ default_bus_layout="res://SoundServer.tres"
 [autoload]
 
 SaveSettings="*res://Autoloads/GlobalScript/SaveSettings.gd"
+SaveWorldMap="*res://Autoloads/GlobalScript/SaveWorldMap.gd"
 QuestionsLoader="*res://Autoloads/GlobalScript/QuestionsLoader.gd"
 GameManager="*res://Autoloads/GlobalScript/GameManager.gd"
 GlobalSettings="*res://Autoloads/GlobalScript/GlobalSettings.gd"
@@ -103,7 +104,7 @@ window/size/width=640
 window/size/height=360
 window/size/test_width=1280
 window/size/test_height=720
-mouse_cursor/custom_image="res://Assets/Textures/Cursor.png"
+mouse_cursor/custom_image="res://Assets/Textures/Cursor-4.png"
 mouse_cursor/custom_image_hotspot=Vector2( 16, 16 )
 window/stretch/mode="2d"
 window/stretch/aspect="keep"

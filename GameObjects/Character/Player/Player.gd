@@ -66,16 +66,11 @@ func undoMovement():
 	if journal.empty(): return
 	var vectorPos = journal.pop_back() * -1
 	undoWalkSFX.play()
-#	_animatePlayer(vectorPos)
-#	raycast.cast_to = vectorPos
-#	raycast.force_raycast_update()
-#	if !raycast.is_colliding():
 	var nextPos = position + vectorPos
 	_moveToNextPos(nextPos)
 
 func _objectStateJournal(playerMoves):
 	journal.append(playerMoves)
-#	emit_signal("objectStateChange", self)
 
 func _undo():
 	undoMovement()

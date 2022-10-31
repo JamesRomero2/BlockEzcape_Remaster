@@ -36,9 +36,11 @@ func _setLevelState(value: bool):
 	if value:
 		digits.visible = true
 		animation.play("LevelContainerOpenAnim")
+		self.modulate.a = 1.0
 	else:
 		digits.visible = false
 		animation.play("LevelContainerCloseAnim")
+		self.modulate.a = .5
 #	If False Level is Close
 
 
