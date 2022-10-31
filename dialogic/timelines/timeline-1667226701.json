@@ -1,0 +1,33 @@
+{
+	"events": [
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "ArchiShock",
+			"text": "Wow the architecture on this library is awesome!"
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "ArchiTalking",
+			"text": "On the outside it looks like a castle, but on the inside it's kinda modern ?!"
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "ArchiAngry",
+			"text": "Wait ! Gotta stay focus. My Math Homework doesn't solve on it's own."
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "ArchiSad",
+			"text": "I just wish that will happen. Time to find a Math Book."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1667226701.json",
+		"name": "Dialog3"
+	}
+}

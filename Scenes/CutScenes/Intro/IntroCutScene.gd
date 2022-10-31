@@ -2,14 +2,23 @@ extends Node
 
 onready var pause := $PausePanel
 onready var animation := $AnimationPlayer
+onready var camera := $Camera2D
+onready var player := $GameObjects/Player
+onready var wood := $GameObjects/Wood
+
 var cutScene = load("res://Assets/Audio/Music/CutSceneBG.ogg")
+var target = null
+var woodShown = false
 
 func _ready():
 	GlobalMusic._changeMusic(cutScene)
+	target = player
+
+func _process(delta):
+	camera.set_position(target.position)
 	
 func _startCutScene():
 	GameManager._setGameOver(false)
-	GameManager._setGameTimerActive(true)
 
 func _unhandled_input(event):
 	if event.is_pressed():
@@ -21,41 +30,33 @@ func _changeGameState():
 	pause.visible = !pause.visible
 
 func _on_Area2D_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" and !woodShown:
+		_playDialog('Dialog2')
+		target = wood
 		animation.play("Scene1_ShowPush")
-
+		animation.stop(false)
 
 func _on_Area2D_body_exited(body):
 	if body.name == "Player":
-		animation.play_backwards("Scene1_ShowPush")
-
+		woodShown = true
+		target = player
 
 func _on_Here_body_entered(body):
 	if body.name == "Wood":
 		animation.play("Scene1_ShowEnter")
+		
 
 func _playDialog1():
-	GameManager._setGamePaused(!GameManager._getGamePause())
+	_playDialog('Dialog1')
 	animation.stop(false)
-#	START DIALOG HERE
-#	DIALOG 1
-#	ARCHI: ALRIGHT ! CHORES ARE DONE, ITS TIME TO GO TO THE LIBRARY TO DO SOME HOMEWORK
-#	ARCHI: FOR TODAYS HOME WORK IS... MATH (SAD FACE)
-#	ARCHI: I HATE MATH, IM TO AFRAID TO SOLVE MATH INFRONT 
-#	ARCHI: BUT STILL GOt TO DO WHAT YOU GOTTA DO
-#	ARCHI: I WONDER IF THE LIBRARY HAS SOME BOOKS TO HELP ME WITH MATH
-	GameManager._setGamePaused(!GameManager._getGamePause())
-	animation.play()
-	pass
 
-func _playDialog2():
-	GameManager._setGamePaused(!GameManager._getGamePause())
-	animation.stop(false)
-#	START DIALOG HERE
-#	DIALOG 2
-#	ARCHI: THERES A WOOD STUCK IN MY WAY
-#	ARCHI: BUT NO WORRIES IM SO STRONG
-#	ARCHI: I CAN JUST PUSH THIS WOOD TO A SAFE AREA
+func _unPauseAnimation(timeline_name):
 	animation.play()
-	GameManager._setGamePaused(!GameManager._getGamePause())
-	pass
+	GameManager._setGamePaused(false)
+
+func _playDialog(timelineTitle):
+	if get_node_or_null('DialogNode') == null:
+		GameManager._setGamePaused(true)
+		var dialog = Dialogic.start(timelineTitle)
+		dialog.connect('timeline_end', self, '_unPauseAnimation')
+		add_child(dialog)

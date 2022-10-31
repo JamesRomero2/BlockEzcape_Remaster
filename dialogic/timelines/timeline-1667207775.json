@@ -1,0 +1,27 @@
+{
+	"events": [
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "ArchiTalking",
+			"text": "THERES A WOOD BLOCKING MY WAY"
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "ArchiHappy",
+			"text": "BUT NO WORRIES IM SO STRONG"
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "ArchiHappy",
+			"text": "I CAN JUST PUSH THIS WOOD TO A SAFE AREA"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1667207775.json",
+		"name": "Dialog2"
+	}
+}

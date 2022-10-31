@@ -1,0 +1,41 @@
+{
+	"color": "#ffe8ef0a",
+	"description": "",
+	"display_name": "Archi",
+	"display_name_bool": true,
+	"id": "character-1666707883.json",
+	"mirror_portraits": true,
+	"name": "Archi",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 25,
+	"offset_y": 60,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Assets/Character/ArchiDefault.png"
+		},
+		{
+			"name": "ArchiHappy",
+			"path": "res://Assets/Character/ArchiHappy.png"
+		},
+		{
+			"name": "ArchiAngry",
+			"path": "res://Assets/Character/ArchiAngry.png"
+		},
+		{
+			"name": "ArchiSad",
+			"path": "res://Assets/Character/ArchiSad.png"
+		},
+		{
+			"name": "ArchiShock",
+			"path": "res://Assets/Character/ArchiShock.png"
+		},
+		{
+			"name": "ArchiTalking",
+			"path": "res://Assets/Character/ArchiTalking.png"
+		}
+	],
+	"scale": 70,
+	"theme": "archi-theme.cfg"
+}

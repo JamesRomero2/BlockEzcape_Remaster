@@ -1,26 +1,45 @@
 {
 	"events": [
 		{
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_012",
-			"value": ""
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "ALRIGHT ! CHORES ARE DONE, ITS TIME TO GO TO THE LIBRARY TO DO SOME HOMEWORK"
 		},
 		{
-			"definition": "",
-			"event_id": "dialogic_014",
-			"operation": "=",
-			"random_upper_limit": 100,
-			"set_random": false,
-			"set_value": ""
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "FOR TODAYS HOME WORK IS... "
 		},
 		{
-			"event_id": "dialogic_013"
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "ArchiSad",
+			"text": "MATH"
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "ArchiAngry",
+			"text": " I HATE MATH, IM TO AFRAID TO SOLVE MATH INFRONT "
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "BUT STILL GOt TO DO WHAT YOU GOTTA DO"
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "I WONDER IF THE LIBRARY HAS SOME BOOKS TO HELP ME WITH MATH"
 		}
 	],
 	"metadata": {
 		"dialogic-version": "1.4.5",
 		"file": "timeline-1664964140.json",
-		"name": "timeline-1664964140"
+		"name": "Dialog1"
 	}
 }
