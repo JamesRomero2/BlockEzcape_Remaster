@@ -1,0 +1,21 @@
+{
+	"events": [
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "ArchiShock",
+			"text": "Huh ? What is this ? and why it is glowing like that ?"
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Let me just take a look at..."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1667271226.json",
+		"name": "Dialog4"
+	}
+}

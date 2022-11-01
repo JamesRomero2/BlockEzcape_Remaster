@@ -10,6 +10,7 @@ var undergroundBG = load("res://Assets/Textures/caveBG.jpg")
 
 func _ready():
 	GlobalMusic._changeMusic(mapMusic)
+	GameManager._setGamePaused(false)
 	$MainMenuNavigation/Control/VBoxContainer2/Music/MusicVolume.value = GlobalSettings._getMusicVolume()
 	$MainMenuNavigation/Control/VBoxContainer2/SoundEffects/SFXVolume.value = GlobalSettings._getSFXVolume()
 	GlobalSettings._setWindowDisplay(GlobalSettings._getWindowDisplay())

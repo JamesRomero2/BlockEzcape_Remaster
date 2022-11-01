@@ -1,10 +1,13 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scenes/CutScenes/LibraryCutscene/LibraryCutscene.gd" type="Script" id=1]
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/CutScenes/LibraryCutscene/Texture/Room_Builder_free_32x32.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/CutScenes/LibraryCutscene/Texture/Interiors_free_32x32.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/CutScenes/LibraryCutscene/Texture/Book.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/random_selection.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/effect_4.png" type="Texture" id=7]
+[ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Room_Builder_free_32x32.png 0"
@@ -235,11 +238,100 @@ extents = Vector2( 13, 10 )
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 13, 5 )
 
+[sub_resource type="CanvasItemMaterial" id=25]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id=26]
+offsets = PoolRealArray( 0, 0.504202, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=27]
+gradient = SubResource( 26 )
+
+[sub_resource type="Curve" id=28]
+_data = [ Vector2( 0, 0 ), 0.0, 1.548, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=29]
+curve = SubResource( 28 )
+
+[sub_resource type="ParticlesMaterial" id=30]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.3
+scale_curve = SubResource( 29 )
+color_ramp = SubResource( 27 )
+hue_variation = 0.02
+hue_variation_random = 1.0
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[sub_resource type="CanvasItemMaterial" id=31]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=32]
+offsets = PoolRealArray( 0, 0.529412, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=33]
+gradient = SubResource( 32 )
+
+[sub_resource type="Curve" id=34]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.460123 ), -0.985548, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=35]
+curve = SubResource( 34 )
+
+[sub_resource type="ParticlesMaterial" id=36]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+angular_velocity = -100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale_curve = SubResource( 35 )
+color_ramp = SubResource( 33 )
+
 [sub_resource type="CircleShape2D" id=23]
 radius = 36.0
 
 [sub_resource type="CircleShape2D" id=24]
 radius = 181.003
+
+[sub_resource type="Animation" id=37]
+resource_name = "bookOpenAnimation"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "_animationPause"
+}, {
+"args": [ null ],
+"method": "_animationUnpause"
+}, {
+"args": [  ],
+"method": "_changeBookSprite"
+}, {
+"args": [  ],
+"method": "_continueAnim"
+} ]
+}
 
 [node name="LibraryCutscene" type="Node"]
 script = ExtResource( 1 )
@@ -427,18 +519,34 @@ shape = SubResource( 22 )
 position = Vector2( 256, -149 )
 shape = SubResource( 22 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AttentionParticle" type="Particles2D" parent="."]
+modulate = Color( 0, 0.690196, 0.984314, 1 )
+material = SubResource( 25 )
+position = Vector2( 58, -212 )
+scale = Vector2( 0.3, 0.3 )
+amount = 4
+process_material = SubResource( 30 )
+texture = ExtResource( 6 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CloseParticle" type="Particles2D" parent="."]
+modulate = Color( 0, 1, 0.74902, 1 )
+material = SubResource( 31 )
+position = Vector2( 58, -212 )
+scale = Vector2( 0.4, 0.4 )
+amount = 3
+process_material = SubResource( 36 )
+texture = ExtResource( 7 )
+
+[node name="Close" type="Area2D" parent="."]
 position = Vector2( 58, -212 )
 collision_layer = 8
 collision_mask = 2
 
-[node name="Sprite" type="Sprite" parent="Area2D"]
+[node name="Sprite" type="Sprite" parent="Close"]
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Close"]
 shape = SubResource( 23 )
 
 [node name="Area2D2" type="Area2D" parent="."]
@@ -448,3 +556,16 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 shape = SubResource( 24 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/bookOpenAnimation = SubResource( 37 )
+
+[node name="PausePanel" parent="." instance=ExtResource( 8 )]
+visible = false
+
+[connection signal="body_entered" from="Close" to="." method="_on_Close_body_entered"]
+[connection signal="body_exited" from="Close" to="." method="_on_Close_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_Area2D2_body_exited"]

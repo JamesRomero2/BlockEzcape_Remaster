@@ -11,6 +11,8 @@ var target = null
 var woodShown = false
 
 func _ready():
+	GameManager._setGameOver(false)
+	GameManager._setGamePaused(true)
 	GlobalMusic._changeMusic(cutScene)
 	target = player
 
@@ -18,7 +20,7 @@ func _process(delta):
 	camera.set_position(target.position)
 	
 func _startCutScene():
-	GameManager._setGameOver(false)
+	GameManager._setGamePaused(false)
 
 func _unhandled_input(event):
 	if event.is_pressed():
@@ -52,7 +54,6 @@ func _playDialog1():
 
 func _unPauseAnimation(timeline_name):
 	animation.play()
-	GameManager._setGamePaused(false)
 
 func _playDialog(timelineTitle):
 	if get_node_or_null('DialogNode') == null:

@@ -26,6 +26,7 @@ var canUndo: bool = true
 
 func _ready():
 	GameManager._setGameOver(false)
+	GameManager._setGamePaused(false)
 	_connectSignal()
 	GameManager._setGameTimerActive(true)
 
