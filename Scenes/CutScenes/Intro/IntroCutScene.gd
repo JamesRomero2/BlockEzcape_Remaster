@@ -46,7 +46,6 @@ func _on_Area2D_body_exited(body):
 func _on_Here_body_entered(body):
 	if body.name == "Wood":
 		animation.play("Scene1_ShowEnter")
-		
 
 func _playDialog1():
 	_playDialog('Dialog1')
@@ -54,6 +53,7 @@ func _playDialog1():
 
 func _unPauseAnimation(timeline_name):
 	animation.play()
+	GameManager._setGamePaused(false)
 
 func _playDialog(timelineTitle):
 	if get_node_or_null('DialogNode') == null:

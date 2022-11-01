@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/CutScenes/DoorCutscene/DoorCutscene.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Gates.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Hexagram.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Book.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Silhoutte2.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Silhoutte1.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Silhoutte3.png" type="Texture" id=7]
+[ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=8]
+
+[node name="DoorCutscene" type="Node"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Door" type="TextureRect" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -15.0
+margin_top = -72.0
+margin_right = 15.0
+margin_bottom = 80.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Book" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -16.0
+margin_top = -56.0
+margin_right = 14.0
+margin_bottom = 96.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Hexagram" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -96.0
+margin_right = 8.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/Hexagram"]
+modulate = Color( 0.168627, 0.168627, 0.168627, 1 )
+position = Vector2( 112, 208 )
+texture = ExtResource( 6 )
+hframes = 4
+vframes = 2
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Hexagram"]
+modulate = Color( 0.168627, 0.168627, 0.168627, 1 )
+position = Vector2( 320, 208 )
+texture = ExtResource( 5 )
+hframes = 4
+vframes = 2
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Hexagram"]
+modulate = Color( 0.168627, 0.168627, 0.168627, 1 )
+position = Vector2( 536, 208 )
+texture = ExtResource( 7 )
+hframes = 4
+vframes = 2
+
+[node name="PausePanel" parent="." instance=ExtResource( 8 )]
+visible = false

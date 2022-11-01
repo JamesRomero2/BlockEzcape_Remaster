@@ -9,7 +9,7 @@ onready var tween := $Tween
 onready var animation := $AnimationPlayer
 onready var pause := $PausePanel
 
-var worldMapScene = "res://Scenes/WorldMap/WorldMap.tscn"
+var doorScene = "res://Scenes/CutScenes/DoorCutscene/DoorCutscene.tscn"
 var target = null
 var libraryMusic = load("res://Assets/Audio/Music/LibraryBG.ogg")
 var near = false
@@ -93,4 +93,4 @@ func _animationUnpause(timeline_name):
 	animation.play()
 
 func _continueAnim():
-	SceneTransition._changeScene(worldMapScene)
+	SceneTransition._changeScene(doorScene)

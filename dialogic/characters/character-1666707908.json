@@ -1,0 +1,37 @@
+{
+	"color": "#ff19e042",
+	"description": "",
+	"display_name": "Baud",
+	"display_name_bool": true,
+	"id": "character-1666707908.json",
+	"mirror_portraits": false,
+	"name": "Baud",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -26,
+	"offset_y": 61,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Assets/Textures/Character/BaudDefault.png"
+		},
+		{
+			"name": "BaudHappy",
+			"path": "res://Assets/Textures/Character/BaudHappy.png"
+		},
+		{
+			"name": "BaudSad",
+			"path": "res://Assets/Textures/Character/BaudSad.png"
+		},
+		{
+			"name": "BaudShock",
+			"path": "res://Assets/Textures/Character/BaudShock.png"
+		},
+		{
+			"name": "BaudAngry",
+			"path": "res://Assets/Textures/Character/BaudAngry.png"
+		}
+	],
+	"scale": 70,
+	"theme": "theme-1667288705.cfg"
+}

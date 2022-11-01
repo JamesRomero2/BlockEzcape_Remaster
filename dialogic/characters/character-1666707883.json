@@ -13,27 +13,27 @@
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Assets/Character/ArchiDefault.png"
+			"path": "res://Assets/Textures/Character/ArchiDefault.png"
 		},
 		{
 			"name": "ArchiHappy",
-			"path": "res://Assets/Character/ArchiHappy.png"
+			"path": "res://Assets/Textures/Character/ArchiHappy.png"
 		},
 		{
 			"name": "ArchiAngry",
-			"path": "res://Assets/Character/ArchiAngry.png"
+			"path": "res://Assets/Textures/Character/ArchiAngry.png"
 		},
 		{
 			"name": "ArchiSad",
-			"path": "res://Assets/Character/ArchiSad.png"
+			"path": "res://Assets/Textures/Character/ArchiSad.png"
 		},
 		{
 			"name": "ArchiShock",
-			"path": "res://Assets/Character/ArchiShock.png"
+			"path": "res://Assets/Textures/Character/ArchiShock.png"
 		},
 		{
 			"name": "ArchiTalking",
-			"path": "res://Assets/Character/ArchiTalking.png"
+			"path": "res://Assets/Textures/Character/ArchiTalking.png"
 		}
 	],
 	"scale": 70,
