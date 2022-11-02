@@ -157,6 +157,50 @@ color_ramp = SubResource( 34 )
 flags = 4
 load_path = "res://.import/offset_glow.png-4a64e79ca1a292e7d5fe8e7c4448333e.stex"
 
+[sub_resource type="DynamicFont" id=37]
+size = 18
+outline_size = 1
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=38]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
+
+[sub_resource type="StyleBoxLine" id=39]
+color = Color( 1, 1, 1, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=40]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=41]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="StreamTexture" id=42]
+load_path = "res://.import/Keys.png-13469275d5aab9ee433265296e1dd612.stex"
+
+[sub_resource type="StyleBoxLine" id=43]
+color = Color( 1, 1, 1, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=44]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="StyleBoxLine" id=45]
+color = Color( 0.141176, 0.623529, 0.870588, 1 )
+thickness = 7
+
+[sub_resource type="DynamicFont" id=46]
+size = 22
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
+
 [sub_resource type="Animation" id=23]
 length = 0.001
 tracks/0/type = "value"
@@ -225,50 +269,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 2.5, 2.5 ), Vector2( 2, 2 ) ]
 }
-
-[sub_resource type="DynamicFont" id=37]
-size = 18
-outline_size = 1
-font_data = ExtResource( 16 )
-
-[sub_resource type="DynamicFont" id=38]
-size = 18
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 15 )
-
-[sub_resource type="StyleBoxLine" id=39]
-color = Color( 1, 1, 1, 1 )
-thickness = 7
-
-[sub_resource type="StyleBoxLine" id=40]
-color = Color( 0.141176, 0.623529, 0.870588, 1 )
-thickness = 7
-
-[sub_resource type="StyleBoxLine" id=41]
-color = Color( 0.141176, 0.623529, 0.870588, 1 )
-thickness = 7
-
-[sub_resource type="StreamTexture" id=42]
-load_path = "res://.import/Keys.png-13469275d5aab9ee433265296e1dd612.stex"
-
-[sub_resource type="StyleBoxLine" id=43]
-color = Color( 1, 1, 1, 1 )
-thickness = 7
-
-[sub_resource type="StyleBoxLine" id=44]
-color = Color( 0.141176, 0.623529, 0.870588, 1 )
-thickness = 7
-
-[sub_resource type="StyleBoxLine" id=45]
-color = Color( 0.141176, 0.623529, 0.870588, 1 )
-thickness = 7
-
-[sub_resource type="DynamicFont" id=46]
-size = 22
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 14 )
 
 [node name="WorldMap" type="Node"]
 script = ExtResource( 1 )
@@ -361,25 +361,22 @@ position = Vector2( -384, -232 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 
-[node name="BG Changer" parent="Map/ForestArea" instance=ExtResource( 17 )]
-position = Vector2( -384, -248 )
-areas = "Forest"
-
 [node name="LevelContainer" parent="Map/ForestArea" instance=ExtResource( 3 )]
-position = Vector2( -400, -312 )
+position = Vector2( -560, -248 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/Stages/Forest/Level 00.tscn"
+targetLevel = "res://Scenes/CutScenes/Intro/Intro.tscn"
+levelTitle = "Block Ezcape"
 levelOpen = true
 
 [node name="LevelContainer2" parent="Map/ForestArea" instance=ExtResource( 3 )]
-position = Vector2( -432, -248 )
+position = Vector2( -400, -312 )
 scale = Vector2( 2, 2 )
 targetLevel = "res://Scenes/Stages/Forest/Level 01.tscn"
 levelNumber = 1
 levelOpen = true
 
 [node name="LevelContainer3" parent="Map/ForestArea" instance=ExtResource( 3 )]
-position = Vector2( -368, -248 )
+position = Vector2( -432, -248 )
 scale = Vector2( 2, 2 )
 targetLevel = "res://Scenes/Stages/Forest/Level 02.tscn"
 levelNumber = 2
@@ -436,7 +433,7 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 8 )
 
 [node name="BG Changer2" parent="Map/UndergroundArea" instance=ExtResource( 17 )]
-position = Vector2( 0, -40 )
+position = Vector2( 16, -40 )
 areas = "Underground"
 
 [node name="LevelContainer" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
@@ -487,29 +484,6 @@ scale = Vector2( 0.8, 0.8 )
 process_material = SubResource( 35 )
 texture = SubResource( 32 )
 
-[node name="LevelSelector" parent="Map" instance=ExtResource( 2 )]
-scale = Vector2( 2, 2 )
-
-[node name="BG Changer2" parent="Map" instance=ExtResource( 17 )]
-position = Vector2( -124, -234 )
-areas = "Default"
-
-[node name="BG Changer3" parent="Map" instance=ExtResource( 17 )]
-position = Vector2( 128, 16 )
-areas = "Default"
-
-[node name="BG Changer4" parent="Map" instance=ExtResource( 17 )]
-position = Vector2( 128, -232 )
-areas = "Ruins"
-
-[node name="BG Changer5" parent="Map" instance=ExtResource( 17 )]
-position = Vector2( 384, -232 )
-areas = "Default"
-
-[node name="BG Changer6" parent="Map" instance=ExtResource( 17 )]
-position = Vector2( 384, 24 )
-areas = "Void"
-
 [node name="Blockers" type="Node2D" parent="Map"]
 
 [node name="Blocker" parent="Map/Blockers" instance=ExtResource( 9 )]
@@ -536,12 +510,36 @@ scale = Vector2( 2, 2 )
 position = Vector2( -496, -280 )
 scale = Vector2( 2, 2 )
 
-[node name="Blocker7" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -496, -248 )
-scale = Vector2( 2, 2 )
-
 [node name="Blocker8" parent="Map/Blockers" instance=ExtResource( 9 )]
 position = Vector2( -496, -216 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker29" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -528, -216 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker40" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -560, -216 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker53" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -592, -216 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker54" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -592, -248 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker55" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -592, -280 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker56" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -560, -280 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker57" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -528, -280 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker9" parent="Map/Blockers" instance=ExtResource( 9 )]
@@ -752,10 +750,39 @@ rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "WorldMapAnimation"
-anims/RESET = SubResource( 23 )
-anims/WorldMapAnimation = SubResource( 24 )
+[node name="BGChanger" type="Node2D" parent="Map"]
+
+[node name="BG Changer" parent="Map/BGChanger" instance=ExtResource( 17 )]
+position = Vector2( -384, -232 )
+areas = "Forest"
+
+[node name="BG Changer2" parent="Map/BGChanger" instance=ExtResource( 17 )]
+position = Vector2( -128, -232 )
+areas = "Default"
+
+[node name="BG Changer7" parent="Map/BGChanger" instance=ExtResource( 17 )]
+position = Vector2( -640, -232 )
+areas = "Default"
+
+[node name="BG Changer3" parent="Map/BGChanger" instance=ExtResource( 17 )]
+position = Vector2( 128, 24 )
+areas = "Default"
+
+[node name="BG Changer4" parent="Map/BGChanger" instance=ExtResource( 17 )]
+position = Vector2( 128, -232 )
+areas = "Ruins"
+
+[node name="BG Changer5" parent="Map/BGChanger" instance=ExtResource( 17 )]
+position = Vector2( 384, -232 )
+areas = "Default"
+
+[node name="BG Changer6" parent="Map/BGChanger" instance=ExtResource( 17 )]
+position = Vector2( 384, 24 )
+areas = "Void"
+
+[node name="LevelSelector" parent="Map" instance=ExtResource( 2 )]
+position = Vector2( -560, -248 )
+scale = Vector2( 2, 2 )
 
 [node name="MainMenuNavigation" type="CanvasLayer" parent="."]
 visible = false
@@ -930,6 +957,12 @@ custom_fonts/font = SubResource( 46 )
 text = "WINDOWED"
 flat = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "WorldMapAnimation"
+anims/RESET = SubResource( 23 )
+anims/WorldMapAnimation = SubResource( 24 )
+
+[connection signal="enteringLevel" from="Map/LevelSelector" to="." method="_on_LevelSelector_enteringLevel"]
 [connection signal="pressed" from="MainMenuNavigation/Control/VBoxContainer/Unpause" to="." method="_on_Unpause_pressed"]
 [connection signal="pressed" from="MainMenuNavigation/Control/VBoxContainer/MapButton" to="." method="_on_MapButton_pressed"]
 [connection signal="value_changed" from="MainMenuNavigation/Control/VBoxContainer2/Music/MusicVolume" to="." method="_on_MusicVolume_value_changed"]

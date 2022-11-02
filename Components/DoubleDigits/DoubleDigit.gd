@@ -18,6 +18,13 @@ onready var ones := $Ones
 onready var tens := $Tens
 
 func _setDigit():
+#	if _getWholeValue() < 10 and _getWholeValue() > 0:
+#		ones.visible = true
+#		tens.visible = false
+#	else:
+#		ones.visible = true
+#		tens.visible = true
+
 	ones._setOnesDigit(_getOnesValue(), valueText[_getOnesValue()])
 	tens._setTensDigit(_getTensValue(), valueText[_getTensValue()])
 
@@ -30,3 +37,5 @@ func _getOnesValue():
 func _getTensValue():
 	return (digitValue / 10) % 10
 
+func _getWholeValue():
+	return digitValue

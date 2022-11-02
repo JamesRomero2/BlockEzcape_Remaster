@@ -68,7 +68,6 @@ scale = Vector2( 5, 5 )
 
 [node name="Particles2D" type="Particles2D" parent="Node2D"]
 material = SubResource( 5 )
-amount = 16
 explosiveness = 0.3
 process_material = SubResource( 7 )
 texture = ExtResource( 4 )

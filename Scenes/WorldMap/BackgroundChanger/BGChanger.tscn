@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Scenes/WorldMap/BackgroundChanger/BGChanger.gd" type="Script" id=1]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 128.0
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 128, 128 )
 
 [node name="BGChanger" type="Area2D" groups=["BGChangerArea"]]
 collision_layer = 8

@@ -26,6 +26,7 @@ func _changeGameState():
 	pause.visible = !pause.visible
 
 func _dialogEnd(timeline_name):
+	GameManager._setOpenLevels(1)
 	SceneTransition._changeScene(worldMapScene)
 	GameManager._setGamePaused(false)
 

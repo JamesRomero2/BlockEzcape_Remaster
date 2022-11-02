@@ -17,12 +17,12 @@ func _ready():
 func _on_LevelContainer_body_entered(body):
 	if !levelOpen: return
 	if body.name == "LevelSelector" and get_overlapping_bodies().size() > 0:
-		body._setLevel(targetLevel)
+		body._setLevelInfo(targetLevel, levelNumber, levelTitle)
 
 func _on_LevelContainer_body_exited(body):
 	if !levelOpen: return
 	if body.name == "LevelSelector":
-		body._setLevel(null)
+		body._setLevelInfo("", -1, "")
 
 func _setLevelNum(value):
 	digits._setValue(value)

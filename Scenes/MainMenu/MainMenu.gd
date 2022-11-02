@@ -3,6 +3,8 @@ extends Node
 onready var buttonGroup = $MainMenuContainer/MainMenuUI/Buttons/ButtonGroup
 onready var settings = $MainMenuContainer/Settings
 onready var exitPanel := $MainMenuContainer/ExitPanel
+onready var resetWarning := $MainMenuContainer/ResetSaves
+onready var resetButtonGroup := $MainMenuContainer/ResetSaves/NinePatchRect/VBoxContainer/ButtonGroup
 
 var creditsScene = "res://Scenes/Credits/Credits.tscn"
 var worldMapScene = "res://Scenes/WorldMap/WorldMap.tscn"
@@ -17,16 +19,20 @@ func _ready():
 func _connectSignals():
 	buttonGroup.connect("buttonPressedName", self, "_buttonPressed")
 	settings.backButton.connect("buttonPressed", self, "_onBackButton")
+	
+	for button in resetButtonGroup.get_children():
+		button.connect("buttonPressed", self, "_resetPanelDecision")
 
 func _buttonPressed(name):
 	match name:
 		"Continue":
-			print("Continue Button Pressed")
+			SceneTransition._changeScene(worldMapScene)
 		"NewGame":
-			SceneTransition._changeScene(cutsceneStart)
+			_newGame()
 		"Settings":
 			settings.visible = true
 			$MainMenuContainer/MainMenuUI.visible = false
+			print(GameManager._getOpenLevels())
 		"Credits":
 			SceneTransition._changeScene(creditsScene)
 		"Exit":
@@ -35,3 +41,18 @@ func _buttonPressed(name):
 func _onBackButton(name):
 	settings.visible = false
 	$MainMenuContainer/MainMenuUI.visible = true
+
+func _newGame():
+	if GameManager._getOpenLevels().size() > 1:
+		resetWarning.visible = true
+	else:
+		SceneTransition._changeScene(cutsceneStart)
+
+
+func _resetPanelDecision(name):
+	match name:
+		"Yes":
+			GameManager._resetLevels()
+			SceneTransition._changeScene(cutsceneStart)
+		"No":
+			resetWarning.visible = false

@@ -21,7 +21,8 @@ func _ready():
 	GlobalMusic._changeMusic(libraryMusic)
 	GameManager._setGameOver(false)
 	target = player
-	_playDialog("Dialog3")
+	_playDialog()
+
 
 func _process(delta):
 	camera.set_position(target.position)
@@ -39,10 +40,10 @@ func _changeGameState():
 	GameManager._setGamePaused(!GameManager._getGamePause())
 	pause.visible = !pause.visible
 
-func _playDialog(timelineTitle):
+func _playDialog():
 	if get_node_or_null('DialogNode') == null:
 		GameManager._setGamePaused(true)
-		var dialog = Dialogic.start(timelineTitle)
+		var dialog = Dialogic.start('Dialog3')
 		dialog.connect('timeline_end', self, '_unPauseAnimation')
 		add_child(dialog)
 

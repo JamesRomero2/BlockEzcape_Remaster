@@ -17,8 +17,8 @@ func _loadSettings():
 	if not file.file_exists(SAVEFILE):
 		worldData = {
 			"worldSelectorPosition": {
-				"x": -432,
-				"y": -312,
+				"x": -560,
+				"y": -248,
 			},
 			"levelsOpen": [00],
 		}
@@ -26,3 +26,4 @@ func _loadSettings():
 	file.open(SAVEFILE, File.READ)
 	worldData = file.get_var()
 	file.close()
+

@@ -1,11 +1,18 @@
 extends KinematicBody2D
 
+signal enteringLevel
+
 onready var raycast := $RayCast2D
 onready var animation := $AnimationPlayer
 onready var walkSFX := $SFX/WalkSFX
 
 var level setget _setLevel, _getLevel
 var levelState: bool = false setget _setLevelState, _getLevelState
+var levelInfo := {
+	"LevelPath": "",
+	"LevelNumber": -1,
+	"LevelTitle": ""
+}
 
 var moving: bool = false
 var gridSize: int = 32
@@ -28,9 +35,12 @@ func _unhandled_input(event):
 	if GameManager._getGamePause():
 		return
 	if event.is_action_pressed("space"):
-		if _getLevel() == null: return
+		if levelInfo["LevelNumber"] < 0: return
 		
-		SceneTransition._changeScene(_getLevel())
+		if levelInfo["LevelNumber"] == 0:
+			emit_signal("enteringLevel", levelInfo)
+		
+		SceneTransition._changeScene(levelInfo["LevelPath"])
 		GameManager._setWorldSelectorPosition(position)
 
 func _move(direction):
@@ -69,3 +79,10 @@ func _setLevelState(value):
 
 func _getLevelState():
 	return levelState
+
+func _setLevelInfo(levelpath, levelNumber, levelTitle):
+	levelInfo.clear()
+	levelInfo["LevelPath"] = levelpath
+	levelInfo["LevelNumber"] = levelNumber
+	levelInfo["LevelTitle"] = levelTitle
+

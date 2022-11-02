@@ -31,13 +31,19 @@ func _getWorldSelectorPosition():
 	return worldSelectorPosition
 
 func _setOpenLevels(value):
-	worldLevelOpen = value
-	saveWorldFile.levelsOpen = worldLevelOpen
+	if saveWorldFile.levelsOpen.has(value): return
+	
+	saveWorldFile.levelsOpen.push_back(value)
 	SaveWorldMap._saveSettings()
 
 func _getOpenLevels():
 	worldLevelOpen = saveWorldFile.levelsOpen
 	return worldLevelOpen
+
+func _resetLevels():
+	saveWorldFile.levelsOpen.clear()
+	saveWorldFile.levelsOpen.push_back(0)
+	SaveWorldMap._saveSettings()
 
 func _setGameTimerActive(value):
 	gameTimerActive = value

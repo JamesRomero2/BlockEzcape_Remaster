@@ -5,6 +5,7 @@ onready var temple := $GameObjects/Temple
 onready var pause := $PausePanel
 onready var resultPanel := $ResultPanel
 
+export(String) var timelineName = ""
 export(Color) var colorTheme
 export var answers := {
 	0: null,
@@ -25,9 +26,29 @@ var undoRedoJournal: UndoRedo = UndoRedo.new()
 var canUndo: bool = true
 
 func _ready():
+	_playDialog(timelineName)
+	_connectSignal()
+
+func _playDialog(value):
+	if value == "":
+		_playGame()
+#		just play the game
+	else:
+#		play Dialog
+		if get_node_or_null('DialogNode') == null:
+			GameManager._setGamePaused(true)
+			GameManager._setGameOver(true)
+			GameManager._setGameTimerActive(false)
+			var dialog = Dialogic.start(timelineName)
+			dialog.connect('timeline_end', self, '_dialogEnd')
+			add_child(dialog)
+
+func _dialogEnd(timeline_name):
+	_playGame()
+
+func _playGame():
 	GameManager._setGameOver(false)
 	GameManager._setGamePaused(false)
-	_connectSignal()
 	GameManager._setGameTimerActive(true)
 
 func _connectSignal():
@@ -127,12 +148,7 @@ func _onLevelAccomplish():
 	resultPanel._showResult(mins, secs)
 	
 	if(resultPanel._newLevelUnlocked(requiredMedal)):
-		print("Level Unlocked")
-		print(self.name.right(5).to_int() + 1)
-#		Append Level
-		pass
-	else:
-		print("Level lock")
+		GameManager._setOpenLevels(self.name.right(5).to_int() + 1)
 
 func _playerJournal(object):
 	undoRedoJournal.create_action("Move")
