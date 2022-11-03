@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scenes/WorldMap/WorldMap.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WorldMap/LevelSelector/LevelSelector.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Textures/Mountains5.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Textures/ForestArea.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Textures/spotlight_1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/Magical Map.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Textures/UndergroundArea.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/WorldMap/Blocker/Blocker.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Textures/Chevron-Arrow.png" type="Texture" id=10]
@@ -20,6 +21,8 @@
 [ext_resource path="res://Assets/Textures/Clouds.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Textures/VoidBG.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Textures/RuinBg.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Textures/castle map.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Textures/StageGate.png" type="Texture" id=23]
 
 [sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 1
@@ -156,6 +159,21 @@ color_ramp = SubResource( 34 )
 [sub_resource type="StreamTexture" id=32]
 flags = 4
 load_path = "res://.import/offset_glow.png-4a64e79ca1a292e7d5fe8e7c4448333e.stex"
+
+[sub_resource type="CanvasItemMaterial" id=47]
+blend_mode = 1
+
+[sub_resource type="StreamTexture" id=48]
+load_path = "res://.import/spotlight_1.png-6c06cfb6da324d2658dd2ceeacedde65.stex"
+
+[sub_resource type="CanvasItemMaterial" id=49]
+blend_mode = 1
+
+[sub_resource type="StreamTexture" id=50]
+load_path = "res://.import/spotlight_1.png-6c06cfb6da324d2658dd2ceeacedde65.stex"
+
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 16, 16 )
 
 [sub_resource type="DynamicFont" id=37]
 size = 18
@@ -432,10 +450,6 @@ texture = SubResource( 26 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 8 )
 
-[node name="BG Changer2" parent="Map/UndergroundArea" instance=ExtResource( 17 )]
-position = Vector2( 16, -40 )
-areas = "Underground"
-
 [node name="LevelContainer" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( 64, -56 )
 scale = Vector2( 2, 2 )
@@ -483,6 +497,32 @@ material = SubResource( 30 )
 scale = Vector2( 0.8, 0.8 )
 process_material = SubResource( 35 )
 texture = SubResource( 32 )
+
+[node name="Magical" type="Node2D" parent="Map"]
+position = Vector2( 392, 16 )
+
+[node name="Sprite" type="Sprite" parent="Map/Magical"]
+modulate = Color( 1, 0.419608, 1, 1 )
+material = SubResource( 47 )
+scale = Vector2( 2.5, 2.5 )
+texture = SubResource( 48 )
+
+[node name="Forest" type="Sprite" parent="Map/Magical"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[node name="Ruins" type="Node2D" parent="Map"]
+position = Vector2( 128, -232 )
+
+[node name="Sprite" type="Sprite" parent="Map/Ruins"]
+modulate = Color( 0.992157, 0.956863, 0.552941, 1 )
+material = SubResource( 49 )
+scale = Vector2( 2.5, 2.5 )
+texture = SubResource( 50 )
+
+[node name="Ruins" type="Sprite" parent="Map/Ruins"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
 
 [node name="Blockers" type="Node2D" parent="Map"]
 
@@ -563,23 +603,19 @@ position = Vector2( -368, -152 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker14" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -304, -184 )
+position = Vector2( -304, -152 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker15" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -272, -184 )
+position = Vector2( -272, -152 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker41" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -240, -184 )
+position = Vector2( -240, -152 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker42" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -208, -184 )
-scale = Vector2( 2, 2 )
-
-[node name="Blocker43" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -176, -184 )
+position = Vector2( -208, -152 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker51" parent="Map/Blockers" instance=ExtResource( 9 )]
@@ -591,23 +627,23 @@ position = Vector2( -112, -152 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker44" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -240, -248 )
+position = Vector2( -272, -216 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker45" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -208, -248 )
+position = Vector2( -240, -216 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker46" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -176, -248 )
+position = Vector2( -208, -216 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker47" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -144, -248 )
+position = Vector2( -176, -216 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker48" parent="Map/Blockers" instance=ExtResource( 9 )]
-position = Vector2( -112, -248 )
+position = Vector2( -144, -216 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker49" parent="Map/Blockers" instance=ExtResource( 9 )]
@@ -666,6 +702,150 @@ scale = Vector2( 2, 2 )
 position = Vector2( -16, 72 )
 scale = Vector2( 2, 2 )
 
+[node name="Blocker70" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 16, 72 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker71" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 48, 72 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker72" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 80, 72 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker73" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 112, 72 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker74" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 144, -88 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker75" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 144, -56 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker76" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 144, -24 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker77" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 144, 8 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker78" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 144, 40 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker80" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 176, 40 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker81" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 208, 40 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker82" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 240, 40 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker83" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 240, -24 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker107" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 272, -56 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker108" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 304, -88 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker109" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 336, -120 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker110" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 368, -120 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker111" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 400, -120 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker112" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 432, -120 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker113" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 464, -88 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker114" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 496, -56 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker115" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 528, -24 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker116" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 528, 8 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker117" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 528, 40 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker118" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 496, 72 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker119" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 464, 104 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker120" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 432, 136 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker121" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 400, 136 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker122" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 368, 136 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker123" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 336, 136 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker124" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 304, 104 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker125" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 272, 72 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker84" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 208, -24 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker85" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 208, -56 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker86" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 208, -88 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker79" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 144, 72 )
+scale = Vector2( 2, 2 )
+
 [node name="Blocker28" parent="Map/Blockers" instance=ExtResource( 9 )]
 position = Vector2( -272, 40 )
 scale = Vector2( 2, 2 )
@@ -676,6 +856,130 @@ scale = Vector2( 2, 2 )
 
 [node name="Blocker31" parent="Map/Blockers" instance=ExtResource( 9 )]
 position = Vector2( -16, 8 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker58" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 16, 8 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker59" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 48, 8 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker60" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 80, 8 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker61" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 80, -24 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker62" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 80, -56 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker63" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 80, -88 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker64" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 80, -120 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker65" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 48, -120 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker67" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 144, -120 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker69" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 208, -152 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker126" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 208, -120 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker87" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 240, -184 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker88" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 272, -216 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker89" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 272, -248 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker90" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 16, -152 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker91" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -16, -184 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker92" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -16, -216 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker93" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -16, -248 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker94" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( -16, -280 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker95" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 16, -312 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker96" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 16, -344 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker97" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 16, -376 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker98" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 48, -376 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker99" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 80, -376 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker100" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 112, -376 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker101" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 144, -376 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker102" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 176, -376 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker103" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 208, -376 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker104" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 240, -344 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker105" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 240, -312 )
+scale = Vector2( 2, 2 )
+
+[node name="Blocker106" parent="Map/Blockers" instance=ExtResource( 9 )]
+position = Vector2( 272, -280 )
 scale = Vector2( 2, 2 )
 
 [node name="Blocker32" parent="Map/Blockers" instance=ExtResource( 9 )]
@@ -713,44 +1017,154 @@ scale = Vector2( 2, 2 )
 [node name="Arrows" type="Node2D" parent="Map"]
 
 [node name="Arr" type="Sprite" parent="Map/Arrows"]
-position = Vector2( -240, -216 )
+position = Vector2( -248, -184 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 
 [node name="Arr2" type="Sprite" parent="Map/Arrows"]
-position = Vector2( -216, -216 )
+position = Vector2( -224, -184 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 
 [node name="Arr3" type="Sprite" parent="Map/Arrows"]
-position = Vector2( -192, -216 )
+position = Vector2( -200, -184 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 
 [node name="Arr4" type="Sprite" parent="Map/Arrows"]
-position = Vector2( -168, -216 )
+position = Vector2( -176, -184 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 
 [node name="Arr6" type="Sprite" parent="Map/Arrows"]
-position = Vector2( -144, -191 )
+position = Vector2( -144, -192 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 
 [node name="Arr8" type="Sprite" parent="Map/Arrows"]
-position = Vector2( -144, -167 )
+position = Vector2( -144, -168 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 
-[node name="Arr9" type="Sprite" parent="Map/Arrows"]
-position = Vector2( -144, -215 )
+[node name="Arr10" type="Sprite" parent="Map/Arrows"]
+position = Vector2( -8, 40 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr11" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 16, 40 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr12" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 40, 40 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr13" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 64, 40 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr29" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 88, 40 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr14" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 112, 48 )
+rotation = 4.71239
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr15" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 112, 24 )
+rotation = 4.71239
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr16" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 112, 0 )
+rotation = 4.71239
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr17" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 112, -24 )
+rotation = 4.71239
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr18" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 112, -48 )
+rotation = 4.71239
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr19" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 112, -72 )
+rotation = 4.71239
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr21" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 112, -96 )
+rotation = 4.71239
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr20" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 176, -96 )
 rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr22" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 176, -72 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr23" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 176, -48 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr24" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 176, -24 )
+rotation = 1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr25" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 168, 8 )
+rotation = 6.28319
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr26" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 192, 8 )
+rotation = 6.28319
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr27" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 216, 8 )
+rotation = 6.28319
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="Arr28" type="Sprite" parent="Map/Arrows"]
+position = Vector2( 240, 8 )
+rotation = 6.28319
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
 
 [node name="BGChanger" type="Node2D" parent="Map"]
+visible = false
 
 [node name="BG Changer" parent="Map/BGChanger" instance=ExtResource( 17 )]
 position = Vector2( -384, -232 )
@@ -779,6 +1193,23 @@ areas = "Default"
 [node name="BG Changer6" parent="Map/BGChanger" instance=ExtResource( 17 )]
 position = Vector2( 384, 24 )
 areas = "Void"
+
+[node name="BG Changer8" parent="Map/BGChanger" instance=ExtResource( 17 )]
+position = Vector2( -128, 24 )
+areas = "Underground"
+
+[node name="StageGate" type="Node2D" parent="Map"]
+
+[node name="ForestGate" type="StaticBody2D" parent="Map/StageGate"]
+position = Vector2( -272, -184 )
+
+[node name="Sprite" type="Sprite" parent="Map/StageGate/ForestGate"]
+position = Vector2( 0, -24 )
+texture = ExtResource( 23 )
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StageGate/ForestGate"]
+shape = SubResource( 51 )
 
 [node name="LevelSelector" parent="Map" instance=ExtResource( 2 )]
 position = Vector2( -560, -248 )
