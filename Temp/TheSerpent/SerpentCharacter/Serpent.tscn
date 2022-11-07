@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Temp/TheSerpent/Animation/Serpent.tres" type="SpriteFrames" id=1]
+
+[node name="Serpent" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "Boss"
+frame = 5
+playing = true

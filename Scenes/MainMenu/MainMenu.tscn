@@ -2,19 +2,23 @@
 
 [ext_resource path="res://Assets/Fonts/Backto1982/BACKTO1982.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Scenes/MainMenu/Animation/MainMenuLabyrinthAnim.tres" type="Animation" id=2]
-[ext_resource path="res://Components/ExitPanel/ExitPanel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Components/MainMenuComponents/ExitPanel/ExitPanel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Components/UIButtons/MainMenuButtonGroup.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/FinalAssets/Minus.png" type="Texture" id=5]
-[ext_resource path="res://Components/SettingsUI/Settings.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/FinalAssets/Labyrinth.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/MainMenu/Textures/LabyrinthImg.tres" type="Texture" id=5]
+[ext_resource path="res://Components/MainMenuComponents/SettingsUI/Settings.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/MainMenu/Textures/DivisionSignImg.tres" type="Texture" id=7]
 [ext_resource path="res://Scenes/MainMenu/Parallax/BackgroundMM.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/FinalAssets/Plus.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/MainMenu/Textures/MultiplicationSignImg.tres" type="Texture" id=9]
 [ext_resource path="res://Assets/FinalAssets/Numbers.png" type="Texture" id=10]
-[ext_resource path="res://Assets/FinalAssets/times.png" type="Texture" id=11]
-[ext_resource path="res://Assets/FinalAssets/dibayd.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/MainMenu/Textures/AdditionSignImg.tres" type="Texture" id=11]
+[ext_resource path="res://Scenes/MainMenu/Textures/SubtractionSignImg.tres" type="Texture" id=12]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Black.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Scenes/MainMenu/Particles/MainMenuBGParticles.tres" type="Material" id=15]
 [ext_resource path="res://Scenes/MainMenu/MainMenu.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/MainMenu/Textures/PanelBG.tres" type="Texture" id=17]
+[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Bold.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Semibold.ttf" type="DynamicFontData" id=19]
 
 [sub_resource type="CanvasItemMaterial" id=7]
 particles_animation = true
@@ -22,57 +26,33 @@ particles_anim_h_frames = 10
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Gradient" id=10]
-offsets = PoolRealArray( 0.412214, 1 )
-colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 0 )
-
-[sub_resource type="GradientTexture" id=11]
-gradient = SubResource( 10 )
-
-[sub_resource type="Curve" id=5]
-_data = [ Vector2( 0, 1 ), 0.0, -0.753979, 0, 0, Vector2( 1, 0 ), -1.06478, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=6]
-curve = SubResource( 5 )
-
-[sub_resource type="ParticlesMaterial" id=2]
-emission_shape = 2
-emission_box_extents = Vector3( 250, 1, 1 )
-flag_disable_z = true
-direction = Vector3( 0, 1, 0 )
-gravity = Vector3( 0, 80, 0 )
-initial_velocity = 20.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-linear_accel = 10.0
-linear_accel_random = 1.0
-damping = 20.0
-angle = 360.0
-angle_random = 1.0
-scale_random = 0.1
-scale_curve = SubResource( 6 )
-color_ramp = SubResource( 11 )
-anim_offset = 1.0
-anim_offset_random = 1.0
-
 [sub_resource type="DynamicFont" id=14]
 size = 40
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="StreamTexture" id=15]
-load_path = "res://.import/LeverTexture.png-88bbc321c8482948d3f8fada1b2ac36a.stex"
-
 [sub_resource type="DynamicFont" id=18]
+size = 36
+outline_size = 2
+extra_spacing_top = -8
+extra_spacing_bottom = -5
+extra_spacing_char = 4
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=19]
 size = 24
 outline_size = 2
 font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 24
+font_data = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=16]
-size = 24
+size = 18
 outline_size = 2
-font_data = ExtResource( 14 )
+font_data = ExtResource( 18 )
 
 [sub_resource type="DynamicFont" id=17]
 size = 24
@@ -105,7 +85,7 @@ position = Vector2( 320, -24 )
 z_index = -1
 amount = 15
 lifetime = 5.0
-process_material = SubResource( 2 )
+process_material = ExtResource( 15 )
 texture = ExtResource( 10 )
 
 [node name="LabyrinthImage" type="Control" parent="MainMenuContainer/MainMenuUI"]
@@ -121,7 +101,7 @@ margin_left = -344.0
 margin_top = -164.0
 margin_right = 56.0052
 margin_bottom = 230.0
-texture = ExtResource( 7 )
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 7
 
@@ -134,7 +114,7 @@ margin_left = 97.9994
 margin_top = -125.0
 margin_right = 138.0
 margin_bottom = -85.0013
-texture = ExtResource( 12 )
+texture = ExtResource( 7 )
 stretch_mode = 6
 
 [node name="Multiply" type="TextureRect" parent="MainMenuContainer/MainMenuUI/LabyrinthImage/Labyrinth"]
@@ -146,7 +126,7 @@ margin_left = -134.001
 margin_top = -93.0
 margin_right = -94.0002
 margin_bottom = -53.0024
-texture = ExtResource( 11 )
+texture = ExtResource( 9 )
 stretch_mode = 6
 
 [node name="Plus" type="TextureRect" parent="MainMenuContainer/MainMenuUI/LabyrinthImage/Labyrinth"]
@@ -158,7 +138,7 @@ margin_left = -183.001
 margin_top = -24.0
 margin_right = -143.001
 margin_bottom = 16.0
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 stretch_mode = 6
 
 [node name="Minus" type="TextureRect" parent="MainMenuContainer/MainMenuUI/LabyrinthImage/Labyrinth"]
@@ -170,7 +150,7 @@ margin_left = 129.999
 margin_top = -33.0
 margin_right = 169.999
 margin_bottom = 7.0
-texture = ExtResource( 5 )
+texture = ExtResource( 12 )
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="MainMenuContainer/MainMenuUI"]
@@ -212,7 +192,7 @@ margin_left = -235.0
 margin_top = -139.0
 margin_right = 235.0
 margin_bottom = 139.0
-texture = SubResource( 15 )
+texture = ExtResource( 17 )
 patch_margin_left = 6
 patch_margin_top = 8
 patch_margin_right = 6
@@ -231,8 +211,9 @@ custom_constants/separation = 15
 alignment = 1
 
 [node name="Label2" type="Label" parent="MainMenuContainer/ResetSaves/NinePatchRect/VBoxContainer"]
+margin_top = 1.0
 margin_right = 338.0
-margin_bottom = 31.0
+margin_bottom = 34.0
 custom_colors/font_color = Color( 1, 0.121569, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 18 )
@@ -240,13 +221,33 @@ text = "WARNING !"
 align = 1
 valign = 1
 
-[node name="Label" type="Label" parent="MainMenuContainer/ResetSaves/NinePatchRect/VBoxContainer"]
-margin_top = 46.0
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenuContainer/ResetSaves/NinePatchRect/VBoxContainer"]
+margin_top = 49.0
 margin_right = 338.0
-margin_bottom = 179.0
+margin_bottom = 177.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_fonts/bold_font = SubResource( 19 )
+custom_fonts/normal_font = SubResource( 20 )
+bbcode_enabled = true
+bbcode_text = "[center]New Game will [b]LOSE[/b] 
+Current Progress including 
+[b]LEVELS[/b] and [b]RECORDS[/b].
+Do you want to Proceed ?[/center]"
+text = "New Game will LOSE 
+Current Progress including 
+LEVELS and RECORDS.
+Do you want to Proceed ?"
+fit_content_height = true
+
+[node name="Label" type="Label" parent="MainMenuContainer/ResetSaves/NinePatchRect/VBoxContainer"]
+visible = false
+margin_top = 70.0
+margin_right = 338.0
+margin_bottom = 171.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 16 )
-text = "New Game will Lose 
+text = "New Game will LOSE 
 Current Progress including 
 LEVELS and RECORDS.
 Do you want to Proceed ?"
@@ -254,21 +255,25 @@ align = 1
 valign = 1
 
 [node name="ButtonGroup" type="HBoxContainer" parent="MainMenuContainer/ResetSaves/NinePatchRect/VBoxContainer"]
-margin_top = 194.0
+margin_top = 192.0
 margin_right = 338.0
-margin_bottom = 231.0
+margin_bottom = 229.0
 custom_constants/separation = 50
 alignment = 1
 
 [node name="Yes" parent="MainMenuContainer/ResetSaves/NinePatchRect/VBoxContainer/ButtonGroup" instance=ExtResource( 13 )]
 margin_left = 95.0
 margin_right = 147.0
+margin_bottom = 37.0
+focus_mode = 1
 custom_fonts/font = SubResource( 17 )
 text = "YES"
 
 [node name="No" parent="MainMenuContainer/ResetSaves/NinePatchRect/VBoxContainer/ButtonGroup" instance=ExtResource( 13 )]
 margin_left = 197.0
 margin_right = 242.0
+margin_bottom = 37.0
+focus_mode = 1
 custom_fonts/font = SubResource( 17 )
 text = "NO"
 

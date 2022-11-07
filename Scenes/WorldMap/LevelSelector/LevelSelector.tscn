@@ -5,7 +5,7 @@
 [ext_resource path="res://GameObjects/Character/Player/Sounds/PlayerWalking.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 2.0
+radius = 8.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "LevelSelectorIdle"
@@ -26,7 +26,7 @@ tracks/0/keys = {
 }
 
 [node name="LevelSelector" type="KinematicBody2D"]
-collision_layer = 2
+collision_layer = 10
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

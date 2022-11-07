@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Black.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Components/Button/ButtonScript.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Audio/SFX/buttonOnClick.wav" type="AudioStream" id=3]
-[ext_resource path="res://Assets/Audio/SFX/buttonOnHover.wav" type="AudioStream" id=4]
+[ext_resource path="res://Components/Button/Audio/OnClickAudio.tres" type="AudioStream" id=3]
+[ext_resource path="res://Components/Button/Audio/OnHoverAudio.tres" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=14]
 size = 24
@@ -12,8 +12,9 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [node name="Button" type="Button"]
-margin_right = 141.0
-margin_bottom = 37.0
+margin_right = 160.0
+margin_bottom = 40.0
+custom_colors/font_color_focus = Color( 0.141176, 0.623529, 0.870588, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.141176, 0.623529, 0.870588, 1 )
 custom_fonts/font = SubResource( 14 )
@@ -30,5 +31,6 @@ bus = "SFX"
 stream = ExtResource( 3 )
 bus = "SFX"
 
+[connection signal="focus_entered" from="." to="." method="_on_Button_focus_entered"]
 [connection signal="mouse_entered" from="." to="." method="_on_Button_mouse_entered"]
 [connection signal="pressed" from="." to="." method="_on_Button_pressed"]

@@ -19,7 +19,7 @@ func _ready():
 func _connectSignals():
 	buttonGroup.connect("buttonPressedName", self, "_buttonPressed")
 	settings.backButton.connect("buttonPressed", self, "_onBackButton")
-	
+
 	for button in resetButtonGroup.get_children():
 		button.connect("buttonPressed", self, "_resetPanelDecision")
 

@@ -18,40 +18,47 @@ __meta__ = {
 }
 
 [node name="Continue" parent="." instance=ExtResource( 5 )]
-visible = false
 margin_right = 128.0
+margin_bottom = 37.0
 focus_neighbour_top = NodePath("../Exit")
 focus_neighbour_bottom = NodePath("../NewGame")
+focus_mode = 1
 text = "Continue"
 
 [node name="NewGame" parent="." instance=ExtResource( 5 )]
-margin_right = 128.0
-focus_neighbour_top = NodePath("../Exit")
-focus_neighbour_bottom = NodePath("../Settings")
-text = "New Game"
-
-[node name="Settings" parent="." instance=ExtResource( 5 )]
 margin_top = 41.0
 margin_right = 128.0
 margin_bottom = 78.0
-focus_neighbour_top = NodePath("../NewGame")
-focus_neighbour_bottom = NodePath("../Credits")
-text = "Settings"
+focus_neighbour_top = NodePath("../Exit")
+focus_neighbour_bottom = NodePath("../Settings")
+focus_mode = 1
+text = "New Game"
 
-[node name="Credits" parent="." instance=ExtResource( 5 )]
+[node name="Settings" parent="." instance=ExtResource( 5 )]
 margin_top = 82.0
 margin_right = 128.0
 margin_bottom = 119.0
-focus_neighbour_top = NodePath("../Settings")
-focus_neighbour_bottom = NodePath("../Exit")
-text = "Credits"
+focus_neighbour_top = NodePath("../NewGame")
+focus_neighbour_bottom = NodePath("../Credits")
+focus_mode = 1
+text = "Settings"
 
-[node name="Exit" parent="." instance=ExtResource( 5 )]
+[node name="Credits" parent="." instance=ExtResource( 5 )]
 margin_top = 123.0
 margin_right = 128.0
 margin_bottom = 160.0
+focus_neighbour_top = NodePath("../Settings")
+focus_neighbour_bottom = NodePath("../Exit")
+focus_mode = 1
+text = "Credits"
+
+[node name="Exit" parent="." instance=ExtResource( 5 )]
+margin_top = 164.0
+margin_right = 128.0
+margin_bottom = 201.0
 focus_neighbour_top = NodePath("../Credits")
 focus_neighbour_bottom = NodePath("../NewGame")
+focus_mode = 1
 text = "Exit"
 
 [editable path="Continue"]

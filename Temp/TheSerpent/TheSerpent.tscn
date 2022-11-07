@@ -1,0 +1,1842 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Temp/TheSerpent/Puzzles/2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Temp/TheSerpent/TheSerpent.gd" type="Script" id=2]
+[ext_resource path="res://Temp/TheSerpent/Puzzles/3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Temp/TheSerpent/Puzzles/1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Temp/TheSerpent/GameArea.gd" type="Script" id=7]
+[ext_resource path="res://Components/Tilesets/Forest/Textures/ForestTileset.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -64 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Transition"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -64 ), Vector2( 0, 360 ) ]
+}
+
+[node name="Level 05" type="Node"]
+script = ExtResource( 2 )
+set1 = ExtResource( 6 )
+set2 = ExtResource( 1 )
+set3 = ExtResource( 3 )
+
+[node name="GameObjects" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="PausePanel" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="ResultPanel" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/Transition = SubResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+margin_top = -64.0
+margin_right = 14080.0
+margin_bottom = -64.0
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 8, -360 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite9"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 0, -336 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite10"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 8, -312 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite11"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 0, -288 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite12"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 8, -264 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite13"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 0, -240 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite14"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 8, -216 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite15"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 0, -192 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite16"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 8, -168 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite5"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 0, -144 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite6"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 8, -120 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite7"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 0, -96 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite8"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 8, -72 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite3"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 0, -48 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite4"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 8, -24 )
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite2"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control"]
+
+[node name="Sprite14" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( -64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite15" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 64, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite16" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 192, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite17" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 320, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite18" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 448, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite19" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 576, 32 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite8" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( -56, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite9" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 72, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite10" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 200, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite11" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 328, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite12" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 456, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite13" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 584, 40 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( -64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 64, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite4" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 192, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite5" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 320, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite6" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 448, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4
+
+[node name="Sprite7" type="Sprite" parent="CanvasLayer/Control/Sprite"]
+position = Vector2( 576, 48 )
+texture = ExtResource( 8 )
+centered = false
+vframes = 4

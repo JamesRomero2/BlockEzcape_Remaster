@@ -33,6 +33,7 @@ collision_mask = 5
 collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
 autoplay = "LookBackward"
 anims/LookBackward = ExtResource( 8 )
 anims/LookForward = ExtResource( 3 )

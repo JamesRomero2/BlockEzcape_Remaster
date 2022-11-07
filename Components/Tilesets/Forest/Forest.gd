@@ -9,5 +9,5 @@ func _ready():
 		if cell == 0:
 			var blockObject = forestBlock.instance()
 			blockObject.position = blocks.map_to_world(cellPosition) + Vector2(8,8)
-			add_child(blockObject)
+			call_deferred("add_child", blockObject)
 			blocks.set_cellv(cellPosition, -1)

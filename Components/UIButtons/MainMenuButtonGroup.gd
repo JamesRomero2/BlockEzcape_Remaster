@@ -13,4 +13,3 @@ func _ready():
 
 func _buttonClicked(button):
 	emit_signal("buttonPressedName", button)
-

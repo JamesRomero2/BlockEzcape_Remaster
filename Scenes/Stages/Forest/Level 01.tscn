@@ -26,7 +26,6 @@ font_data = ExtResource( 17 )
 [node name="Level 01" type="Node"]
 script = ExtResource( 1 )
 timelineName = "/Forest/Level 01"
-colorTheme = Color( 0.462745, 0.870588, 0.0705882, 1 )
 answers = {
 0: 4,
 1: null,

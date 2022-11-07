@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Temp/TheSerpent/Animation/CastingVenom.tres" type="Animation" id=1]
+[ext_resource path="res://Temp/TheSerpent/Power/VenomTiles.tres" type="Texture" id=2]
+[ext_resource path="res://Temp/TheSerpent/Power/Venom.gd" type="Script" id=3]
+[ext_resource path="res://Temp/TheSerpent/Animation/SpawnedVenom.tres" type="Animation" id=4]
+[ext_resource path="res://Temp/TheSerpent/Animation/DissolveVenom.tres" type="Animation" id=5]
+[ext_resource path="res://Temp/TheSerpent/Animation/RESET.tres" type="Animation" id=6]
+[ext_resource path="res://Temp/TheSerpent/Power/VenomCollider.tres" type="Shape2D" id=7]
+
+[node name="Venom" type="Area2D"]
+z_index = 1
+collision_layer = 8
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 8 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 2 )
+hframes = 7
+vframes = 2
+frame = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = ExtResource( 7 )
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/CastingVenom = ExtResource( 1 )
+anims/DissolveVenom = ExtResource( 5 )
+anims/RESET = ExtResource( 6 )
+anims/SpawnedVenom = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_Venom_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

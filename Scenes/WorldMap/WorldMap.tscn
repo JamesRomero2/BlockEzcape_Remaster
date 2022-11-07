@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Scenes/WorldMap/WorldMap.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WorldMap/LevelSelector/LevelSelector.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Assets/Textures/RuinBg.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Textures/castle map.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Textures/StageGate.png" type="Texture" id=23]
+[ext_resource path="res://Components/WorldMapComponents/LevelInformation/LevelInformation.tscn" type="PackedScene" id=24]
 
 [sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 1
@@ -222,7 +223,7 @@ font_data = ExtResource( 14 )
 [sub_resource type="Animation" id=23]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Map:position")
+tracks/0/path = NodePath("Map/ForestArea/Sprite:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -231,27 +232,15 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( 2.5, 2.5 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Map/ForestArea/Sprite:scale")
+tracks/1/path = NodePath("Map/UndergroundArea/Sprite:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 2.5, 2.5 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Map/UndergroundArea/Sprite:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -358,12 +347,8 @@ color = Color( 0, 0, 0, 0.588235 )
 
 [node name="Tween" type="Tween" parent="CanvasLayer/WorldMapUI"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -72 )
-current = true
-zoom = Vector2( 2, 2 )
-
 [node name="Map" type="Node2D" parent="."]
+position = Vector2( -608, 464 )
 
 [node name="ForestArea" type="Node2D" parent="Map"]
 
@@ -1210,10 +1195,28 @@ hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/StageGate/ForestGate"]
 shape = SubResource( 51 )
+disabled = true
 
 [node name="LevelSelector" parent="Map" instance=ExtResource( 2 )]
-position = Vector2( -560, -248 )
+position = Vector2( -400, -312 )
 scale = Vector2( 2, 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Map/LevelSelector"]
+scale = Vector2( 0.5, 0.5 )
+current = true
+zoom = Vector2( 1.5, 1.5 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 3.0
+drag_margin_left = 0.1
+drag_margin_top = 0.0
+drag_margin_right = 0.1
+drag_margin_bottom = 0.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="LevelInfo" parent="." instance=ExtResource( 24 )]
 
 [node name="MainMenuNavigation" type="CanvasLayer" parent="."]
 visible = false
@@ -1393,7 +1396,6 @@ autoplay = "WorldMapAnimation"
 anims/RESET = SubResource( 23 )
 anims/WorldMapAnimation = SubResource( 24 )
 
-[connection signal="enteringLevel" from="Map/LevelSelector" to="." method="_on_LevelSelector_enteringLevel"]
 [connection signal="pressed" from="MainMenuNavigation/Control/VBoxContainer/Unpause" to="." method="_on_Unpause_pressed"]
 [connection signal="pressed" from="MainMenuNavigation/Control/VBoxContainer/MapButton" to="." method="_on_MapButton_pressed"]
 [connection signal="value_changed" from="MainMenuNavigation/Control/VBoxContainer2/Music/MusicVolume" to="." method="_on_MusicVolume_value_changed"]

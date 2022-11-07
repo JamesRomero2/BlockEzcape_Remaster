@@ -16,13 +16,19 @@ func _ready():
 
 func _on_LevelContainer_body_entered(body):
 	if !levelOpen: return
-	if body.name == "LevelSelector" and get_overlapping_bodies().size() > 0:
-		body._setLevelInfo(targetLevel, levelNumber, levelTitle)
+	if body.name == "LevelSelector": 
+		if get_overlapping_bodies().size() > 0:
+			body._setLevelInfo(targetLevel, levelNumber, levelTitle)
+	else:
+		body._setLevelInfo("", -1, "")
 
 func _on_LevelContainer_body_exited(body):
 	if !levelOpen: return
 	if body.name == "LevelSelector":
-		body._setLevelInfo("", -1, "")
+		if get_overlapping_bodies().size() > 0:
+			body._setLevelInfo(targetLevel, levelNumber, levelTitle)
+		else:
+			body._setLevelInfo("", -1, "")
 
 func _setLevelNum(value):
 	digits._setValue(value)
@@ -32,7 +38,6 @@ func _getTargetLevel():
 	return targetLevel
 
 func _setLevelState(value: bool):
-#	If True Level is Open to Play
 	if value:
 		digits.visible = true
 		animation.play("LevelContainerOpenAnim")
@@ -41,7 +46,7 @@ func _setLevelState(value: bool):
 		digits.visible = false
 		animation.play("LevelContainerCloseAnim")
 		self.modulate.a = .5
-#	If False Level is Close
+
 
 
 

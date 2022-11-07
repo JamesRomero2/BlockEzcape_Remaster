@@ -24,6 +24,7 @@ var inputs = {
 }
 
 func _process(delta):
+	
 	if GameManager._getGamePause():
 		return
 	for dir in inputs.keys():
@@ -34,7 +35,7 @@ func _process(delta):
 func _unhandled_input(event):
 	if GameManager._getGamePause():
 		return
-	if event.is_action_pressed("space"):
+	if event.is_action_pressed("space") and !moving:
 		if levelInfo["LevelNumber"] < 0: return
 		
 		if levelInfo["LevelNumber"] == 0:
@@ -67,6 +68,7 @@ func _moveToNextPos(pos):
 
 func _on_Tween_tween_completed(_object, _key):
 	moving = false
+	
 
 func _setLevel(value):
 	level = value
@@ -81,8 +83,6 @@ func _getLevelState():
 	return levelState
 
 func _setLevelInfo(levelpath, levelNumber, levelTitle):
-	levelInfo.clear()
 	levelInfo["LevelPath"] = levelpath
 	levelInfo["LevelNumber"] = levelNumber
 	levelInfo["LevelTitle"] = levelTitle
-

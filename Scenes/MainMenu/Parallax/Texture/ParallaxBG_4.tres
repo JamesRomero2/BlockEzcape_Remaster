@@ -1,0 +1,5 @@
+[gd_resource type="StreamTexture" format=2]
+
+[resource]
+flags = 2
+load_path = "res://.import/clouds_2.png-395c56de4a10cb17a0827821b82d9bdb.stex"

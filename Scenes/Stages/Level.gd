@@ -6,7 +6,6 @@ onready var pause := $PausePanel
 onready var resultPanel := $ResultPanel
 
 export(String) var timelineName = ""
-export(Color) var colorTheme
 export var answers := {
 	0: null,
 	1: null,
@@ -39,7 +38,7 @@ func _playDialog(value):
 			GameManager._setGamePaused(true)
 			GameManager._setGameOver(true)
 			GameManager._setGameTimerActive(false)
-			var dialog = Dialogic.start(timelineName)
+			var dialog = Dialogic.start(value)
 			dialog.connect('timeline_end', self, '_dialogEnd')
 			add_child(dialog)
 
@@ -76,9 +75,6 @@ func _unhandled_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("escape") and !GameManager._getGameOver():
 			_changeGameState()
-		if event.is_action_pressed("space"):
-			if GameManager._getGameOver() and !resultAnimating:
-				SceneTransition._changeScene("res://Scenes/WorldMap/WorldMap.tscn")
 
 func _process(delta):
 	_gameTimer(delta)

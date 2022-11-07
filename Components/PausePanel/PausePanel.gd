@@ -7,11 +7,18 @@ func _ready():
 	$Control/VBoxContainer2/Music/MusicVolume.value = GlobalSettings._getMusicVolume()
 	$Control/VBoxContainer2/SoundEffects/SFXVolume.value = GlobalSettings._getSFXVolume()
 
+func _unhandled_input(event):
+	if event.is_pressed():
+		if event.is_action_pressed("escape"):
+			_on_Unpause_pressed()
+
 func _on_Unpause_pressed():
 	if self.visible:
 		GameManager._setGamePaused(false)
 		GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
 		self.visible = !self.visible
+		get_tree().paused = false
+		get_parent().set_process_unhandled_input(true)
 
 func _on_MainMenuButton_pressed():
 	_on_Unpause_pressed()
