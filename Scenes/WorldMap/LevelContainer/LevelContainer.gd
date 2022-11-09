@@ -1,5 +1,7 @@
 extends Area2D
 
+signal levelSelectorOnTop(Level, LevelTitle)
+
 onready var digits := $DoubleDigits
 onready var animation := $AnimationPlayer
 
@@ -19,6 +21,7 @@ func _on_LevelContainer_body_entered(body):
 	if body.name == "LevelSelector": 
 		if get_overlapping_bodies().size() > 0:
 			body._setLevelInfo(targetLevel, levelNumber, levelTitle)
+			emit_signal("levelSelectorOnTop", levelNumber, levelTitle)
 	else:
 		body._setLevelInfo("", -1, "")
 
@@ -27,8 +30,10 @@ func _on_LevelContainer_body_exited(body):
 	if body.name == "LevelSelector":
 		if get_overlapping_bodies().size() > 0:
 			body._setLevelInfo(targetLevel, levelNumber, levelTitle)
+			emit_signal("levelSelectorOnTop", levelNumber, levelTitle)
 		else:
 			body._setLevelInfo("", -1, "")
+			emit_signal("levelSelectorOnTop", -1, levelTitle)
 
 func _setLevelNum(value):
 	digits._setValue(value)

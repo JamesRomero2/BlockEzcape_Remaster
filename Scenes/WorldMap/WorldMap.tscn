@@ -161,16 +161,16 @@ color_ramp = SubResource( 34 )
 flags = 4
 load_path = "res://.import/offset_glow.png-4a64e79ca1a292e7d5fe8e7c4448333e.stex"
 
-[sub_resource type="CanvasItemMaterial" id=47]
-blend_mode = 1
-
-[sub_resource type="StreamTexture" id=48]
-load_path = "res://.import/spotlight_1.png-6c06cfb6da324d2658dd2ceeacedde65.stex"
-
 [sub_resource type="CanvasItemMaterial" id=49]
 blend_mode = 1
 
 [sub_resource type="StreamTexture" id=50]
+load_path = "res://.import/spotlight_1.png-6c06cfb6da324d2658dd2ceeacedde65.stex"
+
+[sub_resource type="CanvasItemMaterial" id=47]
+blend_mode = 1
+
+[sub_resource type="StreamTexture" id=48]
 load_path = "res://.import/spotlight_1.png-6c06cfb6da324d2658dd2ceeacedde65.stex"
 
 [sub_resource type="RectangleShape2D" id=51]
@@ -367,42 +367,42 @@ texture = ExtResource( 5 )
 [node name="LevelContainer" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -560, -248 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/CutScenes/Intro/Intro.tscn"
+targetLevel = "Level 00"
 levelTitle = "Block Ezcape"
 levelOpen = true
 
 [node name="LevelContainer2" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -400, -312 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/Stages/Forest/Level 01.tscn"
+targetLevel = "Level 01"
 levelNumber = 1
 levelOpen = true
 
 [node name="LevelContainer3" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -432, -248 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/Stages/Forest/Level 02.tscn"
+targetLevel = "Level 02"
 levelNumber = 2
 levelOpen = true
 
 [node name="LevelContainer4" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -304, -248 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/Stages/Forest/Level 03.tscn"
+targetLevel = "Level 03"
 levelNumber = 3
 levelOpen = true
 
 [node name="LevelContainer5" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -400, -184 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/Stages/Forest/Level 04.tscn"
+targetLevel = "Level 04"
 levelNumber = 4
 levelOpen = true
 
 [node name="LevelContainer6" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -336, -184 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/Stages/Forest/Level 05.tscn"
+targetLevel = "Level 05"
 levelNumber = 5
 levelOpen = true
 
@@ -438,37 +438,32 @@ texture = ExtResource( 8 )
 [node name="LevelContainer" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( 64, -56 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/Stages/Underground/Level 06.tscn"
+targetLevel = "Level 06"
 levelNumber = 6
-levelOpen = true
 
 [node name="LevelContainer2" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( 0, -88 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/Stages/Underground/Level 07.tscn"
+targetLevel = "Level 07"
 levelNumber = 7
-levelOpen = true
 
 [node name="LevelContainer3" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( -64, -56 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/Stages/Underground/Level 08.tscn"
+targetLevel = "Level 08"
 levelNumber = 8
-levelOpen = true
 
 [node name="LevelContainer4" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( -64, 8 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/Stages/Underground/Level 09.tscn"
+targetLevel = "Level 09"
 levelNumber = 9
-levelOpen = true
 
 [node name="LevelContainer5" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( 0, 40 )
 scale = Vector2( 2, 2 )
-targetLevel = "res://Scenes/Stages/Underground/Level 10.tscn"
+targetLevel = "Level 10"
 levelNumber = 10
-levelOpen = true
 
 [node name="Particles2D2" type="Particles2D" parent="Map/UndergroundArea"]
 material = SubResource( 27 )
@@ -483,6 +478,49 @@ scale = Vector2( 0.8, 0.8 )
 process_material = SubResource( 35 )
 texture = SubResource( 32 )
 
+[node name="Ruins" type="Node2D" parent="Map"]
+position = Vector2( 128, -232 )
+
+[node name="Sprite" type="Sprite" parent="Map/Ruins"]
+modulate = Color( 0.992157, 0.956863, 0.552941, 1 )
+material = SubResource( 49 )
+scale = Vector2( 2.5, 2.5 )
+texture = SubResource( 50 )
+
+[node name="Ruins" type="Sprite" parent="Map/Ruins"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 22 )
+
+[node name="LevelContainer" parent="Map/Ruins" instance=ExtResource( 3 )]
+position = Vector2( 48, 48 )
+scale = Vector2( 2, 2 )
+targetLevel = "Level 15"
+levelNumber = 15
+
+[node name="LevelContainer2" parent="Map/Ruins" instance=ExtResource( 3 )]
+position = Vector2( 80, -16 )
+scale = Vector2( 2, 2 )
+targetLevel = "Level 14"
+levelNumber = 14
+
+[node name="LevelContainer3" parent="Map/Ruins" instance=ExtResource( 3 )]
+position = Vector2( 0, -16 )
+scale = Vector2( 2, 2 )
+targetLevel = "Level 13"
+levelNumber = 13
+
+[node name="LevelContainer4" parent="Map/Ruins" instance=ExtResource( 3 )]
+position = Vector2( -80, -16 )
+scale = Vector2( 2, 2 )
+targetLevel = "Level 12"
+levelNumber = 12
+
+[node name="LevelContainer5" parent="Map/Ruins" instance=ExtResource( 3 )]
+position = Vector2( -48, 48 )
+scale = Vector2( 2, 2 )
+targetLevel = "Level 11"
+levelNumber = 11
+
 [node name="Magical" type="Node2D" parent="Map"]
 position = Vector2( 392, 16 )
 
@@ -496,18 +534,35 @@ texture = SubResource( 48 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
 
-[node name="Ruins" type="Node2D" parent="Map"]
-position = Vector2( 128, -232 )
-
-[node name="Sprite" type="Sprite" parent="Map/Ruins"]
-modulate = Color( 0.992157, 0.956863, 0.552941, 1 )
-material = SubResource( 49 )
-scale = Vector2( 2.5, 2.5 )
-texture = SubResource( 50 )
-
-[node name="Ruins" type="Sprite" parent="Map/Ruins"]
+[node name="LevelContainer" parent="Map/Magical" instance=ExtResource( 3 )]
+position = Vector2( 40, 56 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 22 )
+targetLevel = "Level 19"
+levelNumber = 19
+
+[node name="LevelContainer2" parent="Map/Magical" instance=ExtResource( 3 )]
+position = Vector2( 40, -40 )
+scale = Vector2( 2, 2 )
+targetLevel = "Level 18"
+levelNumber = 18
+
+[node name="LevelContainer3" parent="Map/Magical" instance=ExtResource( 3 )]
+position = Vector2( -24, -72 )
+scale = Vector2( 2, 2 )
+targetLevel = "Level 17"
+levelNumber = 17
+
+[node name="LevelContainer4" parent="Map/Magical" instance=ExtResource( 3 )]
+position = Vector2( -80, -8 )
+scale = Vector2( 2, 2 )
+targetLevel = "Level 16"
+levelNumber = 16
+
+[node name="LevelContainer5" parent="Map/Magical" instance=ExtResource( 3 )]
+position = Vector2( -56, 56 )
+scale = Vector2( 2, 2 )
+targetLevel = "Level 20"
+levelNumber = 20
 
 [node name="Blockers" type="Node2D" parent="Map"]
 
@@ -1184,6 +1239,7 @@ position = Vector2( -128, 24 )
 areas = "Underground"
 
 [node name="StageGate" type="Node2D" parent="Map"]
+visible = false
 
 [node name="ForestGate" type="StaticBody2D" parent="Map/StageGate"]
 position = Vector2( -272, -184 )
@@ -1198,7 +1254,6 @@ shape = SubResource( 51 )
 disabled = true
 
 [node name="LevelSelector" parent="Map" instance=ExtResource( 2 )]
-position = Vector2( -400, -312 )
 scale = Vector2( 2, 2 )
 
 [node name="Camera2D" type="Camera2D" parent="Map/LevelSelector"]

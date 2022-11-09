@@ -4,6 +4,7 @@
 [ext_resource path="res://Components/Tilesets/Forest/Forest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Textures/LevelBG/Forest/1.jpg" type="Texture" id=5]
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
 [ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=10]
@@ -12,7 +13,6 @@
 [ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=17]
 [ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Textures/Meadow.png" type="Texture" id=20]
 [ext_resource path="res://Temp/Crystal/Crystal.tscn" type="PackedScene" id=21]
 
 [sub_resource type="DynamicFont" id=8]
@@ -40,7 +40,7 @@ layer = -10
 [node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 20 )
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 7
 

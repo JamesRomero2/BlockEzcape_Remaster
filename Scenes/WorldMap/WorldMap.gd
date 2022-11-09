@@ -3,6 +3,7 @@ extends Node
 onready var displayModeButton = $MainMenuNavigation/Control/VBoxContainer2/Display/DisplayModeButton
 onready var pause = $MainMenuNavigation
 onready var levelSelector = $Map/LevelSelector
+onready var levelInfo = $LevelInfo
 
 var mapMusic = load("res://Assets/Audio/Music/Music1.ogg")
 var forestBG = load("res://Assets/Textures/Mountains5.png")
@@ -19,6 +20,7 @@ func _ready():
 	levelSelector.position = GameManager._getWorldSelectorPosition()
 	
 	for level in get_tree().get_nodes_in_group("Levels"):
+		level.connect("levelSelectorOnTop", levelInfo, "_showLevelInfo")
 		if GameManager._getOpenLevels().has(level.levelNumber):
 			level.levelOpen = true
 			level._setLevelState(level.levelOpen)
@@ -31,7 +33,7 @@ func _ready():
 func _connectSignals():
 	for areas in get_tree().get_nodes_in_group("BGChangerArea"):
 		areas.connect("enteredArea", self, "_changeBackground")
-
+	
 func _unhandled_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("escape"):
@@ -45,7 +47,7 @@ func _on_Unpause_pressed():
 
 func _on_MapButton_pressed():
 	_on_Unpause_pressed()
-	SceneTransition._changeScene("res://Scenes/MainMenu/MainMenu.tscn")
+	LoadingScreen.loadLevel("MainMenu")
 
 func _on_DisplayModeButton_pressed():
 	GlobalSettings._setWindowDisplay(!GlobalSettings._getWindowDisplay())

@@ -8,8 +8,8 @@
 	"name": "Baud",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": -26,
-	"offset_y": 61,
+	"offset_x": -175,
+	"offset_y": -7,
 	"portraits": [
 		{
 			"name": "Default",
@@ -32,6 +32,6 @@
 			"path": "res://Assets/Textures/Character/BaudAngry.png"
 		}
 	],
-	"scale": 70,
+	"scale": 60,
 	"theme": "theme-1667288705.cfg"
 }

@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Textures/Meadow.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/LevelBG/Forest/5.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Components/Tilesets/Forest/Forest.tscn" type="PackedScene" id=5]
@@ -27,7 +27,6 @@ font_data = ExtResource( 4 )
 [node name="Level 03" type="Node"]
 script = ExtResource( 15 )
 timelineName = "/Forest/Level 03"
-colorTheme = Color( 0.462745, 0.870588, 0.0705882, 1 )
 answers = {
 0: null,
 1: null,

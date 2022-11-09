@@ -24,7 +24,6 @@ var inputs = {
 }
 
 func _process(delta):
-	
 	if GameManager._getGamePause():
 		return
 	for dir in inputs.keys():
@@ -41,7 +40,7 @@ func _unhandled_input(event):
 		if levelInfo["LevelNumber"] == 0:
 			emit_signal("enteringLevel", levelInfo)
 		
-		SceneTransition._changeScene(levelInfo["LevelPath"])
+		LoadingScreen.loadLevel(levelInfo["LevelPath"])
 		GameManager._setWorldSelectorPosition(position)
 
 func _move(direction):
@@ -68,7 +67,6 @@ func _moveToNextPos(pos):
 
 func _on_Tween_tween_completed(_object, _key):
 	moving = false
-	
 
 func _setLevel(value):
 	level = value

@@ -92,11 +92,11 @@ default_bus_layout="res://SoundServer.tres"
 
 SaveSettings="*res://Autoloads/GlobalScript/SaveSettings.gd"
 SaveWorldMap="*res://Autoloads/GlobalScript/SaveWorldMap.gd"
-QuestionsLoader="*res://Autoloads/GlobalScript/QuestionsLoader.gd"
+SaveHighScore="*res://Autoloads/GlobalScript/SaveHighScore.gd"
+LoadingScreen="*res://Autoloads/GlobalScenes/LoadingScreen/LoadingScreen.tscn"
 GameManager="*res://Autoloads/GlobalScript/GameManager.gd"
 GlobalSettings="*res://Autoloads/GlobalScript/GlobalSettings.gd"
 GlobalMusic="*res://Autoloads/GlobalScenes/GlobalMusic/GlobalMusic.tscn"
-SceneTransition="*res://Autoloads/GlobalScenes/SceneTransition/SceneTransition.tscn"
 
 [display]
 

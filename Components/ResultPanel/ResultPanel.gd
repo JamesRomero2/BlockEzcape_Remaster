@@ -4,19 +4,20 @@ var timeSpent: String
 var medal: int = 0
 var verdict: bool
 var animating: bool = true
-var worldMap = "res://Scenes/WorldMap/WorldMap.tscn"
+var record: String
 
-func _showResult(mins, secs):
+func _showResult(mins, secs, levelNum):
 	timeSpent = "%02d : %02d" % [mins, secs]
 	self.visible = !self.visible
 	_setMedalRanking(mins, secs)
 	$Container/Label4.text = timeSpent
 	$AnimationPlayer.play("ResultsAnimation")
+	GameManager._saveLevelRecord(levelNum, timeSpent, record)
 
 func _input(event):
 	if event.is_pressed() and !animating:
 		if event.is_action_pressed("space"):
-			SceneTransition._changeScene(worldMap)
+			LoadingScreen.loadLevel("WorldMap")
 
 func _setMedalRanking(mins, secs):
 	for medal in $Container/Awards.get_children():
@@ -29,31 +30,38 @@ func _setMedalRanking(mins, secs):
 			medal = 4
 			$Container/Label6.text = "S"
 			$Container/Awards/Platinum.visible = true
+			record = "S"
 		elif seconds >= 26 and seconds <= 50:
 			medal = 3
 			$Container/Label6.text = "A"
 			$Container/Awards/Gold.visible = true
+			record = "A"
 		elif seconds >= 51:
 			medal = 2
 			$Container/Label6.text = "B"
 			$Container/Awards/Silver.visible = true
+			record = "B"
 	elif minutes == 1:
 		if seconds <= 25:
 			medal = 2
 			$Container/Label6.text = "B"
+			record = "B"
 			$Container/Awards/Silver.visible = true
 		elif seconds >= 26 and seconds <= 50:
 			medal = 1
 			$Container/Label6.text = "C"
 			$Container/Awards/Bronze.visible = true
+			record = "C"
 		elif seconds >= 51:
 			medal = 0
 			$Container/Label6.text = "D"
 			$Container/Awards/Copper.visible = true
+			record = "D"
 	else:
 		medal = 0
 		$Container/Label6.text = "D"
 		$Container/Awards/Copper.visible = true
+		record = "D"
 
 func _newLevelUnlocked(value):
 	if medal >= value:

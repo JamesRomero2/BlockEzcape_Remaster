@@ -1,0 +1,204 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
+[ext_resource path="res://Components/Tilesets/Void/Void.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Textures/LevelBG/MagicalVoid/3.jpg" type="Texture" id=5]
+[ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Temp/Crystal/Crystal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=18]
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 12
+font_data = ExtResource( 17 )
+
+[node name="Level 18" type="Node"]
+script = ExtResource( 1 )
+timelineName = "/Forest/Level 05"
+answers = {
+0: 23,
+1: 1,
+2: null,
+3: null
+}
+resultAnimating = true
+requiredMedal = 4
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 7
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -472, 120 )
+current = true
+zoom = Vector2( 0.8, 0.8 )
+
+[node name="Void" parent="." instance=ExtResource( 2 )]
+
+[node name="TileMap" parent="Void" index="0"]
+tile_data = PoolIntArray( -43, 1, 0, -42, 1, 0, -41, 1, 0, -40, 1, 0, -39, 1, 0, -38, 1, 0, -37, 1, 0, -36, 1, 0, -35, 1, 0, -34, 1, 0, -33, 1, 0, -32, 1, 0, -31, 1, 0, -30, 1, 0, -29, 1, 0, -28, 1, 0, -27, 1, 0, -26, 1, 0, -25, 1, 0, -24, 1, 0, -23, 1, 0, -22, 1, 0, -21, 1, 0, -20, 1, 0, -19, 1, 0, -18, 1, 0, 65493, 1, 0, 65494, 1, 131074, 65495, 1, 131074, 65496, 1, 131074, 65497, 1, 131074, 65498, 1, 0, 65499, 1, 131074, 65500, 1, 131074, 65501, 1, 131074, 65502, 1, 131074, 65503, 1, 131074, 65504, 1, 131074, 65505, 1, 131074, 65506, 1, 131074, 65507, 1, 131074, 65508, 1, 131074, 65509, 1, 131074, 65510, 1, 131074, 65511, 1, 131074, 65512, 1, 131074, 65513, 1, 131074, 65514, 1, 131074, 65515, 1, 131074, 65516, 1, 131074, 65517, 1, 131074, 65518, 1, 0, 131029, 1, 0, 131030, 1, 131074, 131031, 1, 131074, 131032, 1, 131074, 131033, 1, 131074, 131034, 1, 0, 131035, 1, 131074, 131036, 1, 131074, 131037, 1, 131074, 131038, 1, 131074, 131039, 1, 131074, 131040, 1, 131074, 131041, 1, 131074, 131042, 1, 131074, 131043, 1, 131074, 131044, 1, 131074, 131045, 1, 131074, 131046, 1, 131074, 131047, 1, 131074, 131048, 1, 131074, 131049, 1, 131074, 131050, 1, 131074, 131051, 1, 131074, 131052, 1, 131074, 131053, 1, 131074, 131054, 1, 0, 196565, 1, 0, 196566, 1, 131074, 196567, 1, 131074, 196568, 1, 131074, 196569, 1, 131074, 196570, 1, 0, 196571, 1, 131074, 196572, 1, 131074, 196573, 1, 131074, 196574, 1, 131074, 196575, 1, 131074, 196576, 1, 131074, 196577, 1, 131074, 196578, 1, 131074, 196579, 1, 131074, 196580, 1, 131074, 196581, 1, 131074, 196582, 1, 131074, 196583, 1, 131074, 196584, 1, 131074, 196585, 1, 131074, 196586, 1, 131074, 196587, 1, 131074, 196588, 1, 131074, 196589, 1, 131074, 196590, 1, 0, 262101, 1, 0, 262102, 1, 131074, 262103, 1, 131074, 262104, 1, 131074, 262105, 1, 131074, 262106, 1, 0, 262107, 1, 131074, 262108, 1, 131074, 262109, 1, 131074, 262110, 1, 131074, 262111, 1, 131074, 262112, 1, 131074, 262113, 1, 131074, 262114, 1, 131074, 262115, 1, 131074, 262116, 1, 131074, 262117, 1, 131074, 262118, 1, 131074, 262119, 1, 131074, 262120, 1, 131074, 262121, 1, 131074, 262122, 1, 131074, 262123, 1, 131074, 262124, 1, 131074, 262125, 1, 131074, 262126, 1, 0, 327637, 1, 0, 327638, 1, 131074, 327639, 1, 131074, 327640, 1, 131074, 327641, 1, 131074, 327642, 1, 0, 327643, 1, 131074, 327644, 1, 131074, 327645, 1, 131074, 327646, 1, 131074, 327647, 1, 131074, 327648, 1, 131074, 327649, 1, 131074, 327650, 1, 131074, 327651, 1, 131074, 327652, 1, 131074, 327653, 1, 131074, 327654, 1, 131074, 327655, 1, 131074, 327656, 1, 131074, 327657, 1, 131074, 327658, 1, 131074, 327659, 1, 131074, 327660, 1, 131074, 327661, 1, 131074, 327662, 1, 0, 393173, 1, 0, 393174, 1, 131074, 393175, 1, 131074, 393176, 1, 131074, 393177, 1, 131074, 393178, 1, 0, 393179, 1, 131074, 393180, 1, 131074, 393181, 1, 131074, 393182, 1, 131074, 393183, 1, 131074, 393184, 1, 131074, 393185, 1, 131074, 393186, 1, 131074, 393187, 1, 131074, 393188, 1, 131074, 393189, 1, 131074, 393190, 1, 131074, 393191, 1, 131074, 393192, 1, 131074, 393193, 1, 131074, 393194, 1, 131074, 393195, 1, 131074, 393196, 1, 131074, 393197, 1, 131074, 393198, 1, 0, 458709, 1, 0, 458710, 1, 131074, 458711, 1, 131074, 458712, 1, 131074, 458713, 1, 131074, 458714, 1, 0, 458715, 1, 131074, 458716, 1, 131074, 458717, 1, 131074, 458718, 1, 131074, 458719, 1, 131074, 458720, 1, 131074, 458721, 1, 131074, 458722, 1, 131074, 458723, 1, 131074, 458724, 1, 131074, 458725, 1, 131074, 458726, 1, 131074, 458727, 1, 131074, 458728, 1, 131074, 458729, 1, 131074, 458730, 1, 131074, 458731, 1, 131074, 458732, 1, 131074, 458733, 1, 131074, 458734, 1, 0, 524245, 1, 0, 524246, 1, 131074, 524247, 1, 131074, 524248, 1, 131074, 524249, 1, 131074, 524250, 1, 0, 524251, 1, 131074, 524252, 1, 131074, 524253, 1, 131074, 524254, 1, 131074, 524255, 1, 131074, 524256, 1, 131074, 524257, 1, 131074, 524258, 1, 131074, 524259, 1, 131074, 524260, 1, 131074, 524261, 1, 131074, 524262, 1, 131074, 524263, 1, 131074, 524264, 1, 131074, 524265, 1, 131074, 524266, 1, 131074, 524267, 1, 131074, 524268, 1, 131074, 524269, 1, 131074, 524270, 1, 0, 589781, 1, 0, 589782, 1, 131074, 589783, 1, 131074, 589784, 1, 131074, 589785, 1, 131074, 589786, 1, 0, 589787, 1, 131074, 589788, 1, 131074, 589789, 1, 131074, 589790, 1, 131074, 589791, 1, 131074, 589792, 1, 131074, 589793, 1, 131074, 589794, 1, 131074, 589795, 1, 131074, 589796, 1, 131074, 589797, 1, 131074, 589798, 1, 131074, 589799, 1, 131074, 589800, 1, 131074, 589801, 1, 131074, 589802, 1, 131074, 589803, 1, 131074, 589804, 1, 131074, 589805, 1, 131074, 589806, 1, 0, 655317, 1, 0, 655318, 1, 131074, 655319, 1, 131074, 655320, 1, 131074, 655321, 1, 131074, 655322, 1, 0, 655323, 1, 131074, 655324, 1, 131074, 655325, 1, 131074, 655326, 1, 131074, 655327, 1, 131074, 655328, 1, 131074, 655329, 1, 131074, 655330, 1, 131074, 655331, 1, 131074, 655332, 1, 131074, 655333, 1, 131074, 655334, 1, 131074, 655335, 1, 131074, 655336, 1, 131074, 655337, 1, 131074, 655338, 1, 131074, 655339, 1, 131074, 655340, 1, 131074, 655341, 1, 131074, 655342, 1, 0, 720853, 1, 0, 720854, 1, 131074, 720855, 1, 131074, 720856, 1, 131074, 720857, 1, 131074, 720858, 1, 0, 720859, 1, 131074, 720860, 1, 131074, 720861, 1, 131074, 720862, 1, 131074, 720863, 1, 131074, 720864, 1, 131074, 720865, 1, 131074, 720866, 1, 131074, 720867, 1, 131074, 720868, 1, 131074, 720869, 1, 131074, 720870, 1, 131074, 720871, 1, 131074, 720872, 1, 131074, 720873, 1, 131074, 720874, 1, 131074, 720875, 1, 131074, 720876, 1, 131074, 720877, 1, 131074, 720878, 1, 0, 786389, 1, 0, 786390, 1, 0, 786391, 1, 0, 786392, 1, 0, 786393, 1, 0, 786394, 1, 0, 786395, 1, 0, 786396, 1, 0, 786397, 1, 0, 786398, 1, 0, 786399, 1, 0, 786400, 1, 0, 786401, 1, 131074, 786402, 1, 131074, 786403, 1, 131074, 786404, 1, 131074, 786405, 1, 131074, 786406, 1, 0, 786407, 1, 0, 786408, 1, 0, 786409, 1, 0, 786410, 1, 0, 786411, 1, 0, 786412, 1, 0, 786413, 1, 0, 786414, 1, 0, 851936, 1, 0, 851937, 1, 131074, 851938, 1, 131074, 851939, 1, 131074, 851940, 1, 131074, 851941, 1, 131074, 851942, 1, 0, 917472, 1, 0, 917473, 1, 131074, 917474, 1, 131074, 917475, 1, 131074, 917476, 1, 131074, 917477, 1, 131074, 917478, 1, 0, 983008, 1, 0, 983009, 1, 131074, 983010, 1, 131074, 983011, 1, 131074, 983012, 1, 131074, 983013, 1, 131074, 983014, 1, 0, 1048544, 1, 0, 1048545, 1, 0, 1048546, 1, 0, 1048547, 1, 0, 1048548, 1, 0, 1048549, 1, 0, 1048550, 1, 0 )
+
+[node name="Blocks" parent="Void" index="1"]
+tile_data = PoolIntArray( 65499, 0, 0, 65500, 0, 0, 65501, 0, 0, 65502, 0, 0, 65503, 0, 0, 65504, 0, 0, 65505, 0, 0, 65506, 0, 0, 65507, 0, 0, 65508, 0, 0, 65509, 0, 0, 65510, 0, 0, 65511, 0, 0, 65512, 0, 0, 65513, 0, 0, 65514, 0, 0, 65515, 0, 0, 65516, 0, 0, 65517, 0, 0, 131035, 0, 0, 131053, 0, 0, 196571, 0, 0, 196574, 0, 0, 196575, 0, 0, 196576, 0, 0, 196577, 0, 0, 196578, 0, 0, 196580, 0, 0, 196581, 0, 0, 196582, 0, 0, 196583, 0, 0, 196584, 0, 0, 196585, 0, 0, 196586, 0, 0, 196587, 0, 0, 196589, 0, 0, 262107, 0, 0, 262125, 0, 0, 327643, 0, 0, 327644, 0, 0, 327646, 0, 0, 327647, 0, 0, 327648, 0, 0, 327649, 0, 0, 327650, 0, 0, 327651, 0, 0, 327652, 0, 0, 327653, 0, 0, 327654, 0, 0, 327655, 0, 0, 327657, 0, 0, 327658, 0, 0, 327659, 0, 0, 327660, 0, 0, 327661, 0, 0, 393179, 0, 0, 393190, 0, 0, 393197, 0, 0, 458715, 0, 0, 458723, 0, 0, 458728, 0, 0, 458729, 0, 0, 458730, 0, 0, 458731, 0, 0, 458733, 0, 0, 524251, 0, 0, 524252, 0, 0, 524253, 0, 0, 524255, 0, 0, 524256, 0, 0, 524257, 0, 0, 524258, 0, 0, 524259, 0, 0, 524261, 0, 0, 524262, 0, 0, 524263, 0, 0, 524264, 0, 0, 524269, 0, 0, 589787, 0, 0, 589795, 0, 0, 589797, 0, 0, 589805, 0, 0, 655323, 0, 0, 655341, 0, 0, 720859, 0, 0, 720860, 0, 0, 720861, 0, 0, 720862, 0, 0, 720863, 0, 0, 720864, 0, 0, 720865, 0, 0, 720866, 0, 0, 720867, 0, 0, 720869, 0, 0, 720870, 0, 0, 720871, 0, 0, 720872, 0, 0, 720873, 0, 0, 720874, 0, 0, 720875, 0, 0, 720876, 0, 0, 720877, 0, 0, 786401, 0, 0, 786405, 0, 0, 851937, 0, 0, 851941, 0, 0, 917473, 0, 0, 917477, 0, 0, 983009, 0, 0, 983010, 0, 0, 983011, 0, 0, 983012, 0, 0, 983013, 0, 0 )
+
+[node name="GameObjects" type="Node2D" parent="."]
+position = Vector2( 8, 80 )
+
+[node name="Player" parent="GameObjects" instance=ExtResource( 3 )]
+position = Vector2( -320, 8 )
+
+[node name="Temple" parent="GameObjects" instance=ExtResource( 6 )]
+position = Vector2( -464, 120 )
+
+[node name="Box4" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -544, 56 )
+boxValue = 23
+
+[node name="Box5" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -400, 56 )
+boxValue = 23
+
+[node name="Box6" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -336, 56 )
+boxValue = 23
+
+[node name="Box7" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -544, 24 )
+boxValue = 23
+
+[node name="ScannerTile4" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -496, -56 )
+scannerID = 1
+
+[node name="ScannerTile5" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -528, -56 )
+scannerID = 1
+
+[node name="ScannerTile7" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -352, -56 )
+scannerID = 1
+
+[node name="ScannerTile8" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -432, -56 )
+scannerID = 1
+
+[node name="Question" type="Node2D" parent="GameObjects"]
+position = Vector2( -152, -112 )
+
+[node name="Box3" parent="GameObjects/Question" instance=ExtResource( 4 )]
+position = Vector2( -472, 120 )
+boxValue = 78
+
+[node name="Box4" parent="GameObjects/Question" instance=ExtResource( 4 )]
+position = Vector2( -472, 104 )
+boxValue = 45
+
+[node name="SymbolBlocks2" parent="GameObjects/Question" instance=ExtResource( 8 )]
+position = Vector2( -488, 112 )
+operation = "Plus"
+
+[node name="SymbolBlocks3" parent="GameObjects/Question" instance=ExtResource( 8 )]
+position = Vector2( -504, 144 )
+operation = "Equals"
+
+[node name="Crystal" parent="GameObjects/Question" instance=ExtResource( 10 )]
+position = Vector2( -472, 144 )
+
+[node name="Crystal2" parent="GameObjects/Question" instance=ExtResource( 10 )]
+position = Vector2( -488, 144 )
+scannerID = 1
+
+[node name="PausePanel" parent="." instance=ExtResource( 15 )]
+visible = false
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="Buttons" type="Control" parent="UILayer"]
+anchor_right = 1.0
+
+[node name="PauseButton" type="Button" parent="UILayer/Buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 64.0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/Buttons/PauseButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="UILayer/Buttons/PauseButton/TextureRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -12.0
+margin_top = -22.0
+margin_right = 13.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Esc"
+align = 1
+valign = 1
+
+[node name="UndoButton" type="Button" parent="UILayer/Buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -80.0
+margin_top = 8.0
+margin_right = -48.0
+margin_bottom = 64.0
+flat = true
+
+[node name="TextureRect2" type="TextureRect" parent="UILayer/Buttons/UndoButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 18 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="UILayer/Buttons/UndoButton/TextureRect2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -16.0
+margin_top = -22.0
+margin_right = 16.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Undo"
+align = 1
+valign = 1
+
+[node name="ResultPanel" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="pressed" from="UILayer/Buttons/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="UILayer/Buttons/UndoButton" to="." method="_on_UndoButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="Void"]

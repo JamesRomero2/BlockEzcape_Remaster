@@ -6,6 +6,7 @@ onready var hex := $CanvasLayer/Control/Hexagram
 onready var pause := $PausePanel
 
 var worldMapScene = "res://Scenes/WorldMap/WorldMap.tscn"
+var loading = false
 
 func _ready():
 	_changeBGToDoor()
@@ -26,9 +27,14 @@ func _changeGameState():
 	pause.visible = !pause.visible
 
 func _dialogEnd(timeline_name):
+	_loadWorldMap()
+
+func _loadWorldMap():
+	if loading: return
 	GameManager._setOpenLevels(1)
-	SceneTransition._changeScene(worldMapScene)
+	LoadingScreen.loadLevel("WorldMap")
 	GameManager._setGamePaused(false)
+	loading = true
 
 func _dialogic_signal(signalName):
 	match signalName:

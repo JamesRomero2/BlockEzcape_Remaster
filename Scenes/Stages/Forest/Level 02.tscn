@@ -6,6 +6,7 @@
 [ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameObjects/Blocks/PhantomBlocks/PhantomBlock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Textures/LevelBG/Forest/3.jpg" type="Texture" id=7]
 [ext_resource path="res://GameObjects/Tiles/LeverTile/LeverTile.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
 [ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=10]
@@ -14,7 +15,6 @@
 [ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=17]
 [ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Textures/Meadow.png" type="Texture" id=20]
 [ext_resource path="res://Temp/Crystal/Crystal.tscn" type="PackedScene" id=21]
 
 [sub_resource type="DynamicFont" id=8]
@@ -28,7 +28,6 @@ font_data = ExtResource( 17 )
 [node name="Level 02" type="Node"]
 script = ExtResource( 1 )
 timelineName = "/Forest/Level 02"
-colorTheme = Color( 0.462745, 0.870588, 0.0705882, 1 )
 answers = {
 0: null,
 1: 19,
@@ -44,7 +43,7 @@ layer = -10
 [node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 20 )
+texture = ExtResource( 7 )
 expand = true
 stretch_mode = 7
 

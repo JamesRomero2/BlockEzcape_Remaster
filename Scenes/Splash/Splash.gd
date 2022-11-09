@@ -8,4 +8,4 @@ func _ready():
 	GlobalSettings._setSFXVolume(GlobalSettings._getSFXVolume())
 
 func _openMainMenu():
-	SceneTransition._changeScene("res://Scenes/MainMenu/MainMenu.tscn")
+	LoadingScreen.loadLevel("MainMenu")

@@ -9,7 +9,6 @@ onready var tween := $Tween
 onready var animation := $AnimationPlayer
 onready var pause := $PausePanel
 
-var doorScene = "res://Scenes/CutScenes/DoorCutscene/DoorCutscene.tscn"
 var target = null
 var libraryMusic = load("res://Assets/Audio/Music/LibraryBG.ogg")
 var near = false
@@ -22,7 +21,6 @@ func _ready():
 	GameManager._setGameOver(false)
 	target = player
 	_playDialog()
-
 
 func _process(delta):
 	camera.set_position(target.position)
@@ -94,4 +92,4 @@ func _animationUnpause(timeline_name):
 	animation.play()
 
 func _continueAnim():
-	SceneTransition._changeScene(doorScene)
+	LoadingScreen.loadLevel("LabvrinthDoorScene")

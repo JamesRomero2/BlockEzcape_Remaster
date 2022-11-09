@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Black.ttf" type="DynamicFontData" id=11]
 
-[sub_resource type="Shader" id=6]
+[sub_resource type="Shader" id=17]
 code = "shader_type canvas_item;
 
 uniform vec4 color: hint_color;
@@ -25,7 +25,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id=7]
-shader = SubResource( 6 )
+shader = SubResource( 17 )
 shader_param/color = Color( 0, 0, 0, 1 )
 shader_param/multiplier = 0.208
 shader_param/softness = 1.005

@@ -8,8 +8,8 @@
 	"name": "Archi",
 	"nickname": "",
 	"nickname_bool": false,
-	"offset_x": 25,
-	"offset_y": 60,
+	"offset_x": 175,
+	"offset_y": -7,
 	"portraits": [
 		{
 			"name": "Default",
@@ -34,8 +34,12 @@
 		{
 			"name": "ArchiTalking",
 			"path": "res://Assets/Textures/Character/ArchiTalking.png"
+		},
+		{
+			"name": "",
+			"path": ""
 		}
 	],
-	"scale": 70,
+	"scale": 60,
 	"theme": "archi-theme.cfg"
 }

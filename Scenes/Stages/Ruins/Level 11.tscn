@@ -1,0 +1,204 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
+[ext_resource path="res://Components/Tilesets/Castle/Castle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Textures/LevelBG/Ruins/1.jpg" type="Texture" id=5]
+[ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Temp/Crystal/Crystal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=18]
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 12
+font_data = ExtResource( 17 )
+
+[node name="Level 11" type="Node"]
+script = ExtResource( 1 )
+timelineName = "/Forest/Level 05"
+answers = {
+0: 23,
+1: 1,
+2: null,
+3: null
+}
+resultAnimating = true
+requiredMedal = 4
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 7
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -472, 104 )
+current = true
+zoom = Vector2( 0.8, 0.8 )
+
+[node name="CastleTile" parent="." instance=ExtResource( 2 )]
+
+[node name="Background" parent="CastleTile" index="0"]
+tile_data = PoolIntArray( -65569, 4, 0, -65568, 4, 0, -65567, 4, 0, -65566, 4, 0, -65565, 4, 0, -65564, 4, 0, -65563, 4, 0, -34, 4, 0, -33, 4, 0, -32, 1, 0, -31, 1, 1, -30, 1, 1, -29, 1, 1, -28, 1, 4, -27, 4, 0, -26, 4, 0, 65500, 4, 0, 65501, 4, 0, 65502, 4, 0, 65503, 1, 0, 65504, 2, 65537, 65505, 1, 65537, 65506, 1, 65538, 65507, 1, 65539, 65508, 2, 65536, 65509, 1, 4, 65510, 4, 0, 65511, 4, 0, 65512, 4, 0, 131035, 4, 0, 131036, 4, 0, 131037, 1, 0, 131038, 1, 1, 131039, 2, 65537, 131040, 1, 65537, 131041, 3, 65537, 131042, 1, 131074, 131043, 3, 65536, 131044, 1, 65539, 131045, 2, 65536, 131046, 1, 1, 131047, 1, 4, 131048, 4, 0, 131049, 4, 0, 196570, 4, 0, 196571, 4, 0, 196572, 1, 0, 196573, 2, 65537, 196574, 1, 65537, 196575, 1, 65538, 196576, 3, 65537, 196577, 1, 131074, 196578, 1, 131074, 196579, 1, 131074, 196580, 3, 65536, 196581, 1, 65538, 196582, 1, 65539, 196583, 2, 65536, 196584, 1, 4, 196585, 4, 0, 196586, 4, 0, 262102, 4, 0, 262103, 4, 0, 262104, 4, 0, 262105, 4, 0, 262106, 4, 0, 262107, 1, 0, 262108, 2, 65537, 262109, 1, 65537, 262110, 3, 65537, 262111, 1, 131074, 262112, 1, 131074, 262113, 1, 131074, 262114, 1, 131074, 262115, 1, 131074, 262116, 1, 131074, 262117, 1, 131074, 262118, 3, 65536, 262119, 1, 65539, 262120, 2, 65536, 262121, 1, 4, 262122, 4, 0, 262123, 4, 0, 327638, 4, 0, 327639, 4, 0, 327640, 4, 0, 327641, 4, 0, 327642, 1, 0, 327643, 2, 65537, 327644, 1, 65537, 327645, 3, 65537, 327646, 1, 131074, 327647, 1, 131074, 327648, 1, 131074, 327649, 1, 131074, 327650, 1, 131074, 327651, 1, 131074, 327652, 1, 131074, 327653, 1, 131074, 327654, 1, 131074, 327655, 3, 65536, 327656, 1, 65539, 327657, 2, 65536, 327658, 1, 4, 327659, 4, 0, 393174, 4, 0, 393175, 4, 0, 393176, 4, 0, 393177, 4, 0, 393178, 1, 65536, 393179, 1, 65537, 393180, 3, 65537, 393181, 1, 131074, 393182, 1, 131074, 393183, 1, 131074, 393184, 1, 131074, 393185, 1, 131074, 393186, 1, 131074, 393187, 1, 131074, 393188, 1, 131074, 393189, 1, 131074, 393190, 1, 131074, 393191, 1, 131074, 393192, 3, 65536, 393193, 1, 65539, 393194, 1, 65540, 393195, 4, 0, 458710, 4, 0, 458711, 4, 0, 458712, 4, 0, 458713, 4, 0, 458714, 1, 65536, 458715, 1, 131073, 458716, 1, 131074, 458717, 1, 131074, 458718, 1, 131074, 458719, 1, 131074, 458720, 1, 131074, 458721, 1, 131074, 458722, 1, 131074, 458723, 1, 131074, 458724, 1, 131074, 458725, 1, 131074, 458726, 1, 131074, 458727, 1, 131074, 458728, 1, 131074, 458729, 1, 131075, 458730, 1, 65540, 458731, 4, 0, 524246, 4, 0, 524247, 4, 0, 524248, 4, 0, 524249, 4, 0, 524250, 1, 65536, 524251, 1, 196609, 524252, 3, 1, 524253, 1, 131074, 524254, 1, 131074, 524255, 1, 131074, 524256, 1, 131074, 524257, 1, 131074, 524258, 1, 131074, 524259, 1, 131074, 524260, 1, 131074, 524261, 1, 131074, 524262, 1, 131074, 524263, 1, 131074, 524264, 3, 0, 524265, 1, 196611, 524266, 1, 65540, 524267, 4, 0, 589782, 4, 0, 589783, 4, 0, 589784, 4, 0, 589785, 4, 0, 589786, 1, 262144, 589787, 2, 1, 589788, 1, 196609, 589789, 3, 1, 589790, 1, 131074, 589791, 1, 131074, 589792, 1, 131074, 589793, 1, 131074, 589794, 1, 131074, 589795, 1, 131074, 589796, 1, 131074, 589797, 1, 131074, 589798, 1, 131074, 589799, 3, 0, 589800, 1, 196611, 589801, 2, 0, 589802, 1, 262148, 589803, 4, 0, 655318, 4, 0, 655319, 4, 0, 655320, 4, 0, 655321, 4, 0, 655322, 4, 0, 655323, 1, 262144, 655324, 2, 1, 655325, 1, 196609, 655326, 3, 1, 655327, 1, 131074, 655328, 1, 131074, 655329, 1, 131074, 655330, 1, 131074, 655331, 1, 131074, 655332, 1, 131074, 655333, 1, 131074, 655334, 3, 0, 655335, 1, 196611, 655336, 2, 0, 655337, 1, 262148, 655338, 4, 0, 655339, 4, 0, 720858, 4, 0, 720859, 4, 0, 720860, 1, 262144, 720861, 2, 1, 720862, 1, 196609, 720863, 1, 196610, 720864, 3, 1, 720865, 1, 131074, 720866, 1, 131074, 720867, 1, 131074, 720868, 3, 0, 720869, 1, 196610, 720870, 1, 196611, 720871, 2, 0, 720872, 1, 262148, 720873, 4, 0, 720874, 4, 0, 786395, 4, 0, 786396, 4, 0, 786397, 1, 262144, 786398, 1, 262145, 786399, 2, 1, 786400, 1, 196609, 786401, 3, 1, 786402, 1, 131074, 786403, 3, 0, 786404, 1, 196611, 786405, 2, 0, 786406, 1, 262147, 786407, 1, 262148, 786408, 4, 0, 786409, 4, 0, 851932, 4, 0, 851933, 4, 0, 851934, 4, 0, 851935, 1, 262144, 851936, 2, 1, 851937, 1, 196609, 851938, 1, 196610, 851939, 1, 196611, 851940, 2, 0, 851941, 1, 262148, 851942, 4, 0, 851943, 4, 0, 851944, 4, 0, 917470, 4, 0, 917471, 4, 0, 917472, 1, 262144, 917473, 1, 262147, 917474, 1, 262147, 917475, 1, 262147, 917476, 1, 262148, 917477, 4, 0, 917478, 4, 0, 983007, 4, 0, 983008, 4, 0, 983009, 4, 0, 983010, 4, 0, 983011, 4, 0, 983012, 4, 0, 983013, 4, 0 )
+
+[node name="Blocks" parent="CastleTile" index="1"]
+tile_data = PoolIntArray( 65505, 0, 0, 65506, 0, 0, 65507, 0, 0, 131040, 0, 0, 131044, 0, 0, 196574, 0, 0, 196575, 0, 0, 196581, 0, 0, 196582, 0, 0, 262109, 0, 0, 262113, 0, 0, 262115, 0, 0, 262119, 0, 0, 327644, 0, 0, 327656, 0, 0, 393179, 0, 0, 393182, 0, 0, 393189, 0, 0, 393193, 0, 0, 458715, 0, 0, 458729, 0, 0, 524251, 0, 0, 524255, 0, 0, 524262, 0, 0, 524265, 0, 0, 589788, 0, 0, 589800, 0, 0, 655325, 0, 0, 655329, 0, 0, 655331, 0, 0, 655335, 0, 0, 720862, 0, 0, 720863, 0, 0, 720869, 0, 0, 720870, 0, 0, 786400, 0, 0, 786404, 0, 0, 851937, 0, 0, 851938, 0, 0, 851939, 0, 0 )
+
+[node name="GameObjects" type="Node2D" parent="."]
+position = Vector2( 8, 80 )
+
+[node name="Player" parent="GameObjects" instance=ExtResource( 3 )]
+position = Vector2( -480, 24 )
+
+[node name="Temple" parent="GameObjects" instance=ExtResource( 6 )]
+position = Vector2( -464, -8 )
+
+[node name="Box4" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -464, 88 )
+boxValue = 23
+
+[node name="Box5" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -496, -40 )
+boxValue = 23
+
+[node name="Box6" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -544, 40 )
+boxValue = 23
+
+[node name="Box7" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -416, 8 )
+boxValue = 23
+
+[node name="ScannerTile3" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -464, 8 )
+scannerID = 1
+
+[node name="ScannerTile4" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -496, 8 )
+scannerID = 1
+
+[node name="ScannerTile5" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -496, 40 )
+scannerID = 1
+
+[node name="ScannerTile7" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -464, 40 )
+scannerID = 1
+
+[node name="Question" type="Node2D" parent="GameObjects"]
+position = Vector2( -160, -104 )
+
+[node name="Box3" parent="GameObjects/Question" instance=ExtResource( 4 )]
+position = Vector2( -472, 120 )
+boxValue = 78
+
+[node name="Box4" parent="GameObjects/Question" instance=ExtResource( 4 )]
+position = Vector2( -472, 104 )
+boxValue = 45
+
+[node name="SymbolBlocks2" parent="GameObjects/Question" instance=ExtResource( 8 )]
+position = Vector2( -488, 112 )
+operation = "Plus"
+
+[node name="SymbolBlocks3" parent="GameObjects/Question" instance=ExtResource( 8 )]
+position = Vector2( -504, 144 )
+operation = "Equals"
+
+[node name="Crystal" parent="GameObjects/Question" instance=ExtResource( 10 )]
+position = Vector2( -472, 144 )
+
+[node name="Crystal2" parent="GameObjects/Question" instance=ExtResource( 10 )]
+position = Vector2( -488, 144 )
+scannerID = 1
+
+[node name="PausePanel" parent="." instance=ExtResource( 15 )]
+visible = false
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="Buttons" type="Control" parent="UILayer"]
+anchor_right = 1.0
+
+[node name="PauseButton" type="Button" parent="UILayer/Buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 64.0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/Buttons/PauseButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="UILayer/Buttons/PauseButton/TextureRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -12.0
+margin_top = -22.0
+margin_right = 13.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Esc"
+align = 1
+valign = 1
+
+[node name="UndoButton" type="Button" parent="UILayer/Buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -80.0
+margin_top = 8.0
+margin_right = -48.0
+margin_bottom = 64.0
+flat = true
+
+[node name="TextureRect2" type="TextureRect" parent="UILayer/Buttons/UndoButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 18 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="UILayer/Buttons/UndoButton/TextureRect2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -16.0
+margin_top = -22.0
+margin_right = 16.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Undo"
+align = 1
+valign = 1
+
+[node name="ResultPanel" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="pressed" from="UILayer/Buttons/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="UILayer/Buttons/UndoButton" to="." method="_on_UndoButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="CastleTile"]

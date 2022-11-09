@@ -25,6 +25,7 @@ var undoRedoJournal: UndoRedo = UndoRedo.new()
 var canUndo: bool = true
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	_playDialog(timelineName)
 	_connectSignal()
 
@@ -75,6 +76,7 @@ func _unhandled_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("escape") and !GameManager._getGameOver():
 			_changeGameState()
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _process(delta):
 	_gameTimer(delta)
@@ -136,12 +138,14 @@ func _getAllBridgeState():
 func _changeGameState():
 	GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
 	GameManager._setGamePaused(!GameManager._getGamePause())
-	pause.visible = !pause.visible
+	pause.visible = true
+	set_process_unhandled_input(false)
+	get_tree().paused = true
 
 func _onLevelAccomplish():
 	GameManager._setGameOver(true)
 	GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
-	resultPanel._showResult(mins, secs)
+	resultPanel._showResult(mins, secs, self.name.right(5).to_int())
 	
 	if(resultPanel._newLevelUnlocked(requiredMedal)):
 		GameManager._setOpenLevels(self.name.right(5).to_int() + 1)
