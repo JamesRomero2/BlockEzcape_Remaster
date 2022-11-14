@@ -7,7 +7,7 @@ onready var timer := $Timer
 
 var playing := false
 
-func _castingVenom():
+func _casting():
 	if playing: return
 	
 	playing = true
@@ -19,7 +19,7 @@ func _spawnedVenom():
 
 func _on_Venom_body_entered(body):
 	if body.name == "Player":
-		emit_signal("playerAffected")
+		body.playerDamage()
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "CastingVenom":

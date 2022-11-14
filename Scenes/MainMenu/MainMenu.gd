@@ -13,6 +13,11 @@ func _ready():
 		GlobalMusic._changeMusic(load(mainMenuBGMusic))
 	_connectSignals()
 
+func _unhandled_input(event):
+	if event.is_pressed():
+		if event.is_action_pressed("activateDemo"):
+			activateDemo()
+
 func _connectSignals():
 	buttonGroup.connect("buttonPressedName", self, "_buttonPressed")
 	settings.backButton.connect("buttonPressed", self, "_onBackButton")
@@ -51,3 +56,6 @@ func _resetPanelDecision(name):
 			LoadingScreen.loadLevel("Level 00")
 		"No":
 			resetWarning.visible = false
+
+func activateDemo():
+	GameManager._openAllLevels()

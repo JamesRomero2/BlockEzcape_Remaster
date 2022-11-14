@@ -10,6 +10,11 @@ var windowDisplay: bool = false setget _setWindowDisplay, _getWindowDisplay
 const BGMUSICBUS = "BGMusic"
 const SFXBUS = "SFX"
 
+func _ready():
+	_setWindowDisplay(_getWindowDisplay())
+	_setMusicVolume(_getMusicVolume())
+	_setSFXVolume(_getSFXVolume())
+
 func _setWindowDisplay(value):
 	saveFile.fullScreen = value
 	windowDisplay = value

@@ -11,25 +11,24 @@ func _unhandled_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("escape"):
 			_unpause()
-			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _on_Unpause_pressed():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	_unpause()
 
 func _unpause():
 	GameManager._setGamePaused(false)
 	GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
 	self.visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_tree().paused = false
 	get_parent().set_process_unhandled_input(true)
 
 func _on_MainMenuButton_pressed():
-	_on_Unpause_pressed()
+	_unpause()
 	LoadingScreen.loadLevel("MainMenu")
 
 func _on_MapButton_pressed():
-	_on_Unpause_pressed()
+	_unpause()
 	LoadingScreen.loadLevel("WorldMap")
 
 func _on_DisplayModeButton_pressed():
@@ -47,3 +46,7 @@ func _on_MusicVolume_value_changed(value):
 
 func _on_SFXVolume_value_changed(value):
 	GlobalSettings._setSFXVolume(value)
+
+func _on_Restart_pressed():
+	_unpause()
+	get_tree().reload_current_scene()

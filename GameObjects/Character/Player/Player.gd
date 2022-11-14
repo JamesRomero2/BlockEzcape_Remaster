@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal objectStateChange(node)
 signal playerPushed(node)
+signal playerDamage
 
 onready var raycast := $RayCast2D
 onready var animation := $AnimationPlayer
@@ -29,11 +30,12 @@ func _process(delta):
 
 func _playerMove(direction):
 	var vectorPos = inputs[direction] * gridSize
-	_animatePlayer(vectorPos)
 	raycast.cast_to = vectorPos
 	raycast.force_raycast_update()
 	var nextPos = position + vectorPos
 	if !raycast.is_colliding():
+		animatePlayer(direction)
+		walkSFX.play()
 		_moveToNextPos(nextPos)
 		_objectStateJournal(vectorPos)
 		emit_signal("objectStateChange", self)
@@ -52,12 +54,13 @@ func _moveToNextPos(pos):
 	)
 	$Tween.start()
 	moving = true
-	walkSFX.play()
 
 func _pushBlocks(pos, dir, vPos):
 	var collider = raycast.get_collider()
 	if collider.is_in_group("Box") || collider.is_in_group("Symbols"):
 		if collider._moveBoxToNextPos(dir):
+			animatePlayer(dir)
+			walkSFX.play()
 			_moveToNextPos(pos)
 			_objectStateJournal(vPos)
 			emit_signal("playerPushed", self)
@@ -75,16 +78,20 @@ func _objectStateJournal(playerMoves):
 func _undo():
 	undoMovement()
 
-func _animatePlayer(vector):
-	if vector.x > 0:
-		animation.play("LookRight")
-	elif vector.x < 0:
-		animation.play("LookLeft")
-	if vector.y > 0:
-		animation.play("LookBackward")
-	elif vector.y < 0:
-		animation.play("LookForward")
+func animatePlayer(dir):
+#	print(dir)
+	match dir:
+		"up":
+			animation.play("WalkingUp")
+		"down":
+			animation.play("WalkingDown")
+		"left":
+			animation.play("WalkingLeft")
+		"right":
+			animation.play("WalkingRight")
 	
 func _on_Tween_tween_completed(object, key):
 	moving = false
 	
+func playerDamage():
+	emit_signal("playerDamage")

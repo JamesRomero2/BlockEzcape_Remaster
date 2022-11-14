@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Textures/LevelSelector.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/WorldMap/LevelSelector/LevelSelector.gd" type="Script" id=2]
-[ext_resource path="res://GameObjects/Character/Player/Sounds/PlayerWalking.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/GameAssets/Sounds/PlayerWalking.tres" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.0
@@ -52,7 +52,7 @@ anims/LevelSelectorIdle = SubResource( 2 )
 [node name="SFX" type="Node" parent="."]
 
 [node name="WalkSFX" type="AudioStreamPlayer" parent="SFX"]
-stream = ExtResource( 4 )
+stream = ExtResource( 3 )
 bus = "SFX"
 
 [node name="Tween" type="Tween" parent="."]

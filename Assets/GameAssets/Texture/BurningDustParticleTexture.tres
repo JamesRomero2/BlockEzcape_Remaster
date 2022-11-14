@@ -1,0 +1,5 @@
+[gd_resource type="StreamTexture" format=2]
+
+[resource]
+flags = 4
+load_path = "res://.import/DUMMY_Particles.png-163703d3f20f094117ef9f9bbdba1546.stex"

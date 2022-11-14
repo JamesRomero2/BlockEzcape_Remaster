@@ -15,7 +15,7 @@
 [ext_resource path="res://addons/dialogic/Images/Toolbar/add-theme.svg" type="Texture" id=13]
 [ext_resource path="res://addons/dialogic/Editor/MasterTree/MasterTree.tscn" type="PackedScene" id=35]
 
-[sub_resource type="Image" id=9]
+[sub_resource type="Image" id=13]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "LumAlpha8",
@@ -24,10 +24,10 @@ data = {
 "width": 16
 }
 
-[sub_resource type="ImageTexture" id=2]
+[sub_resource type="ImageTexture" id=3]
 flags = 4
 flags = 4
-image = SubResource( 9 )
+image = SubResource( 13 )
 size = Vector2( 16, 16 )
 
 [sub_resource type="InputEventKey" id=7]
@@ -36,7 +36,7 @@ scancode = 16777252
 [sub_resource type="ShortCut" id=8]
 shortcut = SubResource( 7 )
 
-[sub_resource type="Image" id=10]
+[sub_resource type="Image" id=14]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "LumAlpha8",
@@ -45,14 +45,14 @@ data = {
 "width": 16
 }
 
-[sub_resource type="ImageTexture" id=4]
+[sub_resource type="ImageTexture" id=11]
 flags = 4
 flags = 4
-image = SubResource( 10 )
+image = SubResource( 14 )
 size = Vector2( 16, 16 )
 
-[sub_resource type="StyleBoxTexture" id=5]
-texture = SubResource( 4 )
+[sub_resource type="StyleBoxTexture" id=12]
+texture = SubResource( 11 )
 region_rect = Rect2( 0, 0, 16, 16 )
 margin_left = 2.0
 margin_right = 2.0
@@ -141,14 +141,14 @@ text = "      Fold  "
 margin_left = 63.0
 margin_right = 91.0
 margin_bottom = 24.0
-icon = SubResource( 2 )
+icon = SubResource( 3 )
 align = 0
 
 [node name="ButtonUnfold" type="ToolButton" parent="ToolBar/FoldTools"]
 margin_left = 95.0
 margin_right = 123.0
 margin_bottom = 24.0
-icon = SubResource( 2 )
+icon = SubResource( 3 )
 align = 0
 
 [node name="PlayTimeline" type="ToolButton" parent="ToolBar/FoldTools"]
@@ -159,39 +159,39 @@ margin_bottom = 24.0
 mouse_default_cursor_shape = 2
 shortcut = SubResource( 8 )
 text = "Play Timeline"
-icon = SubResource( 2 )
+icon = SubResource( 3 )
 
 [node name="Spacer" type="Control" parent="ToolBar"]
 margin_left = 160.0
-margin_right = 747.0
+margin_right = 389.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 
 [node name="Web" type="ToolButton" parent="ToolBar"]
 self_modulate = Color( 0.870588, 0.870588, 0.870588, 1 )
-margin_left = 751.0
-margin_right = 835.0
+margin_left = 393.0
+margin_right = 477.0
 margin_bottom = 24.0
 mouse_default_cursor_shape = 2
 text = "Website"
-icon = SubResource( 2 )
+icon = SubResource( 3 )
 
 [node name="Docs" type="ToolButton" parent="ToolBar"]
 self_modulate = Color( 0.870588, 0.870588, 0.870588, 1 )
-margin_left = 839.0
-margin_right = 900.0
+margin_left = 481.0
+margin_right = 542.0
 margin_bottom = 24.0
 mouse_default_cursor_shape = 2
 text = "Help"
-icon = SubResource( 2 )
+icon = SubResource( 3 )
 
 [node name="Version" type="Label" parent="ToolBar"]
 self_modulate = Color( 1, 1, 1, 0.631373 )
-margin_left = 904.0
+margin_left = 546.0
 margin_top = 5.0
-margin_right = 1024.0
+margin_right = 640.0
 margin_bottom = 19.0
-text = "Dialogic v1.4 - DEV"
+text = "Dialogic v1.4.5"
 
 [node name="DocumentationNavigation" type="HBoxContainer" parent="ToolBar"]
 visible = false
@@ -212,7 +212,7 @@ margin_bottom = 32.0
 rect_min_size = Vector2( 22, 22 )
 focus_mode = 0
 disabled = true
-icon = SubResource( 2 )
+icon = SubResource( 3 )
 flat = true
 expand_icon = true
 
@@ -223,7 +223,7 @@ margin_bottom = 32.0
 rect_min_size = Vector2( 22, 22 )
 focus_mode = 0
 disabled = true
-icon = SubResource( 2 )
+icon = SubResource( 3 )
 flat = true
 expand_icon = true
 
@@ -237,13 +237,13 @@ __meta__ = {
 
 [node name="MasterTreeContainer" type="VBoxContainer" parent="MainPanel"]
 margin_right = 150.0
-margin_bottom = 562.0
+margin_bottom = 322.0
 
 [node name="FilterMasterTreeEdit" type="LineEdit" parent="MainPanel/MasterTreeContainer"]
 margin_right = 150.0
 margin_bottom = 26.0
 clear_button_enabled = true
-right_icon = SubResource( 2 )
+right_icon = SubResource( 3 )
 placeholder_text = "Filter"
 
 [node name="MasterTree" parent="MainPanel/MasterTreeContainer" instance=ExtResource( 35 )]
@@ -251,7 +251,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 30.0
 margin_right = 150.0
-margin_bottom = 562.0
+margin_bottom = 322.0
 size_flags_vertical = 3
 
 [node name="TimelineEditor" parent="MainPanel" instance=ExtResource( 2 )]
@@ -289,18 +289,18 @@ anchor_bottom = 0.0
 margin_left = 162.0
 margin_right = 1024.0
 margin_bottom = 562.0
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 12 )
 
 [node name="Empty" type="CenterContainer" parent="MainPanel"]
 margin_left = 162.0
-margin_right = 1024.0
-margin_bottom = 562.0
+margin_right = 640.0
+margin_bottom = 322.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainPanel/Empty"]
-margin_left = 291.0
-margin_top = 274.0
-margin_right = 571.0
-margin_bottom = 288.0
+margin_left = 99.0
+margin_top = 154.0
+margin_right = 379.0
+margin_bottom = 168.0
 
 [node name="Label" type="Label" parent="MainPanel/Empty/VBoxContainer"]
 margin_right = 280.0

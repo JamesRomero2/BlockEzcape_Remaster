@@ -23,6 +23,7 @@ var mins
 
 var undoRedoJournal: UndoRedo = UndoRedo.new()
 var canUndo: bool = true
+var playingDialog: bool = false
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -32,10 +33,9 @@ func _ready():
 func _playDialog(value):
 	if value == "":
 		_playGame()
-#		just play the game
 	else:
-#		play Dialog
 		if get_node_or_null('DialogNode') == null:
+			playingDialog = true
 			GameManager._setGamePaused(true)
 			GameManager._setGameOver(true)
 			GameManager._setGameTimerActive(false)
@@ -47,6 +47,7 @@ func _dialogEnd(timeline_name):
 	_playGame()
 
 func _playGame():
+	playingDialog = false
 	GameManager._setGameOver(false)
 	GameManager._setGamePaused(false)
 	GameManager._setGameTimerActive(true)
@@ -76,7 +77,14 @@ func _unhandled_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("escape") and !GameManager._getGameOver():
 			_changeGameState()
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if playingDialog and event.is_action_pressed("skip"):
+				var dialog = self.get_child(get_child_count() - 1)
+				if dialog.get_child(0).name == "DialogNode":
+					var dialogNode = dialog.get_child(0)
+					dialogNode.queue_free()
+					_playGame()
+				else:
+					print("No Dialog Node")
 
 func _process(delta):
 	_gameTimer(delta)
@@ -139,6 +147,7 @@ func _changeGameState():
 	GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
 	GameManager._setGamePaused(!GameManager._getGamePause())
 	pause.visible = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	set_process_unhandled_input(false)
 	get_tree().paused = true
 

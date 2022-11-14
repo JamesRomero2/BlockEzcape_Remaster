@@ -2,10 +2,11 @@
 
 [ext_resource path="res://Scenes/Stages/BossStage/TheSerpent/Animation/Serpent.tres" type="SpriteFrames" id=1]
 
-[node name="Serpent" type="Node2D"]
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="Serpent" type="AnimatedSprite"]
 frames = ExtResource( 1 )
 animation = "Boss"
-frame = 1
+frame = 4
 playing = true
+__meta__ = {
+"_editor_description_": ""
+}

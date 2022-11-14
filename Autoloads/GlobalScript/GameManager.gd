@@ -71,3 +71,6 @@ func _resetRecords():
 		recordFile[str(levelRecord)].Ranking = "No Record Yet"
 	SaveHighScore._saveHighScore()
 
+func _openAllLevels():
+	for i in 21:
+		_setOpenLevels(i)

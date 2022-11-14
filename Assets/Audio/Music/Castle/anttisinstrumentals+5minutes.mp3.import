@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/anttisinstrumentals+5minutes.mp3-e1b13e832ae2af8bd013ab9a8af2b76d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Castle/anttisinstrumentals+5minutes.mp3"
+dest_files=[ "res://.import/anttisinstrumentals+5minutes.mp3-e1b13e832ae2af8bd013ab9a8af2b76d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

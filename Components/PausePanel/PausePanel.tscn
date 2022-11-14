@@ -96,7 +96,7 @@ alignment = 1
 
 [node name="Unpause" type="Button" parent="Control/VBoxContainer"]
 margin_right = 256.0
-margin_bottom = 58.0
+margin_bottom = 42.0
 rect_min_size = Vector2( 256, 40 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -121,9 +121,9 @@ align = 1
 valign = 1
 
 [node name="MapButton" type="Button" parent="Control/VBoxContainer"]
-margin_top = 65.0
+margin_top = 49.0
 margin_right = 256.0
-margin_bottom = 123.0
+margin_bottom = 91.0
 rect_min_size = Vector2( 256, 40 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -147,8 +147,35 @@ text = "Return to Map"
 align = 1
 valign = 1
 
+[node name="Restart" type="Button" parent="Control/VBoxContainer"]
+margin_top = 98.0
+margin_right = 256.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 256, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/VBoxContainer/Restart"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+patch_margin_left = 6
+patch_margin_top = 8
+patch_margin_right = 6
+patch_margin_bottom = 10
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/Restart/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Restart"
+align = 1
+valign = 1
+
 [node name="MainMenuButton" type="Button" parent="Control/VBoxContainer"]
-margin_top = 130.0
+margin_top = 147.0
 margin_right = 256.0
 margin_bottom = 189.0
 rect_min_size = Vector2( 256, 40 )
@@ -267,6 +294,7 @@ flat = true
 
 [connection signal="pressed" from="Control/VBoxContainer/Unpause" to="." method="_on_Unpause_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/MapButton" to="." method="_on_MapButton_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 [connection signal="value_changed" from="Control/VBoxContainer2/Music/MusicVolume" to="." method="_on_MusicVolume_value_changed"]
 [connection signal="value_changed" from="Control/VBoxContainer2/SoundEffects/SFXVolume" to="." method="_on_SFXVolume_value_changed"]

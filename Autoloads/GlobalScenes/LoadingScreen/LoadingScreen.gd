@@ -18,12 +18,12 @@ var levelAddresses = {
 	"Level 02" : "res://Scenes/Stages/Forest/Level 02.tscn",
 	"Level 03" : "res://Scenes/Stages/Forest/Level 03.tscn",
 	"Level 04" : "res://Scenes/Stages/Forest/Level 04.tscn",
-	"Level 05" : "res://Scenes/Stages/BossStage/TheSerpent/TheSerpent.tscn",
+	"Level 05" : "res://Scenes/Stages/BossStage/TheSerpent/Level 05.tscn",
 	"Level 06" : "res://Scenes/Stages/Underground/Level 06.tscn",
 	"Level 07" : "res://Scenes/Stages/Underground/Level 07.tscn",
 	"Level 08" : "res://Scenes/Stages/Underground/Level 08.tscn",
 	"Level 09" : "res://Scenes/Stages/Underground/Level 09.tscn",
-	"Level 10" : "",
+	"Level 10" : "res://Scenes/Stages/BossStage/TheGolem/Level 10.tscn",
 	"Level 11" : "res://Scenes/Stages/Ruins/Level 11.tscn",
 	"Level 12" : "res://Scenes/Stages/Ruins/Level 12.tscn",
 	"Level 13" : "res://Scenes/Stages/Ruins/Level 13.tscn",
@@ -42,6 +42,7 @@ func _ready():
 	currentScene = root.get_child(root.get_child_count() - 1)
 
 func loadLevel(level):
+	currentScene = root.get_child(root.get_child_count() - 1)
 	currentScene.queue_free()
 	loader = ResourceLoader.load_interactive(levelAddresses[level])
 	
