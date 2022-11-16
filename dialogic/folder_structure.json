@@ -53,6 +53,20 @@
 				"timeline-1667276127.json"
 			],
 			"folders": {
+				"Dungeon": {
+					"files": [
+						"timeline-1668590035.json",
+						"timeline-1668590267.json",
+						"timeline-1668590331.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				},
 				"Forest": {
 					"files": [
 						"timeline-1666707835.json",
@@ -67,13 +81,27 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": true
+						"folded": false
 					}
 				},
 				"IntroDialog": {
 					"files": [
 						"timeline-1668573825.json",
 						"timeline-1668575112.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
+					}
+				},
+				"Magical": {
+					"files": [
+						"timeline-1668590356.json",
+						"timeline-1668590373.json",
+						"timeline-1668590395.json"
 					],
 					"folders": {
 
@@ -94,6 +122,21 @@
 					"metadata": {
 						"color": null,
 						"folded": true
+					}
+				},
+				"Underground": {
+					"files": [
+						"timeline-1668589870.json",
+						"timeline-1668589916.json",
+						"timeline-1668589970.json",
+						"timeline-1668589974.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
 					}
 				}
 			},

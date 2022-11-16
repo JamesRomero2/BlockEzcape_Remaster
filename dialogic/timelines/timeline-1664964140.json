@@ -24,13 +24,13 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "ALRIGHT ! CHORES ARE DONE, ITS TIME TO GO TO THE LIBRARY TO DO SOME HOMEWORK"
+			"text": "Alright! Chores are done. time to head to the library to do some howework "
 		},
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "FOR TODAYS HOME WORK IS... "
+			"text": "And for today's homework is ......"
 		},
 		{
 			"character": "character-1666707883.json",
@@ -42,19 +42,19 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiAngry",
-			"text": " I HATE MATH, IM TO AFRAID TO SOLVE MATH INFRONT "
+			"text": "I hate math. I'm afraid to get the answer wrong."
 		},
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "BUT STILL GOt TO DO WHAT YOU GOTTA DO"
+			"text": "But still got to do what you have to do"
 		},
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "I WONDER IF THE LIBRARY HAS SOME BOOKS TO HELP ME WITH MATH"
+			"text": "I wonder if the library have some book that can help me"
 		},
 		{
 			"animation": "4-fade_out.gd",

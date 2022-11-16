@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Stages/BossStage/BossStage.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/LevelBG/Ruins/9.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/CastleCurtain.png" type="Texture" id=3]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Stages/BossStage/TheKnight/Puzzles/1.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -38,6 +39,7 @@ tracks/0/keys = {
 
 [node name="Level 15" type="Node"]
 script = ExtResource( 1 )
+set1 = ExtResource( 6 )
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10

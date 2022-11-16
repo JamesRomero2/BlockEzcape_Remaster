@@ -5,7 +5,6 @@ signal playerAffected
 export(Vector2) var flyingDirection := Vector2.DOWN
 export(float) var flyingSpeed := 60
 
-onready var animation := $AnimationPlayer
 onready var timer := $Timer
 
 func _ready():

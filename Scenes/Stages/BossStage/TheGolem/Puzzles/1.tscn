@@ -93,6 +93,7 @@ position = Vector2( 360, 136 )
 
 [node name="Golem" parent="Board" instance=ExtResource( 4 )]
 position = Vector2( 456, -48 )
+frame = 1
 
 [node name="Traps" type="Node2D" parent="Board"]
 

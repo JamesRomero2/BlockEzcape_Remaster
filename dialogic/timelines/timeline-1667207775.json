@@ -24,19 +24,19 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiTalking",
-			"text": "THERES A WOOD BLOCKING MY WAY"
+			"text": "There's a wood blocking my way"
 		},
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiHappy",
-			"text": "BUT NO WORRIES IM SO STRONG"
+			"text": "But no worries, I'm strong enough to remove this piece of wood,"
 		},
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiHappy",
-			"text": "I CAN JUST PUSH THIS WOOD TO A SAFE AREA"
+			"text": "I can just push it to the safe place at the corner"
 		},
 		{
 			"animation": "4-fade_out.gd",
