@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FinalUndergroundLevelMusic.ogg-2eb1cbc8f9c164b1b358fb6a5defeeb4.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Underground/FinalUndergroundLevelMusic.ogg"
+dest_files=[ "res://.import/FinalUndergroundLevelMusic.ogg-2eb1cbc8f9c164b1b358fb6a5defeeb4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

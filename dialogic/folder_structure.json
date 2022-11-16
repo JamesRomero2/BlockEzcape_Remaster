@@ -6,7 +6,8 @@
 		"Characters": {
 			"files": [
 				"character-1666707883.json",
-				"character-1666707908.json"
+				"character-1666707908.json",
+				"character-1668575118.json"
 			],
 			"folders": {
 
@@ -32,7 +33,8 @@
 			"files": [
 				"default-theme.cfg",
 				"archi-theme.cfg",
-				"theme-1667288705.cfg"
+				"theme-1667288705.cfg",
+				"theme-1668575142.cfg"
 			],
 			"folders": {
 
@@ -59,6 +61,19 @@
 						"timeline-1666790513.json",
 						"timeline-1666791164.json",
 						"timeline-1668159893.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": true
+					}
+				},
+				"IntroDialog": {
+					"files": [
+						"timeline-1668573825.json",
+						"timeline-1668575112.json"
 					],
 					"folders": {
 

@@ -46,6 +46,7 @@ func _ready():
 	_playDialog(introTimelineName)
 	_cast()
 	venomFog.material.set_shader_param("softness", 6)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func applyShake():
 	shakeStrength = noiseShakeStrength
@@ -239,6 +240,7 @@ func _onPlayerHurt():
 		deathScreen.visible = true
 		GameManager._setGameOver(true)
 		GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_Reset_buttonPressed(buttonName):
 	get_tree().reload_current_scene()

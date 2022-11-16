@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://Scenes/CutScenes/LibraryCutscene/LibraryCutscene.gd" type="Script" id=1]
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,25 @@
 [ext_resource path="res://Assets/Textures/random_selection.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Textures/effect_4.png" type="Texture" id=7]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Components/Whirlpool/Whirlpool.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GameObjects/Character/NPC/Librarian.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Textures/MovementPanel.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/ArrowIndicator.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=40]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 4
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=41]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 4
+font_data = ExtResource( 9 )
 
 [sub_resource type="TileSet" id=1]
 0/name = "Room_Builder_free_32x32.png 0"
@@ -303,8 +322,14 @@ color_ramp = SubResource( 33 )
 [sub_resource type="CircleShape2D" id=23]
 radius = 36.0
 
+[sub_resource type="StreamTexture" id=42]
+load_path = "res://.import/MovementPanel.png-e031989199dc5e7973f38fab550232f5.stex"
+
 [sub_resource type="CircleShape2D" id=24]
 radius = 181.003
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 16, 8 )
 
 [sub_resource type="Animation" id=37]
 resource_name = "bookOpenAnimation"
@@ -333,6 +358,24 @@ tracks/0/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=43]
+resource_name = "transportToBlockEzcape"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_nextScene"
+} ]
+}
+
 [node name="LibraryCutscene" type="Node"]
 script = ExtResource( 1 )
 
@@ -344,8 +387,61 @@ zoom = Vector2( 0.8, 0.8 )
 smoothing_enabled = true
 smoothing_speed = 3.0
 
+[node name="Whirlpool" parent="Camera2D" instance=ExtResource( 10 )]
+modulate = Color( 0, 5.21176, 100, 0 )
+scale = Vector2( 3, 3 )
+z_index = 1
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 160, 168 )
+
+[node name="Arrow" type="Sprite" parent="Player"]
+position = Vector2( 0, -16 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+
+[node name="Task1" type="Sprite" parent="Player"]
+position = Vector2( 0, -32 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Label" type="Label" parent="Player/Task1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -14.5
+margin_right = 80.0
+margin_bottom = 14.5
+custom_fonts/font = SubResource( 40 )
+text = "Approach Librarian"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Task2" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( 0, -32 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Label" type="Label" parent="Player/Task2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -97.0
+margin_top = -14.5
+margin_right = 97.0
+margin_bottom = 14.5
+custom_fonts/font = SubResource( 41 )
+text = "Find Mathematics Book"
+align = 1
+valign = 1
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="GameWorld" type="Node2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -372,6 +468,11 @@ cell_quadrant_size = 32
 cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 format = 1
 tile_data = PoolIntArray( -589821, 0, 0, -589813, 0, 0, -393213, 0, 0, -393205, 0, 0, -196605, 0, 0, -196597, 0, 0 )
+
+[node name="AnimatedSprite" parent="GameWorld" instance=ExtResource( 11 )]
+position = Vector2( 208, 112 )
+scale = Vector2( 0.666, 0.666 )
+frame = 2
 
 [node name="TileMap2" type="TileMap" parent="GameWorld"]
 tile_set = SubResource( 2 )
@@ -549,6 +650,14 @@ texture = ExtResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Close"]
 shape = SubResource( 23 )
 
+[node name="Space" type="Sprite" parent="Close"]
+position = Vector2( -2, -20 )
+scale = Vector2( 0.5, 0.5 )
+texture = SubResource( 42 )
+hframes = 2
+vframes = 3
+frame = 4
+
 [node name="Area2D2" type="Area2D" parent="."]
 position = Vector2( 92, -189 )
 collision_layer = 8
@@ -559,8 +668,32 @@ shape = SubResource( 24 )
 
 [node name="Tween" type="Tween" parent="."]
 
+[node name="Interact" type="Area2D" parent="."]
+position = Vector2( 96, 88 )
+collision_layer = 8
+collision_mask = 2
+
+[node name="Movement9" type="Sprite" parent="Interact"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+hframes = 2
+vframes = 3
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact"]
+shape = SubResource( 39 )
+
+[node name="Pointers" type="Node2D" parent="."]
+
+[node name="Librarian" type="Position2D" parent="Pointers"]
+position = Vector2( 96, 72 )
+
+[node name="Book" type="Position2D" parent="Pointers"]
+position = Vector2( 64, -208 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/bookOpenAnimation = SubResource( 37 )
+anims/transportToBlockEzcape = SubResource( 43 )
 
 [node name="PausePanel" parent="." instance=ExtResource( 8 )]
 visible = false

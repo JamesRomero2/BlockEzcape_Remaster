@@ -3,7 +3,7 @@ extends Area2D
 signal playerAffected
 
 export(Vector2) var flyingDirection := Vector2.DOWN
-export(float) var flyingSpeed := 0.5
+export(float) var flyingSpeed := 60
 
 onready var animation := $AnimationPlayer
 onready var timer := $Timer
@@ -12,7 +12,7 @@ func _ready():
 	timer.start()
 
 func _process(delta):
-	position += flyingDirection * flyingSpeed
+	position += flyingDirection * flyingSpeed * delta
 
 func _on_Timer_timeout():
 	queue_free()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FinalMagicalBossLevelMusic.ogg-68310951ef8afa8235f71bad4a59a0d3.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Magical/FinalMagicalBossLevelMusic.ogg"
+dest_files=[ "res://.import/FinalMagicalBossLevelMusic.ogg-68310951ef8afa8235f71bad4a59a0d3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

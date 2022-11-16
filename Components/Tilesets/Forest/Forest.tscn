@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Components/Tilesets/Forest/Tileset/ForestTileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Components/Tilesets/Forest/Tileset/ForestBlocksTileset.tres" type="TileSet" id=2]
-[ext_resource path="res://Components/Tilesets/Forest/Forest.gd" type="Script" id=3]
+[ext_resource path="res://Components/Tilesets/Tilesets.gd" type="Script" id=3]
 [ext_resource path="res://Components/Tilesets/Forest/Textures/Ground.png" type="Texture" id=4]
 
 [sub_resource type="TileSet" id=1]
@@ -32,6 +32,7 @@
 
 [node name="ForestTilemap" type="Node2D"]
 script = ExtResource( 3 )
+selectedBlockType = "Forest"
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )

@@ -8,6 +8,7 @@ onready var raycast := $RayCast2D
 onready var animation := $AnimationPlayer
 onready var walkSFX := $SFX/WalkSFX
 onready var undoWalkSFX := $SFX/UndoWalkSFX
+onready var hurtSFX := $SFX/HurtSFX
 
 var journal: Array = Array()
 var moving: bool = false
@@ -79,7 +80,6 @@ func _undo():
 	undoMovement()
 
 func animatePlayer(dir):
-#	print(dir)
 	match dir:
 		"up":
 			animation.play("WalkingUp")
@@ -95,3 +95,4 @@ func _on_Tween_tween_completed(object, key):
 	
 func playerDamage():
 	emit_signal("playerDamage")
+	hurtSFX.play()

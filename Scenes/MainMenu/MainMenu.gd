@@ -5,18 +5,19 @@ onready var settings = $MainMenuContainer/Settings
 onready var exitPanel := $MainMenuContainer/ExitPanel
 onready var resetWarning := $MainMenuContainer/ResetSaves
 onready var resetButtonGroup := $MainMenuContainer/ResetSaves/NinePatchRect/VBoxContainer/ButtonGroup
+onready var demoButtonGroup := $DemoPanel/Control/NinePatchRect/VBoxContainer/ButtonGroup
+onready var demoPanel := $DemoPanel
 
-var mainMenuBGMusic = "res://Assets/Audio/Music/space-120280.mp3"
+var mainMenuBGMusic = load("res://Assets/Audio/Music/MainMenuMusic.ogg")
 
 func _ready():
-	if mainMenuBGMusic != GlobalMusic._getMusic():
-		GlobalMusic._changeMusic(load(mainMenuBGMusic))
+	GlobalMusic._changeMusic(mainMenuBGMusic)
 	_connectSignals()
 
 func _unhandled_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("activateDemo"):
-			activateDemo()
+			demoPanel.visible = true
 
 func _connectSignals():
 	buttonGroup.connect("buttonPressedName", self, "_buttonPressed")
@@ -24,6 +25,9 @@ func _connectSignals():
 
 	for button in resetButtonGroup.get_children():
 		button.connect("buttonPressed", self, "_resetPanelDecision")
+	
+	for button in demoButtonGroup.get_children():
+		button.connect("buttonPressed", self, "demoActivation")
 
 func _buttonPressed(name):
 	match name:
@@ -59,3 +63,13 @@ func _resetPanelDecision(name):
 
 func activateDemo():
 	GameManager._openAllLevels()
+
+func demoActivation(name):
+	match name:
+		"Yes":
+			demoPanel.visible = false
+			activateDemo()
+			get_tree().current_scene = self
+			get_tree().reload_current_scene()
+		"No":
+			demoPanel.visible = false

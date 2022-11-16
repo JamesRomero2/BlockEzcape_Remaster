@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/FinalCastleBossLevelMusic.ogg-91d154e88952e06e44544dc05b41f51d.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Music/Castle/FinalCastleBossLevelMusic.ogg"
+dest_files=[ "res://.import/FinalCastleBossLevelMusic.ogg-91d154e88952e06e44544dc05b41f51d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -128,6 +128,7 @@ direction = "Left"
 
 [node name="Golem" parent="Board" instance=ExtResource( 4 )]
 position = Vector2( 456, -48 )
+frame = 1
 speed_scale = 1.5
 
 [node name="Timers" type="Node" parent="."]

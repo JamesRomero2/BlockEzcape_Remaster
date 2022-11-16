@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/CutScenes/Intro/Textures/Custome.png" type="Texture" id=2]
@@ -9,10 +9,12 @@
 [ext_resource path="res://Scenes/CutScenes/Intro/Textures/School.png" type="Texture" id=7]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=9]
-[ext_resource path="res://Assets/Textures/Chevron-Arrow.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/CutScenes/Intro/Script/HouseInteract.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/CutScenes/Intro/Textures/Wood.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/CutScenes/Intro/Script/Wood.gd" type="Script" id=12]
 [ext_resource path="res://Scenes/CutScenes/Intro/Script/EnterLibrary.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Textures/ArrowIndicator.png" type="Texture" id=14]
+[ext_resource path="res://Components/Highlighter/Highlighter.tscn" type="PackedScene" id=15]
 
 [sub_resource type="TileSet" id=3]
 0/name = "Custome.png 0"
@@ -99,6 +101,12 @@
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="DynamicFont" id=20]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
+
 [sub_resource type="DynamicFont" id=9]
 size = 18
 outline_size = 1
@@ -119,13 +127,13 @@ extents = Vector2( 20, 40 )
 extents = Vector2( 24, 40 )
 
 [sub_resource type="DynamicFont" id=19]
-size = 10
+size = 12
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 9 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 56, 12 )
+extents = Vector2( 8, 8 )
 
 [sub_resource type="DynamicFont" id=10]
 size = 18
@@ -141,7 +149,7 @@ extents = Vector2( 16, 8 )
 extents = Vector2( 56, 40 )
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 8, 8 )
+extents = Vector2( 6, 6 )
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -206,7 +214,7 @@ tracks/4/keys = {
 "values": [ Vector2( 448, 8 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("GameObjects/Arrow/Set2:modulate")
+tracks/5/path = NodePath("GameObjects/Instructions:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -218,7 +226,7 @@ tracks/5/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("GameObjects/Instructions:modulate")
+tracks/6/path = NodePath("GameObjects/TextUI:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -230,7 +238,7 @@ tracks/6/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("GameObjects/Arrow:modulate")
+tracks/7/path = NodePath("GameObjects/Interact3:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -242,7 +250,7 @@ tracks/7/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("GameObjects/TextUI:modulate")
+tracks/8/path = NodePath("GameObjects/Player:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -251,10 +259,10 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Vector2( -88, -40 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("GameObjects/Interact3:modulate")
+tracks/9/path = NodePath("Camera2D:zoom")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -263,39 +271,15 @@ tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Vector2( 0.5, 0.5 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("GameObjects/Player:position")
+tracks/10/path = NodePath("Camera2D:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -88, -40 ) ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("Camera2D:zoom")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.5, 0.5 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("Camera2D:position")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -329,18 +313,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 448, 24 ), Vector2( 448, 8 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("GameObjects/Arrow/Set2:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [sub_resource type="Animation" id=15]
 resource_name = "Scene1_ShowPush"
@@ -366,7 +338,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.2, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 256, 32 ), Vector2( 256, 40 ) ]
+"values": [ Vector2( 232, 32 ), Vector2( 232, 40 ) ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -385,7 +357,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("GameObjects/Arrow:modulate")
+tracks/1/path = NodePath("GameObjects/TextUI:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -397,7 +369,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("GameObjects/TextUI:modulate")
+tracks/2/path = NodePath("GameObjects/Interact3:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -409,56 +381,24 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("GameObjects/Interact3:modulate")
+tracks/3/path = NodePath("GameObjects/Player:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 2.1, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("GameObjects/Player:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0, 1, 2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -88, -40 ), Vector2( -88, 8 ), Vector2( 8, 8 ) ]
 }
-tracks/5/type = "method"
-tracks/5/path = NodePath("GameObjects/Player")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"values": [ {
-"args": [ Vector2( 0, 16 ) ],
-"method": "_animatePlayer"
-}, {
-"args": [ Vector2( 16, 0 ) ],
-"method": "_animatePlayer"
-}, {
-"args": [ Vector2( 0, 16 ) ],
-"method": "_animatePlayer"
-} ]
-}
-tracks/6/type = "method"
-tracks/6/path = NodePath(".")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 2, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
@@ -467,6 +407,50 @@ tracks/6/keys = {
 }, {
 "args": [  ],
 "method": "_startCutScene"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("GameObjects/Player")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ "down" ],
+"method": "animatePlayer"
+}, {
+"args": [ "down" ],
+"method": "animatePlayer"
+}, {
+"args": [ "down" ],
+"method": "animatePlayer"
+}, {
+"args": [ "down" ],
+"method": "animatePlayer"
+}, {
+"args": [ "down" ],
+"method": "animatePlayer"
+}, {
+"args": [ "right" ],
+"method": "animatePlayer"
+}, {
+"args": [ "right" ],
+"method": "animatePlayer"
+}, {
+"args": [ "right" ],
+"method": "animatePlayer"
+}, {
+"args": [ "right" ],
+"method": "animatePlayer"
+}, {
+"args": [ "right" ],
+"method": "animatePlayer"
+}, {
+"args": [ "down" ],
+"method": "animatePlayer"
 } ]
 }
 
@@ -503,6 +487,49 @@ tile_data = PoolIntArray( -655371, 0, 0, -655370, 0, 0, -655369, 0, 0, -655368, 
 
 [node name="Player" parent="GameObjects" instance=ExtResource( 1 )]
 position = Vector2( -88, -40 )
+
+[node name="Arrow" type="Sprite" parent="GameObjects/Player"]
+position = Vector2( 0, -16 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 14 )
+
+[node name="GotoSafeArea" type="Sprite" parent="GameObjects/Player"]
+visible = false
+position = Vector2( 0, -32 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Label" type="Label" parent="GameObjects/Player/GotoSafeArea"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -55.0
+margin_top = -14.5
+margin_right = 55.0
+margin_bottom = 14.5
+custom_fonts/font = SubResource( 20 )
+text = "Safe Area"
+align = 1
+valign = 1
+
+[node name="GotoLibrary" type="Sprite" parent="GameObjects/Player"]
+position = Vector2( 0, -32 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Label" type="Label" parent="GameObjects/Player/GotoLibrary"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -69.5
+margin_top = -14.5
+margin_right = 69.5
+margin_bottom = 14.5
+custom_fonts/font = SubResource( 9 )
+text = "Go to the Library"
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Instructions" type="Node2D" parent="GameObjects"]
 modulate = Color( 1, 1, 1, 0 )
@@ -609,218 +636,6 @@ shape = SubResource( 6 )
 position = Vector2( -8, 168 )
 shape = SubResource( 7 )
 
-[node name="Arrow" type="Node2D" parent="GameObjects"]
-modulate = Color( 1, 1, 1, 0 )
-
-[node name="Set1" type="Node2D" parent="GameObjects/Arrow"]
-
-[node name="Arr" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 64, 8 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr3" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 96, 8 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr4" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 112, 8 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr5" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 128, 8 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr6" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 144, 8 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr7" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 160, 8 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr8" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 176, 24 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr9" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 176, 40 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr10" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 176, 56 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr11" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 176, 72 )
-rotation = 1.5708
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr12" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 192, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr13" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 208, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr14" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 224, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr15" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 240, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr16" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 256, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr17" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 272, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr18" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 288, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr19" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 304, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr20" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 320, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr21" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 336, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr22" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 352, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr23" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 352, 88 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr2" type="Sprite" parent="GameObjects/Arrow/Set1"]
-position = Vector2( 80, 8 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Set2" type="Node2D" parent="GameObjects/Arrow"]
-modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 320, 0 )
-
-[node name="Arr23" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 272, 88 )
-rotation = 3.14159
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr24" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 256, 88 )
-rotation = 3.14159
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr25" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 240, 88 )
-rotation = 3.14159
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr26" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 224, 88 )
-rotation = 3.14159
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr27" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 208, 88 )
-rotation = 3.14159
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr28" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 192, 88 )
-rotation = 3.14159
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr29" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 176, 88 )
-rotation = 3.14159
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr30" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 160, 88 )
-rotation = 3.14159
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr31" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 144, 88 )
-rotation = 3.14159
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr32" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 128, 88 )
-rotation = 4.71239
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr33" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 128, 72 )
-rotation = 4.71239
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr34" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 128, 56 )
-rotation = 4.71239
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr35" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 128, 40 )
-rotation = 4.71239
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
-[node name="Arr36" type="Sprite" parent="GameObjects/Arrow/Set2"]
-position = Vector2( 128, 24 )
-rotation = 4.71239
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 10 )
-
 [node name="TextUI" type="Node2D" parent="GameObjects"]
 modulate = Color( 1, 1, 1, 0 )
 
@@ -829,8 +644,8 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 208, 40 )
 
 [node name="Label" type="Label" parent="GameObjects/TextUI/Sprite"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 110.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 19 )
 text = "Remove the Obstacle.
 Push it to the Safe Area"
@@ -869,6 +684,9 @@ position = Vector2( 664, 88 )
 collision_layer = 8
 collision_mask = 6
 
+[node name="Particles2D" parent="GameObjects/Interact3/Here" instance=ExtResource( 15 )]
+scale = Vector2( 0.5, 0.5 )
+
 [node name="Movement11" type="Sprite" parent="GameObjects/Interact3/Here"]
 scale = Vector2( 0.5, 0.5 )
 hframes = 2
@@ -890,6 +708,8 @@ shape = SubResource( 12 )
 position = Vector2( -96, -40 )
 collision_layer = 8
 collision_mask = 2
+script = ExtResource( 10 )
+timeLine = "/IntroDialog/HouseDialog"
 
 [node name="Movement9" type="Sprite" parent="GameObjects/Interact3/Interact"]
 scale = Vector2( 0.5, 0.5 )
@@ -966,9 +786,20 @@ anims/Scene1_ShowEnter = SubResource( 17 )
 anims/Scene1_ShowPush = SubResource( 15 )
 anims/StartScene = SubResource( 18 )
 
+[node name="Pointer" type="Node2D" parent="."]
+
+[node name="LibraryPosition" type="Position2D" parent="Pointer"]
+position = Vector2( 448, 0 )
+
+[node name="SafeAreaPosition" type="Position2D" parent="Pointer"]
+position = Vector2( 664, 88 )
+
+[node name="Tween" type="Tween" parent="."]
+
 [connection signal="body_entered" from="GameObjects/Interact3/Here" to="." method="_on_Here_body_entered"]
 [connection signal="body_entered" from="GameObjects/Interact3/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="GameObjects/Interact3/Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="tween_completed" from="GameObjects/Wood/Tween" to="GameObjects/Wood" method="_on_Tween_tween_completed"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 
 [editable path="GameObjects/ForestTilemap"]

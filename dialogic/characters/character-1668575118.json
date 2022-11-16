@@ -1,0 +1,21 @@
+{
+	"color": "#ff02bef8",
+	"description": "",
+	"display_name": "Librarian",
+	"display_name_bool": true,
+	"id": "character-1668575118.json",
+	"mirror_portraits": false,
+	"name": "Librarian",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": -175,
+	"offset_y": -7,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Assets/Textures/Character/Librarian.png"
+		}
+	],
+	"scale": 60,
+	"theme": "theme-1668575142.cfg"
+}

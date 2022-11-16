@@ -20,15 +20,19 @@ var result = Array()
 var time = 0
 var secs
 var mins
-
 var undoRedoJournal: UndoRedo = UndoRedo.new()
 var canUndo: bool = true
 var playingDialog: bool = false
+var forestMusic = load("res://Assets/Audio/Music/Forest/FinalForestLevelMusic.ogg")
+var undergroundMusic = load("res://Assets/Audio/Music/Underground/FinalUndergroundLevelMusic.ogg")
+var castleMusic = load("res://Assets/Audio/Music/Castle/FinalCastleLevelMusic.ogg")
+var magicalMusic = load("res://Assets/Audio/Music/Magical/FinalMagicalLevelMusic.ogg")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	_playDialog(timelineName)
 	_connectSignal()
+	levelMusicManager()
 
 func _playDialog(value):
 	if value == "":
@@ -215,3 +219,14 @@ func _undoSystem():
 								undoRedoJournal.undo()
 					canUndo = false
 					$Timer.start()
+
+func levelMusicManager():
+	var levelNum = self.name.right(5).to_int()
+	if levelNum > 0 and levelNum < 5:
+		GlobalMusic._changeMusic(forestMusic)
+	elif levelNum > 5 and levelNum < 10:
+		GlobalMusic._changeMusic(undergroundMusic)
+	elif levelNum > 10 and levelNum < 15:
+		GlobalMusic._changeMusic(castleMusic)
+	elif levelNum > 15 and levelNum < 20:
+		GlobalMusic._changeMusic(magicalMusic)
