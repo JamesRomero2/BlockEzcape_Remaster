@@ -210,6 +210,7 @@ func _onOperationalStateChange(object):
 	undoRedoJournal.commit_action()
 
 func _cast():
+	if GameManager._getGameOver(): return
 	var fires = Array()
 	fires.clear()
 	for boulder in trap.get_children():

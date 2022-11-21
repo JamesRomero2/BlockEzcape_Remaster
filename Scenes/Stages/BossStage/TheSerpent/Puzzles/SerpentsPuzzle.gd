@@ -175,9 +175,11 @@ func _onScannerInput(value, id, scannerNode):
 	if result.has(false):
 		temple._setAnswer(false)
 		temple._setDoorState(false)
+		temple._setTexture()
 	else:
 		temple._setAnswer(true)
 		temple._setDoorState(true)
+		temple._setTexture()
 
 func _onLevelAccomplish():
 	emit_signal("setDone")
@@ -214,6 +216,7 @@ func _onOperationalStateChange(object):
 	undoRedoJournal.commit_action()
 
 func _cast():
+	if GameManager._getGameOver(): return
 	randomize()
 	var children = trap.get_children()
 	for i in numberOfTraps:
@@ -226,7 +229,6 @@ func _on_SpawningVenomTimer_timeout():
 	_cast()
 
 func _onPlayerHurt():
-	
 	var currentValue = venomFog.material.get_shader_param("softness")
 	if currentValue > 0:
 		venomFog.material.set_shader_param("softness", currentValue - 1)

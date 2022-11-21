@@ -40,7 +40,7 @@ func _changeGameState():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _gameTimer(value):
-	if GameManager._getGameTimerActive():
+	if GameManager._getGameTimerActive() and !GameManager._getPlayerAnimating():
 		time += value
 	
 	secs = fmod(time, 60)

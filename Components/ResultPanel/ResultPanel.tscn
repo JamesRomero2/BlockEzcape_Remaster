@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Components/ResultPanel/ResultPanel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Backto1982/BACKTO1982.TTF" type="DynamicFontData" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Assets/Textures/CopperAward.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Black.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Semibold.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Black.ttf" type="DynamicFontData" id=13]
 
 [sub_resource type="Shader" id=17]
 code = "shader_type canvas_item;
@@ -69,6 +71,117 @@ size = 92
 outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 11 )
+
+[sub_resource type="Gradient" id=23]
+offsets = PoolRealArray( 0, 0.43, 0.56, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0.964706, 1, 0, 1, 0.964706, 1, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 23 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 34
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Gradient" id=26]
+offsets = PoolRealArray( 0, 0.41, 0.63, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=27]
+gradient = SubResource( 26 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 34
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 28
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Gradient" id=31]
+offsets = PoolRealArray( 0, 0.41, 0.63, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=32]
+gradient = SubResource( 31 )
+
+[sub_resource type="DynamicFont" id=33]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=34]
+size = 24
+font_data = ExtResource( 12 )
+
+[sub_resource type="Animation" id=35]
+resource_name = "LevelLocked"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container/LevelRequirements:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1.2, 1.5 ),
+"transitions": PoolRealArray( 0.189465, 4.59479, 4.59479, 0.189465 ),
+"update": 0,
+"values": [ Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "NewLevel"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container/NewLevelUnlocked:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1.2, 1.5 ),
+"transitions": PoolRealArray( 0.241484, 3.86375, 3.86375, 0.241484 ),
+"update": 0,
+"values": [ Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "playHighScoreAnimation"
+} ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "NewRecord"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container/NewRecord:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1.2, 1.5 ),
+"transitions": PoolRealArray( 0.225313, 3.605, 3.605, 0.225313 ),
+"update": 0,
+"values": [ Vector2( 1, 1e-05 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1e-05 ) ]
+}
 
 [sub_resource type="Animation" id=16]
 length = 0.001
@@ -204,10 +317,46 @@ tracks/10/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/11/type = "value"
+tracks/11/path = NodePath("Container/NewRecord:rect_scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1e-05 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Container/NewLevelUnlocked:rect_scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1e-05 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Container/LevelRequirements:rect_scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1e-05 ) ]
+}
 
 [sub_resource type="Animation" id=15]
 resource_name = "ResultsAnimation"
-length = 5.0
+length = 2.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Container/Label2:rect_position")
 tracks/0/interp = 1
@@ -316,31 +465,31 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/9/type = "method"
-tracks/9/path = NodePath(".")
+tracks/9/type = "value"
+tracks/9/path = NodePath("Container/Sprite:scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 1.8 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "_playDialog"
-} ]
+"times": PoolRealArray( 1.5, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 2.25, 2.25 ) ]
 }
-tracks/10/type = "value"
-tracks/10/path = NodePath("Container/Sprite:scale")
+tracks/10/type = "method"
+tracks/10/path = NodePath(".")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 1.5, 1.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 2.25, 2.25 ) ]
+"times": PoolRealArray( 2.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_playDialog"
+} ]
 }
 
 [node name="ResultPanel" type="CanvasLayer"]
@@ -453,9 +602,9 @@ text = "Puzzle Complete"
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = -200.0
-margin_top = 96.0
+margin_top = -84.0
 margin_right = -12.0
-margin_bottom = 125.0
+margin_bottom = -55.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 13 )
 text = "Total Time Spent"
@@ -500,6 +649,134 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 14 )
 text = "S"
 
+[node name="NewRecord" type="Control" parent="Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -6.10352e-05
+rect_scale = Vector2( 1, 1e-05 )
+rect_pivot_offset = Vector2( 320, 180 )
+
+[node name="ColorRect" type="TextureRect" parent="Container/NewRecord"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 140.0
+margin_top = -140.0
+margin_right = -140.0
+margin_bottom = 140.0
+rect_rotation = 90.0
+rect_pivot_offset = Vector2( 180, 320 )
+texture = SubResource( 24 )
+expand = true
+
+[node name="Label4" type="Label" parent="Container/NewRecord"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -324.0
+margin_top = -21.0
+margin_right = 371.0
+margin_bottom = 20.0
+rect_scale = Vector2( 0.919858, 0.919858 )
+rect_pivot_offset = Vector2( 56, 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 25 )
+text = "NEW HIGH SCORE !!!"
+align = 1
+valign = 1
+
+[node name="NewLevelUnlocked" type="Control" parent="Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -6.10352e-05
+rect_scale = Vector2( 1, 1e-05 )
+rect_pivot_offset = Vector2( 320, 180 )
+
+[node name="ColorRect" type="TextureRect" parent="Container/NewLevelUnlocked"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 140.0
+margin_top = -140.0
+margin_right = -140.0
+margin_bottom = 140.0
+rect_rotation = 90.0
+rect_pivot_offset = Vector2( 180, 320 )
+texture = SubResource( 27 )
+expand = true
+
+[node name="Label4" type="Label" parent="Container/NewLevelUnlocked"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -28.0
+margin_top = -28.0
+margin_right = 28.0
+margin_bottom = 13.0
+rect_scale = Vector2( 0.919858, 0.919858 )
+rect_pivot_offset = Vector2( 347, 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 28 )
+text = "NEW LEVEL UNLOCKED"
+align = 1
+valign = 1
+
+[node name="LevelNumberUnlocked" type="Label" parent="Container/NewLevelUnlocked"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -324.0
+margin_top = 3.99998
+margin_right = 371.0
+margin_bottom = 45.0
+rect_scale = Vector2( 0.919858, 0.919858 )
+rect_pivot_offset = Vector2( 56, 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 22 )
+text = "Level 03"
+align = 1
+valign = 1
+
+[node name="LevelRequirements" type="Control" parent="Container"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_scale = Vector2( 1, 1e-05 )
+rect_pivot_offset = Vector2( 320, 180 )
+
+[node name="ColorRect" type="TextureRect" parent="Container/LevelRequirements"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 140.0
+margin_top = -140.0
+margin_right = -140.0
+margin_bottom = 140.0
+rect_rotation = 90.0
+rect_pivot_offset = Vector2( 180, 320 )
+texture = SubResource( 32 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/LevelRequirements"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Container/LevelRequirements/VBoxContainer"]
+margin_top = 148.0
+margin_right = 640.0
+margin_bottom = 212.0
+rect_pivot_offset = Vector2( 320, 32 )
+custom_fonts/bold_font = SubResource( 33 )
+custom_fonts/normal_font = SubResource( 34 )
+bbcode_enabled = true
+bbcode_text = "[center]Sorry Little One
+Get [b]Rank A[/b] to Open Level 06[/center]"
+text = "Sorry Little One
+Get Rank A to Open Level 06"
+fit_content_height = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/LevelLocked = SubResource( 35 )
+anims/NewLevel = SubResource( 30 )
+anims/NewRecord = SubResource( 29 )
 anims/RESET = SubResource( 16 )
 anims/ResultsAnimation = SubResource( 15 )

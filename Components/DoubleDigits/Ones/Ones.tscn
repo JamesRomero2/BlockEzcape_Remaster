@@ -25,15 +25,14 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 10 ]
+"values": [ 0 ]
 }
 
 [node name="Ones" type="Sprite"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
-hframes = 10
+hframes = 11
 vframes = 2
-frame = 10
 script = ExtResource( 12 )
 __meta__ = {
 "_editor_description_": ""

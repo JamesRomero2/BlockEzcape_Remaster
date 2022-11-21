@@ -15,5 +15,5 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0, 10 ]
+"values": [ 0, 11 ]
 }

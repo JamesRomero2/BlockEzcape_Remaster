@@ -1,18 +1,18 @@
 extends Node
 
 onready var camera := $Camera2D
-onready var player := $Player
+onready var player := $GameArea/Player
 onready var enterParticle := $AttentionParticle
 onready var closeParticle := $CloseParticle
 onready var closeBook := $Close
 onready var tween := $Tween
 onready var animation := $AnimationPlayer
 onready var pause := $PausePanel
-onready var arrow := $Player/Arrow
+onready var arrow :=  $GameArea/Player/Arrow
 onready var librarianPoint := $Pointers/Librarian
 onready var bookPoint := $Pointers/Book
-onready var task1 := $Player/Task1
-onready var task2 := $Player/Task2
+onready var task := $GameArea/Player/Task1
+onready var taskLabel := $GameArea/Player/Task1/Label
 onready var interact := $Interact
 onready var space := $Close/Space
 onready var whirlpool := $Camera2D/Whirlpool
@@ -22,6 +22,12 @@ var libraryMusic = load("res://Assets/Audio/Music/LibraryBG.ogg")
 var near = false
 var arrowTarget = null
 var dialogPlaying := true
+var task1 = "Approach Librarian"
+var task2 = "Find Vase"
+var task3 = "Bring Vase to the Librarian"
+var task4 = "Locate Room with a Book"
+var taskState = -1
+var playerEnteredVase = false
 
 func _ready():
 	GameManager._setGameOver(false)
@@ -32,8 +38,7 @@ func _ready():
 	target = player
 	arrowTarget = librarianPoint
 	arrow.visible = false
-	task1.visible = false
-	task2.visible = false
+	task.visible = false
 	space.visible = false
 	whirlpool.visible = false
 	whirlpool.modulate.a = 0
@@ -45,6 +50,7 @@ func _process(delta):
 	arrow.rotation_degrees = angle * -1
 
 func _unhandled_input(event):
+	var dialog
 	if event.is_pressed():
 		if event.is_action_pressed("escape") and !GameManager._getGameOver():
 			_changeGameState()
@@ -55,12 +61,17 @@ func _unhandled_input(event):
 		
 		if event.is_action_pressed("space") and dialogPlaying:
 			if interact.get_overlapping_bodies().size() > 0:
-				if get_node_or_null('DialogNode') == null:
-					GameManager._setGamePaused(true)
-					dialogPlaying = false
-					var dialog = Dialogic.start('/IntroDialog/LibrarianDialog')
-					dialog.connect('timeline_end', self, '_unPauseAnimation')
-					add_child(dialog)
+					if get_node_or_null('DialogNode') == null:
+						GameManager._setGamePaused(true)
+						dialogPlaying = false
+						if taskState == -1:
+							dialog = Dialogic.start('/IntroDialog/LibrarianDialog')
+						if taskState == 0:
+							dialog = Dialogic.start('/IntroDialog/LibrarianVaseDialog')
+						if taskState == 1:
+							dialog = Dialogic.start('/IntroDialog/LibrarianVaseTaskDone')
+						dialog.connect('timeline_end', self, '_unPauseAnimation')
+						add_child(dialog)
 
 func _changeGameState():
 	GameManager._setGamePaused(!GameManager._getGamePause())
@@ -77,14 +88,15 @@ func _unPauseAnimation(timeline_name):
 	GameManager._setGamePaused(false)
 	dialogPlaying = true
 	if timeline_name == "Dialog3":
-		task1.visible = true
-		task2.visible = false
+		task.visible = true
 		arrow.visible = true
 	if timeline_name == "/IntroDialog/LibrarianDialog":
-		task1.visible = false
-		task2.visible = true
+		taskState = 0
+		arrowTarget = $GameArea/Box
+		taskLabel.text = task2
+	if timeline_name == "/IntroDialog/LibrarianVaseTaskDone":
 		arrowTarget = bookPoint
-
+		taskLabel.text = task4
 
 func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
@@ -106,7 +118,7 @@ func _on_Close_body_entered(body):
 		GlobalMusic._pauseMusic()
 		near = true
 		space.visible = true
-		task2.visible = false
+		task.visible = false
 		arrow.visible = false
 
 func _on_Close_body_exited(body):
@@ -118,7 +130,7 @@ func _on_Close_body_exited(body):
 		GlobalMusic._unPauseMusic()
 		near = false
 		space.visible = false
-		task2.visible = true
+		task.visible = true
 		arrow.visible = true
 
 func _changeBookSprite():
@@ -144,3 +156,16 @@ func _continueAnim():
 
 func _nextScene():
 	LoadingScreen.loadLevel("LabvrinthDoorScene")
+
+func _on_LeverTile_body_entered(body):
+	if body.name == "Box":
+		taskState = 1
+		$GameObjects/WallCollisions/Door.set_deferred("disabled", true)
+		$GameWorld/TileMap6.visible = false
+		$GameArea/Room.visible = false
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Player" and !playerEnteredVase:
+		playerEnteredVase = true
+		arrowTarget = $GameArea/LeverTile
+		taskLabel.text = task3

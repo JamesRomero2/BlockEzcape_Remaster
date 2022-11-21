@@ -1,89 +1,139 @@
 extends CanvasLayer
 
-var timeSpent: String
-var medal: int = 0
-var verdict: bool
-var animating: bool = true
-var record: String
+onready var levelNumUnlocked = $Container/NewLevelUnlocked/LevelNumberUnlocked
+onready var levelNumLocked = $Container/LevelRequirements/VBoxContainer/RichTextLabel2
 
-func _showResult(mins, secs, levelNum):
-	timeSpent = "%02d : %02d" % [mins, secs]
+var medal: int = 0
+var animating: bool = true
+
+var newRecord: bool = false
+var newLevel: bool = false
+
+var playedLevelNumber: int 
+var playedLevelInterpretedTime: String
+var playedLevelTimeMinutes: float
+var playedLevelTimeSeconds: float
+var playedLevelRequiredRank: int
+var playedLevelAttainedRank: String
+
+func _showResult(mins, secs, levelNum, requiredMedalInLevel):
+	playedLevelTimeMinutes = mins
+	playedLevelTimeSeconds = secs
+	playedLevelNumber = levelNum
+	playedLevelRequiredRank = requiredMedalInLevel
+	
+	playedLevelInterpretedTime = "%02d : %02d" % [mins, secs]
 	self.visible = !self.visible
-	_setMedalRanking(mins, secs)
-	$Container/Label4.text = timeSpent
+	
+	setTextOnLabels()
+	_setMedalRanking()
+	checkForNewLevel()
+	checkForNewHighScore()
+
 	$AnimationPlayer.play("ResultsAnimation")
-	GameManager._saveLevelRecord(levelNum, timeSpent, record)
 
 func _input(event):
 	if event.is_pressed() and !animating:
 		if event.is_action_pressed("space"):
 			LoadingScreen.loadLevel("WorldMap")
 
-func _setMedalRanking(mins, secs):
+func _setMedalRanking():
 	for medal in $Container/Awards.get_children():
 		medal.visible = false
 
-	var minutes = int(mins)
-	var seconds = int(secs)
+	var minutes = int(playedLevelTimeMinutes)
+	var seconds = int(playedLevelTimeSeconds)
 	if minutes == 0:
 		if seconds <= 25:
 			medal = 4
 			$Container/Label6.text = "S"
 			$Container/Awards/Platinum.visible = true
-			record = "S"
+			playedLevelAttainedRank = "S"
 		elif seconds >= 26 and seconds <= 50:
 			medal = 3
 			$Container/Label6.text = "A"
 			$Container/Awards/Gold.visible = true
-			record = "A"
+			playedLevelAttainedRank = "A"
 		elif seconds >= 51:
 			medal = 2
 			$Container/Label6.text = "B"
 			$Container/Awards/Silver.visible = true
-			record = "B"
+			playedLevelAttainedRank = "B"
 	elif minutes == 1:
 		if seconds <= 25:
 			medal = 2
 			$Container/Label6.text = "B"
-			record = "B"
+			playedLevelAttainedRank = "B"
 			$Container/Awards/Silver.visible = true
 		elif seconds >= 26 and seconds <= 50:
 			medal = 1
 			$Container/Label6.text = "C"
 			$Container/Awards/Bronze.visible = true
-			record = "C"
+			playedLevelAttainedRank = "C"
 		elif seconds >= 51:
 			medal = 0
 			$Container/Label6.text = "D"
 			$Container/Awards/Copper.visible = true
-			record = "D"
+			playedLevelAttainedRank = "D"
 	else:
 		medal = 0
 		$Container/Label6.text = "D"
 		$Container/Awards/Copper.visible = true
-		record = "D"
+		playedLevelAttainedRank = "D"
 
-func _newLevelUnlocked(value):
-	if medal >= value:
-		verdict = true
-		return true
-	verdict = false
-	return false
+func checkForNewLevel():
+	if medal >= playedLevelRequiredRank:
+		newLevel = true
+	else:
+		newLevel = false
+
+func checkForNewHighScore():
+	if GameManager._getLevelRecord(playedLevelNumber)[1] == 0.0:
+		newRecord = true
+	else:
+		if playedLevelTimeMinutes < GameManager._getLevelRecord(playedLevelNumber)[1]:
+			newRecord = true
+		else:
+			newRecord = false
 
 func _playDialog():
-	var newLevelDialog := "/Results/NewLevelDialog"
-	var tryAgainDialog := "/Results/TryAgainDialog"
-	var dialog
-	
-	if get_node_or_null('DialogNode') == null:
-		GameManager._setGamePaused(true)
-		if verdict:
-			dialog = Dialogic.start(newLevelDialog)
+	if newLevel:
+		if !GameManager._getOpenLevels().has(playedLevelNumber + 1):
+			$AnimationPlayer.play("NewLevel")
+			GameManager._setOpenLevels(playedLevelNumber + 1)
 		else:
-			dialog = Dialogic.start(tryAgainDialog)
-		dialog.connect('timeline_end', self, '_dialogEnd')
-		add_child(dialog)
-
-func _dialogEnd(_timeline_name):
-	GameManager._setGamePaused(false)
+			if newRecord:
+				$AnimationPlayer.play("NewRecord")
+				saveRecordToSaveFile()
+	else:
+		$AnimationPlayer.play("LevelLocked")
 	animating = false
+
+func playHighScoreAnimation():
+	if newRecord:
+		$AnimationPlayer.play("NewRecord")
+		saveRecordToSaveFile()
+
+func setTextOnLabels():
+	var rank: String
+	match playedLevelRequiredRank:
+		0:
+			rank = "D"
+		1:
+			rank = "C"
+		2:
+			rank = "B"
+		3:
+			rank = "A"
+		4:
+			rank = "S"
+	$Container/Label4.text = playedLevelInterpretedTime
+	if playedLevelNumber < 10: 
+		levelNumUnlocked.text = "Level 0" + str(playedLevelNumber + 1)
+		levelNumLocked.set_bbcode("[center]Sorry Little One\nGet [b]Rank " + rank + "[/b] to Open [b]Level 0" + str(playedLevelNumber + 1) + " [/b][/center]")
+	else:
+		levelNumUnlocked.text = "Level " + str(playedLevelNumber + 1)
+		levelNumLocked.set_bbcode("[center]Sorry Little One\nGet [b]Rank " + rank + "[/b] to Open [b]Level " + str(playedLevelNumber + 1) + " [/b][/center]")
+
+func saveRecordToSaveFile():
+	GameManager._saveLevelRecord(playedLevelNumber, playedLevelInterpretedTime, playedLevelAttainedRank, playedLevelTimeMinutes, playedLevelTimeSeconds)

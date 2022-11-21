@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Underground/Underground.tscn" type="PackedScene" id=2]
@@ -9,28 +9,21 @@
 [ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Temp/Crystal/Crystal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GameObjects/Blocks/Crystal/Crystal.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GameObjects/Character/NPC/Baud.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=13]
+[ext_resource path="res://GameObjects/Tiles/OperationalTile/OperationalTile.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=17]
-[ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=18]
-
-[sub_resource type="DynamicFont" id=8]
-size = 12
-font_data = ExtResource( 17 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 12
-font_data = ExtResource( 17 )
 
 [node name="Level 07" type="Node"]
 script = ExtResource( 1 )
 timelineName = "/Forest/Level 05"
 answers = {
-0: 23,
-1: 1,
-2: null,
-3: null
+0: null,
+1: null,
+2: 34,
+3: 12
 }
 resultAnimating = true
 requiredMedal = 4
@@ -46,18 +39,18 @@ expand = true
 stretch_mode = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -368, 88 )
+position = Vector2( -440, 88 )
 current = true
-zoom = Vector2( 0.6, 0.6 )
+zoom = Vector2( 0.7, 0.7 )
 
 [node name="UndergroundTilemap" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -56 )
 
 [node name="Background" parent="UndergroundTilemap" index="0"]
-tile_data = PoolIntArray( 262117, 0, 2, 262118, 0, 3, 262119, 0, 3, 262120, 0, 3, 262121, 0, 4, 327653, 0, 65538, 327654, 0, 65539, 327655, 0, 65539, 327656, 0, 65539, 327657, 0, 65540, 393183, 0, 2, 393184, 0, 3, 393185, 0, 3, 393186, 0, 3, 393187, 0, 3, 393188, 0, 3, 393189, 0, 65537, 393190, 0, 65539, 393191, 0, 65539, 393192, 0, 65539, 393193, 0, 65536, 393194, 0, 3, 393195, 0, 3, 393196, 0, 3, 393197, 0, 3, 393198, 0, 3, 393199, 0, 4, 458719, 0, 65538, 458720, 0, 65539, 458721, 0, 65539, 458722, 0, 65539, 458723, 0, 65539, 458724, 0, 65539, 458725, 0, 65539, 458726, 0, 65539, 458727, 0, 65539, 458728, 0, 65539, 458729, 0, 65539, 458730, 0, 65539, 458731, 0, 65539, 458732, 0, 65539, 458733, 0, 65539, 458734, 0, 65539, 458735, 0, 65540, 524255, 0, 65538, 524256, 0, 65539, 524257, 0, 65539, 524258, 0, 65539, 524259, 0, 65539, 524260, 0, 65539, 524261, 0, 65539, 524262, 0, 65539, 524263, 0, 65539, 524264, 0, 65539, 524265, 0, 65539, 524266, 0, 65539, 524267, 0, 65539, 524268, 0, 65539, 524269, 0, 65539, 524270, 0, 65539, 524271, 0, 65540, 589791, 0, 65538, 589792, 0, 65539, 589793, 0, 65539, 589794, 0, 65539, 589795, 0, 65539, 589796, 0, 65539, 589797, 0, 65539, 589798, 0, 65539, 589799, 0, 65539, 589800, 0, 65539, 589801, 0, 65539, 589802, 0, 65539, 589803, 0, 65539, 589804, 0, 65539, 589805, 0, 65539, 589806, 0, 65539, 589807, 0, 65536, 589808, 0, 3, 589809, 0, 3, 589810, 0, 4, 655327, 0, 65538, 655328, 0, 65539, 655329, 0, 65539, 655330, 0, 65539, 655331, 0, 65539, 655332, 0, 65539, 655333, 0, 65539, 655334, 0, 65539, 655335, 0, 65539, 655336, 0, 65539, 655337, 0, 65539, 655338, 0, 65539, 655339, 0, 65539, 655340, 0, 65539, 655341, 0, 65539, 655342, 0, 65539, 655343, 0, 65539, 655344, 0, 65539, 655345, 0, 65539, 655346, 0, 65540, 720863, 0, 65538, 720864, 0, 65539, 720865, 0, 65539, 720866, 0, 65539, 720867, 0, 65539, 720868, 0, 65539, 720869, 0, 65539, 720870, 0, 65539, 720871, 0, 65539, 720872, 0, 65539, 720873, 0, 65539, 720874, 0, 65539, 720875, 0, 65539, 720876, 0, 65539, 720877, 0, 65539, 720878, 0, 65539, 720879, 0, 65539, 720880, 0, 65539, 720881, 0, 65539, 720882, 0, 65540, 786399, 0, 65538, 786400, 0, 65539, 786401, 0, 65539, 786402, 0, 65539, 786403, 0, 65539, 786404, 0, 65539, 786405, 0, 65539, 786406, 0, 65539, 786407, 0, 65539, 786408, 0, 65539, 786409, 0, 65539, 786410, 0, 65539, 786411, 0, 65539, 786412, 0, 65539, 786413, 0, 65539, 786414, 0, 65539, 786415, 0, 65539, 786416, 0, 65539, 786417, 0, 65539, 786418, 0, 65540, 851935, 0, 65538, 851936, 0, 65539, 851937, 0, 65539, 851938, 0, 65539, 851939, 0, 65539, 851940, 0, 65539, 851941, 0, 65539, 851942, 0, 65539, 851943, 0, 65539, 851944, 0, 65539, 851945, 0, 65539, 851946, 0, 65539, 851947, 0, 65539, 851948, 0, 65539, 851949, 0, 65539, 851950, 0, 65539, 851951, 0, 65539, 851952, 0, 65539, 851953, 0, 65539, 851954, 0, 65540, 917471, 0, 65538, 917472, 0, 65539, 917473, 0, 65539, 917474, 0, 65539, 917475, 0, 65539, 917476, 0, 65539, 917477, 0, 65539, 917478, 0, 65539, 917479, 0, 65539, 917480, 0, 65539, 917481, 0, 65539, 917482, 0, 65539, 917483, 0, 65539, 917484, 0, 65539, 917485, 0, 65539, 917486, 0, 65539, 917487, 0, 0, 917488, 0, 131075, 917489, 0, 131075, 917490, 0, 131076, 983007, 0, 131074, 983008, 0, 131075, 983009, 0, 131075, 983010, 0, 131075, 983011, 0, 131075, 983012, 0, 131075, 983013, 0, 131075, 983014, 0, 131075, 983015, 0, 131075, 983016, 0, 131075, 983017, 0, 131075, 983018, 0, 131075, 983019, 0, 131075, 983020, 0, 131075, 983021, 0, 131075, 983022, 0, 131075, 983023, 0, 131076 )
+tile_data = PoolIntArray( 262118, 0, 2, 262119, 0, 3, 262120, 0, 4, 327653, 0, 2, 327654, 0, 65537, 327655, 0, 65539, 327656, 0, 65536, 327657, 0, 4, 393186, 0, 2, 393187, 0, 3, 393188, 0, 3, 393189, 0, 65537, 393190, 0, 65539, 393191, 0, 65539, 393192, 0, 65539, 393193, 0, 65536, 393194, 0, 3, 393195, 0, 3, 393196, 0, 4, 458721, 0, 2, 458722, 0, 65537, 458723, 0, 65539, 458724, 0, 65539, 458725, 0, 65539, 458726, 0, 65539, 458727, 0, 65539, 458728, 0, 65539, 458729, 0, 65539, 458730, 0, 65539, 458731, 0, 65539, 458732, 0, 65536, 458733, 0, 4, 524249, 0, 2, 524250, 0, 3, 524251, 0, 3, 524252, 0, 3, 524253, 0, 4, 524256, 0, 2, 524257, 0, 65537, 524258, 0, 65539, 524259, 0, 65539, 524260, 0, 65539, 524261, 0, 65539, 524262, 0, 65539, 524263, 0, 65539, 524264, 0, 65539, 524265, 0, 65539, 524266, 0, 65539, 524267, 0, 65539, 524268, 0, 65539, 524269, 0, 65536, 524270, 0, 4, 589785, 0, 65538, 589786, 0, 65539, 589787, 0, 65539, 589788, 0, 65539, 589789, 0, 65540, 589791, 0, 2, 589792, 0, 65537, 589793, 0, 65539, 589794, 0, 65539, 589795, 0, 65539, 589796, 0, 65539, 589797, 0, 65539, 589798, 0, 65539, 589799, 0, 65539, 589800, 0, 65539, 589801, 0, 65539, 589802, 0, 65539, 589803, 0, 65539, 589804, 0, 65539, 589805, 0, 65539, 589806, 0, 65536, 589807, 0, 4, 655321, 0, 65538, 655322, 0, 65539, 655323, 0, 65539, 655324, 0, 65539, 655325, 0, 65540, 655327, 0, 65538, 655328, 0, 65539, 655329, 0, 65539, 655330, 0, 65539, 655331, 0, 65539, 655332, 0, 65539, 655333, 0, 65539, 655334, 0, 65539, 655335, 0, 65539, 655336, 0, 65539, 655337, 0, 65539, 655338, 0, 65539, 655339, 0, 65539, 655340, 0, 65539, 655341, 0, 65539, 655342, 0, 65539, 655343, 0, 65540, 720857, 0, 65538, 720858, 0, 65539, 720859, 0, 65539, 720860, 0, 65539, 720861, 0, 65540, 720863, 0, 65538, 720864, 0, 65539, 720865, 0, 65539, 720866, 0, 65539, 720867, 0, 65539, 720868, 0, 65539, 720869, 0, 65539, 720870, 0, 65539, 720871, 0, 65539, 720872, 0, 65539, 720873, 0, 65539, 720874, 0, 65539, 720875, 0, 65539, 720876, 0, 65539, 720877, 0, 65539, 720878, 0, 65539, 720879, 0, 65540, 786393, 0, 65538, 786394, 0, 65539, 786395, 0, 65539, 786396, 0, 65539, 786397, 0, 65540, 786399, 0, 65538, 786400, 0, 65539, 786401, 0, 65539, 786402, 0, 65539, 786403, 0, 65539, 786404, 0, 65539, 786405, 0, 65539, 786406, 0, 65539, 786407, 0, 65539, 786408, 0, 65539, 786409, 0, 65539, 786410, 0, 65539, 786411, 0, 65539, 786412, 0, 65539, 786413, 0, 65539, 786414, 0, 65539, 786415, 0, 65540, 851929, 0, 131074, 851930, 0, 131075, 851931, 0, 131075, 851932, 0, 131075, 851933, 0, 131076, 851935, 0, 131074, 851936, 0, 1, 851937, 0, 65539, 851938, 0, 65539, 851939, 0, 65539, 851940, 0, 65539, 851941, 0, 65539, 851942, 0, 65539, 851943, 0, 65539, 851944, 0, 65539, 851945, 0, 65539, 851946, 0, 65539, 851947, 0, 65539, 851948, 0, 65539, 851949, 0, 65539, 851950, 0, 0, 851951, 0, 131076, 917472, 0, 131074, 917473, 0, 131075, 917474, 0, 131075, 917475, 0, 1, 917476, 0, 65539, 917477, 0, 65539, 917478, 0, 0, 917479, 0, 131075, 917480, 0, 1, 917481, 0, 65539, 917482, 0, 65539, 917483, 0, 0, 917484, 0, 131075, 917485, 0, 131075, 917486, 0, 131076, 983011, 0, 131074, 983012, 0, 131075, 983013, 0, 131075, 983014, 0, 131076, 983016, 0, 131074, 983017, 0, 131075, 983018, 0, 131075, 983019, 0, 131076 )
 
 [node name="Blocks" parent="UndergroundTilemap" index="1"]
-tile_data = PoolIntArray( 327654, 0, 0, 327655, 0, 0, 327656, 0, 0, 393190, 0, 0, 393192, 0, 0, 458720, 0, 0, 458721, 0, 0, 458722, 0, 0, 458723, 0, 0, 458724, 0, 0, 458725, 0, 0, 458726, 0, 0, 458728, 0, 0, 458729, 0, 0, 458730, 0, 0, 458731, 0, 0, 458732, 0, 0, 458733, 0, 0, 458734, 0, 0, 524256, 0, 0, 524257, 0, 0, 524258, 0, 0, 524268, 0, 0, 524269, 0, 0, 524270, 0, 0, 589792, 0, 0, 589793, 0, 0, 589796, 0, 0, 589798, 0, 0, 589800, 0, 0, 589802, 0, 0, 589805, 0, 0, 589806, 0, 0, 655328, 0, 0, 655331, 0, 0, 655332, 0, 0, 655338, 0, 0, 655339, 0, 0, 655342, 0, 0, 720864, 0, 0, 720866, 0, 0, 720867, 0, 0, 720870, 0, 0, 720872, 0, 0, 720875, 0, 0, 720876, 0, 0, 720878, 0, 0, 786400, 0, 0, 786414, 0, 0, 851936, 0, 0, 851937, 0, 0, 851938, 0, 0, 851939, 0, 0, 851942, 0, 0, 851943, 0, 0, 851944, 0, 0, 851947, 0, 0, 851948, 0, 0, 851949, 0, 0, 851950, 0, 0, 917472, 0, 0, 917473, 0, 0, 917474, 0, 0, 917475, 0, 0, 917476, 0, 0, 917477, 0, 0, 917478, 0, 0, 917480, 0, 0, 917481, 0, 0, 917482, 0, 0, 917483, 0, 0, 917484, 0, 0, 917485, 0, 0, 917486, 0, 0 )
+tile_data = PoolIntArray( 327655, 0, 0, 393190, 0, 0, 393192, 0, 0, 458723, 0, 0, 458724, 0, 0, 458725, 0, 0, 458726, 0, 0, 458728, 0, 0, 458729, 0, 0, 458730, 0, 0, 458731, 0, 0, 524258, 0, 0, 524268, 0, 0, 589793, 0, 0, 589796, 0, 0, 589798, 0, 0, 589800, 0, 0, 589802, 0, 0, 589805, 0, 0, 655328, 0, 0, 655331, 0, 0, 655332, 0, 0, 655338, 0, 0, 655339, 0, 0, 655342, 0, 0, 720864, 0, 0, 720866, 0, 0, 720867, 0, 0, 720870, 0, 0, 720872, 0, 0, 720875, 0, 0, 720876, 0, 0, 720878, 0, 0, 786400, 0, 0, 786414, 0, 0, 851937, 0, 0, 851938, 0, 0, 851939, 0, 0, 851942, 0, 0, 851944, 0, 0, 851947, 0, 0, 851948, 0, 0, 851949, 0, 0, 917476, 0, 0, 917477, 0, 0, 917481, 0, 0, 917482, 0, 0 )
 
 [node name="GameObjects" type="Node2D" parent="."]
 position = Vector2( 8, 80 )
@@ -67,10 +60,11 @@ position = Vector2( -400, 48 )
 
 [node name="Temple" parent="GameObjects" instance=ExtResource( 6 )]
 position = Vector2( -400, 16 )
+portalTheme = "Underground"
 
 [node name="Box4" parent="GameObjects" instance=ExtResource( 4 )]
 position = Vector2( -384, 48 )
-boxValue = 23
+boxValue = 2
 
 [node name="Box5" parent="GameObjects" instance=ExtResource( 4 )]
 position = Vector2( -416, 48 )
@@ -78,103 +72,90 @@ boxValue = 23
 
 [node name="ScannerTile3" parent="GameObjects" instance=ExtResource( 9 )]
 position = Vector2( -400, -48 )
-scannerID = 1
+scannerID = 2
 
 [node name="ScannerTile6" parent="GameObjects" instance=ExtResource( 9 )]
 position = Vector2( -400, -32 )
-scannerID = 1
+scannerID = 3
 
 [node name="Question" type="Node2D" parent="GameObjects"]
-position = Vector2( 232, -88 )
+position = Vector2( -32, -120 )
 
-[node name="Box3" parent="GameObjects/Question" instance=ExtResource( 4 )]
-position = Vector2( -472, 120 )
-boxValue = 78
+[node name="Top" type="Node2D" parent="GameObjects/Question"]
 
-[node name="Box4" parent="GameObjects/Question" instance=ExtResource( 4 )]
-position = Vector2( -472, 104 )
-boxValue = 45
+[node name="Box3" parent="GameObjects/Question/Top" instance=ExtResource( 4 )]
+position = Vector2( -544, 120 )
+boxValue = 65
 
-[node name="SymbolBlocks2" parent="GameObjects/Question" instance=ExtResource( 8 )]
-position = Vector2( -488, 112 )
-operation = "Plus"
+[node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 11 )]
+position = Vector2( -560, 112 )
+frame = 0
 
-[node name="SymbolBlocks3" parent="GameObjects/Question" instance=ExtResource( 8 )]
-position = Vector2( -504, 144 )
-operation = "Equals"
+[node name="Bottom" type="Node2D" parent="GameObjects/Question"]
 
-[node name="Crystal" parent="GameObjects/Question" instance=ExtResource( 10 )]
-position = Vector2( -472, 144 )
+[node name="Crystal2" parent="GameObjects/Question/Bottom" instance=ExtResource( 10 )]
+position = Vector2( -544, 136 )
+scannerID = 2
 
-[node name="Crystal2" parent="GameObjects/Question" instance=ExtResource( 10 )]
-position = Vector2( -488, 144 )
-scannerID = 1
+[node name="Box6" parent="GameObjects/Question/Bottom" instance=ExtResource( 4 )]
+position = Vector2( -568, 120 )
+boxValue = 16
+
+[node name="Box5" parent="GameObjects/Question/Bottom" instance=ExtResource( 4 )]
+position = Vector2( -568, 136 )
+boxValue = 4
+
+[node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 11 )]
+position = Vector2( -560, 128 )
+frame = 0
+
+[node name="Answer" type="Node2D" parent="GameObjects/Question"]
+
+[node name="Box7" parent="GameObjects/Question/Answer" instance=ExtResource( 4 )]
+position = Vector2( -544, 160 )
+boxValue = 31
+
+[node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 11 )]
+position = Vector2( -560, 152 )
+frame = 0
+
+[node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 10 )]
+position = Vector2( -568, 160 )
+scannerID = 3
+
+[node name="Characters" type="Node2D" parent="GameObjects/Question"]
+
+[node name="SymbolBlocks2" parent="GameObjects/Question/Characters" instance=ExtResource( 8 )]
+position = Vector2( -584, 128 )
+operation = "Minus"
+
+[node name="Line" type="Sprite" parent="GameObjects/Question/Characters"]
+position = Vector2( -592, 144 )
+scale = Vector2( 0.8, 0.5 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Baud" parent="GameObjects" instance=ExtResource( 12 )]
+position = Vector2( -400, 64 )
+
+[node name="OperationalTile" parent="GameObjects" instance=ExtResource( 14 )]
+position = Vector2( -368, 32 )
+operationalValue = 6
+
+[node name="OperationalTile2" parent="GameObjects" instance=ExtResource( 14 )]
+position = Vector2( -368, 16 )
+operationalValue = 5
+
+[node name="OperationalTile3" parent="GameObjects" instance=ExtResource( 14 )]
+position = Vector2( -432, 16 )
+operationalValue = 7
+
+[node name="OperationalTile4" parent="GameObjects" instance=ExtResource( 14 )]
+position = Vector2( -432, 32 )
+operationalValue = 3
 
 [node name="PausePanel" parent="." instance=ExtResource( 15 )]
 visible = false
-
-[node name="UILayer" type="CanvasLayer" parent="."]
-
-[node name="Buttons" type="Control" parent="UILayer"]
-anchor_right = 1.0
-
-[node name="PauseButton" type="Button" parent="UILayer/Buttons"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -40.0
-margin_top = 8.0
-margin_right = -8.0
-margin_bottom = 64.0
-flat = true
-
-[node name="TextureRect" type="TextureRect" parent="UILayer/Buttons/PauseButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 16 )
-stretch_mode = 6
-
-[node name="Label" type="Label" parent="UILayer/Buttons/PauseButton/TextureRect"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -12.0
-margin_top = -22.0
-margin_right = 13.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 8 )
-text = "Esc"
-align = 1
-valign = 1
-
-[node name="UndoButton" type="Button" parent="UILayer/Buttons"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -80.0
-margin_top = 8.0
-margin_right = -48.0
-margin_bottom = 64.0
-flat = true
-
-[node name="TextureRect2" type="TextureRect" parent="UILayer/Buttons/UndoButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 18 )
-stretch_mode = 6
-
-[node name="Label" type="Label" parent="UILayer/Buttons/UndoButton/TextureRect2"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -16.0
-margin_top = -22.0
-margin_right = 16.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 10 )
-text = "Undo"
-align = 1
-valign = 1
 
 [node name="ResultPanel" parent="." instance=ExtResource( 7 )]
 visible = false
@@ -182,8 +163,6 @@ visible = false
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
 
-[connection signal="pressed" from="UILayer/Buttons/PauseButton" to="." method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="UILayer/Buttons/UndoButton" to="." method="_on_UndoButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="UndergroundTilemap"]

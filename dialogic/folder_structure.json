@@ -64,7 +64,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				},
 				"Forest": {
@@ -87,14 +87,16 @@
 				"IntroDialog": {
 					"files": [
 						"timeline-1668573825.json",
-						"timeline-1668575112.json"
+						"timeline-1668575112.json",
+						"timeline-1668769747.json",
+						"timeline-1668770387.json"
 					],
 					"folders": {
 
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				},
 				"Magical": {
@@ -108,7 +110,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				},
 				"Results": {
@@ -136,7 +138,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				}
 			},

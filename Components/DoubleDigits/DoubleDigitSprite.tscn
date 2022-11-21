@@ -12,3 +12,4 @@ position = Vector2( 4, 0 )
 
 [node name="Tens" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4, 0 )
+frame = 0

@@ -6,6 +6,7 @@ onready var recordFile = SaveHighScore.highScoreData
 var gamePaused := false setget _setGamePaused, _getGamePause
 var gameOver := true setget _setGameOver, _getGameOver
 var gameTimerActive := false setget _setGameTimerActive, _getGameTimerActive
+var playerAnimating := false setget _setPlayerAnimating, _getPlayerAnimating
 var worldSelectorPosition: Vector2 = Vector2.ZERO setget _setWorldSelectorPosition, _getWorldSelectorPosition
 var worldLevelOpen: Array = Array() setget _setOpenLevels, _getOpenLevels
 
@@ -20,6 +21,12 @@ func _setGameOver(value):
 
 func _getGameOver():
 	return gameOver
+
+func _setPlayerAnimating(value):
+	playerAnimating = value
+
+func _getPlayerAnimating():
+	return playerAnimating
 
 func _setWorldSelectorPosition(value):
 	worldSelectorPosition = value
@@ -56,18 +63,24 @@ func _getGameTimerActive():
 func _getLevelRecord(levelNum):
 	var record = Array()
 	record.clear()
-	record.append(recordFile[str(levelNum)].Time)
+	record.append(recordFile[str(levelNum)].Time.InterpretedTime)
+	record.append(recordFile[str(levelNum)].Time.Minutes)
+	record.append(recordFile[str(levelNum)].Time.Seconds)
 	record.append(recordFile[str(levelNum)].Ranking)
 	return record
 
-func _saveLevelRecord(levelNum, time, rank):
-	recordFile[str(levelNum)].Time = time
+func _saveLevelRecord(levelNum, time, rank, timeMinutes, timeSeconds):
+	recordFile[str(levelNum)].Time.InterpretedTime = time
+	recordFile[str(levelNum)].Time.Minutes = timeMinutes
+	recordFile[str(levelNum)].Time.Seconds = timeSeconds
 	recordFile[str(levelNum)].Ranking = rank
 	SaveHighScore._saveHighScore()
 
 func _resetRecords():
 	for levelRecord in recordFile:
-		recordFile[str(levelRecord)].Time = "No Record Yet"
+		recordFile[str(levelRecord)].Time.InterpretedTime = "No Record Yet"
+		recordFile[str(levelRecord)].Time.Minutes = 0.0
+		recordFile[str(levelRecord)].Time.Seconds = 0.0
 		recordFile[str(levelRecord)].Ranking = "No Record Yet"
 	SaveHighScore._saveHighScore()
 

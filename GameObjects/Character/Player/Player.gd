@@ -19,6 +19,10 @@ var inputs := {
 	"left": Vector2.LEFT,
 	"right": Vector2.RIGHT
 }
+func _ready():
+	animation.play("PlayerSpawn")
+	GameManager._setPlayerAnimating(true)
+	moving = true
 
 func _process(delta):
 	if GameManager._getGameOver() || GameManager._getGamePause():
@@ -96,3 +100,9 @@ func _on_Tween_tween_completed(object, key):
 func playerDamage():
 	emit_signal("playerDamage")
 	hurtSFX.play()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "PlayerSpawn":
+		GameManager._setPlayerAnimating(false)
+		moving = false

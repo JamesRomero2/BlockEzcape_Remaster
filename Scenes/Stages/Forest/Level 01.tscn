@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Forest/Forest.tscn" type="PackedScene" id=2]
@@ -7,27 +7,19 @@
 [ext_resource path="res://Assets/Textures/LevelBG/Forest/1.jpg" type="Texture" id=5]
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameObjects/Blocks/Crystal/Crystal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
 [ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=12]
+[ext_resource path="res://GameObjects/Character/NPC/Baud.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=17]
-[ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=18]
-
-[sub_resource type="DynamicFont" id=8]
-size = 12
-font_data = ExtResource( 17 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 12
-font_data = ExtResource( 17 )
 
 [node name="Level 01" type="Node"]
 script = ExtResource( 1 )
 timelineName = "/Forest/Level 01"
 answers = {
-0: 4,
+0: 59,
 1: null,
 2: null,
 3: null
@@ -45,128 +37,111 @@ expand = true
 stretch_mode = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -360, 144 )
+position = Vector2( -424, 136 )
 current = true
 zoom = Vector2( 0.7, 0.7 )
 
 [node name="ForestTilemap" parent="." instance=ExtResource( 2 )]
 
 [node name="Background" parent="ForestTilemap" index="0"]
-tile_data = PoolIntArray( 262113, 0, 2, 262114, 0, 3, 262115, 0, 3, 262116, 0, 3, 262117, 0, 3, 262118, 0, 3, 262119, 0, 3, 262120, 0, 3, 262121, 0, 3, 262122, 0, 3, 262123, 0, 3, 262124, 0, 3, 262125, 0, 3, 262126, 0, 3, 262127, 0, 3, 262128, 0, 3, 262129, 0, 4, 327649, 0, 65538, 327650, 0, 65539, 327651, 0, 65539, 327652, 0, 65539, 327653, 0, 65539, 327654, 0, 65539, 327655, 0, 65539, 327656, 0, 65539, 327657, 0, 65539, 327658, 0, 65539, 327659, 0, 65539, 327660, 0, 65539, 327661, 0, 65539, 327662, 0, 65539, 327663, 0, 65539, 327664, 0, 65539, 327665, 0, 65540, 393185, 0, 65538, 393186, 0, 65539, 393187, 0, 65539, 393188, 0, 65539, 393189, 0, 65539, 393190, 0, 65539, 393191, 0, 65539, 393192, 0, 65539, 393193, 0, 65539, 393194, 0, 65539, 393195, 0, 65539, 393196, 0, 65539, 393197, 0, 65539, 393198, 0, 65539, 393199, 0, 65539, 393200, 0, 65539, 393201, 0, 65540, 458721, 0, 65538, 458722, 0, 65539, 458723, 0, 65539, 458724, 0, 65539, 458725, 0, 65539, 458726, 0, 65539, 458727, 0, 65539, 458728, 0, 65539, 458729, 0, 65539, 458730, 0, 65539, 458731, 0, 65539, 458732, 0, 65539, 458733, 0, 65539, 458734, 0, 65539, 458735, 0, 65539, 458736, 0, 65539, 458737, 0, 65540, 524257, 0, 65538, 524258, 0, 65539, 524259, 0, 65539, 524260, 0, 65539, 524261, 0, 65539, 524262, 0, 65539, 524263, 0, 65539, 524264, 0, 65539, 524265, 0, 65539, 524266, 0, 65539, 524267, 0, 65539, 524268, 0, 65539, 524269, 0, 65539, 524270, 0, 65539, 524271, 0, 65539, 524272, 0, 65539, 524273, 0, 65540, 589793, 0, 65538, 589794, 0, 65539, 589795, 0, 65539, 589796, 0, 65539, 589797, 0, 65539, 589798, 0, 65539, 589799, 0, 65539, 589800, 0, 65539, 589801, 0, 65539, 589802, 0, 65539, 589803, 0, 65539, 589804, 0, 65539, 589805, 0, 65539, 589806, 0, 65539, 589807, 0, 65539, 589808, 0, 65539, 589809, 0, 65540, 655329, 0, 65538, 655330, 0, 65539, 655331, 0, 65539, 655332, 0, 65539, 655333, 0, 65539, 655334, 0, 65539, 655335, 0, 65539, 655336, 0, 65539, 655337, 0, 65539, 655338, 0, 65539, 655339, 0, 65539, 655340, 0, 65539, 655341, 0, 65539, 655342, 0, 65539, 655343, 0, 65539, 655344, 0, 65539, 655345, 0, 65540, 720865, 0, 65538, 720866, 0, 65539, 720867, 0, 65539, 720868, 0, 65539, 720869, 0, 65539, 720870, 0, 65539, 720871, 0, 65539, 720872, 0, 65539, 720873, 0, 65539, 720874, 0, 65539, 720875, 0, 65539, 720876, 0, 65539, 720877, 0, 65539, 720878, 0, 65539, 720879, 0, 65539, 720880, 0, 65539, 720881, 0, 65540, 786401, 0, 65538, 786402, 0, 65539, 786403, 0, 65539, 786404, 0, 65539, 786405, 0, 65539, 786406, 0, 65539, 786407, 0, 65539, 786408, 0, 65539, 786409, 0, 65539, 786410, 0, 65539, 786411, 0, 65539, 786412, 0, 65539, 786413, 0, 65539, 786414, 0, 65539, 786415, 0, 65539, 786416, 0, 65539, 786417, 0, 65540, 851937, 0, 65538, 851938, 0, 65539, 851939, 0, 65539, 851940, 0, 65539, 851941, 0, 65539, 851942, 0, 65539, 851943, 0, 65539, 851944, 0, 65539, 851945, 0, 65539, 851946, 0, 65539, 851947, 0, 65539, 851948, 0, 65539, 851949, 0, 65539, 851950, 0, 65539, 851951, 0, 65539, 851952, 0, 65539, 851953, 0, 65540, 917473, 0, 65538, 917474, 0, 65539, 917475, 0, 65539, 917476, 0, 65539, 917477, 0, 65539, 917478, 0, 65539, 917479, 0, 65539, 917480, 0, 65539, 917481, 0, 65539, 917482, 0, 65539, 917483, 0, 65539, 917484, 0, 65539, 917485, 0, 65539, 917486, 0, 65539, 917487, 0, 65539, 917488, 0, 65539, 917489, 0, 65540, 983009, 0, 131074, 983010, 0, 131075, 983011, 0, 131075, 983012, 0, 131075, 983013, 0, 131075, 983014, 0, 131075, 983015, 0, 131075, 983016, 0, 131075, 983017, 0, 131075, 983018, 0, 131075, 983019, 0, 131075, 983020, 0, 131075, 983021, 0, 131075, 983022, 0, 131075, 983023, 0, 131075, 983024, 0, 131075, 983025, 0, 131076 )
+tile_data = PoolIntArray( 196578, 0, 2, 196579, 0, 3, 196580, 0, 3, 196581, 0, 3, 196582, 0, 3, 196583, 0, 3, 196584, 0, 3, 196585, 0, 3, 196586, 0, 3, 196587, 0, 3, 196588, 0, 3, 196589, 0, 3, 196590, 0, 4, 262114, 0, 65538, 262115, 0, 65539, 262116, 0, 65539, 262117, 0, 65539, 262118, 0, 65539, 262119, 0, 65539, 262120, 0, 65539, 262121, 0, 65539, 262122, 0, 65539, 262123, 0, 65539, 262124, 0, 65539, 262125, 0, 65539, 262126, 0, 65540, 327642, 0, 2, 327643, 0, 3, 327644, 0, 3, 327645, 0, 3, 327646, 0, 3, 327647, 0, 4, 327650, 0, 65538, 327651, 0, 65539, 327652, 0, 65539, 327653, 0, 65539, 327654, 0, 65539, 327655, 0, 65539, 327656, 0, 65539, 327657, 0, 65539, 327658, 0, 65539, 327659, 0, 65539, 327660, 0, 65539, 327661, 0, 65539, 327662, 0, 65536, 327663, 0, 4, 393178, 0, 65538, 393179, 0, 65539, 393180, 0, 65539, 393181, 0, 65539, 393182, 0, 65539, 393183, 0, 65540, 393186, 0, 65538, 393187, 0, 65539, 393188, 0, 65539, 393189, 0, 65539, 393190, 0, 65539, 393191, 0, 65539, 393192, 0, 65539, 393193, 0, 65539, 393194, 0, 65539, 393195, 0, 65539, 393196, 0, 65539, 393197, 0, 65539, 393198, 0, 65539, 393199, 0, 65536, 393200, 0, 4, 458714, 0, 65538, 458715, 0, 65539, 458716, 0, 65539, 458717, 0, 65539, 458718, 0, 65539, 458719, 0, 65540, 458722, 0, 65538, 458723, 0, 65539, 458724, 0, 65539, 458725, 0, 65539, 458726, 0, 65539, 458727, 0, 65539, 458728, 0, 65539, 458729, 0, 65539, 458730, 0, 65539, 458731, 0, 65539, 458732, 0, 65539, 458733, 0, 65539, 458734, 0, 65539, 458735, 0, 65539, 458736, 0, 65540, 524250, 0, 65538, 524251, 0, 65539, 524252, 0, 65539, 524253, 0, 65539, 524254, 0, 65539, 524255, 0, 65540, 524258, 0, 65538, 524259, 0, 65539, 524260, 0, 65539, 524261, 0, 65539, 524262, 0, 65539, 524263, 0, 65539, 524264, 0, 65539, 524265, 0, 65539, 524266, 0, 65539, 524267, 0, 65539, 524268, 0, 65539, 524269, 0, 65539, 524270, 0, 65539, 524271, 0, 65539, 524272, 0, 65540, 589786, 0, 65538, 589787, 0, 65539, 589788, 0, 65539, 589789, 0, 65539, 589790, 0, 65539, 589791, 0, 65540, 589794, 0, 65538, 589795, 0, 65539, 589796, 0, 65539, 589797, 0, 65539, 589798, 0, 65539, 589799, 0, 65539, 589800, 0, 65539, 589801, 0, 65539, 589802, 0, 65539, 589803, 0, 65539, 589804, 0, 65539, 589805, 0, 65539, 589806, 0, 65539, 589807, 0, 65539, 589808, 0, 65540, 655322, 0, 65538, 655323, 0, 65539, 655324, 0, 65539, 655325, 0, 65539, 655326, 0, 65539, 655327, 0, 65540, 655330, 0, 65538, 655331, 0, 65539, 655332, 0, 65539, 655333, 0, 65539, 655334, 0, 65539, 655335, 0, 65539, 655336, 0, 65539, 655337, 0, 65539, 655338, 0, 65539, 655339, 0, 65539, 655340, 0, 65539, 655341, 0, 65539, 655342, 0, 65539, 655343, 0, 65539, 655344, 0, 65540, 720858, 0, 131074, 720859, 0, 131075, 720860, 0, 131075, 720861, 0, 131075, 720862, 0, 131075, 720863, 0, 131076, 720866, 0, 65538, 720867, 0, 65539, 720868, 0, 65539, 720869, 0, 65539, 720870, 0, 65539, 720871, 0, 65539, 720872, 0, 65539, 720873, 0, 65539, 720874, 0, 65539, 720875, 0, 65539, 720876, 0, 65539, 720877, 0, 65539, 720878, 0, 65539, 720879, 0, 65539, 720880, 0, 65540, 786402, 0, 65538, 786403, 0, 65539, 786404, 0, 65539, 786405, 0, 65539, 786406, 0, 65539, 786407, 0, 65539, 786408, 0, 65539, 786409, 0, 65539, 786410, 0, 65539, 786411, 0, 65539, 786412, 0, 65539, 786413, 0, 65539, 786414, 0, 65539, 786415, 0, 65539, 786416, 0, 65540, 851938, 0, 65538, 851939, 0, 65539, 851940, 0, 65539, 851941, 0, 65539, 851942, 0, 65539, 851943, 0, 65539, 851944, 0, 65539, 851945, 0, 65539, 851946, 0, 65539, 851947, 0, 65539, 851948, 0, 65539, 851949, 0, 65539, 851950, 0, 65539, 851951, 0, 65539, 851952, 0, 65540, 917474, 0, 131074, 917475, 0, 131075, 917476, 0, 131075, 917477, 0, 131075, 917478, 0, 131075, 917479, 0, 131075, 917480, 0, 131075, 917481, 0, 1, 917482, 0, 65539, 917483, 0, 65539, 917484, 0, 65539, 917485, 0, 65539, 917486, 0, 65539, 917487, 0, 65539, 917488, 0, 65540, 983017, 0, 131074, 983018, 0, 131075, 983019, 0, 131075, 983020, 0, 131075, 983021, 0, 131075, 983022, 0, 131075, 983023, 0, 131075, 983024, 0, 131076 )
 
 [node name="Ground" parent="ForestTilemap" index="1"]
-tile_data = PoolIntArray( 851940, 0, 0, 851941, 0, 1, 851942, 0, 1, 851943, 0, 1, 851944, 0, 1, 851945, 0, 1, 851946, 0, 2, 917476, 0, 131072, 917477, 0, 131073, 917478, 0, 131073, 917479, 0, 131073, 917480, 0, 131073, 917481, 0, 131073, 917482, 0, 131074 )
+tile_data = PoolIntArray( 262115, 0, 0, 262116, 0, 1, 262117, 0, 1, 262118, 0, 1, 262119, 0, 1, 262120, 0, 1, 262121, 0, 1, 262122, 0, 1, 262123, 0, 1, 262124, 0, 1, 262125, 0, 2, 327651, 0, 65536, 327652, 0, 65537, 327653, 0, 65537, 327654, 0, 65537, 327655, 0, 65537, 327656, 0, 65537, 327657, 0, 65537, 327658, 0, 65537, 327659, 0, 65537, 327660, 0, 65537, 327661, 0, 65538, 393187, 0, 65536, 393188, 0, 65537, 393189, 0, 65537, 393190, 0, 65537, 393191, 0, 65537, 393192, 0, 65537, 393193, 0, 65537, 393194, 0, 65537, 393195, 0, 65537, 393196, 0, 65537, 393197, 0, 65539, 393198, 0, 2, 458723, 0, 65536, 458724, 0, 65537, 458725, 0, 65537, 458726, 0, 65537, 458727, 0, 65537, 458728, 0, 65537, 458729, 0, 65537, 458730, 0, 65537, 458731, 0, 65537, 458732, 0, 65537, 458733, 0, 65537, 458734, 0, 65539, 458735, 0, 2, 524259, 0, 65536, 524260, 0, 65537, 524261, 0, 65537, 524262, 0, 65537, 524263, 0, 65537, 524264, 0, 65537, 524265, 0, 65537, 524266, 0, 65537, 524267, 0, 65537, 524268, 0, 65537, 524269, 0, 65537, 524270, 0, 65537, 524271, 0, 65538, 589795, 0, 65536, 589796, 0, 65537, 589797, 0, 65537, 589798, 0, 65537, 589799, 0, 65537, 589800, 0, 65537, 589801, 0, 65537, 589802, 0, 65537, 589803, 0, 65537, 589804, 0, 65537, 589805, 0, 65537, 589806, 0, 65537, 589807, 0, 65538, 655331, 0, 65536, 655332, 0, 65537, 655333, 0, 65537, 655334, 0, 65537, 655335, 0, 65537, 655336, 0, 65537, 655337, 0, 65537, 655338, 0, 65537, 655339, 0, 65537, 655340, 0, 65537, 655341, 0, 65537, 655342, 0, 65537, 655343, 0, 65538, 720867, 0, 65536, 720868, 0, 65537, 720869, 0, 65537, 720870, 0, 65537, 720871, 0, 65537, 720872, 0, 65537, 720873, 0, 65537, 720874, 0, 65537, 720875, 0, 65537, 720876, 0, 65537, 720877, 0, 65537, 720878, 0, 65537, 720879, 0, 65538, 786403, 0, 65536, 786404, 0, 65537, 786405, 0, 65537, 786406, 0, 65537, 786407, 0, 65537, 786408, 0, 65537, 786409, 0, 65537, 786410, 0, 65537, 786411, 0, 65537, 786412, 0, 65537, 786413, 0, 65537, 786414, 0, 65537, 786415, 0, 65538, 851939, 0, 131072, 851940, 0, 131073, 851941, 0, 131073, 851942, 0, 131073, 851943, 0, 131073, 851944, 0, 131073, 851945, 0, 131073, 851946, 0, 4, 851947, 0, 65537, 851948, 0, 65537, 851949, 0, 65537, 851950, 0, 65537, 851951, 0, 65538, 917482, 0, 131072, 917483, 0, 131073, 917484, 0, 131073, 917485, 0, 131073, 917486, 0, 131073, 917487, 0, 131074 )
 
 [node name="Blocks" parent="ForestTilemap" index="2"]
-tile_data = PoolIntArray( 327652, 0, 0, 327653, 0, 0, 327654, 0, 0, 327655, 0, 0, 327656, 0, 0, 327657, 0, 0, 327658, 0, 0, 327659, 0, 0, 327660, 0, 0, 327661, 0, 0, 327662, 0, 0, 393188, 0, 0, 393191, 0, 0, 393196, 0, 0, 393197, 0, 0, 393198, 0, 0, 458724, 0, 0, 458727, 0, 0, 458732, 0, 0, 458733, 0, 0, 458734, 0, 0, 524260, 0, 0, 524263, 0, 0, 524268, 0, 0, 524269, 0, 0, 524270, 0, 0, 589796, 0, 0, 589804, 0, 0, 589806, 0, 0, 655332, 0, 0, 655335, 0, 0, 655339, 0, 0, 655340, 0, 0, 655342, 0, 0, 720868, 0, 0, 720871, 0, 0, 720872, 0, 0, 720878, 0, 0, 786404, 0, 0, 786405, 0, 0, 786406, 0, 0, 786407, 0, 0, 786408, 0, 0, 786409, 0, 0, 786410, 0, 0, 786411, 0, 0, 786414, 0, 0, 851947, 0, 0, 851948, 0, 0, 851949, 0, 0, 851950, 0, 0 )
+tile_data = PoolIntArray( 327653, 0, 0, 327654, 0, 0, 327656, 0, 0, 327657, 0, 0, 327658, 0, 0, 327659, 0, 0, 393191, 0, 0, 393196, 0, 0, 458724, 0, 0, 458732, 0, 0, 524260, 0, 0, 524263, 0, 0, 524269, 0, 0, 589796, 0, 0, 589804, 0, 0, 589806, 0, 0, 655332, 0, 0, 655335, 0, 0, 655339, 0, 0, 655340, 0, 0, 655342, 0, 0, 720868, 0, 0, 720870, 0, 0, 720872, 0, 0, 720878, 0, 0, 786405, 0, 0, 786406, 0, 0, 786409, 0, 0, 786410, 0, 0, 786411, 0, 0, 786414, 0, 0, 851948, 0, 0, 851949, 0, 0 )
 
 [node name="GameObjects" type="Node2D" parent="."]
 
+[node name="Baud" parent="GameObjects" instance=ExtResource( 13 )]
+position = Vector2( -440, 88 )
+
 [node name="Box" parent="GameObjects" instance=ExtResource( 4 )]
-position = Vector2( -408, 104 )
-boxValue = 4
+position = Vector2( -424, 104 )
+boxValue = 60
+
+[node name="Box3" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -312, 120 )
+boxValue = 13
+
+[node name="Box4" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -376, 120 )
+boxValue = 15
+
+[node name="Box5" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -328, 88 )
+boxValue = 29
+
+[node name="Box6" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -360, 88 )
+boxValue = 34
 
 [node name="Box2" parent="GameObjects" instance=ExtResource( 4 )]
-position = Vector2( -392, 136 )
-boxValue = 5
+position = Vector2( -408, 104 )
+boxValue = 59
 
 [node name="Player" parent="GameObjects" instance=ExtResource( 3 )]
 position = Vector2( -424, 88 )
 
 [node name="Temple" parent="GameObjects" instance=ExtResource( 6 )]
-position = Vector2( -408, 168 )
+position = Vector2( -344, 120 )
 
 [node name="ScannerTile2" parent="GameObjects" instance=ExtResource( 9 )]
 position = Vector2( -296, 136 )
 
 [node name="Question" type="Node2D" parent="GameObjects"]
-position = Vector2( 0, -8 )
+position = Vector2( 0, -24 )
 
-[node name="Box3" parent="GameObjects/Question" instance=ExtResource( 4 )]
-position = Vector2( -360, 216 )
-boxValue = 9
+[node name="Top" type="Node2D" parent="GameObjects/Question"]
 
-[node name="Box4" parent="GameObjects/Question" instance=ExtResource( 4 )]
-position = Vector2( -424, 216 )
-boxValue = 5
+[node name="Box3" parent="GameObjects/Question/Top" instance=ExtResource( 4 )]
+position = Vector2( -544, 120 )
+boxValue = 25
 
-[node name="SymbolBlocks2" parent="GameObjects/Question" instance=ExtResource( 10 )]
-position = Vector2( -408, 216 )
+[node name="Box4" parent="GameObjects/Question/Top" instance=ExtResource( 4 )]
+position = Vector2( -568, 120 )
+
+[node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 8 )]
+position = Vector2( -560, 112 )
+
+[node name="Bottom" type="Node2D" parent="GameObjects/Question"]
+
+[node name="Box6" parent="GameObjects/Question/Bottom" instance=ExtResource( 4 )]
+position = Vector2( -544, 136 )
+boxValue = 34
+
+[node name="Box5" parent="GameObjects/Question/Bottom" instance=ExtResource( 4 )]
+position = Vector2( -568, 136 )
+
+[node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 8 )]
+position = Vector2( -560, 128 )
+
+[node name="Answer" type="Node2D" parent="GameObjects/Question"]
+
+[node name="Box7" parent="GameObjects/Question/Answer" instance=ExtResource( 4 )]
+position = Vector2( -568, 160 )
+
+[node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 8 )]
+position = Vector2( -560, 152 )
+
+[node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 7 )]
+position = Vector2( -544, 160 )
+
+[node name="Characters" type="Node2D" parent="GameObjects/Question"]
+
+[node name="SymbolBlocks2" parent="GameObjects/Question/Characters" instance=ExtResource( 10 )]
+position = Vector2( -584, 128 )
 operation = "Plus"
 
-[node name="SymbolBlocks3" parent="GameObjects/Question" instance=ExtResource( 10 )]
-position = Vector2( -376, 216 )
-operation = "Equals"
-
-[node name="Crystal" parent="GameObjects/Question" instance=ExtResource( 7 )]
-position = Vector2( -392, 216 )
+[node name="Line" type="Sprite" parent="GameObjects/Question/Characters"]
+position = Vector2( -592, 144 )
+scale = Vector2( 0.8, 0.5 )
+texture = ExtResource( 12 )
+centered = false
 
 [node name="PausePanel" parent="." instance=ExtResource( 15 )]
 visible = false
-
-[node name="UILayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Buttons" type="Control" parent="UILayer"]
-anchor_right = 1.0
-
-[node name="PauseButton" type="Button" parent="UILayer/Buttons"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -40.0
-margin_top = 8.0
-margin_right = -8.0
-margin_bottom = 64.0
-flat = true
-
-[node name="TextureRect" type="TextureRect" parent="UILayer/Buttons/PauseButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 16 )
-stretch_mode = 6
-
-[node name="Label" type="Label" parent="UILayer/Buttons/PauseButton/TextureRect"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -12.0
-margin_top = -22.0
-margin_right = 13.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 8 )
-text = "Esc"
-align = 1
-valign = 1
-
-[node name="UndoButton" type="Button" parent="UILayer/Buttons"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -80.0
-margin_top = 8.0
-margin_right = -48.0
-margin_bottom = 64.0
-flat = true
-
-[node name="TextureRect2" type="TextureRect" parent="UILayer/Buttons/UndoButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 18 )
-stretch_mode = 6
-
-[node name="Label" type="Label" parent="UILayer/Buttons/UndoButton/TextureRect2"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -16.0
-margin_top = -22.0
-margin_right = 16.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 10 )
-text = "Undo"
-align = 1
-valign = 1
 
 [node name="ResultPanel" parent="." instance=ExtResource( 11 )]
 visible = false
@@ -174,8 +149,6 @@ visible = false
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
 
-[connection signal="pressed" from="UILayer/Buttons/PauseButton" to="." method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="UILayer/Buttons/UndoButton" to="." method="_on_UndoButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="ForestTilemap"]

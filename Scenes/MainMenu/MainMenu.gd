@@ -69,7 +69,7 @@ func demoActivation(name):
 		"Yes":
 			demoPanel.visible = false
 			activateDemo()
-			get_tree().current_scene = self
+			get_tree().set_current_scene(self)
 			get_tree().reload_current_scene()
 		"No":
 			demoPanel.visible = false

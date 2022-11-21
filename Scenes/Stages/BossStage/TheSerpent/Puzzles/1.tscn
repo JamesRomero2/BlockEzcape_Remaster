@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Stages/BossStage/TheSerpent/Puzzles/SerpentsPuzzle.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Scenes/Stages/BossStage/TheSerpent/Power/Venom.tscn" type="PackedScene" id=21]
 [ext_resource path="res://GameObjects/Blocks/PhantomBlocks/PhantomBlock.tscn" type="PackedScene" id=22]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=23]
+[ext_resource path="res://GameObjects/Tiles/OperationalTile/OperationalTile.tscn" type="PackedScene" id=24]
 
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
@@ -59,56 +60,71 @@ font_data = ExtResource( 2 )
 [node name="1" type="Node"]
 script = ExtResource( 1 )
 answers = {
-0: 50,
+0: null,
 1: null,
 2: null,
-3: null
+3: 15
 }
 numberOfTraps = 4
+spawnWaitTime = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -328, 184 )
+position = Vector2( 456, 32 )
 current = true
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Board" type="Node2D" parent="."]
 
 [node name="ForestTilemap" parent="Board" instance=ExtResource( 17 )]
-position = Vector2( -488, 104 )
 
 [node name="Background" parent="Board/ForestTilemap" index="0"]
-tile_data = PoolIntArray( -327674, 0, 2, -327673, 0, 3, -327672, 0, 3, -327671, 0, 3, -327670, 0, 3, -327669, 0, 3, -327668, 0, 3, -327667, 0, 4, -262139, 0, 2, -262138, 0, 65537, -262137, 0, 65539, -262136, 0, 65539, -262135, 0, 65539, -262134, 0, 65539, -262133, 0, 65539, -262132, 0, 65539, -262131, 0, 65536, -262130, 0, 4, -196603, 0, 65538, -196602, 0, 65539, -196601, 0, 65539, -196600, 0, 65539, -196599, 0, 65539, -196598, 0, 65539, -196597, 0, 65539, -196596, 0, 65539, -196595, 0, 65539, -196594, 0, 65540, -131067, 0, 65538, -131066, 0, 65539, -131065, 0, 65539, -131064, 0, 65539, -131063, 0, 65539, -131062, 0, 65539, -131061, 0, 65539, -131060, 0, 65539, -131059, 0, 65539, -131058, 0, 65540, -65532, 0, 2, -65531, 0, 65537, -65530, 0, 65539, -65529, 0, 65539, -65528, 0, 65539, -65527, 0, 65539, -65526, 0, 65539, -65525, 0, 65539, -65524, 0, 65539, -65523, 0, 65539, -65522, 0, 65536, -65521, 0, 4, 3, 0, 2, 4, 0, 65537, 5, 0, 65539, 6, 0, 65539, 7, 0, 65539, 8, 0, 65539, 9, 0, 65539, 10, 0, 65539, 11, 0, 65539, 12, 0, 65539, 13, 0, 65539, 14, 0, 65539, 15, 0, 65536, 16, 0, 4, 65537, 0, 2, 65538, 0, 3, 65539, 0, 65537, 65540, 0, 65539, 65541, 0, 65539, 65542, 0, 65539, 65543, 0, 65539, 65544, 0, 65539, 65545, 0, 65539, 65546, 0, 65539, 65547, 0, 65539, 65548, 0, 65539, 65549, 0, 65539, 65550, 0, 65539, 65551, 0, 65539, 65552, 0, 65536, 65553, 0, 3, 65554, 0, 4, 131072, 0, 2, 131073, 0, 65537, 131074, 0, 65539, 131075, 0, 65539, 131076, 0, 65539, 131077, 0, 65539, 131078, 0, 65539, 131079, 0, 65539, 131080, 0, 65539, 131081, 0, 65539, 131082, 0, 65539, 131083, 0, 65539, 131084, 0, 65539, 131085, 0, 65539, 131086, 0, 65539, 131087, 0, 65539, 131088, 0, 65539, 131089, 0, 65539, 131090, 0, 65536, 131091, 0, 4, 196608, 0, 65538, 196609, 0, 65539, 196610, 0, 65539, 196611, 0, 65539, 196612, 0, 65539, 196613, 0, 65539, 196614, 0, 65539, 196615, 0, 65539, 196616, 0, 65539, 196617, 0, 65539, 196618, 0, 65539, 196619, 0, 65539, 196620, 0, 65539, 196621, 0, 65539, 196622, 0, 65539, 196623, 0, 65539, 196624, 0, 65539, 196625, 0, 65539, 196626, 0, 65539, 196627, 0, 65540, 262144, 0, 65538, 262145, 0, 65539, 262146, 0, 65539, 262147, 0, 65539, 262148, 0, 65539, 262149, 0, 65539, 262150, 0, 65539, 262151, 0, 65539, 262152, 0, 65539, 262153, 0, 65539, 262154, 0, 65539, 262155, 0, 65539, 262156, 0, 65539, 262157, 0, 65539, 262158, 0, 65539, 262159, 0, 65539, 262160, 0, 65539, 262161, 0, 65539, 262162, 0, 65539, 262163, 0, 65540, 327680, 0, 65538, 327681, 0, 65539, 327682, 0, 65539, 327683, 0, 65539, 327684, 0, 65539, 327685, 0, 65539, 327686, 0, 65539, 327687, 0, 65539, 327688, 0, 65539, 327689, 0, 65539, 327690, 0, 65539, 327691, 0, 65539, 327692, 0, 65539, 327693, 0, 65539, 327694, 0, 65539, 327695, 0, 65539, 327696, 0, 65539, 327697, 0, 65539, 327698, 0, 65539, 327699, 0, 65540, 393216, 0, 65538, 393217, 0, 65539, 393218, 0, 65539, 393219, 0, 65539, 393220, 0, 65539, 393221, 0, 65539, 393222, 0, 65539, 393223, 0, 65539, 393224, 0, 65539, 393225, 0, 65539, 393226, 0, 65539, 393227, 0, 65539, 393228, 0, 65539, 393229, 0, 65539, 393230, 0, 65539, 393231, 0, 65539, 393232, 0, 65539, 393233, 0, 65539, 393234, 0, 65539, 393235, 0, 65540, 458752, 0, 65538, 458753, 0, 65539, 458754, 0, 65539, 458755, 0, 65539, 458756, 0, 65539, 458757, 0, 65539, 458758, 0, 65539, 458759, 0, 65539, 458760, 0, 65539, 458761, 0, 65539, 458762, 0, 65539, 458763, 0, 65539, 458764, 0, 65539, 458765, 0, 65539, 458766, 0, 65539, 458767, 0, 65539, 458768, 0, 65539, 458769, 0, 65539, 458770, 0, 65539, 458771, 0, 65540, 524288, 0, 65538, 524289, 0, 65539, 524290, 0, 65539, 524291, 0, 65539, 524292, 0, 65539, 524293, 0, 65539, 524294, 0, 65539, 524295, 0, 65539, 524296, 0, 65539, 524297, 0, 65539, 524298, 0, 65539, 524299, 0, 65539, 524300, 0, 65539, 524301, 0, 65539, 524302, 0, 65539, 524303, 0, 65539, 524304, 0, 65539, 524305, 0, 65539, 524306, 0, 65539, 524307, 0, 65540, 589824, 0, 65538, 589825, 0, 65539, 589826, 0, 65539, 589827, 0, 65539, 589828, 0, 65539, 589829, 0, 65539, 589830, 0, 65539, 589831, 0, 65539, 589832, 0, 65539, 589833, 0, 65539, 589834, 0, 65539, 589835, 0, 65539, 589836, 0, 65539, 589837, 0, 65539, 589838, 0, 65539, 589839, 0, 65539, 589840, 0, 65539, 589841, 0, 65539, 589842, 0, 65539, 589843, 0, 65540, 655360, 0, 65538, 655361, 0, 65539, 655362, 0, 65539, 655363, 0, 65539, 655364, 0, 65539, 655365, 0, 65539, 655366, 0, 65539, 655367, 0, 65539, 655368, 0, 65539, 655369, 0, 65539, 655370, 0, 65539, 655371, 0, 65539, 655372, 0, 65539, 655373, 0, 65539, 655374, 0, 65539, 655375, 0, 65539, 655376, 0, 65539, 655377, 0, 65539, 655378, 0, 65539, 655379, 0, 65540, 720896, 0, 65538, 720897, 0, 65539, 720898, 0, 65539, 720899, 0, 65539, 720900, 0, 65539, 720901, 0, 65539, 720902, 0, 65539, 720903, 0, 65539, 720904, 0, 65539, 720905, 0, 65539, 720906, 0, 65539, 720907, 0, 65539, 720908, 0, 65539, 720909, 0, 65539, 720910, 0, 65539, 720911, 0, 65539, 720912, 0, 65539, 720913, 0, 65539, 720914, 0, 65539, 720915, 0, 65540, 786432, 0, 65538, 786433, 0, 65539, 786434, 0, 65539, 786435, 0, 65539, 786436, 0, 65539, 786437, 0, 65539, 786438, 0, 65539, 786439, 0, 65539, 786440, 0, 65539, 786441, 0, 65539, 786442, 0, 65539, 786443, 0, 65539, 786444, 0, 65539, 786445, 0, 65539, 786446, 0, 65539, 786447, 0, 65539, 786448, 0, 65539, 786449, 0, 65539, 786450, 0, 65539, 786451, 0, 65540, 851968, 0, 65538, 851969, 0, 65539, 851970, 0, 65539, 851971, 0, 65539, 851972, 0, 65539, 851973, 0, 65539, 851974, 0, 65539, 851975, 0, 65539, 851976, 0, 65539, 851977, 0, 65539, 851978, 0, 65539, 851979, 0, 65539, 851980, 0, 65539, 851981, 0, 65539, 851982, 0, 65539, 851983, 0, 65539, 851984, 0, 65539, 851985, 0, 65539, 851986, 0, 65539, 851987, 0, 65540, 917504, 0, 131074, 917505, 0, 131075, 917506, 0, 131075, 917507, 0, 131075, 917508, 0, 131075, 917509, 0, 131075, 917510, 0, 131075, 917511, 0, 131075, 917512, 0, 131075, 917513, 0, 131075, 917514, 0, 131075, 917515, 0, 131075, 917516, 0, 131075, 917517, 0, 131075, 917518, 0, 131075, 917519, 0, 131075, 917520, 0, 131075, 917521, 0, 131075, 917522, 0, 131075, 917523, 0, 131076 )
+tile_data = PoolIntArray( -524263, 0, 2, -524262, 0, 3, -524261, 0, 3, -524260, 0, 3, -524259, 0, 3, -524258, 0, 3, -524257, 0, 4, -458728, 0, 2, -458727, 0, 65537, -458726, 0, 65539, -458725, 0, 65539, -458724, 0, 65539, -458723, 0, 65539, -458722, 0, 65539, -458721, 0, 65536, -458720, 0, 4, -393193, 0, 2, -393192, 0, 65537, -393191, 0, 65539, -393190, 0, 65539, -393189, 0, 65539, -393188, 0, 65539, -393187, 0, 65539, -393186, 0, 65539, -393185, 0, 65539, -393184, 0, 65536, -393183, 0, 4, -327657, 0, 65538, -327656, 0, 65539, -327655, 0, 65539, -327654, 0, 65539, -327653, 0, 65539, -327652, 0, 65539, -327651, 0, 65539, -327650, 0, 65539, -327649, 0, 65539, -327648, 0, 65539, -327647, 0, 65540, -262122, 0, 2, -262121, 0, 65537, -262120, 0, 65539, -262119, 0, 65539, -262118, 0, 65539, -262117, 0, 65539, -262116, 0, 65539, -262115, 0, 65539, -262114, 0, 65539, -262113, 0, 65539, -262112, 0, 65539, -262111, 0, 65536, -262110, 0, 4, -196586, 0, 65538, -196585, 0, 65539, -196584, 0, 65539, -196583, 0, 65539, -196582, 0, 65539, -196581, 0, 65539, -196580, 0, 65539, -196579, 0, 65539, -196578, 0, 65539, -196577, 0, 65539, -196576, 0, 65539, -196575, 0, 65539, -196574, 0, 65540, -131053, 0, 2, -131052, 0, 3, -131051, 0, 3, -131050, 0, 65537, -131049, 0, 65539, -131048, 0, 65539, -131047, 0, 65539, -131046, 0, 65539, -131045, 0, 65539, -131044, 0, 65539, -131043, 0, 65539, -131042, 0, 65539, -131041, 0, 65539, -131040, 0, 65539, -131039, 0, 65539, -131038, 0, 65536, -131037, 0, 3, -131036, 0, 3, -131035, 0, 4, -65517, 0, 65538, -65516, 0, 65539, -65515, 0, 65539, -65514, 0, 65539, -65513, 0, 65539, -65512, 0, 65539, -65511, 0, 65539, -65510, 0, 65539, -65509, 0, 65539, -65508, 0, 65539, -65507, 0, 65539, -65506, 0, 65539, -65505, 0, 65539, -65504, 0, 65539, -65503, 0, 65539, -65502, 0, 65539, -65501, 0, 65539, -65500, 0, 65539, -65499, 0, 65540, 19, 0, 65538, 20, 0, 65539, 21, 0, 65539, 22, 0, 65539, 23, 0, 65539, 24, 0, 65539, 25, 0, 65539, 26, 0, 65539, 27, 0, 65539, 28, 0, 65539, 29, 0, 65539, 30, 0, 65539, 31, 0, 65539, 32, 0, 65539, 33, 0, 65539, 34, 0, 65539, 35, 0, 65539, 36, 0, 65539, 37, 0, 65540, 65555, 0, 65538, 65556, 0, 65539, 65557, 0, 65539, 65558, 0, 65539, 65559, 0, 65539, 65560, 0, 65539, 65561, 0, 65539, 65562, 0, 65539, 65563, 0, 65539, 65564, 0, 65539, 65565, 0, 65539, 65566, 0, 65539, 65567, 0, 65539, 65568, 0, 65539, 65569, 0, 65539, 65570, 0, 65539, 65571, 0, 65539, 65572, 0, 65539, 65573, 0, 65540, 131091, 0, 65538, 131092, 0, 65539, 131093, 0, 65539, 131094, 0, 65539, 131095, 0, 65539, 131096, 0, 65539, 131097, 0, 65539, 131098, 0, 65539, 131099, 0, 65539, 131100, 0, 65539, 131101, 0, 65539, 131102, 0, 65539, 131103, 0, 65539, 131104, 0, 65539, 131105, 0, 65539, 131106, 0, 65539, 131107, 0, 65539, 131108, 0, 65539, 131109, 0, 65540, 196627, 0, 65538, 196628, 0, 65539, 196629, 0, 65539, 196630, 0, 65539, 196631, 0, 65539, 196632, 0, 65539, 196633, 0, 65539, 196634, 0, 65539, 196635, 0, 65539, 196636, 0, 65539, 196637, 0, 65539, 196638, 0, 65539, 196639, 0, 65539, 196640, 0, 65539, 196641, 0, 65539, 196642, 0, 65539, 196643, 0, 65539, 196644, 0, 65539, 196645, 0, 65540, 262163, 0, 65538, 262164, 0, 65539, 262165, 0, 65539, 262166, 0, 65539, 262167, 0, 65539, 262168, 0, 65539, 262169, 0, 65539, 262170, 0, 65539, 262171, 0, 65539, 262172, 0, 65539, 262173, 0, 65539, 262174, 0, 65539, 262175, 0, 65539, 262176, 0, 65539, 262177, 0, 65539, 262178, 0, 65539, 262179, 0, 65539, 262180, 0, 65539, 262181, 0, 65540, 327699, 0, 65538, 327700, 0, 65539, 327701, 0, 65539, 327702, 0, 65539, 327703, 0, 65539, 327704, 0, 65539, 327705, 0, 65539, 327706, 0, 65539, 327707, 0, 65539, 327708, 0, 65539, 327709, 0, 65539, 327710, 0, 65539, 327711, 0, 65539, 327712, 0, 65539, 327713, 0, 65539, 327714, 0, 65539, 327715, 0, 65539, 327716, 0, 65539, 327717, 0, 65540, 393235, 0, 65538, 393236, 0, 65539, 393237, 0, 65539, 393238, 0, 65539, 393239, 0, 65539, 393240, 0, 65539, 393241, 0, 65539, 393242, 0, 65539, 393243, 0, 65539, 393244, 0, 65539, 393245, 0, 65539, 393246, 0, 65539, 393247, 0, 65539, 393248, 0, 65539, 393249, 0, 65539, 393250, 0, 65539, 393251, 0, 65539, 393252, 0, 65539, 393253, 0, 65540, 458771, 0, 65538, 458772, 0, 65539, 458773, 0, 65539, 458774, 0, 65539, 458775, 0, 65539, 458776, 0, 65539, 458777, 0, 65539, 458778, 0, 65539, 458779, 0, 65539, 458780, 0, 65539, 458781, 0, 65539, 458782, 0, 65539, 458783, 0, 65539, 458784, 0, 65539, 458785, 0, 65539, 458786, 0, 65539, 458787, 0, 65539, 458788, 0, 65539, 458789, 0, 65540, 524307, 0, 65538, 524308, 0, 65539, 524309, 0, 65539, 524310, 0, 65539, 524311, 0, 65539, 524312, 0, 65539, 524313, 0, 65539, 524314, 0, 65539, 524315, 0, 65539, 524316, 0, 65539, 524317, 0, 65539, 524318, 0, 65539, 524319, 0, 65539, 524320, 0, 65539, 524321, 0, 65539, 524322, 0, 65539, 524323, 0, 65539, 524324, 0, 65539, 524325, 0, 65540, 589843, 0, 65538, 589844, 0, 65539, 589845, 0, 65539, 589846, 0, 65539, 589847, 0, 65539, 589848, 0, 65539, 589849, 0, 65539, 589850, 0, 65539, 589851, 0, 65539, 589852, 0, 65539, 589853, 0, 65539, 589854, 0, 65539, 589855, 0, 65539, 589856, 0, 65539, 589857, 0, 65539, 589858, 0, 65539, 589859, 0, 65539, 589860, 0, 65539, 589861, 0, 65540, 655379, 0, 65538, 655380, 0, 65539, 655381, 0, 65539, 655382, 0, 65539, 655383, 0, 65539, 655384, 0, 65539, 655385, 0, 65539, 655386, 0, 65539, 655387, 0, 65539, 655388, 0, 65539, 655389, 0, 65539, 655390, 0, 65539, 655391, 0, 65539, 655392, 0, 65539, 655393, 0, 65539, 655394, 0, 65539, 655395, 0, 65539, 655396, 0, 65539, 655397, 0, 65540, 720915, 0, 131074, 720916, 0, 131075, 720917, 0, 131075, 720918, 0, 131075, 720919, 0, 131075, 720920, 0, 131075, 720921, 0, 131075, 720922, 0, 131075, 720923, 0, 131075, 720924, 0, 131075, 720925, 0, 131075, 720926, 0, 131075, 720927, 0, 131075, 720928, 0, 131075, 720929, 0, 131075, 720930, 0, 131075, 720931, 0, 131075, 720932, 0, 131075, 720933, 0, 131076 )
 
 [node name="Ground" parent="Board/ForestTilemap" index="1"]
-tile_data = PoolIntArray( -327672, 0, 0, -327671, 0, 1, -327670, 0, 1, -327669, 0, 2, -262138, 0, 0, -262137, 0, 1, -262136, 0, 65540, -262135, 0, 65537, -262134, 0, 65537, -262133, 0, 65539, -262132, 0, 1, -262131, 0, 2, -196602, 0, 65536, -196601, 0, 65537, -196600, 0, 65537, -196599, 0, 65537, -196598, 0, 65537, -196597, 0, 65537, -196596, 0, 65537, -196595, 0, 65538, -131066, 0, 65536, -131065, 0, 65537, -131064, 0, 65537, -131063, 0, 65537, -131062, 0, 65537, -131061, 0, 65537, -131060, 0, 65537, -131059, 0, 65538, -65530, 0, 65536, -65529, 0, 65537, -65528, 0, 65537, -65527, 0, 65537, -65526, 0, 65537, -65525, 0, 65537, -65524, 0, 65537, -65523, 0, 65538, 6, 0, 131072, 7, 0, 4, 8, 0, 65537, 9, 0, 65537, 10, 0, 65537, 11, 0, 65537, 12, 0, 3, 13, 0, 131074, 65543, 0, 65536, 65544, 0, 65537, 65545, 0, 65537, 65546, 0, 65537, 65547, 0, 65537, 65548, 0, 65538, 131079, 0, 131072, 131080, 0, 131073, 131081, 0, 131073, 131082, 0, 131073, 131083, 0, 131073, 131084, 0, 131074 )
+tile_data = PoolIntArray( -458726, 0, 0, -458725, 0, 1, -458724, 0, 1, -458723, 0, 1, -458722, 0, 2, -393191, 0, 0, -393190, 0, 65540, -393189, 0, 65537, -393188, 0, 65537, -393187, 0, 65537, -393186, 0, 65539, -393185, 0, 2, -327656, 0, 0, -327655, 0, 65540, -327654, 0, 65537, -327653, 0, 65537, -327652, 0, 65537, -327651, 0, 65537, -327650, 0, 65537, -327649, 0, 65539, -327648, 0, 2, -262120, 0, 65536, -262119, 0, 65537, -262118, 0, 65537, -262117, 0, 65537, -262116, 0, 65537, -262115, 0, 65537, -262114, 0, 65537, -262113, 0, 65537, -262112, 0, 65538, -196584, 0, 65536, -196583, 0, 65537, -196582, 0, 65537, -196581, 0, 65537, -196580, 0, 65537, -196579, 0, 65537, -196578, 0, 65537, -196577, 0, 65537, -196576, 0, 65538, -131048, 0, 65536, -131047, 0, 65537, -131046, 0, 65537, -131045, 0, 65537, -131044, 0, 65537, -131043, 0, 65537, -131042, 0, 65537, -131041, 0, 65537, -131040, 0, 65538, -65512, 0, 65536, -65511, 0, 65537, -65510, 0, 65537, -65509, 0, 65537, -65508, 0, 65537, -65507, 0, 65537, -65506, 0, 65537, -65505, 0, 65537, -65504, 0, 65538, 24, 0, 131072, 25, 0, 131073, 26, 0, 131073, 27, 0, 131073, 28, 0, 131073, 29, 0, 131073, 30, 0, 131073, 31, 0, 131073, 32, 0, 131074 )
 
 [node name="Blocks" parent="Board/ForestTilemap" index="2"]
-tile_data = PoolIntArray( 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 196610, 0, 0, 196625, 0, 0, 262146, 0, 0, 262161, 0, 0, 327682, 0, 0, 327697, 0, 0, 393218, 0, 0, 393233, 0, 0, 458754, 0, 0, 458769, 0, 0, 524290, 0, 0, 524305, 0, 0, 589826, 0, 0, 589841, 0, 0, 655362, 0, 0, 655377, 0, 0, 720898, 0, 0, 720913, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0 )
+tile_data = PoolIntArray( 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 65557, 0, 0, 65571, 0, 0, 131093, 0, 0, 131107, 0, 0, 196629, 0, 0, 196643, 0, 0, 262165, 0, 0, 262179, 0, 0, 327701, 0, 0, 327715, 0, 0, 393237, 0, 0, 393251, 0, 0, 458773, 0, 0, 458787, 0, 0, 524309, 0, 0, 524323, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0 )
+
+[node name="Box3" parent="Board" instance=ExtResource( 20 )]
+position = Vector2( 552, 40 )
+boxValue = 5
+
+[node name="Box5" parent="Board" instance=ExtResource( 20 )]
+position = Vector2( 536, 120 )
+
+[node name="PhantomBlock9" parent="Board" instance=ExtResource( 22 )]
+position = Vector2( 552, 56 )
+
+[node name="LeverTile" parent="Board" instance=ExtResource( 16 )]
+position = Vector2( 360, 120 )
+
+[node name="OperationalTile" parent="Board" instance=ExtResource( 24 )]
+position = Vector2( 552, 120 )
+operationalValue = 10
+
+[node name="ScannerTile3" parent="Board" instance=ExtResource( 23 )]
+position = Vector2( 552, 136 )
+scannerID = 3
+
+[node name="Temple" parent="Board" instance=ExtResource( 19 )]
+position = Vector2( 360, 24 )
+
+[node name="Player" parent="Board" instance=ExtResource( 15 )]
+position = Vector2( 360, 136 )
 
 [node name="Serpent" parent="Board" instance=ExtResource( 18 )]
-position = Vector2( -328, 88 )
-
-[node name="AnimatedSprite3" type="AnimatedSprite" parent="Board/Serpent"]
-position = Vector2( 64, 24 )
-scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 12 )
-animation = "Crystal"
-frame = 2
-playing = true
-
-[node name="AnimatedSprite5" type="AnimatedSprite" parent="Board/Serpent"]
-position = Vector2( -64, 24 )
-scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 12 )
-animation = "Crystal"
-frame = 2
-playing = true
+position = Vector2( 456, -48 )
+frame = 1
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Board/Serpent"]
 position = Vector2( 0, -24 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 12 )
 animation = "Crystal"
-frame = 1
+frame = 5
 playing = true
 
 [node name="Sprite" type="Sprite" parent="Board/Serpent"]
@@ -121,392 +137,306 @@ vframes = 8
 frame = 54
 
 [node name="Traps" type="Node2D" parent="Board"]
-position = Vector2( -488, 104 )
-
-[node name="Venom" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 72, 56 )
-
-[node name="Venom2" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 88, 56 )
 
 [node name="Venom3" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 56, 72 )
+position = Vector2( 376, 136 )
 
 [node name="Venom4" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 56, 88 )
+position = Vector2( 392, 136 )
 
 [node name="Venom5" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 88, 88 )
+position = Vector2( 408, 136 )
 
 [node name="Venom6" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 104, 56 )
+position = Vector2( 424, 136 )
 
 [node name="Venom7" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 56, 104 )
+position = Vector2( 440, 136 )
 
 [node name="Venom8" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 72, 104 )
+position = Vector2( 456, 136 )
 
 [node name="Venom9" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 88, 104 )
+position = Vector2( 472, 136 )
 
 [node name="Venom10" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 104, 88 )
+position = Vector2( 488, 136 )
 
 [node name="Venom11" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 104, 72 )
+position = Vector2( 504, 136 )
 
 [node name="Venom12" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 120, 72 )
+position = Vector2( 520, 136 )
 
 [node name="Venom13" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 72, 120 )
+position = Vector2( 536, 136 )
 
 [node name="Venom14" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 56, 120 )
+position = Vector2( 376, 120 )
 
 [node name="Venom15" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 56, 136 )
+position = Vector2( 392, 120 )
 
 [node name="Venom16" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 72, 152 )
+position = Vector2( 408, 120 )
 
 [node name="Venom17" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 56, 168 )
-
-[node name="Venom48" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 56, 184 )
-
-[node name="Venom49" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 104, 184 )
-
-[node name="Venom50" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 120, 184 )
-
-[node name="Venom51" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 136, 184 )
-
-[node name="Venom52" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 136, 168 )
-
-[node name="Venom53" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 152, 168 )
-
-[node name="Venom54" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 152, 152 )
-
-[node name="Venom55" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 168, 152 )
-
-[node name="Venom56" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 168, 136 )
-
-[node name="Venom57" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 184, 136 )
-
-[node name="Venom58" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 184, 120 )
-
-[node name="Venom59" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 200, 120 )
-
-[node name="Venom60" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 216, 104 )
-
-[node name="Venom61" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 216, 88 )
-
-[node name="Venom62" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 232, 88 )
-
-[node name="Venom63" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 232, 72 )
-
-[node name="Venom64" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 264, 88 )
-
-[node name="Venom67" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 264, 104 )
-
-[node name="Venom68" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 248, 104 )
-
-[node name="Venom69" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 248, 120 )
-
-[node name="Venom70" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 232, 120 )
-
-[node name="Venom71" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 264, 120 )
-
-[node name="Venom72" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 264, 136 )
-
-[node name="Venom73" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 248, 136 )
-
-[node name="Venom74" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 216, 136 )
-
-[node name="Venom76" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 216, 152 )
-
-[node name="Venom77" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 200, 152 )
-
-[node name="Venom78" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 200, 168 )
-
-[node name="Venom79" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 184, 168 )
-
-[node name="Venom80" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 184, 184 )
-
-[node name="Venom81" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 168, 184 )
-
-[node name="Venom82" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 200, 184 )
-
-[node name="Venom83" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 216, 184 )
-
-[node name="Venom84" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 216, 168 )
-
-[node name="Venom85" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 232, 168 )
-
-[node name="Venom86" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 248, 152 )
-
-[node name="Venom87" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 264, 152 )
-
-[node name="Venom88" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 264, 168 )
-
-[node name="Venom89" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 248, 184 )
-
-[node name="Venom90" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 232, 184 )
-
-[node name="Venom75" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 232, 136 )
-
-[node name="Venom65" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 248, 56 )
-
-[node name="Venom66" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 264, 56 )
+position = Vector2( 424, 120 )
 
 [node name="Venom18" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 88, 136 )
+position = Vector2( 440, 120 )
 
 [node name="Venom19" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 104, 120 )
+position = Vector2( 456, 120 )
 
 [node name="Venom20" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 120, 104 )
+position = Vector2( 472, 120 )
 
 [node name="Venom21" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 136, 88 )
+position = Vector2( 488, 120 )
 
 [node name="Venom22" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 152, 72 )
+position = Vector2( 504, 120 )
 
 [node name="Venom23" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 168, 56 )
+position = Vector2( 520, 120 )
 
 [node name="Venom24" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 88, 152 )
+position = Vector2( 536, 120 )
 
 [node name="Venom25" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 72, 168 )
+position = Vector2( 376, 104 )
 
 [node name="Venom26" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 104, 136 )
+position = Vector2( 392, 104 )
 
 [node name="Venom27" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 120, 120 )
+position = Vector2( 408, 104 )
 
 [node name="Venom28" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 136, 104 )
+position = Vector2( 424, 104 )
 
 [node name="Venom29" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 152, 88 )
+position = Vector2( 440, 104 )
 
 [node name="Venom30" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 168, 72 )
+position = Vector2( 456, 104 )
 
 [node name="Venom31" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 184, 56 )
+position = Vector2( 472, 104 )
 
 [node name="Venom32" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 88, 168 )
+position = Vector2( 488, 104 )
 
 [node name="Venom33" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 72, 184 )
+position = Vector2( 504, 104 )
 
 [node name="Venom34" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 104, 152 )
+position = Vector2( 520, 104 )
 
 [node name="Venom35" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 120, 136 )
+position = Vector2( 536, 104 )
 
 [node name="Venom36" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 136, 120 )
+position = Vector2( 376, 88 )
 
 [node name="Venom37" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 152, 104 )
+position = Vector2( 392, 88 )
 
 [node name="Venom38" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 168, 88 )
+position = Vector2( 408, 88 )
 
 [node name="Venom39" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 184, 72 )
+position = Vector2( 424, 88 )
 
 [node name="Venom40" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 136, 152 )
+position = Vector2( 440, 88 )
 
 [node name="Venom41" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 120, 168 )
+position = Vector2( 456, 88 )
 
 [node name="Venom42" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 152, 136 )
+position = Vector2( 472, 88 )
 
 [node name="Venom43" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 168, 120 )
+position = Vector2( 488, 88 )
 
 [node name="Venom44" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 184, 104 )
+position = Vector2( 504, 88 )
 
 [node name="Venom45" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 200, 88 )
+position = Vector2( 520, 88 )
 
 [node name="Venom46" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 216, 72 )
+position = Vector2( 536, 88 )
 
 [node name="Venom47" parent="Board/Traps" instance=ExtResource( 21 )]
-position = Vector2( 232, 56 )
+position = Vector2( 376, 72 )
 
-[node name="Box3" parent="Board" instance=ExtResource( 20 )]
-position = Vector2( -416, 176 )
-boxValue = 50
+[node name="Venom48" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 392, 72 )
 
-[node name="Box5" parent="Board" instance=ExtResource( 20 )]
-position = Vector2( -368, 160 )
-boxValue = 50
+[node name="Venom49" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 408, 72 )
 
-[node name="Box2" parent="Board" instance=ExtResource( 20 )]
-position = Vector2( -288, 208 )
-boxValue = 30
+[node name="Venom50" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 424, 72 )
 
-[node name="Box4" parent="Board" instance=ExtResource( 20 )]
-position = Vector2( -352, 208 )
-boxValue = 70
+[node name="Venom51" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 440, 72 )
 
-[node name="PhantomBlock" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -400, 176 )
+[node name="Venom52" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 456, 72 )
 
-[node name="PhantomBlock2" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -416, 192 )
+[node name="Venom53" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 472, 72 )
 
-[node name="PhantomBlock3" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -384, 208 )
+[node name="Venom54" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 488, 72 )
 
-[node name="PhantomBlock4" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -368, 192 )
+[node name="Venom55" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 504, 72 )
 
-[node name="PhantomBlock5" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -352, 176 )
+[node name="Venom56" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 520, 72 )
 
-[node name="PhantomBlock6" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -336, 160 )
+[node name="Venom57" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 536, 72 )
 
-[node name="PhantomBlock9" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -432, 256 )
+[node name="Venom58" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 376, 56 )
 
-[node name="PhantomBlock10" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -400, 288 )
+[node name="Venom59" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 392, 56 )
 
-[node name="PhantomBlock11" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -384, 272 )
+[node name="Venom60" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 408, 56 )
 
-[node name="PhantomBlock12" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -368, 256 )
+[node name="Venom61" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 424, 56 )
 
-[node name="PhantomBlock13" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -352, 240 )
+[node name="Venom62" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 440, 56 )
 
-[node name="PhantomBlock14" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -336, 224 )
+[node name="Venom63" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 456, 56 )
 
-[node name="PhantomBlock15" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -320, 208 )
+[node name="Venom64" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 472, 56 )
 
-[node name="PhantomBlock16" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -304, 192 )
+[node name="Venom65" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 488, 56 )
 
-[node name="PhantomBlock17" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -288, 176 )
+[node name="Venom66" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 504, 56 )
 
-[node name="PhantomBlock18" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -272, 160 )
+[node name="Venom67" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 520, 56 )
 
-[node name="PhantomBlock19" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -224, 176 )
+[node name="Venom68" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 536, 56 )
 
-[node name="PhantomBlock20" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -240, 192 )
+[node name="Venom69" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 376, 40 )
 
-[node name="PhantomBlock21" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -256, 208 )
+[node name="Venom91" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 552, 104 )
 
-[node name="PhantomBlock22" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -272, 224 )
+[node name="Venom97" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 552, 120 )
 
-[node name="PhantomBlock23" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -288, 240 )
+[node name="Venom98" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 360, 40 )
 
-[node name="PhantomBlock24" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -304, 256 )
+[node name="Venom99" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 360, 56 )
 
-[node name="PhantomBlock25" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -320, 272 )
+[node name="Venom100" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 360, 72 )
 
-[node name="PhantomBlock26" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -336, 288 )
+[node name="Venom101" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 360, 88 )
 
-[node name="PhantomBlock7" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -400, 224 )
+[node name="Venom102" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 360, 104 )
 
-[node name="PhantomBlock8" parent="Board" instance=ExtResource( 22 )]
-position = Vector2( -416, 240 )
+[node name="Venom92" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 552, 88 )
 
-[node name="LeverTile" parent="Board" instance=ExtResource( 16 )]
-position = Vector2( -352, 160 )
+[node name="Venom93" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 552, 72 )
 
-[node name="LeverTile3" parent="Board" instance=ExtResource( 16 )]
-position = Vector2( -288, 160 )
+[node name="Venom94" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 552, 56 )
 
-[node name="LeverTile4" parent="Board" instance=ExtResource( 16 )]
-position = Vector2( -240, 176 )
+[node name="Venom95" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 552, 40 )
 
-[node name="LeverTile5" parent="Board" instance=ExtResource( 16 )]
-position = Vector2( -240, 272 )
+[node name="Venom96" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 552, 24 )
 
-[node name="ScannerTile2" parent="Board" instance=ExtResource( 23 )]
-position = Vector2( -256, 256 )
+[node name="Venom70" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 392, 40 )
 
-[node name="Temple" parent="Board" instance=ExtResource( 19 )]
-position = Vector2( -224, 288 )
+[node name="Venom71" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 408, 40 )
 
-[node name="Player" parent="Board" instance=ExtResource( 15 )]
-position = Vector2( -432, 160 )
+[node name="Venom72" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 424, 40 )
+
+[node name="Venom73" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 440, 40 )
+
+[node name="Venom74" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 456, 40 )
+
+[node name="Venom75" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 472, 40 )
+
+[node name="Venom76" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 488, 40 )
+
+[node name="Venom77" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 504, 40 )
+
+[node name="Venom78" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 520, 40 )
+
+[node name="Venom79" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 536, 40 )
+
+[node name="Venom80" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 376, 24 )
+
+[node name="Venom81" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 392, 24 )
+
+[node name="Venom82" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 408, 24 )
+
+[node name="Venom83" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 424, 24 )
+
+[node name="Venom84" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 440, 24 )
+
+[node name="Venom85" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 456, 24 )
+
+[node name="Venom86" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 472, 24 )
+
+[node name="Venom87" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 488, 24 )
+
+[node name="Venom88" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 504, 24 )
+
+[node name="Venom89" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 520, 24 )
+
+[node name="Venom90" parent="Board/Traps" instance=ExtResource( 21 )]
+position = Vector2( 536, 24 )
 
 [node name="Timers" type="Node" parent="."]
 

@@ -24,7 +24,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiTalking",
-			"text": "Hello? Excuse me. Where can I find a Mathematics Book?"
+			"text": "Hello? Excuse me. Librarian !. Where can I find a Mathematics Book?"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -70,7 +70,7 @@
 			"character": "character-1668575118.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hello, Let me just check on the Records.\nA Mathematics Book is Available at the end of the Library.\nJust go straight pass the Shelves and it is just placed on top of a table."
+			"text": "Hello Archi, Let me just check on the Records.\nThis Software might take a long time to find the book.\nWhile waiting, Can I Ask for a Favor Archin ?\nCan you find the Vase and put it on top of the Square Platform. I appreciate your help Archi ! Thanks !"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -116,7 +116,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiHappy",
-			"text": "Thanks !"
+			"text": "Alright ! Just wait. I will bring the Vase to you."
 		},
 		{
 			"animation": "4-fade_out.gd",

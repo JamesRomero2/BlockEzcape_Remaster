@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/DoorCutscene.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Gates.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/DoorImage1.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Hexagram.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Book.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Silhoutte2.png" type="Texture" id=5]
@@ -21,10 +21,6 @@ anchor_bottom = 1.0
 [node name="Door" type="TextureRect" parent="CanvasLayer/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -15.0
-margin_top = -72.0
-margin_right = 15.0
-margin_bottom = 80.0
 texture = ExtResource( 2 )
 expand = true
 

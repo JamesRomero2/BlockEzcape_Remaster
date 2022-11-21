@@ -4,6 +4,9 @@ onready var player := $GameObjects/Player
 onready var temple := $GameObjects/Temple
 onready var pause := $PausePanel
 onready var resultPanel := $ResultPanel
+onready var rand := RandomNumberGenerator.new()
+onready var noise := OpenSimplexNoise.new()
+onready var camera := $Camera2D
 
 export(String) var timelineName = ""
 export var answers := {
@@ -14,6 +17,10 @@ export var answers := {
 }
 export(bool) var resultAnimating: bool = false
 export(int, 0, 4) var requiredMedal = 0
+export var randomShakeStrength: float = 10.0
+export var shakeDecayRate: float = 3.0
+export var noiseShakeSpeed: float = 10.0
+export var noiseShakeStrength: float = 15.0
 
 var moveCount: int = 0
 var result = Array()
@@ -27,12 +34,19 @@ var forestMusic = load("res://Assets/Audio/Music/Forest/FinalForestLevelMusic.og
 var undergroundMusic = load("res://Assets/Audio/Music/Underground/FinalUndergroundLevelMusic.ogg")
 var castleMusic = load("res://Assets/Audio/Music/Castle/FinalCastleLevelMusic.ogg")
 var magicalMusic = load("res://Assets/Audio/Music/Magical/FinalMagicalLevelMusic.ogg")
+var noiseI: float = 0.0
+var shakeStrength: float = 0.0
 
 func _ready():
+	get_tree().current_scene = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	_playDialog(timelineName)
 	_connectSignal()
 	levelMusicManager()
+	
+	rand.randomize()
+	noise.seed = rand.randi()
+	noise.period = 2
 
 func _playDialog(value):
 	if value == "":
@@ -55,10 +69,13 @@ func _playGame():
 	GameManager._setGameOver(false)
 	GameManager._setGamePaused(false)
 	GameManager._setGameTimerActive(true)
+	if get_node_or_null("GameObjects/Traps") != null: 
+		get_node_or_null("GameObjects/Traps")._cast()
 
 func _connectSignal():
 	player.connect("objectStateChange", self, "_playerJournal")
 	player.connect("playerPushed", self, "_playerPushJournal")
+	player.connect("playerDamage", self, "_onPlayerHurt")
 	temple.connect("levelAccomplish", self, "_onLevelAccomplish")
 	
 	for box in get_tree().get_nodes_in_group("Box"):
@@ -95,9 +112,21 @@ func _process(delta):
 
 	if Input.is_action_pressed("undo"):
 		_undoSystem()
+	
+	shakeStrength = lerp(shakeStrength, 0, shakeDecayRate * delta)
+	
+	camera.offset = getNoiseOffset(delta)
+
+func getNoiseOffset(delta):
+	noiseI += delta * noiseShakeSpeed
+	
+	return Vector2(
+		noise.get_noise_2d(1, noiseI) * shakeStrength,
+		noise.get_noise_2d(100, noiseI) * shakeStrength
+	)
 
 func _gameTimer(value):
-	if GameManager._getGameTimerActive():
+	if GameManager._getGameTimerActive() and !GameManager._getPlayerAnimating():
 		time += value
 	
 	secs = fmod(time, 60)
@@ -134,11 +163,13 @@ func _onScannerInput(value, id, scannerNode):
 		result.append(scanner._getResult())
 
 	if result.has(false):
-		$GameObjects.find_node("Temple")._setAnswer(false)
-		$GameObjects.find_node("Temple")._setDoorState(false)
+		temple._setAnswer(false)
+		temple._setDoorState(false)
+		temple._setTexture()
 	else:
-		$GameObjects.find_node("Temple")._setAnswer(true)
-		$GameObjects.find_node("Temple")._setDoorState(true)
+		temple._setAnswer(true)
+		temple._setDoorState(true)
+		temple._setTexture()
 
 func _getAllBridgeState():
 	var bridges := Array()
@@ -158,10 +189,7 @@ func _changeGameState():
 func _onLevelAccomplish():
 	GameManager._setGameOver(true)
 	GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
-	resultPanel._showResult(mins, secs, self.name.right(5).to_int())
-	
-	if(resultPanel._newLevelUnlocked(requiredMedal)):
-		GameManager._setOpenLevels(self.name.right(5).to_int() + 1)
+	resultPanel._showResult(mins, secs, self.name.right(5).to_int(), requiredMedal)
 
 func _playerJournal(object):
 	undoRedoJournal.create_action("Move")
@@ -194,14 +222,8 @@ func _onOperationalStateChange(object):
 	
 	undoRedoJournal.commit_action()
 
-func _on_PauseButton_pressed():
-	_changeGameState()
-
 func _on_Timer_timeout():
 	canUndo = true
-
-func _on_UndoButton_pressed():
-	_undoSystem()
 
 func _undoSystem():
 	if !GameManager._getGameOver():
@@ -230,3 +252,10 @@ func levelMusicManager():
 		GlobalMusic._changeMusic(castleMusic)
 	elif levelNum > 15 and levelNum < 20:
 		GlobalMusic._changeMusic(magicalMusic)
+
+func _onPlayerHurt():
+	applyShake()
+	get_node_or_null("GameObjects/Traps")._onPlayerHurt()
+
+func applyShake():
+	shakeStrength = noiseShakeStrength
