@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Underground/Underground.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
 [ext_resource path="res://GameObjects/Tiles/OperationalTile/OperationalTile.tscn" type="PackedScene" id=16]
 [ext_resource path="res://GameObjects/Character/NPC/Baud.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=18]
 
 [node name="Level 08" type="Node"]
 script = ExtResource( 1 )
@@ -98,13 +99,17 @@ position = Vector2( -48, -128 )
 
 [node name="Top" type="Node2D" parent="GameObjects/Question"]
 
-[node name="Box3" parent="GameObjects/Question/Top" instance=ExtResource( 4 )]
-position = Vector2( -544, 120 )
-boxValue = 77
-
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 10 )]
 position = Vector2( -560, 112 )
 frame = 0
+
+[node name="DoubleDigits" parent="GameObjects/Question/Top" instance=ExtResource( 18 )]
+position = Vector2( -544, 120 )
+objectValue = 77
+
+[node name="DoubleDigits2" parent="GameObjects/Question/Top" instance=ExtResource( 18 )]
+position = Vector2( -568, 120 )
+objectValue = 15
 
 [node name="Bottom" type="Node2D" parent="GameObjects/Question"]
 
@@ -115,23 +120,18 @@ position = Vector2( -568, 136 )
 position = Vector2( -544, 136 )
 scannerID = 1
 
-[node name="Box6" parent="GameObjects/Question/Bottom" instance=ExtResource( 4 )]
-position = Vector2( -568, 120 )
-boxValue = 15
-
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 10 )]
 position = Vector2( -560, 128 )
 frame = 0
 
 [node name="Answer" type="Node2D" parent="GameObjects/Question"]
 
-[node name="Box7" parent="GameObjects/Question/Answer" instance=ExtResource( 4 )]
-position = Vector2( -544, 160 )
-boxValue = 50
-
-[node name="Box8" parent="GameObjects/Question/Answer" instance=ExtResource( 4 )]
+[node name="DoubleDigits3" parent="GameObjects/Question/Answer" instance=ExtResource( 18 )]
 position = Vector2( -568, 160 )
-boxValue = 8
+objectValue = 8
+
+[node name="DoubleDigits4" parent="GameObjects/Question/Answer" instance=ExtResource( 18 )]
+position = Vector2( -544, 160 )
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 10 )]
 position = Vector2( -560, 152 )

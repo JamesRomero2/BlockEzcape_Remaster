@@ -126,7 +126,7 @@ objectValue = 0
 
 [node name="DoubleDigits5" parent="GameObjects/Question/Answer" instance=ExtResource( 14 )]
 position = Vector2( -568, 160 )
-objectValue = 0
+objectValue = 1
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 8 )]
 position = Vector2( -560, 152 )
