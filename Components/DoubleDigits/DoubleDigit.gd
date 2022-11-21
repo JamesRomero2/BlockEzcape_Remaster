@@ -1,6 +1,7 @@
 extends Node2D
 
-var digitValue
+export(int) var objectValue := 00
+
 var valueText := {
 	0: "Zero",
 	1: "One",
@@ -16,26 +17,39 @@ var valueText := {
 
 onready var ones := $Ones
 onready var tens := $Tens
+onready var single := $Single
+onready var guidingBox := $Guide
+
+func _ready():
+	setObjectsValue(objectValue)
+
+func setObjectsValue(value):
+	_setValue(value)
+	_setDigit()
 
 func _setDigit():
-#	if _getWholeValue() < 10 and _getWholeValue() > 0:
-#		ones.visible = true
-#		tens.visible = false
-#	else:
-#		ones.visible = true
-#		tens.visible = true
-
-	ones._setOnesDigit(_getOnesValue(), valueText[_getOnesValue()])
-	tens._setTensDigit(_getTensValue(), valueText[_getTensValue()])
+	if _getWholeValue() < 10:
+		ones.visible = false
+		tens.visible = false
+		single.visible = true
+		single._setOnesDigit(_getOnesValue(), valueText[_getOnesValue()])
+		guidingBox.visible = true
+	else:
+		ones.visible = true
+		tens.visible = true
+		single.visible = false
+		ones._setOnesDigit(_getOnesValue(), valueText[_getOnesValue()])
+		tens._setTensDigit(_getTensValue(), valueText[_getTensValue()])
+		guidingBox.visible = false
 
 func _setValue(value):
-	digitValue = value
+	objectValue = value
 
 func _getOnesValue():
-	return digitValue % 10
+	return objectValue % 10
 
 func _getTensValue():
-	return (digitValue / 10) % 10
+	return (objectValue / 10) % 10
 
 func _getWholeValue():
-	return digitValue
+	return objectValue
