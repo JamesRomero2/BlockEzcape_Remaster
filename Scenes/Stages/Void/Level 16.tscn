@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Textures/LevelBG/MagicalVoid/2.jpg" type="Texture" id=1]
 [ext_resource path="res://Components/Tilesets/Void/Void.tscn" type="PackedScene" id=2]
@@ -15,17 +15,6 @@
 [ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Textures/DivisionLine.png" type="Texture" id=14]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=17]
-[ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=18]
-
-[sub_resource type="DynamicFont" id=8]
-size = 12
-font_data = ExtResource( 17 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 12
-font_data = ExtResource( 17 )
 
 [node name="Level 16" type="Node"]
 script = ExtResource( 5 )
@@ -47,11 +36,11 @@ zoom = Vector2( 0.6, 0.6 )
 
 [node name="Void" parent="." instance=ExtResource( 2 )]
 
-[node name="TileMap" parent="Void" index="0"]
-tile_data = PoolIntArray( 131027, 0, 0, 131028, 0, 1, 131029, 0, 1, 131030, 0, 1, 131031, 0, 1, 131032, 0, 1, 131033, 0, 1, 131034, 0, 1, 131035, 0, 2, 131038, 0, 0, 131039, 0, 1, 131040, 0, 1, 131041, 0, 1, 131042, 0, 1, 131043, 0, 1, 131044, 0, 2, 196563, 0, 65536, 196564, 1, 0, 196565, 1, 0, 196566, 1, 0, 196567, 1, 0, 196568, 1, 0, 196569, 1, 0, 196570, 1, 0, 196571, 0, 65538, 196574, 0, 65536, 196575, 1, 0, 196576, 1, 0, 196577, 1, 0, 196578, 1, 0, 196579, 1, 0, 196580, 0, 65538, 262099, 0, 65536, 262100, 1, 0, 262101, 1, 0, 262102, 1, 0, 262103, 1, 0, 262104, 1, 0, 262105, 1, 0, 262106, 1, 0, 262107, 0, 65538, 262110, 0, 65536, 262111, 1, 0, 262112, 1, 0, 262113, 1, 0, 262114, 1, 0, 262115, 1, 0, 262116, 0, 65538, 327635, 0, 65536, 327636, 1, 0, 327637, 1, 0, 327638, 1, 0, 327639, 1, 0, 327640, 1, 0, 327641, 1, 0, 327642, 1, 0, 327643, 0, 65538, 327646, 0, 65536, 327647, 1, 0, 327648, 1, 0, 327649, 1, 0, 327650, 1, 0, 327651, 1, 0, 327652, 0, 65538, 393171, 0, 65536, 393172, 1, 0, 393173, 1, 0, 393174, 1, 0, 393175, 1, 0, 393176, 1, 0, 393177, 1, 0, 393178, 1, 0, 393179, 0, 65538, 393182, 0, 65536, 393183, 1, 0, 393184, 1, 0, 393185, 1, 0, 393186, 1, 0, 393187, 1, 0, 393188, 0, 65538, 458707, 0, 65536, 458708, 1, 0, 458709, 1, 0, 458710, 1, 0, 458711, 1, 0, 458712, 1, 0, 458713, 1, 0, 458714, 1, 0, 458715, 0, 65538, 458718, 0, 65536, 458719, 1, 0, 458720, 1, 0, 458721, 1, 0, 458722, 1, 0, 458723, 1, 0, 458724, 0, 65538, 524243, 0, 65536, 524244, 1, 0, 524245, 1, 0, 524246, 1, 0, 524247, 1, 0, 524248, 1, 0, 524249, 1, 0, 524250, 1, 0, 524251, 0, 65538, 524254, 0, 65536, 524255, 1, 0, 524256, 1, 0, 524257, 1, 0, 524258, 1, 0, 524259, 1, 0, 524260, 0, 65538, 589779, 0, 131072, 589780, 0, 131073, 589781, 0, 131073, 589782, 0, 131073, 589783, 0, 131073, 589784, 0, 131073, 589785, 0, 131073, 589786, 0, 131073, 589787, 0, 131074, 589790, 0, 131072, 589791, 0, 131073, 589792, 0, 131073, 589793, 0, 131073, 589794, 0, 131073, 589795, 0, 131073, 589796, 0, 131074 )
+[node name="TileMap2" parent="Void" index="1"]
+tile_data = PoolIntArray( 131027, 0, 2, 131028, 0, 3, 131029, 0, 3, 131030, 0, 3, 131031, 0, 3, 131032, 0, 3, 131033, 0, 3, 131034, 0, 3, 131035, 0, 4, 131039, 0, 2, 131040, 0, 3, 131041, 0, 3, 131042, 0, 3, 131043, 0, 4, 196563, 0, 65538, 196564, 0, 65539, 196565, 0, 65539, 196566, 0, 65539, 196567, 0, 65539, 196568, 0, 65539, 196569, 0, 65539, 196570, 0, 65539, 196571, 0, 65540, 196574, 0, 2, 196575, 0, 65537, 196576, 0, 65539, 196577, 0, 65539, 196578, 0, 65539, 196579, 0, 65536, 196580, 0, 4, 262099, 0, 65538, 262100, 0, 65539, 262101, 0, 65539, 262102, 0, 65539, 262103, 0, 65539, 262104, 0, 65539, 262105, 0, 65539, 262106, 0, 65539, 262107, 0, 65540, 262110, 0, 65538, 262111, 0, 65539, 262112, 0, 65539, 262113, 0, 65539, 262114, 0, 65539, 262115, 0, 65539, 262116, 0, 65540, 327635, 0, 65538, 327636, 0, 65539, 327637, 0, 65539, 327638, 0, 65539, 327639, 0, 65539, 327640, 0, 65539, 327641, 0, 65539, 327642, 0, 65539, 327643, 0, 65540, 327646, 0, 65538, 327647, 0, 65539, 327648, 0, 65539, 327649, 0, 65539, 327650, 0, 65539, 327651, 0, 65539, 327652, 0, 65540, 393171, 0, 65538, 393172, 0, 65539, 393173, 0, 65539, 393174, 0, 65539, 393175, 0, 65539, 393176, 0, 65539, 393177, 0, 65539, 393178, 0, 65539, 393179, 0, 65540, 393182, 0, 65538, 393183, 0, 65539, 393184, 0, 65539, 393185, 0, 65539, 393186, 0, 65539, 393187, 0, 65539, 393188, 0, 65540, 458707, 0, 65538, 458708, 0, 65539, 458709, 0, 65539, 458710, 0, 65539, 458711, 0, 65539, 458712, 0, 65539, 458713, 0, 65539, 458714, 0, 65539, 458715, 0, 65540, 458718, 0, 65538, 458719, 0, 65539, 458720, 0, 65539, 458721, 0, 65539, 458722, 0, 65539, 458723, 0, 65539, 458724, 0, 65540, 524243, 0, 65538, 524244, 0, 65539, 524245, 0, 65539, 524246, 0, 65539, 524247, 0, 65539, 524248, 0, 65539, 524249, 0, 65539, 524250, 0, 65539, 524251, 0, 65540, 524254, 0, 131074, 524255, 0, 1, 524256, 0, 65539, 524257, 0, 65539, 524258, 0, 65539, 524259, 0, 0, 524260, 0, 131076, 589779, 0, 131074, 589780, 0, 131075, 589781, 0, 131075, 589782, 0, 131075, 589783, 0, 131075, 589784, 0, 131075, 589785, 0, 131075, 589786, 0, 131075, 589787, 0, 131076, 589791, 0, 131074, 589792, 0, 131075, 589793, 0, 131075, 589794, 0, 131075, 589795, 0, 131076 )
 
-[node name="Blocks" parent="Void" index="1"]
-tile_data = PoolIntArray( 196575, 0, 0, 196576, 0, 0, 196577, 0, 0, 196578, 0, 0, 196579, 0, 0, 262111, 0, 0, 262115, 0, 0, 327647, 0, 0, 327651, 0, 0, 393183, 0, 0, 393187, 0, 0, 458719, 0, 0, 458723, 0, 0, 524255, 0, 0, 524256, 0, 0, 524257, 0, 0, 524258, 0, 0, 524259, 0, 0 )
+[node name="Blocks" parent="Void" index="2"]
+tile_data = PoolIntArray( 196576, 0, 0, 196577, 0, 0, 196578, 0, 0, 262111, 0, 0, 262115, 0, 0, 327647, 0, 0, 327651, 0, 0, 393183, 0, 0, 393187, 0, 0, 458719, 0, 0, 458723, 0, 0, 524256, 0, 0, 524257, 0, 0, 524258, 0, 0 )
 
 [node name="GameObjects" type="Node2D" parent="."]
 position = Vector2( 8, 80 )
@@ -179,77 +168,12 @@ offset = Vector2( 0, -31.6667 )
 [node name="PausePanel" parent="." instance=ExtResource( 15 )]
 visible = false
 
-[node name="UILayer" type="CanvasLayer" parent="."]
-
-[node name="Buttons" type="Control" parent="UILayer"]
-anchor_right = 1.0
-
-[node name="PauseButton" type="Button" parent="UILayer/Buttons"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -40.0
-margin_top = 8.0
-margin_right = -8.0
-margin_bottom = 64.0
-flat = true
-
-[node name="TextureRect" type="TextureRect" parent="UILayer/Buttons/PauseButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 16 )
-stretch_mode = 6
-
-[node name="Label" type="Label" parent="UILayer/Buttons/PauseButton/TextureRect"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -12.0
-margin_top = -22.0
-margin_right = 13.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 8 )
-text = "Esc"
-align = 1
-valign = 1
-
-[node name="UndoButton" type="Button" parent="UILayer/Buttons"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -80.0
-margin_top = 8.0
-margin_right = -48.0
-margin_bottom = 64.0
-flat = true
-
-[node name="TextureRect2" type="TextureRect" parent="UILayer/Buttons/UndoButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 18 )
-stretch_mode = 6
-
-[node name="Label" type="Label" parent="UILayer/Buttons/UndoButton/TextureRect2"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -16.0
-margin_top = -22.0
-margin_right = 16.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 10 )
-text = "Undo"
-align = 1
-valign = 1
-
 [node name="ResultPanel" parent="." instance=ExtResource( 7 )]
 visible = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
 
-[connection signal="pressed" from="UILayer/Buttons/PauseButton" to="." method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="UILayer/Buttons/UndoButton" to="." method="_on_UndoButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Void"]

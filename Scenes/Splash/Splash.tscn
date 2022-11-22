@@ -1,11 +1,29 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Splash/Splash.gd" type="Script" id=1]
-[ext_resource path="res://Assets/GameAssets/Particles/BlueGreenParticles.tres" type="Material" id=2]
+[ext_resource path="res://Assets/GameAssets/Others/BlueToYellowColorRamp.tres" type="Texture" id=2]
 [ext_resource path="res://Assets/GameAssets/Animation/Splash/SplashAnim.tres" type="Animation" id=3]
 [ext_resource path="res://Assets/GameAssets/Materials/RemoveBlackBGMaterial.tres" type="Material" id=4]
 [ext_resource path="res://Assets/GameAssets/Texture/KeyTexture.tres" type="Texture" id=6]
 [ext_resource path="res://Assets/GameAssets/Texture/BurningDustParticleTexture.tres" type="Texture" id=7]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 4.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 25.0
+angular_velocity = 100.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+color_ramp = ExtResource( 2 )
+hue_variation = 0.01
+hue_variation_random = 1.0
+anim_speed = 1.0
 
 [node name="Splash" type="Control"]
 anchor_right = 1.0
@@ -24,7 +42,7 @@ scale = Vector2( 5, 5 )
 [node name="Particles2D" type="Particles2D" parent="Key"]
 material = ExtResource( 4 )
 explosiveness = 0.3
-process_material = ExtResource( 2 )
+process_material = SubResource( 1 )
 texture = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Key"]

@@ -18,7 +18,7 @@ var valueText := {
 onready var ones := $Ones
 onready var tens := $Tens
 onready var single := $Single
-onready var guidingBox := $Guide
+
 
 func _ready():
 	setObjectsValue(objectValue)
@@ -33,14 +33,12 @@ func _setDigit():
 		tens.visible = false
 		single.visible = true
 		single._setOnesDigit(_getOnesValue(), valueText[_getOnesValue()])
-		guidingBox.visible = true
 	else:
 		ones.visible = true
 		tens.visible = true
 		single.visible = false
 		ones._setOnesDigit(_getOnesValue(), valueText[_getOnesValue()])
 		tens._setTensDigit(_getTensValue(), valueText[_getTensValue()])
-		guidingBox.visible = false
 
 func _setValue(value):
 	objectValue = value
