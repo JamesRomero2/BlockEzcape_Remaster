@@ -94,7 +94,6 @@ position = Vector2( -96, -128 )
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 10 )]
 position = Vector2( -560, 112 )
-frame = 0
 
 [node name="DoubleDigits" parent="GameObjects/Question/Top" instance=ExtResource( 18 )]
 position = Vector2( -544, 120 )
@@ -115,7 +114,6 @@ position = Vector2( -544, 136 )
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 10 )]
 position = Vector2( -560, 128 )
-frame = 0
 
 [node name="Answer" type="Node2D" parent="GameObjects/Question"]
 
@@ -128,7 +126,6 @@ scannerID = 3
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 10 )]
 position = Vector2( -560, 152 )
-frame = 0
 
 [node name="Characters" type="Node2D" parent="GameObjects/Question"]
 

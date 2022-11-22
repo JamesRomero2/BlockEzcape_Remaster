@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Void/Void.tscn" type="PackedScene" id=2]
@@ -7,21 +7,8 @@
 [ext_resource path="res://Assets/Textures/LevelBG/MagicalVoid/1.jpg" type="Texture" id=5]
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Temp/Crystal/Crystal.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=17]
-[ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=18]
-
-[sub_resource type="DynamicFont" id=8]
-size = 12
-font_data = ExtResource( 17 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 12
-font_data = ExtResource( 17 )
 
 [node name="Level 17" type="Node"]
 script = ExtResource( 1 )
@@ -91,97 +78,8 @@ scannerID = 1
 position = Vector2( -400, 24 )
 scannerID = 1
 
-[node name="Question" type="Node2D" parent="GameObjects"]
-position = Vector2( -120, -112 )
-
-[node name="Box3" parent="GameObjects/Question" instance=ExtResource( 4 )]
-position = Vector2( -472, 120 )
-boxValue = 78
-
-[node name="Box4" parent="GameObjects/Question" instance=ExtResource( 4 )]
-position = Vector2( -472, 104 )
-boxValue = 45
-
-[node name="SymbolBlocks2" parent="GameObjects/Question" instance=ExtResource( 8 )]
-position = Vector2( -488, 112 )
-operation = "Plus"
-
-[node name="SymbolBlocks3" parent="GameObjects/Question" instance=ExtResource( 8 )]
-position = Vector2( -504, 144 )
-operation = "Equals"
-
-[node name="Crystal" parent="GameObjects/Question" instance=ExtResource( 10 )]
-position = Vector2( -472, 144 )
-
-[node name="Crystal2" parent="GameObjects/Question" instance=ExtResource( 10 )]
-position = Vector2( -488, 144 )
-scannerID = 1
-
 [node name="PausePanel" parent="." instance=ExtResource( 15 )]
 visible = false
-
-[node name="UILayer" type="CanvasLayer" parent="."]
-
-[node name="Buttons" type="Control" parent="UILayer"]
-anchor_right = 1.0
-
-[node name="PauseButton" type="Button" parent="UILayer/Buttons"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -40.0
-margin_top = 8.0
-margin_right = -8.0
-margin_bottom = 64.0
-flat = true
-
-[node name="TextureRect" type="TextureRect" parent="UILayer/Buttons/PauseButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 16 )
-stretch_mode = 6
-
-[node name="Label" type="Label" parent="UILayer/Buttons/PauseButton/TextureRect"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -12.0
-margin_top = -22.0
-margin_right = 13.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 8 )
-text = "Esc"
-align = 1
-valign = 1
-
-[node name="UndoButton" type="Button" parent="UILayer/Buttons"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -80.0
-margin_top = 8.0
-margin_right = -48.0
-margin_bottom = 64.0
-flat = true
-
-[node name="TextureRect2" type="TextureRect" parent="UILayer/Buttons/UndoButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 18 )
-stretch_mode = 6
-
-[node name="Label" type="Label" parent="UILayer/Buttons/UndoButton/TextureRect2"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -16.0
-margin_top = -22.0
-margin_right = 16.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 10 )
-text = "Undo"
-align = 1
-valign = 1
 
 [node name="ResultPanel" parent="." instance=ExtResource( 7 )]
 visible = false
@@ -189,8 +87,6 @@ visible = false
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
 
-[connection signal="pressed" from="UILayer/Buttons/PauseButton" to="." method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="UILayer/Buttons/UndoButton" to="." method="_on_UndoButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="Void"]
