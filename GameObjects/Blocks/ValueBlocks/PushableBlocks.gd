@@ -4,6 +4,7 @@ signal boxMoves(node)
 
 onready var raycast := $RayCast2D
 onready var digits := $DoubleDigits
+onready var guidingBox := $Guide
 
 export(int) var boxValue := 00
 
@@ -58,6 +59,10 @@ func _moveToNextPos(pos):
 	moving = true
 
 func _setBoxValue(value):
+	if value < 10:
+		guidingBox.visible = true
+	else:
+		guidingBox.visible = false
 	digits._setValue(value)
 	digits._setDigit()
 

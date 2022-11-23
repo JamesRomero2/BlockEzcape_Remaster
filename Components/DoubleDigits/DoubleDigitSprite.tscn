@@ -4,12 +4,15 @@
 [ext_resource path="res://Components/DoubleDigits/Tens/Tens.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Components/DoubleDigits/Ones/Ones.tscn" type="PackedScene" id=3]
 
-[node name="DoubleDigits" type="Node2D"]
+[node name="DoubleDigits" type="Node2D" groups=["Numbers"]]
 script = ExtResource( 1 )
+objectValue = 50
+
+[node name="Single" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="Ones" parent="." instance=ExtResource( 3 )]
 position = Vector2( 4, 0 )
 
 [node name="Tens" parent="." instance=ExtResource( 2 )]
 position = Vector2( -4, 0 )
-frame = 0
