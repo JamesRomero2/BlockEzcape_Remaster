@@ -1,17 +1,15 @@
 extends Node
 
 signal setDone
-
 onready var camera := $Camera2D
 onready var rand := RandomNumberGenerator.new()
 onready var noise := OpenSimplexNoise.new()
-
 onready var board := $Board
 onready var player := $Board/Player
 onready var temple := $Board/Temple
 onready var trap := $Board/Traps
 onready var canUndoTime := $Timers/CanUndoTimer
-onready var spawnTime := $Timers/SpawningCavTimer
+onready var spawnTime := $Timers/SpawningVenomTimer
 onready var venomFog := $Death/ColorRect
 onready var deathScreen := $Death/DeathScreen
 onready var healTimer := $Timers/IncreaseHealth
@@ -27,7 +25,6 @@ export var answers := {
 export(String) var introTimelineName = ""
 export(int) var numberOfTraps = 2
 export(int) var spawnWaitTime = 2
-
 export var randomShakeStrength: float = 10.0
 export var shakeDecayRate: float = 3.0
 export var noiseShakeSpeed: float = 10.0
@@ -44,7 +41,6 @@ func _ready():
 	rand.randomize()
 	noise.seed = rand.randi()
 	noise.period = 2
-	
 	spawnTime.wait_time = spawnWaitTime
 	_connectSignal()
 	_playDialog(introTimelineName)
@@ -215,14 +211,24 @@ func _onOperationalStateChange(object):
 
 func _cast():
 	if GameManager._getGameOver(): return
-	if !GameManager._getPlayerAnimating():
+	var fires = Array()
+	fires.clear()
+	for boulder in trap.get_children():
+		fires.push_back(boulder.fire)
+	
+	if fires.has(false):
 		randomize()
 		var children = trap.get_children()
 		for i in numberOfTraps:
 			var trapObject = children[randi() % children.size()]
-			trapObject._setTargetPost((trapObject.position - player.position) * -1)
+			trapObject.fire = true
 			trapObject._casting()
-	spawnTime.start()
+		spawnTime.start()
+	else:
+		spawnTime.stop()
+
+func _on_SpawningVenomTimer_timeout():
+	_cast()
 
 func _onPlayerHurt():
 	var currentValue = venomFog.material.get_shader_param("softness")
@@ -253,6 +259,3 @@ func _on_IncreaseHealth_timeout():
 
 func _on_CanUndoTimer_timeout():
 	canUndo = true
-
-func _on_SpawningCavTimer_timeout():
-	_cast()

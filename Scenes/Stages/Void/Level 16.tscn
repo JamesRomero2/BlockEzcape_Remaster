@@ -18,6 +18,12 @@
 
 [node name="Level 16" type="Node"]
 script = ExtResource( 5 )
+answers = {
+0: 4,
+1: 4,
+2: 0,
+3: null
+}
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -50,33 +56,32 @@ position = Vector2( -512, 8 )
 
 [node name="Temple" parent="GameObjects" instance=ExtResource( 6 )]
 position = Vector2( -496, -24 )
+portalTheme = "Magical"
 
 [node name="Box4" parent="GameObjects" instance=ExtResource( 4 )]
 position = Vector2( -496, 8 )
-boxValue = 23
 
 [node name="Box5" parent="GameObjects" instance=ExtResource( 4 )]
 position = Vector2( -496, -8 )
-boxValue = 23
+boxValue = 4
 
 [node name="Box7" parent="GameObjects" instance=ExtResource( 4 )]
 position = Vector2( -496, 24 )
-boxValue = 23
+boxValue = 4
 
 [node name="ScannerTile4" parent="GameObjects" instance=ExtResource( 9 )]
 position = Vector2( -480, -8 )
-scannerID = 1
+scannerID = 2
 
 [node name="ScannerTile5" parent="GameObjects" instance=ExtResource( 9 )]
 position = Vector2( -512, 24 )
-scannerID = 1
 
 [node name="ScannerTile7" parent="GameObjects" instance=ExtResource( 9 )]
 position = Vector2( -512, -8 )
 scannerID = 1
 
 [node name="Question" type="Node2D" parent="GameObjects"]
-position = Vector2( -71, -138 )
+position = Vector2( -75, -138 )
 
 [node name="Top" type="Node2D" parent="GameObjects/Question"]
 
@@ -99,10 +104,6 @@ objectValue = 1
 position = Vector2( -620, 128 )
 objectValue = 1
 
-[node name="DoubleDigits6" parent="GameObjects/Question/Top" instance=ExtResource( 10 )]
-position = Vector2( -548, 107 )
-objectValue = 4
-
 [node name="DoubleDigits3" parent="GameObjects/Question/Top" instance=ExtResource( 10 )]
 position = Vector2( -548, 128 )
 objectValue = 4
@@ -115,11 +116,7 @@ position = Vector2( -568, 136 )
 objectValue = 4
 
 [node name="DoubleDigits4" parent="GameObjects/Question/Bottom" instance=ExtResource( 10 )]
-position = Vector2( -544, 136 )
-objectValue = 4
-
-[node name="DoubleDigits5" parent="GameObjects/Question/Bottom" instance=ExtResource( 10 )]
-position = Vector2( -544, 156 )
+position = Vector2( -568, 156 )
 objectValue = 0
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 12 )]
@@ -127,17 +124,20 @@ position = Vector2( -560, 128 )
 frame = 0
 
 [node name="Answer" type="Node2D" parent="GameObjects/Question"]
-visible = false
 
 [node name="Crystal2" parent="GameObjects/Question/Answer" instance=ExtResource( 11 )]
-position = Vector2( -544, 160 )
+position = Vector2( -548, 107 )
 
 [node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 11 )]
-position = Vector2( -568, 160 )
-scannerID = 3
+position = Vector2( -548, 145 )
+scannerID = 1
+
+[node name="Crystal3" parent="GameObjects/Question/Answer" instance=ExtResource( 11 )]
+position = Vector2( -548, 165 )
+scannerID = 2
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 12 )]
-position = Vector2( -560, 152 )
+position = Vector2( -564, 157 )
 frame = 0
 
 [node name="Characters" type="Node2D" parent="GameObjects/Question"]
