@@ -92,7 +92,7 @@ tile_data = PoolIntArray( 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 
 [node name="Serpent" parent="Board" instance=ExtResource( 11 )]
 position = Vector2( -576, 200 )
 scale = Vector2( 1.5, 1.5 )
-frame = 1
+frame = 2
 speed_scale = 2.0
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Board/Serpent"]
@@ -100,7 +100,7 @@ position = Vector2( 64, 24 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 12 )
 animation = "Crystal"
-frame = 6
+frame = 1
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Board/Serpent"]
@@ -108,7 +108,7 @@ position = Vector2( -64, 24 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 12 )
 animation = "Crystal"
-frame = 6
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Board/Serpent"]
@@ -116,7 +116,6 @@ position = Vector2( 0, -24 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 12 )
 animation = "Crystal"
-frame = 5
 playing = true
 
 [node name="Sprite" type="Sprite" parent="Board/Serpent"]
@@ -322,7 +321,6 @@ boxValue = 16
 
 [node name="Sprite" parent="Board/Question/Top" instance=ExtResource( 9 )]
 position = Vector2( -560, 112 )
-frame = 0
 
 [node name="Bottom" type="Node2D" parent="Board/Question"]
 
@@ -336,7 +334,6 @@ boxValue = 2
 
 [node name="Sprite2" parent="Board/Question/Bottom" instance=ExtResource( 9 )]
 position = Vector2( -560, 128 )
-frame = 0
 
 [node name="Answer" type="Node2D" parent="Board/Question"]
 
@@ -346,7 +343,6 @@ boxValue = 38
 
 [node name="Sprite3" parent="Board/Question/Answer" instance=ExtResource( 9 )]
 position = Vector2( -560, 152 )
-frame = 0
 
 [node name="Crystal" parent="Board/Question/Answer" instance=ExtResource( 6 )]
 position = Vector2( -568, 160 )
