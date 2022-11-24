@@ -211,18 +211,20 @@ func _onOperationalStateChange(object):
 
 func _cast():
 	if GameManager._getGameOver(): return
+	
 	var fires = Array()
 	fires.clear()
 	for boulder in trap.get_children():
 		fires.push_back(boulder.fire)
 	
 	if fires.has(false):
-		randomize()
-		var children = trap.get_children()
-		for i in numberOfTraps:
-			var trapObject = children[randi() % children.size()]
-			trapObject.fire = true
-			trapObject._casting()
+		if !GameManager._getPlayerAnimating():
+			randomize()
+			var children = trap.get_children()
+			for i in numberOfTraps:
+				var trapObject = children[randi() % children.size()]
+				trapObject.fire = true
+				trapObject._casting()
 		spawnTime.start()
 	else:
 		spawnTime.stop()

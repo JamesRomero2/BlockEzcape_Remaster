@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Stages/BossStage/TheEye/Power/TorchSpawner.tscn" type="PackedScene" id=2]
@@ -8,8 +8,19 @@
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Textures/MagicalBossTemple3.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scenes/Stages/BossStage/TheEye/Puzzles/TheEyePuzzles.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Textures/MagicalBossTemple2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/MagicalBossTemple1.png" type="Texture" id=13]
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
 
 [sub_resource type="Shader" id=9]
 code = "shader_type canvas_item;
@@ -39,8 +50,9 @@ font_data = ExtResource( 10 )
 script = ExtResource( 11 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 392, 128 )
+position = Vector2( 392, 112 )
 current = true
+zoom = Vector2( 0.8, 0.8 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -120,27 +132,35 @@ position = Vector2( 456, 120 )
 
 [node name="TheEyeSprite" parent="Board" instance=ExtResource( 3 )]
 position = Vector2( 232, 40 )
-frame = 2
+frame = 0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Board/TheEyeSprite"]
+show_behind_parent = true
+position = Vector2( -1, 49 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 13 )
+playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]
 
 [node name="AnimatedSprite" parent="Board/Traps" instance=ExtResource( 2 )]
-position = Vector2( 369, 32 )
-frame = 1
+position = Vector2( 369, 16 )
+frame = 2
 offset = Vector2( -20, -40 )
 
 [node name="AnimatedSprite2" parent="Board/Traps" instance=ExtResource( 2 )]
-position = Vector2( 540, 32 )
-frame = 1
+position = Vector2( 540, 16 )
+frame = 2
 offset = Vector2( 24, -40 )
 
 [node name="AnimatedSprite3" parent="Board/Traps" instance=ExtResource( 2 )]
-position = Vector2( 539, 224 )
-frame = 1
+position = Vector2( 539, 240 )
+frame = 2
 offset = Vector2( 24, -40 )
 
 [node name="AnimatedSprite4" parent="Board/Traps" instance=ExtResource( 2 )]
-position = Vector2( 348, 224 )
+position = Vector2( 348, 240 )
+frame = 1
 offset = Vector2( 24, -40 )
 
 [node name="Timers" type="Node" parent="."]

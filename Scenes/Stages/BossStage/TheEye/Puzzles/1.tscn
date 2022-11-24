@@ -1,15 +1,26 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Components/Tilesets/Void/Void.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Stages/BossStage/TheEye/Power/TorchSpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Textures/MagicalBossTemple3.png" type="Texture" id=5]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Textures/MagicalBossTemple2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/MagicalBossTemple1.png" type="Texture" id=9]
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://Scenes/Stages/BossStage/TheEye/TheEyeSprite/TheEyeSprite.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Stages/BossStage/TheEye/Puzzles/TheEyePuzzles.gd" type="Script" id=14]
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
 
 [sub_resource type="Shader" id=9]
 code = "shader_type canvas_item;
@@ -39,7 +50,7 @@ font_data = ExtResource( 12 )
 script = ExtResource( 14 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 384, 48 )
+position = Vector2( 384, 16 )
 current = true
 zoom = Vector2( 0.7, 0.7 )
 __meta__ = {
@@ -94,6 +105,14 @@ position = Vector2( 440, 88 )
 [node name="TheEyeSprite" parent="Board" instance=ExtResource( 13 )]
 position = Vector2( 288, -48 )
 frame = 0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Board/TheEyeSprite"]
+show_behind_parent = true
+position = Vector2( -1, 49 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 13 )
+frame = 3
+playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]
 

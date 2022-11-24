@@ -1,8 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scenes/Stages/BossStage/TheKnight/Power/Cavalier.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Stages/BossStage/TheKnight/Puzzles/KnightsPuzzle.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Textures/DungeonBossTemple2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/DungeonBossTemple3.png" type="Texture" id=4]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Textures/DungeonBossTemple1.png" type="Texture" id=6]
 [ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=9]
@@ -10,6 +13,14 @@
 [ext_resource path="res://Components/Tilesets/Castle/Castle.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=23]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=24]
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]
 
 [sub_resource type="Shader" id=9]
 code = "shader_type canvas_item;
@@ -82,7 +93,14 @@ position = Vector2( 216, 72 )
 
 [node name="TheKnightSprite" parent="Board" instance=ExtResource( 11 )]
 position = Vector2( -88, 32 )
-frame = 2
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Board/TheKnightSprite"]
+show_behind_parent = true
+position = Vector2( 0, 40 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 13 )
+frame = 1
+playing = true
 
 [node name="ScannerTile" parent="Board" instance=ExtResource( 5 )]
 position = Vector2( 200, 120 )

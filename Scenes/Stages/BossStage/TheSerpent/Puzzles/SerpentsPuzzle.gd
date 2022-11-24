@@ -217,12 +217,13 @@ func _onOperationalStateChange(object):
 
 func _cast():
 	if GameManager._getGameOver(): return
-	randomize()
-	var children = trap.get_children()
-	for i in numberOfTraps:
-		var trapObject = children[randi() % children.size()]
-		if !trapObject.playing:
-			trapObject._casting()
+	if !GameManager._getPlayerAnimating():
+		randomize()
+		var children = trap.get_children()
+		for i in numberOfTraps:
+			var trapObject = children[randi() % children.size()]
+			if !trapObject.playing:
+				trapObject._casting()
 	spawnTime.start()
 
 func _on_SpawningVenomTimer_timeout():
