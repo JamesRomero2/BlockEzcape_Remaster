@@ -6,9 +6,12 @@ signal playerDamage
 
 onready var raycast := $RayCast2D
 onready var animation := $AnimationPlayer
+onready var blink := $AnimationPlayer2
 onready var walkSFX := $SFX/WalkSFX
 onready var undoWalkSFX := $SFX/UndoWalkSFX
 onready var hurtSFX := $SFX/HurtSFX
+onready var immuneTime := $ImmuneTimer
+onready var sprite := $Sprite
 
 var journal: Array = Array()
 var moving: bool = false
@@ -19,7 +22,10 @@ var inputs := {
 	"left": Vector2.LEFT,
 	"right": Vector2.RIGHT
 }
+var immune: bool = false
+
 func _ready():
+	sprite.material.set_shader_param("hitOpacity", 0)
 	animation.play("PlayerSpawn")
 	GameManager._setPlayerAnimating(true)
 	moving = true
@@ -98,11 +104,19 @@ func _on_Tween_tween_completed(object, key):
 	moving = false
 	
 func playerDamage():
-	emit_signal("playerDamage")
-	hurtSFX.play()
-
+	if !immune:
+		emit_signal("playerDamage")
+		hurtSFX.play()
+		immuneTime.start()
+		immune = true
+		blink.play("PlayerPlayerHit")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "PlayerSpawn":
 		GameManager._setPlayerAnimating(false)
 		moving = false
+
+func _on_ImmuneTimer_timeout():
+	immune = false
+	blink.stop()
+	sprite.material.set_shader_param("hitOpacity", 0)

@@ -39,6 +39,7 @@ var shakeStrength: float = 0.0
 
 func _ready():
 	get_tree().current_scene = self
+	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	_playDialog(timelineName)
 	_connectSignal()

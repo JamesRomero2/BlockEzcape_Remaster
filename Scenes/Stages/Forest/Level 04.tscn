@@ -20,7 +20,7 @@
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=18]
 [ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=19]
 
-[sub_resource type="Shader" id=9]
+[sub_resource type="Shader" id=12]
 code = "shader_type canvas_item;
 
 uniform vec4 color: hint_color;
@@ -33,7 +33,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id=10]
-shader = SubResource( 9 )
+shader = SubResource( 12 )
 shader_param/color = Color( 0, 0.27451, 0.188235, 1 )
 shader_param/multiplier = -0.5
 shader_param/softness = 6.0
@@ -115,52 +115,49 @@ position = Vector2( 8, -128 )
 [node name="Top" type="Node2D" parent="GameObjects/Question"]
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 4 )]
-position = Vector2( -560, 112 )
-frame = 0
+position = Vector2( -560, 104 )
 
 [node name="DoubleDigits" parent="GameObjects/Question/Top" instance=ExtResource( 19 )]
-position = Vector2( -544, 120 )
+position = Vector2( -544, 112 )
 objectValue = 52
 
 [node name="DoubleDigits2" parent="GameObjects/Question/Top" instance=ExtResource( 19 )]
-position = Vector2( -568, 120 )
+position = Vector2( -568, 112 )
 objectValue = 5
 
 [node name="Bottom" type="Node2D" parent="GameObjects/Question"]
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 4 )]
-position = Vector2( -560, 128 )
-frame = 0
+position = Vector2( -560, 120 )
 
 [node name="DoubleDigits3" parent="GameObjects/Question/Bottom" instance=ExtResource( 19 )]
-position = Vector2( -544, 136 )
+position = Vector2( -544, 128 )
 objectValue = 95
 
 [node name="DoubleDigits4" parent="GameObjects/Question/Bottom" instance=ExtResource( 19 )]
-position = Vector2( -568, 136 )
+position = Vector2( -568, 128 )
 objectValue = 3
 
 [node name="Answer" type="Node2D" parent="GameObjects/Question"]
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 4 )]
-position = Vector2( -560, 152 )
-frame = 0
+position = Vector2( -560, 144 )
 
 [node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 3 )]
-position = Vector2( -544, 160 )
+position = Vector2( -544, 152 )
 
 [node name="Crystal2" parent="GameObjects/Question/Answer" instance=ExtResource( 3 )]
-position = Vector2( -568, 160 )
+position = Vector2( -568, 152 )
 scannerID = 1
 
 [node name="Characters" type="Node2D" parent="GameObjects/Question"]
 
 [node name="SymbolBlocks2" parent="GameObjects/Question/Characters" instance=ExtResource( 13 )]
-position = Vector2( -584, 128 )
+position = Vector2( -584, 120 )
 operation = "Plus"
 
 [node name="Line" type="Sprite" parent="GameObjects/Question/Characters"]
-position = Vector2( -592, 144 )
+position = Vector2( -592, 136 )
 scale = Vector2( 0.8, 0.5 )
 texture = ExtResource( 8 )
 centered = false
@@ -188,6 +185,7 @@ position = Vector2( -384, -8 )
 position = Vector2( -416, 24 )
 
 [node name="Death" type="CanvasLayer" parent="GameObjects/Traps"]
+pause_mode = 2
 layer = 2
 
 [node name="ColorRect" type="ColorRect" parent="GameObjects/Traps/Death"]

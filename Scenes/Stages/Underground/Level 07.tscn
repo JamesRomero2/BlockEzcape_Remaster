@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Underground/Underground.tscn" type="PackedScene" id=2]
@@ -16,6 +16,35 @@
 [ext_resource path="res://GameObjects/Tiles/OperationalTile/OperationalTile.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/Stopper.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/BoulderSpawner.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Stages/Traps.gd" type="Script" id=20]
+[ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=21]
+
+[sub_resource type="Shader" id=15]
+code = "shader_type canvas_item;
+
+uniform vec4 color: hint_color;
+uniform float multiplier = 0.2;
+uniform float softness = 3.0;
+
+void fragment() {
+	float value = distance(UV, vec2(0.5));
+	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
+}"
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = SubResource( 15 )
+shader_param/color = Color( 0.113725, 0.101961, 0.0784314, 1 )
+shader_param/multiplier = -0.5
+shader_param/softness = 6.0
+
+[sub_resource type="DynamicFont" id=14]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 21 )
 
 [node name="Level 07" type="Node"]
 script = ExtResource( 1 )
@@ -86,7 +115,6 @@ position = Vector2( -32, -120 )
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 11 )]
 position = Vector2( -560, 112 )
-frame = 0
 
 [node name="DoubleDigits" parent="GameObjects/Question/Top" instance=ExtResource( 16 )]
 position = Vector2( -544, 120 )
@@ -108,7 +136,6 @@ scannerID = 2
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 11 )]
 position = Vector2( -560, 128 )
-frame = 0
 
 [node name="Answer" type="Node2D" parent="GameObjects/Question"]
 
@@ -118,7 +145,6 @@ objectValue = 31
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 11 )]
 position = Vector2( -560, 152 )
-frame = 0
 
 [node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 10 )]
 position = Vector2( -568, 160 )
@@ -154,6 +180,77 @@ operationalValue = 7
 [node name="OperationalTile4" parent="GameObjects" instance=ExtResource( 14 )]
 position = Vector2( -432, 32 )
 operationalValue = 3
+
+[node name="Traps" type="Node2D" parent="GameObjects"]
+script = ExtResource( 20 )
+
+[node name="Timer" type="Timer" parent="GameObjects/Traps"]
+
+[node name="HealTimer" type="Timer" parent="GameObjects/Traps"]
+wait_time = 5.0
+
+[node name="Trap" type="Node2D" parent="GameObjects/Traps"]
+
+[node name="BoulderSpawner" parent="GameObjects/Traps/Trap" instance=ExtResource( 19 )]
+position = Vector2( -496, 0 )
+direction = "Right"
+
+[node name="BoulderSpawner2" parent="GameObjects/Traps/Trap" instance=ExtResource( 19 )]
+position = Vector2( -288, 32 )
+direction = "Left"
+
+[node name="Death" type="CanvasLayer" parent="GameObjects/Traps"]
+pause_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameObjects/Traps/Death"]
+material = SubResource( 13 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DeathScreen" type="Control" parent="GameObjects/Traps/Death"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="GameObjects/Traps/Death/DeathScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 14 )
+text = "ARCHI GOT LOST"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameObjects/Traps/Death/DeathScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 300, 37 )
+rect_pivot_offset = Vector2( 150, 18 )
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Reset" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 17 )]
+margin_left = 36.0
+margin_right = 147.0
+margin_bottom = 37.0
+text = "RESTART"
+
+[node name="Quit" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 17 )]
+margin_left = 197.0
+margin_right = 264.0
+margin_bottom = 37.0
+text = "QUIT"
+
+[node name="Stopper4" parent="GameObjects/Traps" instance=ExtResource( 18 )]
+position = Vector2( -528, 32 )
+
+[node name="Stopper5" parent="GameObjects/Traps" instance=ExtResource( 18 )]
+position = Vector2( -288, 0 )
 
 [node name="PausePanel" parent="." instance=ExtResource( 15 )]
 visible = false

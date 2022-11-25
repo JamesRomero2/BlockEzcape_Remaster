@@ -107,13 +107,14 @@ position = Vector2( 216, 72 )
 
 [node name="TheKnightSprite" parent="Board" instance=ExtResource( 11 )]
 position = Vector2( -88, -8 )
+frame = 1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/TheKnightSprite"]
 show_behind_parent = true
 position = Vector2( 0, 40 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 13 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="ScannerTile" parent="Board" instance=ExtResource( 5 )]

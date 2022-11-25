@@ -23,7 +23,6 @@ scale = Vector2( 5, 5 )
 
 [node name="Particles2D" type="Particles2D" parent="Key"]
 material = ExtResource( 4 )
-scale = Vector2( 1, 1 )
 amount = 16
 explosiveness = 0.3
 process_material = ExtResource( 2 )
@@ -33,7 +32,6 @@ texture = ExtResource( 7 )
 texture = ExtResource( 6 )
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )

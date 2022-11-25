@@ -49,5 +49,4 @@ func _on_SFXVolume_value_changed(value):
 
 func _on_Restart_pressed():
 	_unpause()
-	var _relead = get_tree().reload_current_scene()
-	print(_relead)
+	var _reload = get_tree().reload_current_scene()
