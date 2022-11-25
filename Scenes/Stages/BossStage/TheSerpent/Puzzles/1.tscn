@@ -52,7 +52,7 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[node name="3" type="Node"]
+[node name="1" type="Node"]
 script = ExtResource( 1 )
 answers = {
 0: null,
@@ -84,14 +84,14 @@ tile_data = PoolIntArray( 196617, 0, 0, 262152, 0, 0, 262154, 0, 0, 262155, 0, 0
 
 [node name="Serpent" parent="Board" instance=ExtResource( 18 )]
 position = Vector2( -544, 208 )
-frame = 0
+frame = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/Serpent"]
 show_behind_parent = true
 position = Vector2( 0, 32 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 14 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]
@@ -231,7 +231,7 @@ scannerID = 3
 [node name="Characters" type="Node2D" parent="Board/Question"]
 
 [node name="SymbolBlocks2" parent="Board/Question/Characters" instance=ExtResource( 22 )]
-position = Vector2( -608, 128 )
+position = Vector2( -592, 128 )
 operation = "Plus"
 
 [node name="Line" type="Sprite" parent="Board/Question/Characters"]

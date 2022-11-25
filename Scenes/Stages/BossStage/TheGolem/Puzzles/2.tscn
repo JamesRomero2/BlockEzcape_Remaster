@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Components/Tilesets/Underground/Underground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/BoulderSpawner.tscn" type="PackedScene" id=2]
@@ -12,6 +12,11 @@
 [ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Puzzles/GolemsPuzzle.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Textures/UndergroundBossTemple3.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/Stopper.tscn" type="PackedScene" id=12]
+[ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=15]
+[ext_resource path="res://GameObjects/Blocks/Crystal/Crystal.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=23]
 
@@ -51,13 +56,13 @@ font_data = ExtResource( 22 )
 script = ExtResource( 10 )
 answers = {
 0: null,
-1: null,
-2: null,
-3: 15
+1: 5,
+2: 0,
+3: 8
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 376, 88 )
+position = Vector2( -224, 128 )
 current = true
 zoom = Vector2( 0.7, 0.7 )
 __meta__ = {
@@ -65,6 +70,7 @@ __meta__ = {
 }
 
 [node name="Board" type="Node2D" parent="."]
+position = Vector2( -600, 40 )
 
 [node name="UndergroundTilemap" parent="Board" instance=ExtResource( 1 )]
 
@@ -74,13 +80,8 @@ tile_data = PoolIntArray( 23, 0, 2, 24, 0, 3, 25, 0, 3, 26, 0, 3, 27, 0, 3, 28, 
 [node name="Blocks" parent="Board/UndergroundTilemap" index="1"]
 tile_data = PoolIntArray( 65560, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 65567, 0, 0, 65568, 0, 0, 131095, 0, 0, 131105, 0, 0, 196631, 0, 0, 196641, 0, 0, 262167, 0, 0, 262169, 0, 0, 262170, 0, 0, 262171, 0, 0, 262173, 0, 0, 262174, 0, 0, 262175, 0, 0, 262177, 0, 0, 327703, 0, 0, 327705, 0, 0, 327706, 0, 0, 327710, 0, 0, 327713, 0, 0, 393239, 0, 0, 393246, 0, 0, 393249, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458785, 0, 0, 524315, 0, 0, 524319, 0, 0, 524320, 0, 0, 589851, 0, 0, 589855, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0 )
 
-[node name="Box3" parent="Board" instance=ExtResource( 7 )]
-position = Vector2( 488, 120 )
-boxValue = 5
-
 [node name="Box4" parent="Board" instance=ExtResource( 7 )]
 position = Vector2( 456, 120 )
-boxValue = 5
 
 [node name="Box6" parent="Board" instance=ExtResource( 7 )]
 position = Vector2( 440, 104 )
@@ -88,6 +89,7 @@ boxValue = 5
 
 [node name="Box5" parent="Board" instance=ExtResource( 7 )]
 position = Vector2( 472, 104 )
+boxValue = 8
 
 [node name="ScannerTile3" parent="Board" instance=ExtResource( 5 )]
 position = Vector2( 472, 56 )
@@ -95,31 +97,27 @@ scannerID = 3
 
 [node name="ScannerTile4" parent="Board" instance=ExtResource( 5 )]
 position = Vector2( 456, 40 )
-scannerID = 3
+scannerID = 2
 
 [node name="ScannerTile5" parent="Board" instance=ExtResource( 5 )]
 position = Vector2( 440, 56 )
-scannerID = 3
-
-[node name="ScannerTile6" parent="Board" instance=ExtResource( 5 )]
-position = Vector2( 440, 88 )
-scannerID = 3
+scannerID = 1
 
 [node name="Temple" parent="Board" instance=ExtResource( 8 )]
-position = Vector2( 392, 80 )
+position = Vector2( 456, 88 )
+portalTheme = "Underground"
 
 [node name="Player" parent="Board" instance=ExtResource( 9 )]
 position = Vector2( 456, 136 )
 
 [node name="Stopper" parent="Board" instance=ExtResource( 12 )]
-position = Vector2( 552, 56 )
+position = Vector2( 424, 88 )
 
 [node name="Stopper2" parent="Board" instance=ExtResource( 12 )]
-position = Vector2( 360, 104 )
+position = Vector2( 488, 88 )
 
 [node name="Golem" parent="Board" instance=ExtResource( 4 )]
 position = Vector2( 264, 16 )
-frame = 2
 speed_scale = 1.5
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/Golem"]
@@ -127,18 +125,85 @@ show_behind_parent = true
 position = Vector2( 0, 40 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 14 )
-frame = 2
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]
 
 [node name="BoulderSpawner" parent="Board/Traps" instance=ExtResource( 2 )]
-position = Vector2( 376, 56 )
+position = Vector2( 424, 24 )
+
+[node name="BoulderSpawner3" parent="Board/Traps" instance=ExtResource( 2 )]
+position = Vector2( 376, 88 )
 direction = "Right"
 
-[node name="BoulderSpawner2" parent="Board/Traps" instance=ExtResource( 2 )]
-position = Vector2( 536, 104 )
+[node name="BoulderSpawner4" parent="Board/Traps" instance=ExtResource( 2 )]
+position = Vector2( 536, 88 )
 direction = "Left"
+
+[node name="BoulderSpawner2" parent="Board/Traps" instance=ExtResource( 2 )]
+position = Vector2( 488, 24 )
+
+[node name="Question" type="Node2D" parent="Board"]
+position = Vector2( 840, -8 )
+
+[node name="DoubleDigits2" parent="Board/Question" instance=ExtResource( 14 )]
+position = Vector2( -584, 136 )
+objectValue = 2
+
+[node name="DoubleDigits3" parent="Board/Question" instance=ExtResource( 14 )]
+position = Vector2( -584, 120 )
+objectValue = 7
+
+[node name="DoubleDigits4" parent="Board/Question" instance=ExtResource( 14 )]
+position = Vector2( -560, 120 )
+objectValue = 43
+
+[node name="DoubleDigits5" parent="Board/Question" instance=ExtResource( 14 )]
+position = Vector2( -560, 136 )
+objectValue = 43
+
+[node name="DoubleDigits6" parent="Board/Question" instance=ExtResource( 14 )]
+position = Vector2( -544, 136 )
+objectValue = 42
+isWholeNumber = false
+
+[node name="DoubleDigits7" parent="Board/Question" instance=ExtResource( 14 )]
+position = Vector2( -544, 120 )
+isWholeNumber = false
+
+[node name="Sprite" parent="Board/Question" instance=ExtResource( 15 )]
+position = Vector2( -576, 112 )
+
+[node name="Sprite2" parent="Board/Question" instance=ExtResource( 15 )]
+position = Vector2( -576, 128 )
+frame = 0
+
+[node name="Sprite3" parent="Board/Question" instance=ExtResource( 15 )]
+position = Vector2( -576, 152 )
+frame = 0
+
+[node name="Crystal" parent="Board/Question" instance=ExtResource( 16 )]
+position = Vector2( -584, 160 )
+scannerID = 1
+
+[node name="Crystal2" parent="Board/Question" instance=ExtResource( 16 )]
+position = Vector2( -560, 160 )
+scannerID = 2
+
+[node name="Crystal3" parent="Board/Question" instance=ExtResource( 16 )]
+position = Vector2( -544, 160 )
+scannerID = 3
+isCrystalWholeNumber = false
+
+[node name="SymbolBlocks2" parent="Board/Question" instance=ExtResource( 13 )]
+position = Vector2( -600, 128 )
+operation = "Minus"
+
+[node name="Line" type="Sprite" parent="Board/Question"]
+position = Vector2( -600, 144 )
+scale = Vector2( 0.9, 0.5 )
+texture = ExtResource( 17 )
+centered = false
 
 [node name="Timers" type="Node" parent="."]
 

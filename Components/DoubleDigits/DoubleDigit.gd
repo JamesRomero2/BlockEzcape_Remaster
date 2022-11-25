@@ -1,6 +1,7 @@
 extends Node2D
 
 export(int) var objectValue := 00
+export(bool) var isWholeNumber := true
 
 var valueText := {
 	0: "Zero",
@@ -17,8 +18,6 @@ var valueText := {
 
 onready var ones := $Ones
 onready var tens := $Tens
-onready var single := $Single
-
 
 func _ready():
 	setObjectsValue(objectValue)
@@ -28,17 +27,23 @@ func setObjectsValue(value):
 	_setDigit()
 
 func _setDigit():
-	if _getWholeValue() < 10:
-		ones.visible = false
-		tens.visible = false
-		single.visible = true
-		single._setOnesDigit(_getOnesValue(), valueText[_getOnesValue()])
+	if isWholeNumber:
+		if _getWholeValue() < 10 and _getWholeValue() > 0:
+			ones.visible = true
+			tens.visible = false
+		else:
+			ones.visible = true
+			tens.visible = true
 	else:
-		ones.visible = true
-		tens.visible = true
-		single.visible = false
-		ones._setOnesDigit(_getOnesValue(), valueText[_getOnesValue()])
-		tens._setTensDigit(_getTensValue(), valueText[_getTensValue()])
+		if _getOnesValue() == 0:
+			ones.visible = false
+			tens.visible = true
+		else:
+			ones.visible = true
+			tens.visible = true
+	
+	ones._setOnesDigit(_getOnesValue(), valueText[_getOnesValue()])
+	tens._setTensDigit(_getTensValue(), valueText[_getTensValue()])
 
 func _setValue(value):
 	objectValue = value

@@ -175,9 +175,11 @@ func _onScannerInput(value, id, scannerNode):
 	if result.has(false):
 		temple._setAnswer(false)
 		temple._setDoorState(false)
+		temple._setTexture()
 	else:
 		temple._setAnswer(true)
 		temple._setDoorState(true)
+		temple._setTexture()
 
 func _onLevelAccomplish():
 	emit_signal("setDone")
@@ -215,11 +217,12 @@ func _onOperationalStateChange(object):
 
 func _cast():
 	if GameManager._getGameOver(): return
-	randomize()
-	var children = trap.get_children()
-	for i in numberOfTraps:
-		var trapObject = children[randi() % children.size()]
-		trapObject.activateCavalier()
+	if !GameManager._getPlayerAnimating():
+		randomize()
+		var children = trap.get_children()
+		for i in numberOfTraps:
+			var trapObject = children[randi() % children.size()]
+			trapObject.activateCavalier()
 	spawnTime.start()
 
 func _onPlayerHurt():

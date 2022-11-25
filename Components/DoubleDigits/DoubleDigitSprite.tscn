@@ -8,9 +8,6 @@
 script = ExtResource( 1 )
 objectValue = 50
 
-[node name="Single" parent="." instance=ExtResource( 3 )]
-visible = false
-
 [node name="Ones" parent="." instance=ExtResource( 3 )]
 position = Vector2( 4, 0 )
 

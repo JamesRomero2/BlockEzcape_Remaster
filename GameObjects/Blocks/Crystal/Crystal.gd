@@ -1,6 +1,7 @@
 extends Node2D
 
 export(int, 0, 3) var scannerID
+export(bool) var isCrystalWholeNumber := true
 
 onready var digits := $DoubleDigits
 onready var crystalSprite := $Sprite
@@ -10,6 +11,7 @@ var reading: bool = false setget _setReading, _getReading
 func _ready():
 	_crystalHasValue(false, 0)
 	$Sprite.frame = scannerID
+	digits.isWholeNumber = isCrystalWholeNumber
 
 func _crystalHasValue(state, value):
 	if state:

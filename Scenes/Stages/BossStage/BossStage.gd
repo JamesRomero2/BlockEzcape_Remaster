@@ -8,20 +8,37 @@ export(int, 0, 4) var requiredMedal = 0
 onready var pause := $PausePanel
 onready var resultPanel := $ResultPanel
 onready var animation := $AnimationPlayer
+onready var stageArea := $StageArea
 
 var set: int = 0
 var puzzleSets = Array()
 var time = 0
 var secs
 var mins
+var forestBossMusic = load("res://Assets/Audio/Music/Forest/FinalForestBossLevelMusic.ogg")
+var undergroundBossMusic = load("res://Assets/Audio/Music/Underground/FinalUndergroundBossLevelMusic.ogg")
+var dungeonBossMusic = load("res://Assets/Audio/Music/Castle/FinalCastleBossLevelMusic.ogg")
+var magicalBossMusic = load("res://Assets/Audio/Music/Magical/FinalMagicalBossLevelMusic.ogg")
 
 func _ready():
+#	setBossStageBGMusic()
+	GlobalMusic._changeMusic(setBossStageBGMusic())
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	puzzleSets = [set1, set2, set3]
 	_setPuzzle()
 
-func _connectSignals():
-	pass
+func setBossStageBGMusic():
+	var music
+	match self.name.right(5).to_int():
+		5:
+			music = forestBossMusic
+		10:
+			music = undergroundBossMusic
+		15:
+			music = dungeonBossMusic
+		20:
+			music = magicalBossMusic
+	return music
 
 func _process(delta):
 	_gameTimer(delta)
@@ -53,17 +70,17 @@ func _setPuzzle():
 		print("Please Set all Puzzle")
 		
 	animation.play("Transition")
-	yield($AnimationPlayer, "animation_finished")
+	yield(animation, "animation_finished")
 	
-	if $StageArea.get_child_count() > 0:
-		for node in $StageArea.get_children():
+	if stageArea.get_child_count() > 0:
+		for node in stageArea.get_children():
 			node.queue_free()
 	
 	var instanceSet = puzzleSets[set].instance()
 	instanceSet.connect("setDone", self, "_setComplete")
-	$StageArea.call_deferred("add_child", instanceSet)
+	stageArea.call_deferred("add_child", instanceSet)
 		
-	$AnimationPlayer.play_backwards("Transition")
+	animation.play_backwards("Transition")
 
 	GameManager._setGamePaused(false)
 	GameManager._setGameTimerActive(true)
@@ -81,10 +98,7 @@ func _changeSet():
 func _onLevelAccomplish():
 	GameManager._setGameOver(true)
 	GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
-	resultPanel._showResult(mins, secs, self.name.right(5).to_int())
-	
-	if(resultPanel._newLevelUnlocked(requiredMedal)):
-		GameManager._setOpenLevels(self.name.right(5).to_int() + 1)
+	resultPanel._showResult(mins, secs, self.name.right(5).to_int(), requiredMedal)
 
 func _setComplete():
 	_changeSet()

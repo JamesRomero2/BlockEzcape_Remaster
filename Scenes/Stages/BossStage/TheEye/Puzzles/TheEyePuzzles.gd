@@ -175,9 +175,11 @@ func _onScannerInput(value, id, scannerNode):
 	if result.has(false):
 		temple._setAnswer(false)
 		temple._setDoorState(false)
+		temple._setTexture()
 	else:
 		temple._setAnswer(true)
 		temple._setDoorState(true)
+		temple._setTexture()
 
 func _onLevelAccomplish():
 	emit_signal("setDone")

@@ -7,6 +7,7 @@ onready var digits := $DoubleDigits
 onready var guidingBox := $Guide
 
 export(int) var boxValue := 00
+export(bool) var boxWholeNum := true
 
 var journal: Array = Array()
 var moving: bool = false
@@ -19,6 +20,7 @@ var inputs := {
 }
 
 func _ready():
+	digits.isWholeNumber = boxWholeNum
 	_changeBoxValue(boxValue)
 
 func _moveBoxToNextPos(direction):
@@ -59,12 +61,19 @@ func _moveToNextPos(pos):
 	moving = true
 
 func _setBoxValue(value):
+	digits._setValue(value)
+	digits._setDigit()
+	
 	if value < 10:
 		guidingBox.visible = true
 	else:
 		guidingBox.visible = false
-	digits._setValue(value)
-	digits._setDigit()
+	if !boxWholeNum:
+		if digits._getOnesValue() == 0:
+			guidingBox.visible = true
+		else:
+			guidingBox.visible = false
+
 
 func _on_Tween_tween_completed(_object, _key):
 	moving = false

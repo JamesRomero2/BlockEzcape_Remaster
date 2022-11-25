@@ -28,11 +28,10 @@ export(String) var introTimelineName = ""
 export(int) var numberOfTraps = 2
 export(int) var spawnWaitTime = 2
 
-export var randomShakeStrength: float = 10.0
-export var shakeDecayRate: float = 3.0
-export var noiseShakeSpeed: float = 10.0
-export var noiseShakeStrength: float = 15.0
-
+var randomShakeStrength: float = 10.0
+var shakeDecayRate: float = 3.0
+var noiseShakeSpeed: float = 10.0
+var noiseShakeStrength: float = 15.0
 var moveCount: int = 0
 var result = Array()
 var undoRedoJournal: UndoRedo = UndoRedo.new()
@@ -44,7 +43,6 @@ func _ready():
 	rand.randomize()
 	noise.seed = rand.randi()
 	noise.period = 2
-	
 	spawnTime.wait_time = spawnWaitTime
 	_connectSignal()
 	_playDialog(introTimelineName)

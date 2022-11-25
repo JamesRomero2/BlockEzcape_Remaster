@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Stages/BossStage/TheKnight/Power/Cavalier.tscn" type="PackedScene" id=2]
@@ -13,6 +13,11 @@
 [ext_resource path="res://Assets/Textures/DungeonBossTemple2.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Textures/DungeonBossTemple3.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Textures/DungeonBossTemple1.png" type="Texture" id=13]
+[ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=15]
+[ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=16]
+[ext_resource path="res://GameObjects/Blocks/Crystal/Crystal.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=18]
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
@@ -46,11 +51,17 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 9 )
 
-[node name="1" type="Node"]
+[node name="2" type="Node"]
 script = ExtResource( 10 )
+answers = {
+0: 47,
+1: 40,
+2: 87,
+3: 30
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 408, 88 )
+position = Vector2( -256, 144 )
 current = true
 zoom = Vector2( 0.8, 0.8 )
 __meta__ = {
@@ -58,82 +69,151 @@ __meta__ = {
 }
 
 [node name="Board" type="Node2D" parent="."]
+position = Vector2( -664, 56 )
 
 [node name="CastleTilemap" parent="Board" instance=ExtResource( 4 )]
 
 [node name="Spacing" parent="Board/CastleTilemap" index="0"]
-tile_data = PoolIntArray( 655381, 0, 0, 655382, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 720928, 0, 0, 720934, 0, 0, 786465, 0, 0, 786466, 0, 0, 786467, 0, 0, 786468, 0, 0, 786469, 0, 0 )
+tile_data = PoolIntArray( 655381, 0, 0, 655382, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 720928, 0, 0, 720934, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786465, 0, 0, 786466, 0, 0, 786467, 0, 0, 786468, 0, 0, 786469, 0, 0 )
 
 [node name="Background" parent="Board/CastleTilemap" index="1"]
-tile_data = PoolIntArray( -65511, 0, 0, -65510, 0, 1, -65509, 0, 1, -65508, 0, 1, -65507, 0, 2, 24, 0, 0, 25, 0, 65540, 26, 0, 65537, 27, 0, 65537, 28, 0, 65537, 29, 0, 65539, 30, 0, 2, 65560, 0, 65536, 65561, 0, 65537, 65562, 0, 65537, 65563, 0, 65537, 65564, 0, 65537, 65565, 0, 65537, 65566, 0, 65539, 65567, 0, 1, 65568, 0, 2, 131096, 0, 65536, 131097, 0, 65537, 131098, 0, 65537, 131099, 0, 65537, 131100, 0, 65537, 131101, 0, 65537, 131102, 0, 65537, 131103, 0, 65537, 131104, 0, 65539, 131105, 0, 2, 196632, 0, 65536, 196633, 0, 65537, 196634, 0, 65537, 196635, 0, 65537, 196636, 0, 65537, 196637, 0, 65537, 196638, 0, 65537, 196639, 0, 65537, 196640, 0, 65537, 196641, 0, 65538, 262156, 0, 0, 262157, 0, 1, 262158, 0, 1, 262159, 0, 1, 262160, 0, 1, 262161, 0, 1, 262162, 0, 2, 262168, 0, 65536, 262169, 0, 65537, 262170, 0, 65537, 262171, 0, 65537, 262172, 0, 65537, 262173, 0, 65537, 262174, 0, 65537, 262175, 0, 65537, 262176, 0, 65537, 262177, 0, 65538, 327692, 0, 65536, 327693, 0, 65537, 327694, 0, 65537, 327695, 0, 65537, 327696, 0, 65537, 327697, 0, 65537, 327698, 0, 65538, 327702, 0, 0, 327703, 0, 1, 327704, 0, 65540, 327705, 0, 65537, 327706, 0, 65537, 327707, 0, 65537, 327708, 0, 65537, 327709, 0, 65537, 327710, 0, 65537, 327711, 0, 65537, 327712, 0, 65537, 327713, 0, 65539, 327714, 0, 1, 327715, 0, 1, 327716, 0, 1, 327717, 0, 2, 393228, 0, 65536, 393229, 0, 65537, 393230, 0, 65537, 393231, 0, 65537, 393232, 0, 65537, 393233, 0, 65537, 393234, 0, 65538, 393237, 0, 0, 393238, 0, 65540, 393239, 0, 65537, 393240, 0, 65537, 393241, 0, 65537, 393242, 0, 65537, 393243, 0, 65537, 393244, 0, 65537, 393245, 0, 65537, 393246, 0, 65537, 393247, 0, 65537, 393248, 0, 65537, 393249, 0, 65537, 393250, 0, 65537, 393251, 0, 65537, 393252, 0, 65537, 393253, 0, 65539, 393254, 0, 2, 458764, 0, 65536, 458765, 0, 65537, 458766, 0, 65537, 458767, 0, 65537, 458768, 0, 65537, 458769, 0, 65537, 458770, 0, 65538, 458773, 0, 65536, 458774, 0, 65537, 458775, 0, 65537, 458776, 0, 65537, 458777, 0, 65537, 458778, 0, 65537, 458779, 0, 65537, 458780, 0, 65537, 458781, 0, 65537, 458782, 0, 65537, 458783, 0, 65537, 458784, 0, 65537, 458785, 0, 65537, 458786, 0, 65537, 458787, 0, 65537, 458788, 0, 65537, 458789, 0, 65537, 458790, 0, 65538, 524300, 0, 65536, 524301, 0, 65537, 524302, 0, 65537, 524303, 0, 65537, 524304, 0, 65537, 524305, 0, 65537, 524306, 0, 65538, 524309, 0, 65536, 524310, 0, 65537, 524311, 0, 65537, 524312, 0, 65537, 524313, 0, 65537, 524314, 0, 65537, 524315, 0, 65537, 524316, 0, 65537, 524317, 0, 65537, 524318, 0, 65537, 524319, 0, 65537, 524320, 0, 65537, 524321, 0, 65537, 524322, 0, 65537, 524323, 0, 65537, 524324, 0, 65537, 524325, 0, 65537, 524326, 0, 65538, 589836, 0, 65536, 589837, 0, 65537, 589838, 0, 65537, 589839, 0, 65537, 589840, 0, 65537, 589841, 0, 65537, 589842, 0, 65538, 589845, 0, 131072, 589846, 0, 131073, 589847, 0, 4, 589848, 0, 65537, 589849, 0, 65537, 589850, 0, 65537, 589851, 0, 65537, 589852, 0, 65537, 589853, 0, 65537, 589854, 0, 65537, 589855, 0, 65537, 589856, 0, 65537, 589857, 0, 65537, 589858, 0, 65537, 589859, 0, 65537, 589860, 0, 65537, 589861, 0, 65537, 589862, 0, 65538, 655372, 0, 131072, 655373, 0, 131073, 655374, 0, 131073, 655375, 0, 131073, 655376, 0, 131073, 655377, 0, 131073, 655378, 0, 131074, 655381, 1, 0, 655382, 1, 0, 655383, 0, 131072, 655384, 0, 131073, 655385, 0, 131073, 655386, 0, 131073, 655387, 0, 131073, 655388, 0, 131073, 655389, 0, 131073, 655390, 0, 131073, 655391, 0, 131073, 655392, 0, 131073, 655393, 0, 4, 655394, 0, 65537, 655395, 0, 65537, 655396, 0, 65537, 655397, 0, 3, 655398, 0, 131074, 720908, 1, 0, 720909, 1, 0, 720910, 1, 0, 720911, 1, 0, 720912, 1, 0, 720913, 1, 0, 720914, 1, 0, 720919, 1, 0, 720920, 1, 0, 720921, 1, 0, 720922, 1, 0, 720923, 1, 0, 720924, 1, 0, 720925, 1, 0, 720926, 1, 0, 720927, 1, 0, 720928, 1, 0, 720929, 0, 131072, 720930, 0, 131073, 720931, 0, 131073, 720932, 0, 131073, 720933, 0, 131074, 720934, 1, 0, 786465, 1, 0, 786466, 1, 0, 786467, 1, 0, 786468, 1, 0, 786469, 1, 0 )
+tile_data = PoolIntArray( -65511, 0, 0, -65510, 0, 1, -65509, 0, 1, -65508, 0, 1, -65507, 0, 2, 24, 0, 0, 25, 0, 65540, 26, 0, 65537, 27, 0, 65537, 28, 0, 65537, 29, 0, 65539, 30, 0, 2, 65560, 0, 65536, 65561, 0, 65537, 65562, 0, 65537, 65563, 0, 65537, 65564, 0, 65537, 65565, 0, 65537, 65566, 0, 65539, 65567, 0, 1, 65568, 0, 2, 131096, 0, 65536, 131097, 0, 65537, 131098, 0, 65537, 131099, 0, 65537, 131100, 0, 65537, 131101, 0, 65537, 131102, 0, 65537, 131103, 0, 65537, 131104, 0, 65539, 131105, 0, 2, 196632, 0, 65536, 196633, 0, 65537, 196634, 0, 65537, 196635, 0, 65537, 196636, 0, 65537, 196637, 0, 65537, 196638, 0, 65537, 196639, 0, 65537, 196640, 0, 65537, 196641, 0, 65538, 262156, 0, 0, 262157, 0, 1, 262158, 0, 1, 262159, 0, 1, 262160, 0, 1, 262161, 0, 1, 262162, 0, 2, 262168, 0, 65536, 262169, 0, 65537, 262170, 0, 65537, 262171, 0, 65537, 262172, 0, 65537, 262173, 0, 65537, 262174, 0, 65537, 262175, 0, 65537, 262176, 0, 65537, 262177, 0, 65538, 327692, 0, 65536, 327693, 0, 65537, 327694, 0, 65537, 327695, 0, 65537, 327696, 0, 65537, 327697, 0, 65537, 327698, 0, 65538, 327702, 0, 0, 327703, 0, 1, 327704, 0, 65540, 327705, 0, 65537, 327706, 0, 65537, 327707, 0, 65537, 327708, 0, 65537, 327709, 0, 65537, 327710, 0, 65537, 327711, 0, 65537, 327712, 0, 65537, 327713, 0, 65539, 327714, 0, 1, 327715, 0, 1, 327716, 0, 1, 327717, 0, 2, 393228, 0, 65536, 393229, 0, 65537, 393230, 0, 65537, 393231, 0, 65537, 393232, 0, 65537, 393233, 0, 65537, 393234, 0, 65538, 393237, 0, 0, 393238, 0, 65540, 393239, 0, 65537, 393240, 0, 65537, 393241, 0, 65537, 393242, 0, 65537, 393243, 0, 65537, 393244, 0, 65537, 393245, 0, 65537, 393246, 0, 65537, 393247, 0, 65537, 393248, 0, 65537, 393249, 0, 65537, 393250, 0, 65537, 393251, 0, 65537, 393252, 0, 65537, 393253, 0, 65539, 393254, 0, 2, 458764, 0, 65536, 458765, 0, 65537, 458766, 0, 65537, 458767, 0, 65537, 458768, 0, 65537, 458769, 0, 65537, 458770, 0, 65538, 458773, 0, 65536, 458774, 0, 65537, 458775, 0, 65537, 458776, 0, 65537, 458777, 0, 65537, 458778, 0, 65537, 458779, 0, 65537, 458780, 0, 65537, 458781, 0, 65537, 458782, 0, 65537, 458783, 0, 65537, 458784, 0, 65537, 458785, 0, 65537, 458786, 0, 65537, 458787, 0, 65537, 458788, 0, 65537, 458789, 0, 65537, 458790, 0, 65538, 524300, 0, 65536, 524301, 0, 65537, 524302, 0, 65537, 524303, 0, 65537, 524304, 0, 65537, 524305, 0, 65537, 524306, 0, 65538, 524309, 0, 65536, 524310, 0, 65537, 524311, 0, 65537, 524312, 0, 65537, 524313, 0, 65537, 524314, 0, 65537, 524315, 0, 65537, 524316, 0, 65537, 524317, 0, 65537, 524318, 0, 65537, 524319, 0, 65537, 524320, 0, 65537, 524321, 0, 65537, 524322, 0, 65537, 524323, 0, 65537, 524324, 0, 65537, 524325, 0, 65537, 524326, 0, 65538, 589836, 0, 65536, 589837, 0, 65537, 589838, 0, 65537, 589839, 0, 65537, 589840, 0, 65537, 589841, 0, 65537, 589842, 0, 65538, 589845, 0, 131072, 589846, 0, 131073, 589847, 0, 4, 589848, 0, 65537, 589849, 0, 65537, 589850, 0, 65537, 589851, 0, 65537, 589852, 0, 65537, 589853, 0, 65537, 589854, 0, 65537, 589855, 0, 65537, 589856, 0, 65537, 589857, 0, 65537, 589858, 0, 65537, 589859, 0, 65537, 589860, 0, 65537, 589861, 0, 65537, 589862, 0, 65538, 655372, 0, 65536, 655373, 0, 65537, 655374, 0, 65537, 655375, 0, 65537, 655376, 0, 65537, 655377, 0, 65537, 655378, 0, 65538, 655381, 1, 0, 655382, 1, 0, 655383, 0, 131072, 655384, 0, 131073, 655385, 0, 131073, 655386, 0, 131073, 655387, 0, 131073, 655388, 0, 131073, 655389, 0, 131073, 655390, 0, 131073, 655391, 0, 131073, 655392, 0, 131073, 655393, 0, 4, 655394, 0, 65537, 655395, 0, 65537, 655396, 0, 65537, 655397, 0, 3, 655398, 0, 131074, 720908, 0, 131072, 720909, 0, 131073, 720910, 0, 131073, 720911, 0, 131073, 720912, 0, 131073, 720913, 0, 131073, 720914, 0, 131074, 720919, 1, 0, 720920, 1, 0, 720921, 1, 0, 720922, 1, 0, 720923, 1, 0, 720924, 1, 0, 720925, 1, 0, 720926, 1, 0, 720927, 1, 0, 720928, 1, 0, 720929, 0, 131072, 720930, 0, 131073, 720931, 0, 131073, 720932, 0, 131073, 720933, 0, 131074, 720934, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786465, 1, 0, 786466, 1, 0, 786467, 1, 0, 786468, 1, 0, 786469, 1, 0 )
 
 [node name="Blocks" parent="Board/CastleTilemap" index="2"]
 tile_data = PoolIntArray( 26, 0, 0, 27, 0, 0, 28, 0, 0, 65561, 0, 0, 65565, 0, 0, 131097, 0, 0, 131101, 0, 0, 131102, 0, 0, 131103, 0, 0, 196633, 0, 0, 196640, 0, 0, 262169, 0, 0, 262172, 0, 0, 262176, 0, 0, 327705, 0, 0, 327708, 0, 0, 327709, 0, 0, 327712, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393244, 0, 0, 393245, 0, 0, 393248, 0, 0, 393249, 0, 0, 393250, 0, 0, 393251, 0, 0, 393252, 0, 0, 458774, 0, 0, 458780, 0, 0, 458781, 0, 0, 458789, 0, 0, 524310, 0, 0, 524311, 0, 0, 524325, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589861, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0 )
 
-[node name="Box3" parent="Board" instance=ExtResource( 7 )]
-position = Vector2( 440, 40 )
-boxValue = 5
-
 [node name="Box5" parent="Board" instance=ExtResource( 7 )]
 position = Vector2( 456, 40 )
+boxValue = 30
 
 [node name="Box6" parent="Board" instance=ExtResource( 7 )]
 position = Vector2( 456, 56 )
+boxValue = 87
 
 [node name="Box7" parent="Board" instance=ExtResource( 7 )]
 position = Vector2( 440, 72 )
+boxValue = 40
+boxWholeNum = false
 
 [node name="Box8" parent="Board" instance=ExtResource( 7 )]
 position = Vector2( 488, 88 )
-
-[node name="Box9" parent="Board" instance=ExtResource( 7 )]
-position = Vector2( 488, 56 )
+boxValue = 47
 
 [node name="ScannerTile3" parent="Board" instance=ExtResource( 5 )]
 position = Vector2( 568, 152 )
-scannerID = 3
+scannerID = 1
 
 [node name="ScannerTile4" parent="Board" instance=ExtResource( 5 )]
 position = Vector2( 568, 136 )
 scannerID = 3
 
-[node name="ScannerTile5" parent="Board" instance=ExtResource( 5 )]
-position = Vector2( 568, 120 )
-scannerID = 3
-
-[node name="ScannerTile6" parent="Board" instance=ExtResource( 5 )]
-position = Vector2( 584, 120 )
-scannerID = 3
-
 [node name="ScannerTile7" parent="Board" instance=ExtResource( 5 )]
 position = Vector2( 584, 136 )
-scannerID = 3
+scannerID = 2
 
 [node name="ScannerTile8" parent="Board" instance=ExtResource( 5 )]
 position = Vector2( 584, 152 )
-scannerID = 3
 
 [node name="Temple" parent="Board" instance=ExtResource( 8 )]
-position = Vector2( 456, 24 )
+position = Vector2( 440, 40 )
+portalTheme = "Dungeon"
 
 [node name="Player" parent="Board" instance=ExtResource( 1 )]
 position = Vector2( 376, 120 )
 
 [node name="TheKnightSprite" parent="Board" instance=ExtResource( 3 )]
-position = Vector2( 248, 16 )
+position = Vector2( 248, -8 )
+frame = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/TheKnightSprite"]
 show_behind_parent = true
 position = Vector2( 0, 40 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 13 )
-frame = 1
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]
 
 [node name="Cavalier" parent="Board/Traps" instance=ExtResource( 2 )]
-position = Vector2( 456, 120 )
+position = Vector2( 552, 136 )
+
+[node name="Cavalier2" parent="Board/Traps" instance=ExtResource( 2 )]
+position = Vector2( 504, 56 )
+
+[node name="Cavalier3" parent="Board/Traps" instance=ExtResource( 2 )]
+position = Vector2( 424, 56 )
+
+[node name="Cavalier4" parent="Board/Traps" instance=ExtResource( 2 )]
+position = Vector2( 456, 24 )
+
+[node name="Cavalier5" parent="Board/Traps" instance=ExtResource( 2 )]
+position = Vector2( 488, 120 )
+
+[node name="Question" type="Node2D" parent="Board"]
+position = Vector2( 824, -40 )
+
+[node name="DoubleDigits2" parent="Board/Question" instance=ExtResource( 15 )]
+position = Vector2( -544, 136 )
+objectValue = 21
+
+[node name="DoubleDigits3" parent="Board/Question" instance=ExtResource( 15 )]
+position = Vector2( -568, 120 )
+objectValue = 1
+
+[node name="DoubleDigits4" parent="Board/Question" instance=ExtResource( 15 )]
+position = Vector2( -544, 120 )
+objectValue = 47
+
+[node name="DoubleDigits11" parent="Board/Question" instance=ExtResource( 15 )]
+position = Vector2( -568, 160 )
+objectValue = 1
+
+[node name="DoubleDigits8" parent="Board/Question" instance=ExtResource( 15 )]
+position = Vector2( -568, 176 )
+objectValue = 29
+
+[node name="Sprite" parent="Board/Question" instance=ExtResource( 14 )]
+position = Vector2( -560, 112 )
+
+[node name="Sprite2" parent="Board/Question" instance=ExtResource( 14 )]
+position = Vector2( -560, 192 )
+frame = 0
+
+[node name="Crystal4" parent="Board/Question" instance=ExtResource( 17 )]
+position = Vector2( -568, 200 )
+scannerID = 3
+
+[node name="Crystal7" parent="Board/Question" instance=ExtResource( 17 )]
+position = Vector2( -544, 200 )
+scannerID = 2
+
+[node name="Crystal5" parent="Board/Question" instance=ExtResource( 17 )]
+position = Vector2( -544, 160 )
+
+[node name="Crystal6" parent="Board/Question" instance=ExtResource( 17 )]
+position = Vector2( -544, 176 )
+scannerID = 1
+isCrystalWholeNumber = false
+
+[node name="SymbolBlocks2" parent="Board/Question" instance=ExtResource( 16 )]
+position = Vector2( -592, 128 )
+operation = "Times"
+
+[node name="SymbolBlocks3" parent="Board/Question" instance=ExtResource( 16 )]
+position = Vector2( -592, 168 )
+operation = "Plus"
+
+[node name="Line" type="Sprite" parent="Board/Question"]
+position = Vector2( -592, 144 )
+scale = Vector2( 0.8, 0.5 )
+texture = ExtResource( 18 )
+centered = false
+
+[node name="Line2" type="Sprite" parent="Board/Question"]
+position = Vector2( -592, 184 )
+scale = Vector2( 0.799999, 0.5 )
+texture = ExtResource( 18 )
+centered = false
 
 [node name="Timers" type="Node" parent="."]
 
