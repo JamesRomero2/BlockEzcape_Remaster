@@ -43,38 +43,27 @@ func _setMedalRanking():
 
 	var minutes = int(playedLevelTimeMinutes)
 	var seconds = int(playedLevelTimeSeconds)
+
 	if minutes == 0:
-		if seconds <= 25:
-			medal = 4
-			$Container/Label6.text = "S"
-			$Container/Awards/Platinum.visible = true
-			playedLevelAttainedRank = "S"
-		elif seconds >= 26 and seconds <= 50:
-			medal = 3
-			$Container/Label6.text = "A"
-			$Container/Awards/Gold.visible = true
-			playedLevelAttainedRank = "A"
-		elif seconds >= 51:
-			medal = 2
-			$Container/Label6.text = "B"
-			$Container/Awards/Silver.visible = true
-			playedLevelAttainedRank = "B"
+		medal = 4
+		$Container/Label6.text = "S"
+		$Container/Awards/Platinum.visible = true
+		playedLevelAttainedRank = "S"
 	elif minutes == 1:
-		if seconds <= 25:
-			medal = 2
-			$Container/Label6.text = "B"
-			playedLevelAttainedRank = "B"
-			$Container/Awards/Silver.visible = true
-		elif seconds >= 26 and seconds <= 50:
-			medal = 1
-			$Container/Label6.text = "C"
-			$Container/Awards/Bronze.visible = true
-			playedLevelAttainedRank = "C"
-		elif seconds >= 51:
-			medal = 0
-			$Container/Label6.text = "D"
-			$Container/Awards/Copper.visible = true
-			playedLevelAttainedRank = "D"
+		medal = 3
+		$Container/Label6.text = "A"
+		$Container/Awards/Gold.visible = true
+		playedLevelAttainedRank = "A"
+	elif minutes == 2:
+		medal = 2
+		$Container/Label6.text = "B"
+		playedLevelAttainedRank = "B"
+		$Container/Awards/Silver.visible = true
+	elif minutes == 3:
+		medal = 1
+		$Container/Label6.text = "C"
+		$Container/Awards/Bronze.visible = true
+		playedLevelAttainedRank = "C"
 	else:
 		medal = 0
 		$Container/Label6.text = "D"

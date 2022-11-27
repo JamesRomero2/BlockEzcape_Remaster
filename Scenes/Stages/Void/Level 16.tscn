@@ -24,6 +24,8 @@ answers = {
 2: 0,
 3: null
 }
+resultAnimating = true
+requiredMedal = 1
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10

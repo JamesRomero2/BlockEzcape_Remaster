@@ -48,7 +48,6 @@ font_data = ExtResource( 21 )
 
 [node name="Level 07" type="Node"]
 script = ExtResource( 1 )
-timelineName = "/Forest/Level 05"
 answers = {
 0: null,
 1: null,
@@ -56,7 +55,7 @@ answers = {
 3: 12
 }
 resultAnimating = true
-requiredMedal = 4
+requiredMedal = 3
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10

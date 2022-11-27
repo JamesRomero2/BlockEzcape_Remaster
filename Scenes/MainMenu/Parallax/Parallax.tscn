@@ -19,6 +19,7 @@ color = Color( 0, 0, 0, 0.392157 )
 offset = Vector2( 370, 180 )
 scale = Vector2( 0.4, 0.4 )
 transform = Transform2D( 0.4, 0, 0, 0.4, 370, 180 )
+follow_viewport_enable = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="PlanA"]
 motion_scale = Vector2( 0, 1 )

@@ -17,7 +17,6 @@
 
 [node name="Level 13" type="Node"]
 script = ExtResource( 1 )
-timelineName = "/Forest/Level 05"
 answers = {
 0: 5,
 1: 40,
@@ -25,7 +24,7 @@ answers = {
 3: 30
 }
 resultAnimating = true
-requiredMedal = 4
+requiredMedal = 2
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10

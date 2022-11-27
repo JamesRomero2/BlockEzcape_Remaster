@@ -17,7 +17,6 @@
 
 [node name="Level 14" type="Node"]
 script = ExtResource( 1 )
-timelineName = "/Forest/Level 05"
 answers = {
 0: 11,
 1: 10,
@@ -25,7 +24,7 @@ answers = {
 3: 12
 }
 resultAnimating = true
-requiredMedal = 4
+requiredMedal = 2
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -120,10 +119,10 @@ objectValue = 11
 
 [node name="Sprite" parent="GameObjects/Question" instance=ExtResource( 12 )]
 position = Vector2( -560, 112 )
+frame = 0
 
 [node name="Sprite2" parent="GameObjects/Question" instance=ExtResource( 12 )]
 position = Vector2( -560, 192 )
-frame = 0
 
 [node name="Crystal4" parent="GameObjects/Question" instance=ExtResource( 11 )]
 position = Vector2( -568, 200 )

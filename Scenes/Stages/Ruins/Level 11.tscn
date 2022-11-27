@@ -47,7 +47,6 @@ font_data = ExtResource( 19 )
 
 [node name="Level 11" type="Node"]
 script = ExtResource( 1 )
-timelineName = "/Forest/Level 05"
 answers = {
 0: 84,
 1: null,
@@ -55,7 +54,7 @@ answers = {
 3: 3
 }
 resultAnimating = true
-requiredMedal = 4
+requiredMedal = 2
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -132,7 +131,6 @@ position = Vector2( -128, -120 )
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 13 )]
 position = Vector2( -560, 112 )
-frame = 0
 
 [node name="DoubleDigits" parent="GameObjects/Question/Top" instance=ExtResource( 10 )]
 position = Vector2( -544, 120 )
@@ -161,7 +159,6 @@ scannerID = 3
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 13 )]
 position = Vector2( -560, 152 )
-frame = 0
 
 [node name="Characters" type="Node2D" parent="GameObjects/Question"]
 
