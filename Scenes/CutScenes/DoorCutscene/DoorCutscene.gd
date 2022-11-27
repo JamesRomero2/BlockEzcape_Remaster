@@ -9,6 +9,9 @@ var worldMapScene = "res://Scenes/WorldMap/WorldMap.tscn"
 var loading = false
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	get_tree().current_scene = self
+	get_tree().paused = false
 	_changeBGToDoor()
 	if get_node_or_null('DialogNode') == null:
 		GameManager._setGamePaused(true)
@@ -25,6 +28,9 @@ func _unhandled_input(event):
 func _changeGameState():
 	GameManager._setGamePaused(!GameManager._getGamePause())
 	pause.visible = !pause.visible
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	set_process_unhandled_input(false)
+	get_tree().paused = true
 
 func _dialogEnd(timeline_name):
 	_loadWorldMap()

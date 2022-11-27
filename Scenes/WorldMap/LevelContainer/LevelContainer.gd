@@ -4,6 +4,7 @@ signal levelSelectorOnTop(Level, LevelTitle)
 
 onready var digits := $DoubleDigits
 onready var animation := $AnimationPlayer
+export(bool) var wholeNumber := true
 
 export(String) var targetLevel setget , _getTargetLevel
 export(String) var levelTitle := ""
@@ -13,6 +14,7 @@ export(bool) var levelOpen: bool = false
 var onTop: bool = false
 
 func _ready():
+	digits.isWholeNumber = wholeNumber
 	_setLevelNum(levelNumber)
 	_setLevelState(levelOpen)
 

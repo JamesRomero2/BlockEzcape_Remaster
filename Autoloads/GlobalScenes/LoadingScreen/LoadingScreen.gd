@@ -28,12 +28,12 @@ var levelAddresses = {
 	"Level 12" : "res://Scenes/Stages/Ruins/Level 12.tscn",
 	"Level 13" : "res://Scenes/Stages/Ruins/Level 13.tscn",
 	"Level 14" : "res://Scenes/Stages/Ruins/Level 14.tscn",
-	"Level 15" : "",
+	"Level 15" : "res://Scenes/Stages/BossStage/TheKnight/Level 15.tscn",
 	"Level 16" : "res://Scenes/Stages/Void/Level 16.tscn",
 	"Level 17" : "res://Scenes/Stages/Void/Level 17.tscn",
 	"Level 18" : "res://Scenes/Stages/Void/Level 18.tscn",
 	"Level 19" : "res://Scenes/Stages/Void/Level 19.tscn",
-	"Level 20" : ""
+	"Level 20" : "res://Scenes/Stages/BossStage/TheEye/Level 20.tscn"
 }
 
 func _ready():

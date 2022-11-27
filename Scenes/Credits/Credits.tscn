@@ -1,19 +1,55 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Assets/Fonts/Alice/Alice-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/GameAssets/Fonts/ButtonFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/GameAssets/Texture/BurningDustParticleTexture.tres" type="Texture" id=2]
 [ext_resource path="res://Scenes/Credits/Credits.gd" type="Script" id=3]
 [ext_resource path="res://Assets/GameAssets/Particles/BlueGreenParticles.tres" type="Material" id=4]
 [ext_resource path="res://Assets/GameAssets/Texture/KeyTexture.tres" type="Texture" id=5]
 [ext_resource path="res://Assets/GameAssets/Materials/RemoveBlackBGMaterial.tres" type="Material" id=6]
+[ext_resource path="res://Assets/Fonts/Rubik/Rubik-Medium.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/Fonts/Rubik/Rubik-Light.ttf" type="DynamicFontData" id=8]
 
-[sub_resource type="DynamicFont" id=1]
-size = 32
-font_data = ExtResource( 1 )
+[sub_resource type="DynamicFont" id=2]
+outline_size = 1
+outline_color = Color( 0.156863, 0.360784, 0.768627, 1 )
+font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=5]
-size = 18
-font_data = ExtResource( 1 )
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "CreditsAnimation"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 360 ), Vector2( 0, -1288 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 360 ) ]
+}
 
 [node name="Credits" type="Control"]
 anchor_right = 1.0
@@ -25,24 +61,99 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -14.0
-margin_top = -121.5
-margin_right = 292.0
-margin_bottom = 121.5
-custom_fonts/font = SubResource( 1 )
-text = "DEVELOPERS
-CABASAAN, MERYLE
-ROMERO, JAMES
-SANGALANG, ROBIN
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 320, 176 )
+scale = Vector2( 5, 5 )
 
-LEZGO"
-align = 1
-valign = 1
+[node name="Particles2D" type="Particles2D" parent="Node2D"]
+visible = false
+material = ExtResource( 6 )
+explosiveness = 0.3
+process_material = ExtResource( 4 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+texture = ExtResource( 5 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.52588e-05
+margin_top = 1.52588e-05
+color = Color( 0, 0, 0, 0.588235 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 360.0
+margin_bottom = 1288.0
+custom_fonts/bold_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]
+[b]BLOCKEZCAPE[/b]
+A Puzzle-Based Game for Grade 5 – Basic Math Arithmetic
+
+[b]DEVELOPERS[/b]
+Meryke Cabasaan
+James Romero
+Robin Emmanuel Sangalang
+
+[b]MUSIC[/b]
+Antti Luode
+
+[b]SOUND EFFECTS[/b]
+Generated using jsfxr (Jsfxr is an online 8 bit sound maker and sfx generator.)
+[https://sfxr.me/]
+
+[b]GRAPHICS[/b]
+BACKGROUND
+Generated Using Lexica (The Stable Diffusion search engine)
+[https://lexica.art/]
+
+CHARACTERS AND OTHER ENTITIES
+RPG Maker - Character Generator
+
+[b]SPECIAL THANKS TO[/b]
+Ms. Isabelle Alyssa Mortega
+Mr. Julito Velasco Jr.
+Mr. Winchester Pastolero
+
+[b]LEZGO[/b]
+[b]ANGAS[/b]
+[/center]"
+text = "
+BLOCKEZCAPE
+A Puzzle-Based Game for Grade 5 – Basic Math Arithmetic
+
+DEVELOPERS
+Meryke Cabasaan
+James Romero
+Robin Emmanuel Sangalang
+
+MUSIC
+Antti Luode
+
+SOUND EFFECTS
+Generated using jsfxr (Jsfxr is an online 8 bit sound maker and sfx generator.)
+[https://sfxr.me/]
+
+GRAPHICS
+BACKGROUND
+Generated Using Lexica (The Stable Diffusion search engine)
+[https://lexica.art/]
+
+CHARACTERS AND OTHER ENTITIES
+RPG Maker - Character Generator
+
+SPECIAL THANKS TO
+Ms. Isabelle Alyssa Mortega
+Mr. Julito Velasco Jr.
+Mr. Winchester Pastolero
+
+LEZGO
+ANGAS
+"
 
 [node name="Label2" type="Label" parent="."]
 anchor_left = 0.5
@@ -54,21 +165,12 @@ margin_top = -50.0
 margin_right = 144.5
 margin_bottom = -12.0
 custom_colors/font_color = Color( 0.705882, 0.705882, 0.705882, 1 )
-custom_fonts/font = SubResource( 5 )
-text = "Press Space to go Back..."
+custom_fonts/font = ExtResource( 1 )
+text = "Space to go Back..."
 align = 1
 valign = 1
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 147, 180 )
-scale = Vector2( 5, 5 )
-
-[node name="Particles2D" type="Particles2D" parent="Node2D"]
-material = ExtResource( 6 )
-amount = 16
-explosiveness = 0.3
-process_material = ExtResource( 4 )
-texture = ExtResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Node2D"]
-texture = ExtResource( 5 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "CreditsAnimation"
+anims/CreditsAnimation = SubResource( 1 )
+anims/RESET = SubResource( 4 )

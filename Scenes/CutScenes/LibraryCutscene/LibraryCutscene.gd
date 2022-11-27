@@ -30,6 +30,8 @@ var taskState = -1
 var playerEnteredVase = false
 
 func _ready():
+	get_tree().current_scene = self
+	get_tree().paused = false
 	GameManager._setGameOver(false)
 	enterParticle.modulate.a = 0
 	closeParticle.modulate.a = 0
@@ -43,6 +45,7 @@ func _ready():
 	whirlpool.visible = false
 	whirlpool.modulate.a = 0
 	_playDialog()
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _process(delta):
 	camera.set_position(target.position)
@@ -76,6 +79,9 @@ func _unhandled_input(event):
 func _changeGameState():
 	GameManager._setGamePaused(!GameManager._getGamePause())
 	pause.visible = !pause.visible
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	set_process_unhandled_input(false)
+	get_tree().paused = true
 
 func _playDialog():
 	if get_node_or_null('DialogNode') == null:

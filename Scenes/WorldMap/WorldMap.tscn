@@ -374,35 +374,45 @@ levelOpen = true
 [node name="LevelContainer2" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -400, -312 )
 scale = Vector2( 2, 2 )
+wholeNumber = false
 targetLevel = "Level 01"
+levelTitle = "The Add Forest of Numbers - Act 1"
 levelNumber = 1
 levelOpen = true
 
 [node name="LevelContainer3" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -432, -248 )
 scale = Vector2( 2, 2 )
+wholeNumber = false
 targetLevel = "Level 02"
+levelTitle = "The Add Forest of Numbers - Act 2"
 levelNumber = 2
 levelOpen = true
 
 [node name="LevelContainer4" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -304, -248 )
 scale = Vector2( 2, 2 )
+wholeNumber = false
 targetLevel = "Level 03"
+levelTitle = "The Add Forest of Numbers - Act 3"
 levelNumber = 3
 levelOpen = true
 
 [node name="LevelContainer5" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -400, -184 )
 scale = Vector2( 2, 2 )
+wholeNumber = false
 targetLevel = "Level 04"
+levelTitle = "The Add Forest of Numbers - Act 4"
 levelNumber = 4
 levelOpen = true
 
 [node name="LevelContainer6" parent="Map/ForestArea" instance=ExtResource( 3 )]
 position = Vector2( -336, -184 )
 scale = Vector2( 2, 2 )
+wholeNumber = false
 targetLevel = "Level 05"
+levelTitle = "The Serpent Hiding in the Forest"
 levelNumber = 5
 levelOpen = true
 
@@ -438,31 +448,40 @@ texture = ExtResource( 8 )
 [node name="LevelContainer" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( 64, -56 )
 scale = Vector2( 2, 2 )
+wholeNumber = false
 targetLevel = "Level 06"
+levelTitle = "Diminishing the Surface - Act 1"
 levelNumber = 6
 
 [node name="LevelContainer2" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( 0, -88 )
 scale = Vector2( 2, 2 )
+wholeNumber = false
 targetLevel = "Level 07"
+levelTitle = "Diminishing the Surface - Act 2"
 levelNumber = 7
 
 [node name="LevelContainer3" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( -64, -56 )
 scale = Vector2( 2, 2 )
+wholeNumber = false
 targetLevel = "Level 08"
+levelTitle = "Diminishing the Surface - Act 3"
 levelNumber = 8
 
 [node name="LevelContainer4" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( -64, 8 )
 scale = Vector2( 2, 2 )
+wholeNumber = false
 targetLevel = "Level 09"
+levelTitle = "Diminishing the Surface - Act 4"
 levelNumber = 9
 
 [node name="LevelContainer5" parent="Map/UndergroundArea" instance=ExtResource( 3 )]
 position = Vector2( 0, 40 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 10"
+levelTitle = "The Golem Underneath the Surface"
 levelNumber = 10
 
 [node name="Particles2D2" type="Particles2D" parent="Map/UndergroundArea"]
@@ -482,7 +501,7 @@ texture = SubResource( 32 )
 position = Vector2( 128, -232 )
 
 [node name="Sprite" type="Sprite" parent="Map/Ruins"]
-modulate = Color( 0.992157, 0.956863, 0.552941, 1 )
+modulate = Color( 0.0156863, 0.113725, 0.94902, 1 )
 material = SubResource( 49 )
 scale = Vector2( 2.5, 2.5 )
 texture = SubResource( 50 )
@@ -495,30 +514,35 @@ texture = ExtResource( 22 )
 position = Vector2( 48, 48 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 15"
+levelTitle = "The Dungeon's Long Lost Knight "
 levelNumber = 15
 
 [node name="LevelContainer2" parent="Map/Ruins" instance=ExtResource( 3 )]
-position = Vector2( 80, -16 )
+position = Vector2( 48, -16 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 14"
+levelTitle = "Dungeon Augmentation - Act 4"
 levelNumber = 14
 
 [node name="LevelContainer3" parent="Map/Ruins" instance=ExtResource( 3 )]
-position = Vector2( 0, -16 )
+position = Vector2( -16, -16 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 13"
+levelTitle = "Dungeon Augmentation - Act 3"
 levelNumber = 13
 
 [node name="LevelContainer4" parent="Map/Ruins" instance=ExtResource( 3 )]
 position = Vector2( -80, -16 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 12"
+levelTitle = "Dungeon Augmentation - Act 2"
 levelNumber = 12
 
 [node name="LevelContainer5" parent="Map/Ruins" instance=ExtResource( 3 )]
 position = Vector2( -48, 48 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 11"
+levelTitle = "Dungeon Augmentation - Act 1"
 levelNumber = 11
 
 [node name="Magical" type="Node2D" parent="Map"]
@@ -538,30 +562,35 @@ texture = ExtResource( 7 )
 position = Vector2( 40, 56 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 19"
+levelTitle = "The Severancial World - Act 4"
 levelNumber = 19
 
 [node name="LevelContainer2" parent="Map/Magical" instance=ExtResource( 3 )]
 position = Vector2( 40, -40 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 18"
+levelTitle = "The Severancial World - Act 3"
 levelNumber = 18
 
 [node name="LevelContainer3" parent="Map/Magical" instance=ExtResource( 3 )]
 position = Vector2( -24, -72 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 17"
+levelTitle = "The Severancial World - Act 2"
 levelNumber = 17
 
 [node name="LevelContainer4" parent="Map/Magical" instance=ExtResource( 3 )]
 position = Vector2( -88, -8 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 16"
+levelTitle = "The Severancial World - Act 1"
 levelNumber = 16
 
 [node name="LevelContainer5" parent="Map/Magical" instance=ExtResource( 3 )]
 position = Vector2( -56, 56 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 20"
+levelTitle = "The Eye between Different Worlds"
 levelNumber = 20
 
 [node name="Blockers" type="Node2D" parent="Map"]
@@ -1321,7 +1350,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 37 )
-text = "Go Back"
+text = "Back"
 align = 1
 valign = 1
 

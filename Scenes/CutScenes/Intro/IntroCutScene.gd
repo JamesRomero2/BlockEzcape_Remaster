@@ -19,6 +19,8 @@ var woodShown = false
 var arrowTarget = null
 
 func _ready():
+	get_tree().current_scene = self
+	get_tree().paused = false
 	GameManager._setGameOver(false)
 	GameManager._setGamePaused(true)
 	GlobalMusic._changeMusic(cutScene)
@@ -27,6 +29,7 @@ func _ready():
 	gotoLibr.visible = false
 	gotoSafe.visible = false
 	arrowTarget = libraryPoint
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _process(delta):
 	camera.set_position(target.position)
@@ -44,6 +47,9 @@ func _unhandled_input(event):
 func _changeGameState():
 	GameManager._setGamePaused(!GameManager._getGamePause())
 	pause.visible = !pause.visible
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	set_process_unhandled_input(false)
+	get_tree().paused = true
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player" and !woodShown:

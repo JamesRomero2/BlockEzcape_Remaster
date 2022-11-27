@@ -565,7 +565,7 @@ format = 1
 [node name="AnimatedSprite" parent="GameWorld" instance=ExtResource( 11 )]
 position = Vector2( 48, 112 )
 scale = Vector2( 0.666, 0.666 )
-frame = 2
+frame = 3
 
 [node name="TileMap2" type="TileMap" parent="GameWorld"]
 tile_set = SubResource( 2 )
@@ -598,7 +598,6 @@ format = 1
 tile_data = PoolIntArray( -983034, 0, 0, -983030, 0, 0, -983026, 0, 0, 65539, 0, 0, 65548, 0, 0 )
 
 [node name="AttentionParticle" type="Particles2D" parent="."]
-visible = false
 modulate = Color( 0, 0.690196, 0.984314, 1 )
 material = SubResource( 25 )
 position = Vector2( 40, -200 )
@@ -608,7 +607,6 @@ process_material = SubResource( 30 )
 texture = ExtResource( 6 )
 
 [node name="CloseParticle" type="Particles2D" parent="."]
-visible = false
 modulate = Color( 0, 1, 0.74902, 1 )
 material = SubResource( 31 )
 position = Vector2( 40, -200 )

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Components/Tilesets/Tilesets.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/CastleTiles.png" type="Texture" id=2]
-[ext_resource path="res://GameObjects/Blocks/Castle/ImmovableBlocks/Texture/CastleBlocks.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/ImmovableTile.png" type="Texture" id=3]
 
 [sub_resource type="TileSet" id=4]
 0/name = "CastleTiles.png 0"
@@ -69,11 +69,11 @@
 1/z_index = 0
 
 [sub_resource type="TileSet" id=2]
-0/name = "CastleBlocks.png 0"
+0/name = "ImmovableTile.png 0"
 0/texture = ExtResource( 3 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 16, 16 )
+0/region = Rect2( 0, 32, 16, 16 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )

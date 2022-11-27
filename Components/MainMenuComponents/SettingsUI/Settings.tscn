@@ -1,33 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets/Fonts/terminal-font.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/GameAssets/Fonts/MainMenuButtonFonts.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/GameAssets/Fonts/MainMenuTitleFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Bold.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Components/MainMenuComponents/SettingsUI/Textures/GrabberImg.tres" type="Texture" id=5]
-[ext_resource path="res://Components/MainMenuComponents/SettingsUI/Textures/SliderStyle.tres" type="StyleBox" id=6]
+[ext_resource path="res://Assets/GameAssets/Others/GrabberImg.tres" type="Texture" id=5]
+[ext_resource path="res://Assets/GameAssets/Others/SliderStyle.tres" type="StyleBox" id=6]
 [ext_resource path="res://Components/MainMenuComponents/SettingsUI/Settings.gd" type="Script" id=7]
-[ext_resource path="res://Components/MainMenuComponents/SettingsUI/Textures/SliderHighlightStyle.tres" type="StyleBox" id=8]
-
-[sub_resource type="DynamicFont" id=15]
-size = 62
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 2 )
+[ext_resource path="res://Assets/GameAssets/Others/SliderHighlightStyle.tres" type="StyleBox" id=8]
 
 [sub_resource type="Theme" id=17]
-
-[sub_resource type="DynamicFont" id=16]
-size = 24
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 4 )
-
-[sub_resource type="DynamicFont" id=27]
-size = 22
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
 
 [sub_resource type="StreamTexture" id=28]
 load_path = "res://.import/Keys.png-13469275d5aab9ee433265296e1dd612.stex"
@@ -40,9 +21,9 @@ script = ExtResource( 7 )
 [node name="Label" type="Label" parent="."]
 margin_left = 32.0
 margin_top = 24.0
-margin_right = 405.0
-margin_bottom = 87.0
-custom_fonts/font = SubResource( 15 )
+margin_right = 308.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 2 )
 text = "Settings"
 
 [node name="Control" type="Control" parent="."]
@@ -67,13 +48,13 @@ margin_right = 532.0
 margin_bottom = 31.0
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer"]
-margin_right = 142.0
+margin_right = 144.0
 margin_bottom = 31.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = ExtResource( 1 )
 text = "Display Mode"
 
 [node name="Control" type="Control" parent="Control/VBoxContainer/HBoxContainer"]
-margin_left = 146.0
+margin_left = 148.0
 margin_right = 532.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
@@ -88,7 +69,7 @@ margin_left = -200.0
 margin_top = -15.5
 margin_bottom = 15.5
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = ExtResource( 1 )
 text = "WINDOWED"
 flat = true
 
@@ -98,13 +79,13 @@ margin_right = 532.0
 margin_bottom = 67.0
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer2"]
-margin_right = 146.0
+margin_right = 149.0
 margin_bottom = 31.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = ExtResource( 1 )
 text = "Music Volume"
 
 [node name="Control" type="Control" parent="Control/VBoxContainer/HBoxContainer2"]
-margin_left = 150.0
+margin_left = 153.0
 margin_right = 532.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
@@ -133,13 +114,13 @@ margin_right = 532.0
 margin_bottom = 103.0
 
 [node name="Label" type="Label" parent="Control/VBoxContainer/HBoxContainer3"]
-margin_right = 230.0
+margin_right = 237.0
 margin_bottom = 31.0
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = ExtResource( 1 )
 text = "Sound Effects Volume"
 
 [node name="Control" type="Control" parent="Control/VBoxContainer/HBoxContainer3"]
-margin_left = 234.0
+margin_left = 241.0
 margin_right = 532.0
 margin_bottom = 31.0
 size_flags_horizontal = 3
@@ -179,7 +160,7 @@ margin_right = 0.0
 margin_bottom = 18.5
 focus_mode = 1
 text = "Back"
-align = 1
+align = 2
 
 [connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/Control/DisplayModeButton" to="." method="_on_DisplayModeButton_pressed"]
 [connection signal="value_changed" from="Control/VBoxContainer/HBoxContainer2/Control/MusicVolume" to="." method="_on_MusicVolume_value_changed"]
