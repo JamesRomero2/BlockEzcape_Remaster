@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/DoorCutscene.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/DoorImage1.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/CustomImport/DoorImage1.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Hexagram.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Book.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Silhoutte2.png" type="Texture" id=5]

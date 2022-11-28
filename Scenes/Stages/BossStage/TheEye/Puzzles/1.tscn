@@ -4,11 +4,11 @@
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Components/Tilesets/Void/Void.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Stages/BossStage/TheEye/Power/TorchSpawner.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Textures/MagicalBossTemple3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/Bosses/Eye/Temple/MagicalBossTemple3.png" type="Texture" id=5]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Assets/Textures/MagicalBossTemple2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Textures/MagicalBossTemple1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/Bosses/Eye/Temple/MagicalBossTemple2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Textures/Bosses/Eye/Temple/MagicalBossTemple1.png" type="Texture" id=9]
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=12]
@@ -106,21 +106,21 @@ position = Vector2( 504, 40 )
 
 [node name="TheEyeSprite" parent="Board" instance=ExtResource( 13 )]
 position = Vector2( 360, 32 )
-frame = 2
+frame = 0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/TheEyeSprite"]
 show_behind_parent = true
 position = Vector2( -1, 49 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 13 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]
 
 [node name="AnimatedSprite2" parent="Board/Traps" instance=ExtResource( 4 )]
 position = Vector2( 439, -51 )
-frame = 1
+frame = 2
 
 [node name="Question" type="Node2D" parent="Board"]
 position = Vector2( 808, -96 )

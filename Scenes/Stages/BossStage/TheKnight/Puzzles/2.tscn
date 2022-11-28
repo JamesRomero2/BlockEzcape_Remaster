@@ -10,14 +10,15 @@
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Scenes/Stages/BossStage/TheKnight/Puzzles/KnightsPuzzle.gd" type="Script" id=10]
-[ext_resource path="res://Assets/Textures/DungeonBossTemple2.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Textures/DungeonBossTemple3.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Textures/DungeonBossTemple1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Textures/Bosses/Knight/Temple/DungeonBossTemple2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/Bosses/Knight/Temple/DungeonBossTemple3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/Bosses/Knight/Temple/DungeonBossTemple1.png" type="Texture" id=13]
 [ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=15]
 [ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=16]
 [ext_resource path="res://GameObjects/Blocks/Crystal/Crystal.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=18]
+
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {

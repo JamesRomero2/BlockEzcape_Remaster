@@ -8,11 +8,11 @@
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Textures/MagicalBossTemple3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Textures/Bosses/Eye/Temple/MagicalBossTemple3.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scenes/Stages/BossStage/TheEye/Puzzles/TheEyePuzzles.gd" type="Script" id=11]
-[ext_resource path="res://Assets/Textures/MagicalBossTemple2.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Textures/MagicalBossTemple1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Textures/Bosses/Eye/Temple/MagicalBossTemple2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/Bosses/Eye/Temple/MagicalBossTemple1.png" type="Texture" id=13]
 [ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=14]
 [ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=16]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Assets/Textures/DivisionLine.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Textures/Chevron-Arrow.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=20]
+
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {

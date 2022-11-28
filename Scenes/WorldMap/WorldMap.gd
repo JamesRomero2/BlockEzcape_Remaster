@@ -6,8 +6,6 @@ onready var levelSelector = $Map/LevelSelector
 onready var levelInfo = $LevelInfo
 
 var mapMusic = load("res://Assets/Audio/Music/Music1.ogg")
-var forestBG = load("res://Assets/Textures/Mountains5.png")
-var undergroundBG = load("res://Assets/Textures/caveBG.jpg")
 
 func _ready():
 	GlobalMusic._changeMusic(mapMusic)

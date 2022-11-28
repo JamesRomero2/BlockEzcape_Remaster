@@ -1,26 +1,25 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scenes/WorldMap/WorldMap.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WorldMap/LevelSelector/LevelSelector.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/WorldMap/LevelContainer/LevelContainer.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Textures/Mountains5.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/CustomImport/Mountains5.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Textures/ForestArea.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Textures/spotlight_1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/CustomImport/spotlight_1.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Textures/Magical Map.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Textures/UndergroundArea.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/WorldMap/Blocker/Blocker.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Textures/Chevron-Arrow.png" type="Texture" id=10]
 [ext_resource path="res://GameObjects/Tiles/LeverTile/Texture/LeverTexture.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Textures/Keys.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Textures/BlackBackDrop.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Bold.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Medium.ttf" type="DynamicFontData" id=16]
 [ext_resource path="res://Scenes/WorldMap/BackgroundChanger/BGChanger.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Assets/Textures/caveBG.jpg" type="Texture" id=18]
-[ext_resource path="res://Assets/Textures/Clouds.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Textures/VoidBG.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Textures/RuinBg.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Textures/CustomImport/caveBG.jpg" type="Texture" id=18]
+[ext_resource path="res://Assets/Textures/CustomImport/Clouds.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Textures/CustomImport/VoidBG.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Textures/CustomImport/RuinBg.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Textures/castle map.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Textures/StageGate.png" type="Texture" id=23]
 [ext_resource path="res://Components/WorldMapComponents/LevelInformation/LevelInformation.tscn" type="PackedScene" id=24]
@@ -1087,149 +1086,149 @@ scale = Vector2( 2, 2 )
 
 [node name="Arr" type="Sprite" parent="Map/Arrows"]
 position = Vector2( -248, -184 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr2" type="Sprite" parent="Map/Arrows"]
 position = Vector2( -224, -184 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr3" type="Sprite" parent="Map/Arrows"]
 position = Vector2( -200, -184 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr4" type="Sprite" parent="Map/Arrows"]
 position = Vector2( -176, -184 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr6" type="Sprite" parent="Map/Arrows"]
 position = Vector2( -144, -192 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr8" type="Sprite" parent="Map/Arrows"]
 position = Vector2( -144, -168 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr10" type="Sprite" parent="Map/Arrows"]
 position = Vector2( -8, 40 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr11" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 16, 40 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr12" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 40, 40 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr13" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 64, 40 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr29" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 88, 40 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr14" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 112, 48 )
 rotation = 4.71239
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr15" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 112, 24 )
 rotation = 4.71239
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr16" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 112, 0 )
 rotation = 4.71239
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr17" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 112, -24 )
 rotation = 4.71239
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr18" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 112, -48 )
 rotation = 4.71239
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr19" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 112, -72 )
 rotation = 4.71239
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr21" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 112, -96 )
 rotation = 4.71239
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr20" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 176, -96 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr22" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 176, -72 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr23" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 176, -48 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr24" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 176, -24 )
 rotation = 1.5708
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr25" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 168, 8 )
 rotation = 6.28319
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr26" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 192, 8 )
 rotation = 6.28319
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr27" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 216, 8 )
 rotation = 6.28319
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="Arr28" type="Sprite" parent="Map/Arrows"]
 position = Vector2( 240, 8 )
 rotation = 6.28319
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 
 [node name="BGChanger" type="Node2D" parent="Map"]
@@ -1309,12 +1308,10 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Backdrop" type="TextureRect" parent="MainMenuNavigation/Control"]
-modulate = Color( 1, 1, 1, 0.54902 )
+[node name="ColorRect" type="ColorRect" parent="MainMenuNavigation/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 13 )
-stretch_mode = 1
+color = Color( 0, 0, 0, 0.588235 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenuNavigation/Control"]
 anchor_left = 0.5

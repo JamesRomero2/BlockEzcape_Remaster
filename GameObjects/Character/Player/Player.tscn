@@ -2,7 +2,7 @@
 
 [ext_resource path="res://GameObjects/Character/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Audio/SFX/hitHurt.wav" type="AudioStream" id=2]
-[ext_resource path="res://Assets/GameAssets/Texture/PlayerSprite.tres" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/ArchiMini.png" type="Texture" id=3]
 [ext_resource path="res://Assets/GameAssets/Animation/Player/WalkingDown.tres" type="Animation" id=4]
 [ext_resource path="res://Assets/GameAssets/Animation/Player/WalkingRight.tres" type="Animation" id=5]
 [ext_resource path="res://Assets/GameAssets/Animation/Player/WalkingUp.tres" type="Animation" id=6]
@@ -109,7 +109,6 @@ material = SubResource( 14 )
 scale = Vector2( 0.333, 0.333 )
 texture = ExtResource( 3 )
 hframes = 12
-frame = 1
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )

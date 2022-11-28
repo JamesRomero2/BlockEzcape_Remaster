@@ -15,6 +15,7 @@ var playedLevelTimeMinutes: float
 var playedLevelTimeSeconds: float
 var playedLevelRequiredRank: int
 var playedLevelAttainedRank: String
+var lastLevel: bool = false
 
 func _showResult(mins, secs, levelNum, requiredMedalInLevel):
 	playedLevelTimeMinutes = mins
@@ -30,7 +31,11 @@ func _showResult(mins, secs, levelNum, requiredMedalInLevel):
 	checkForNewLevel()
 	checkForNewHighScore()
 
-	$AnimationPlayer.play("ResultsAnimation")
+
+	if (playedLevelNumber + 1) == 21:
+		$AnimationPlayer.play("ResultsAnimationForEndLevel")
+	else:
+		$AnimationPlayer.play("ResultsAnimation")
 
 func _input(event):
 	if event.is_pressed() and !animating:
@@ -126,3 +131,9 @@ func setTextOnLabels():
 
 func saveRecordToSaveFile():
 	GameManager._saveLevelRecord(playedLevelNumber, playedLevelInterpretedTime, playedLevelAttainedRank, playedLevelTimeMinutes, playedLevelTimeSeconds)
+
+func playLastScene():
+	if newRecord:
+		saveRecordToSaveFile()
+	LoadingScreen.loadLevel("Credits")
+	

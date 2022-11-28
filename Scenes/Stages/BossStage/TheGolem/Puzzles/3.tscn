@@ -2,15 +2,15 @@
 
 [ext_resource path="res://Components/Tilesets/Underground/Underground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/BoulderSpawner.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Textures/UndergroundBossTemple2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/Bosses/Golem/Temple/UndergroundBossTemple2.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Stages/BossStage/TheGolem/TheGolemSprite/TheGolemSprite.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Textures/UndergroundBossTemple1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Textures/Bosses/Golem/Temple/UndergroundBossTemple1.png" type="Texture" id=6]
 [ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Puzzles/GolemsPuzzle.gd" type="Script" id=10]
-[ext_resource path="res://Assets/Textures/UndergroundBossTemple3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/Bosses/Golem/Temple/UndergroundBossTemple3.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/Stopper.tscn" type="PackedScene" id=12]
 [ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=14]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=23]
+
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {

@@ -4,14 +4,14 @@
 [ext_resource path="res://Assets/GameAssets/Animation/MainMenu/LabyrinthAnimation.tres" type="Animation" id=2]
 [ext_resource path="res://Components/MainMenuComponents/ExitPanel/ExitPanel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Components/UIButtons/MainMenuButtonGroup.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/GameAssets/Texture/MainMenu/AdditionSign.tres" type="Texture" id=5]
+[ext_resource path="res://Assets/Textures/FloatingIsland/Minus.png" type="Texture" id=5]
 [ext_resource path="res://Components/MainMenuComponents/SettingsUI/Settings.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/GameAssets/Texture/MainMenu/DivisionSign.tres" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/FloatingIsland/Labyrinth.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/MainMenu/Parallax/Parallax.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/GameAssets/Texture/NumbersTexture.tres" type="Texture" id=9]
-[ext_resource path="res://Assets/GameAssets/Texture/MainMenu/FloatingLabyrinth.tres" type="Texture" id=10]
-[ext_resource path="res://Assets/GameAssets/Texture/MainMenu/MultiplicationSign.tres" type="Texture" id=11]
-[ext_resource path="res://Assets/GameAssets/Texture/MainMenu/SubtractionSign.tres" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/FloatingIsland/dibayd.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Textures/FloatingIsland/times.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Textures/FloatingIsland/Plus.png" type="Texture" id=12]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Black.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Assets/GameAssets/Particles/NumbersParticles.tres" type="Material" id=15]
@@ -122,7 +122,7 @@ margin_left = -344.0
 margin_top = -164.0
 margin_right = 56.0052
 margin_bottom = 230.0
-texture = ExtResource( 10 )
+texture = ExtResource( 7 )
 expand = true
 stretch_mode = 7
 
@@ -135,7 +135,7 @@ margin_left = 97.9994
 margin_top = -125.0
 margin_right = 138.0
 margin_bottom = -85.0013
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 stretch_mode = 6
 
 [node name="Multiply" type="TextureRect" parent="MainMenuContainer/MainMenuUI/LabyrinthImage/Labyrinth"]
@@ -159,7 +159,7 @@ margin_left = -183.001
 margin_top = -24.0
 margin_right = -143.001
 margin_bottom = 16.0
-texture = ExtResource( 5 )
+texture = ExtResource( 12 )
 stretch_mode = 6
 
 [node name="Minus" type="TextureRect" parent="MainMenuContainer/MainMenuUI/LabyrinthImage/Labyrinth"]
@@ -171,7 +171,7 @@ margin_left = 129.999
 margin_top = -33.0
 margin_right = 169.999
 margin_bottom = 7.0
-texture = ExtResource( 12 )
+texture = ExtResource( 5 )
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="MainMenuContainer/MainMenuUI"]

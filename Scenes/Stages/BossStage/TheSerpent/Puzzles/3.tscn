@@ -14,9 +14,9 @@
 [ext_resource path="res://Scenes/Stages/BossStage/TheSerpent/Power/Venom.tscn" type="PackedScene" id=12]
 [ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Textures/ForestBossTemple1.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Textures/ForestBossTemple3.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Textures/ForestBossTemple2.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Textures/Bosses/Serpent/Temple/ForestBossTemple1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Textures/Bosses/Serpent/Temple/ForestBossTemple3.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Textures/Bosses/Serpent/Temple/ForestBossTemple2.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/Stages/BossStage/TheSerpent/Puzzles/SerpentsPuzzle.gd" type="Script" id=25]
 [ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=26]
 
@@ -90,7 +90,7 @@ position = Vector2( 552, 24 )
 
 [node name="Serpent" parent="Board" instance=ExtResource( 11 )]
 position = Vector2( 160, 32 )
-frame = 3
+frame = 2
 speed_scale = 2.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/Serpent"]
@@ -98,7 +98,7 @@ show_behind_parent = true
 position = Vector2( 0, 32 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 13 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]

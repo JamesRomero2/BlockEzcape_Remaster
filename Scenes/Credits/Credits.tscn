@@ -21,8 +21,9 @@ font_data = ExtResource( 8 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "CreditsAnimation"
-length = 10.0
+length = 20.0
 loop = true
+step = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("RichTextLabel:rect_position")
 tracks/0/interp = 1
@@ -30,7 +31,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 10 ),
+"times": PoolRealArray( 0, 20 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 360 ), Vector2( 0, -1288 ) ]
@@ -95,7 +96,7 @@ bbcode_text = "[center]
 A Puzzle-Based Game for Grade 5 – Basic Math Arithmetic
 
 [b]DEVELOPERS[/b]
-Meryke Cabasaan
+Meryle Cabasaan
 James Romero
 Robin Emmanuel Sangalang
 
@@ -114,6 +115,9 @@ Generated Using Lexica (The Stable Diffusion search engine)
 CHARACTERS AND OTHER ENTITIES
 RPG Maker - Character Generator
 
+ICONS
+Lucid Icons by Midhil M
+
 [b]SPECIAL THANKS TO[/b]
 Ms. Isabelle Alyssa Mortega
 Mr. Julito Velasco Jr.
@@ -127,7 +131,7 @@ BLOCKEZCAPE
 A Puzzle-Based Game for Grade 5 – Basic Math Arithmetic
 
 DEVELOPERS
-Meryke Cabasaan
+Meryle Cabasaan
 James Romero
 Robin Emmanuel Sangalang
 
@@ -145,6 +149,9 @@ Generated Using Lexica (The Stable Diffusion search engine)
 
 CHARACTERS AND OTHER ENTITIES
 RPG Maker - Character Generator
+
+ICONS
+Lucid Icons by Midhil M
 
 SPECIAL THANKS TO
 Ms. Isabelle Alyssa Mortega
