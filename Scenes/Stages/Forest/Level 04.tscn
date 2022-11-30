@@ -123,6 +123,7 @@ position = Vector2( 8, -128 )
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 4 )]
 position = Vector2( -472, 120 )
+frame = 0
 
 [node name="DoubleDigits" parent="GameObjects/Question/Top" instance=ExtResource( 19 )]
 position = Vector2( -456, 128 )
@@ -134,7 +135,6 @@ objectValue = 1
 
 [node name="Sprite2" parent="GameObjects/Question/Top" instance=ExtResource( 4 )]
 position = Vector2( -472, 104 )
-frame = 0
 
 [node name="DoubleDigits3" parent="GameObjects/Question/Top" instance=ExtResource( 19 )]
 position = Vector2( -456, 112 )
@@ -171,6 +171,7 @@ objectValue = 2
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 4 )]
 position = Vector2( -472, 136 )
+frame = 0
 
 [node name="DoubleDigits3" parent="GameObjects/Question/Bottom" instance=ExtResource( 19 )]
 position = Vector2( -456, 144 )
@@ -184,6 +185,7 @@ objectValue = 0
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 4 )]
 position = Vector2( -472, 160 )
+frame = 0
 
 [node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 3 )]
 position = Vector2( -456, 168 )
@@ -210,6 +212,8 @@ centered = false
 
 [node name="Traps" type="Node2D" parent="GameObjects"]
 script = ExtResource( 16 )
+numberOfTraps = 3
+spawnWaitTime = 1
 
 [node name="Timer" type="Timer" parent="GameObjects/Traps"]
 

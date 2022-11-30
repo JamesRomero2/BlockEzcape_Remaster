@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Underground/Underground.tscn" type="PackedScene" id=2]
@@ -17,6 +17,36 @@
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
 [ext_resource path="res://GameObjects/Tiles/LeverTile/LeverTile.tscn" type="PackedScene" id=16]
 [ext_resource path="res://GameObjects/Tiles/OperationalTile/OperationalTile.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Stages/Traps.gd" type="Script" id=18]
+[ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/Stopper.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/BoulderSpawner.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://GameObjects/Character/NPC/Baud.tscn" type="PackedScene" id=23]
+
+[sub_resource type="Shader" id=12]
+code = "shader_type canvas_item;
+
+uniform vec4 color: hint_color;
+uniform float multiplier = 0.2;
+uniform float softness = 3.0;
+
+void fragment() {
+	float value = distance(UV, vec2(0.5));
+	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
+}"
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = SubResource( 12 )
+shader_param/color = Color( 0.113725, 0.101961, 0.0784314, 1 )
+shader_param/multiplier = -0.5
+shader_param/softness = 6.0
+
+[sub_resource type="DynamicFont" id=14]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 22 )
 
 [node name="Level 08" type="Node"]
 script = ExtResource( 1 )
@@ -51,7 +81,7 @@ position = Vector2( -832, 192 )
 tile_data = PoolIntArray( -655352, 0, 2, -655351, 0, 3, -655350, 0, 3, -655349, 0, 3, -655348, 0, 3, -655347, 0, 3, -655346, 0, 4, -655343, 0, 2, -655342, 0, 3, -655341, 0, 3, -655340, 0, 3, -655339, 0, 3, -655338, 0, 3, -655337, 0, 3, -655336, 0, 3, -655335, 0, 3, -655334, 0, 3, -655333, 0, 4, -589816, 0, 65538, -589815, 0, 65539, -589814, 0, 65539, -589813, 0, 65539, -589812, 0, 65539, -589811, 0, 65539, -589810, 0, 65540, -589808, 0, 2, -589807, 0, 65537, -589806, 0, 65539, -589805, 0, 65539, -589804, 0, 65539, -589803, 0, 65539, -589802, 0, 65539, -589801, 0, 65539, -589800, 0, 65539, -589799, 0, 65539, -589798, 0, 65539, -589797, 0, 65536, -589796, 0, 4, -524280, 0, 65538, -524279, 0, 65539, -524278, 0, 65539, -524277, 0, 65539, -524276, 0, 65539, -524275, 0, 65539, -524274, 0, 65540, -524272, 0, 65538, -524271, 0, 65539, -524270, 0, 65539, -524269, 0, 65539, -524268, 0, 65539, -524267, 0, 65539, -524266, 0, 65539, -524265, 0, 65539, -524264, 0, 65539, -524263, 0, 65539, -524262, 0, 65539, -524261, 0, 65539, -524260, 0, 65540, -458744, 0, 65538, -458743, 0, 65539, -458742, 0, 65539, -458741, 0, 65539, -458740, 0, 65539, -458739, 0, 65539, -458738, 0, 65540, -458736, 0, 65538, -458735, 0, 65539, -458734, 0, 65539, -458733, 0, 65539, -458732, 0, 65539, -458731, 0, 65539, -458730, 0, 65539, -458729, 0, 65539, -458728, 0, 65539, -458727, 0, 65539, -458726, 0, 65539, -458725, 0, 65539, -458724, 0, 65540, -393208, 0, 65538, -393207, 0, 65539, -393206, 0, 65539, -393205, 0, 65539, -393204, 0, 65539, -393203, 0, 65539, -393202, 0, 65540, -393200, 0, 65538, -393199, 0, 65539, -393198, 0, 65539, -393197, 0, 65539, -393196, 0, 65539, -393195, 0, 65539, -393194, 0, 65539, -393193, 0, 65539, -393192, 0, 65539, -393191, 0, 65539, -393190, 0, 65539, -393189, 0, 65539, -393188, 0, 65540, -327672, 0, 65538, -327671, 0, 65539, -327670, 0, 65539, -327669, 0, 65539, -327668, 0, 65539, -327667, 0, 65539, -327666, 0, 65540, -327664, 0, 65538, -327663, 0, 65539, -327662, 0, 65539, -327661, 0, 65539, -327660, 0, 65539, -327659, 0, 65539, -327658, 0, 65539, -327657, 0, 65539, -327656, 0, 65539, -327655, 0, 65539, -327654, 0, 65539, -327653, 0, 65539, -327652, 0, 65540, -262136, 0, 65538, -262135, 0, 65539, -262134, 0, 65539, -262133, 0, 65539, -262132, 0, 65539, -262131, 0, 65539, -262130, 0, 65540, -262128, 0, 131074, -262127, 0, 1, -262126, 0, 65539, -262125, 0, 65539, -262124, 0, 65539, -262123, 0, 0, -262122, 0, 131075, -262121, 0, 1, -262120, 0, 65539, -262119, 0, 65539, -262118, 0, 65539, -262117, 0, 0, -262116, 0, 131076, -196600, 0, 131074, -196599, 0, 131075, -196598, 0, 131075, -196597, 0, 131075, -196596, 0, 131075, -196595, 0, 131075, -196594, 0, 131076, -196591, 0, 131074, -196590, 0, 131075, -196589, 0, 131075, -196588, 0, 131075, -196587, 0, 131076, -196585, 0, 131074, -196584, 0, 131075, -196583, 0, 131075, -196582, 0, 131075, -196581, 0, 131076 )
 
 [node name="Blocks" parent="UndergroundTilemap" index="1"]
-tile_data = PoolIntArray( -589806, 0, 0, -589805, 0, 0, -589804, 0, 0, -589803, 0, 0, -589801, 0, 0, -589800, 0, 0, -589799, 0, 0, -589798, 0, 0, -524271, 0, 0, -524266, 0, 0, -524261, 0, 0, -458735, 0, 0, -458725, 0, 0, -393199, 0, 0, -393195, 0, 0, -393194, 0, 0, -393193, 0, 0, -393189, 0, 0, -327663, 0, 0, -327659, 0, 0, -327657, 0, 0, -327653, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262120, 0, 0, -262119, 0, 0, -262118, 0, 0 )
+tile_data = PoolIntArray( -589806, 0, 0, -589805, 0, 0, -589804, 0, 0, -589803, 0, 0, -589801, 0, 0, -589800, 0, 0, -589799, 0, 0, -589798, 0, 0, -524271, 0, 0, -524261, 0, 0, -458735, 0, 0, -458725, 0, 0, -393199, 0, 0, -393195, 0, 0, -393194, 0, 0, -393193, 0, 0, -393189, 0, 0, -327663, 0, 0, -327659, 0, 0, -327657, 0, 0, -327653, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262120, 0, 0, -262119, 0, 0, -262118, 0, 0 )
 
 [node name="GameObjects" type="Node2D" parent="."]
 position = Vector2( 8, 80 )
@@ -126,6 +156,7 @@ isCrystalWholeNumber = false
 
 [node name="Sprite2" parent="GameObjects/Question/Answer" instance=ExtResource( 11 )]
 position = Vector2( -544, 128 )
+frame = 0
 
 [node name="Top" type="Node2D" parent="GameObjects/Question"]
 
@@ -148,13 +179,11 @@ isWholeNumber = false
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 11 )]
 position = Vector2( -544, 104 )
-frame = 0
 
 [node name="Bottom" type="Node2D" parent="GameObjects/Question"]
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 11 )]
 position = Vector2( -544, 88 )
-frame = 0
 
 [node name="DoubleDigits4" parent="GameObjects/Question/Bottom" instance=ExtResource( 10 )]
 position = Vector2( -528, 112 )
@@ -175,6 +204,79 @@ position = Vector2( -568, 120 )
 scale = Vector2( 0.8, 0.5 )
 texture = ExtResource( 13 )
 centered = false
+
+[node name="Traps" type="Node2D" parent="GameObjects"]
+position = Vector2( -8, -80 )
+script = ExtResource( 18 )
+
+[node name="Timer" type="Timer" parent="GameObjects/Traps"]
+
+[node name="HealTimer" type="Timer" parent="GameObjects/Traps"]
+wait_time = 5.0
+
+[node name="Trap" type="Node2D" parent="GameObjects/Traps"]
+
+[node name="BoulderSpawner" parent="GameObjects/Traps/Trap" instance=ExtResource( 21 )]
+position = Vector2( -504, 40 )
+
+[node name="BoulderSpawner2" parent="GameObjects/Traps/Trap" instance=ExtResource( 21 )]
+position = Vector2( -440, 40 )
+
+[node name="Death" type="CanvasLayer" parent="GameObjects/Traps"]
+pause_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameObjects/Traps/Death"]
+material = SubResource( 13 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DeathScreen" type="Control" parent="GameObjects/Traps/Death"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="GameObjects/Traps/Death/DeathScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 14 )
+text = "ARCHI GOT LOST"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameObjects/Traps/Death/DeathScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 300, 37 )
+rect_pivot_offset = Vector2( 150, 18 )
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Reset" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 20 )]
+margin_left = 36.0
+margin_right = 147.0
+margin_bottom = 37.0
+text = "RESTART"
+
+[node name="Quit" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 20 )]
+margin_left = 197.0
+margin_right = 264.0
+margin_bottom = 37.0
+text = "QUIT"
+
+[node name="Stopper4" parent="GameObjects/Traps" instance=ExtResource( 19 )]
+position = Vector2( -440, 152 )
+
+[node name="Stopper5" parent="GameObjects/Traps" instance=ExtResource( 19 )]
+position = Vector2( -504, 152 )
+
+[node name="Baud" parent="GameObjects" instance=ExtResource( 23 )]
+position = Vector2( -480, -8 )
 
 [node name="PausePanel" parent="." instance=ExtResource( 15 )]
 visible = false

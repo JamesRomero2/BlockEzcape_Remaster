@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Void/Void.tscn" type="PackedScene" id=2]
@@ -13,12 +13,11 @@
 [ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=13]
-[ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/Stopper.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Stages/BossStage/TheEye/Power/TorchSpawner.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
 [ext_resource path="res://GameObjects/Tiles/LeverTile/LeverTile.tscn" type="PackedScene" id=16]
 [ext_resource path="res://GameObjects/Tiles/OperationalTile/OperationalTile.tscn" type="PackedScene" id=17]
 [ext_resource path="res://GameObjects/Character/NPC/Baud.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/BoulderSpawner.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=21]
 [ext_resource path="res://Assets/Textures/LevelBG/MagicalVoid/2.jpg" type="Texture" id=22]
@@ -26,7 +25,7 @@
 [ext_resource path="res://Assets/Textures/DivisionLine.png" type="Texture" id=24]
 [ext_resource path="res://Assets/Textures/Chevron-Arrow.png" type="Texture" id=25]
 
-[sub_resource type="Shader" id=12]
+[sub_resource type="Shader" id=18]
 code = "shader_type canvas_item;
 
 uniform vec4 color: hint_color;
@@ -38,13 +37,13 @@ void fragment() {
 	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
 }"
 
-[sub_resource type="ShaderMaterial" id=13]
-shader = SubResource( 12 )
-shader_param/color = Color( 0.113725, 0.101961, 0.0784314, 1 )
+[sub_resource type="ShaderMaterial" id=16]
+shader = SubResource( 18 )
+shader_param/color = Color( 0.12549, 0.152941, 0.258824, 1 )
 shader_param/multiplier = -0.5
 shader_param/softness = 6.0
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=17]
 size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -72,7 +71,7 @@ expand = true
 stretch_mode = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -512, 104 )
+position = Vector2( -552, 112 )
 current = true
 zoom = Vector2( 0.8, 0.8 )
 
@@ -221,11 +220,9 @@ isWholeNumber = false
 
 [node name="Sprite" parent="GameObjects/Question" instance=ExtResource( 11 )]
 position = Vector2( -688, 51.75 )
-frame = 0
 
 [node name="Sprite2" parent="GameObjects/Question" instance=ExtResource( 11 )]
 position = Vector2( -688, 27.75 )
-frame = 0
 
 [node name="DoubleDigits9" parent="GameObjects/Question" instance=ExtResource( 12 )]
 position = Vector2( -616, 59.75 )
@@ -246,9 +243,11 @@ objectValue = 0
 
 [node name="Sprite3" parent="GameObjects/Question" instance=ExtResource( 11 )]
 position = Vector2( -632, 51.75 )
+frame = 0
 
 [node name="Sprite4" parent="GameObjects/Question" instance=ExtResource( 11 )]
 position = Vector2( -632, 27.75 )
+frame = 0
 
 [node name="Crystal" parent="GameObjects/Question" instance=ExtResource( 8 )]
 position = Vector2( -648, 88 )
@@ -334,49 +333,42 @@ position = Vector2( -656, 59.75 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 25 )
 
-[node name="PausePanel" parent="." instance=ExtResource( 15 )]
-visible = false
-
-[node name="Traps" type="Node2D" parent="."]
-position = Vector2( 8, 80 )
+[node name="Traps" type="Node2D" parent="GameObjects"]
 script = ExtResource( 23 )
 
-[node name="Timer" type="Timer" parent="Traps"]
+[node name="Timer" type="Timer" parent="GameObjects/Traps"]
 
-[node name="HealTimer" type="Timer" parent="Traps"]
+[node name="HealTimer" type="Timer" parent="GameObjects/Traps"]
 wait_time = 5.0
 
-[node name="Trap" type="Node2D" parent="Traps"]
+[node name="Trap" type="Node2D" parent="GameObjects/Traps"]
 
-[node name="BoulderSpawner4" parent="Traps/Trap" instance=ExtResource( 19 )]
-position = Vector2( -432, 24 )
+[node name="AnimatedSprite" parent="GameObjects/Traps/Trap" instance=ExtResource( 14 )]
+position = Vector2( -560, -64 )
+frame = 2
 
-[node name="BoulderSpawner2" parent="Traps/Trap" instance=ExtResource( 19 )]
-position = Vector2( -496, 24 )
-direction = "Up"
-
-[node name="Death" type="CanvasLayer" parent="Traps"]
+[node name="Death" type="CanvasLayer" parent="GameObjects/Traps"]
 pause_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Traps/Death"]
-material = SubResource( 13 )
+[node name="ColorRect" type="ColorRect" parent="GameObjects/Traps/Death"]
+material = SubResource( 16 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="DeathScreen" type="Control" parent="Traps/Death"]
+[node name="DeathScreen" type="Control" parent="GameObjects/Traps/Death"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Label" type="Label" parent="Traps/Death/DeathScreen"]
+[node name="Label" type="Label" parent="GameObjects/Traps/Death/DeathScreen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "ARCHI GOT LOST"
 align = 1
 valign = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Traps/Death/DeathScreen"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GameObjects/Traps/Death/DeathScreen"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -390,23 +382,20 @@ rect_pivot_offset = Vector2( 150, 18 )
 custom_constants/separation = 50
 alignment = 1
 
-[node name="Reset" parent="Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 20 )]
+[node name="Reset" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 20 )]
 margin_left = 36.0
 margin_right = 147.0
 margin_bottom = 37.0
 text = "RESTART"
 
-[node name="Quit" parent="Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 20 )]
+[node name="Quit" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 20 )]
 margin_left = 197.0
 margin_right = 264.0
 margin_bottom = 37.0
 text = "QUIT"
 
-[node name="Stopper4" parent="Traps" instance=ExtResource( 14 )]
-position = Vector2( -432, 88 )
-
-[node name="Stopper5" parent="Traps" instance=ExtResource( 14 )]
-position = Vector2( -496, -40 )
+[node name="PausePanel" parent="." instance=ExtResource( 15 )]
+visible = false
 
 [node name="ResultPanel" parent="." instance=ExtResource( 7 )]
 visible = false

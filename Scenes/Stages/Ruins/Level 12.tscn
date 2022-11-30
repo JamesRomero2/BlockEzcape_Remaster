@@ -35,7 +35,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=16]
 shader = SubResource( 15 )
-shader_param/color = Color( 0.113725, 0.101961, 0.0784314, 1 )
+shader_param/color = Color( 0.490196, 0.482353, 0.145098, 1 )
 shader_param/multiplier = -0.5
 shader_param/softness = 6.0
 
@@ -135,7 +135,6 @@ position = Vector2( -128, -120 )
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 12 )]
 position = Vector2( -552, 112 )
-frame = 0
 
 [node name="DoubleDigits" parent="GameObjects/Question/Top" instance=ExtResource( 8 )]
 position = Vector2( -536, 120 )
@@ -168,7 +167,6 @@ scannerID = 2
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 12 )]
 position = Vector2( -560, 152 )
-frame = 0
 
 [node name="Characters" type="Node2D" parent="GameObjects/Question"]
 

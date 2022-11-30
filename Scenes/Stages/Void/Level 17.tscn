@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=2]
@@ -19,6 +19,35 @@
 [ext_resource path="res://Assets/Textures/LevelBG/MagicalVoid/1.jpg" type="Texture" id=17]
 [ext_resource path="res://Assets/Textures/DivisionLine.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Textures/Chevron-Arrow.png" type="Texture" id=19]
+[ext_resource path="res://GameObjects/Character/NPC/Baud.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=21]
+[ext_resource path="res://Scenes/Stages/Traps.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/Stages/BossStage/TheEye/Power/TorchSpawner.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=24]
+
+[sub_resource type="Shader" id=18]
+code = "shader_type canvas_item;
+
+uniform vec4 color: hint_color;
+uniform float multiplier = 0.2;
+uniform float softness = 3.0;
+
+void fragment() {
+	float value = distance(UV, vec2(0.5));
+	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
+}"
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = SubResource( 18 )
+shader_param/color = Color( 0.12549, 0.152941, 0.258824, 1 )
+shader_param/multiplier = -0.5
+shader_param/softness = 6.0
+
+[sub_resource type="DynamicFont" id=17]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 21 )
 
 [node name="Level 17" type="Node"]
 script = ExtResource( 2 )
@@ -53,7 +82,7 @@ position = Vector2( -544, 112 )
 tile_data = PoolIntArray( -524303, 0, 2, -524302, 0, 3, -524301, 0, 3, -524300, 0, 3, -524299, 0, 3, -524298, 0, 3, -524297, 0, 3, -524296, 0, 3, -524295, 0, 3, -524294, 0, 3, -524293, 0, 3, -524292, 0, 3, -524291, 0, 4, -458767, 0, 65538, -458766, 0, 65539, -458765, 0, 65539, -458764, 0, 65539, -458763, 0, 65539, -458762, 0, 65539, -458761, 0, 65539, -458760, 0, 65539, -458759, 0, 65539, -458758, 0, 65539, -458757, 0, 65539, -458756, 0, 65539, -458755, 0, 65540, -458753, 0, 2, -524288, 0, 3, -524287, 0, 3, -524286, 0, 4, -393231, 0, 65538, -393230, 0, 65539, -393229, 0, 65539, -393228, 0, 65539, -393227, 0, 65539, -393226, 0, 65539, -393225, 0, 65539, -393224, 0, 65539, -393223, 0, 65539, -393222, 0, 65539, -393221, 0, 65539, -393220, 0, 65539, -393219, 0, 65536, -393218, 0, 3, -393217, 0, 65537, -458752, 0, 65539, -458751, 0, 65539, -458750, 0, 65536, -458749, 0, 3, -458748, 0, 3, -458747, 0, 3, -458746, 0, 3, -458745, 0, 4, -327695, 0, 65538, -327694, 0, 65539, -327693, 0, 65539, -327692, 0, 65539, -327691, 0, 65539, -327690, 0, 65539, -327689, 0, 65539, -327688, 0, 65539, -327687, 0, 65539, -327686, 0, 65539, -327685, 0, 65539, -327684, 0, 65539, -327683, 0, 65539, -327682, 0, 65539, -327681, 0, 65539, -393216, 0, 65539, -393215, 0, 65539, -393214, 0, 65539, -393213, 0, 65539, -393212, 0, 65539, -393211, 0, 65539, -393210, 0, 65539, -393209, 0, 65536, -393208, 0, 4, -262159, 0, 131074, -262158, 0, 131075, -262157, 0, 1, -262156, 0, 65539, -262155, 0, 65539, -262154, 0, 65539, -262153, 0, 0, -262152, 0, 131075, -262151, 0, 131075, -262150, 0, 131075, -262149, 0, 131075, -262148, 0, 131075, -262147, 0, 131075, -262146, 0, 1, -262145, 0, 65539, -327680, 0, 65539, -327679, 0, 65539, -327678, 0, 65539, -327677, 0, 65539, -327676, 0, 65539, -327675, 0, 65539, -327674, 0, 65539, -327673, 0, 65539, -327672, 0, 65540, -196621, 0, 65538, -196620, 0, 65539, -196619, 0, 65539, -196618, 0, 65539, -196617, 0, 65540, -196610, 0, 65538, -196609, 0, 65539, -262144, 0, 65539, -262143, 0, 65539, -262142, 0, 65539, -262141, 0, 65539, -262140, 0, 65539, -262139, 0, 65539, -262138, 0, 65539, -262137, 0, 65539, -262136, 0, 65540, -131085, 0, 65538, -131084, 0, 65539, -131083, 0, 65539, -131082, 0, 65539, -131081, 0, 65540, -131074, 0, 131074, -131073, 0, 1, -196608, 0, 65539, -196607, 0, 65539, -196606, 0, 65539, -196605, 0, 65539, -196604, 0, 65539, -196603, 0, 65539, -196602, 0, 65539, -196601, 0, 65539, -196600, 0, 65540, -65549, 0, 65538, -65548, 0, 65539, -65547, 0, 65539, -65546, 0, 65539, -65545, 0, 65540, -65537, 0, 65538, -131072, 0, 65539, -131071, 0, 65539, -131070, 0, 65539, -131069, 0, 65539, -131068, 0, 65539, -131067, 0, 65539, -131066, 0, 65539, -131065, 0, 65539, -131064, 0, 65540, -13, 0, 65538, -12, 0, 65539, -11, 0, 65539, -10, 0, 65539, -9, 0, 65540, -1, 0, 65538, -65536, 0, 65539, -65535, 0, 65539, -65534, 0, 65539, -65533, 0, 65539, -65532, 0, 65539, -65531, 0, 65539, -65530, 0, 65539, -65529, 0, 65539, -65528, 0, 65536, -65527, 0, 4, 65523, 0, 65538, 65524, 0, 65539, 65525, 0, 65539, 65526, 0, 65539, 65527, 0, 65540, 65534, 0, 2, 65535, 0, 65537, 0, 0, 65539, 1, 0, 65539, 2, 0, 65539, 3, 0, 65539, 4, 0, 65539, 5, 0, 65539, 6, 0, 65539, 7, 0, 65539, 8, 0, 65539, 9, 0, 65536, 10, 0, 4, 131059, 0, 65538, 131060, 0, 65539, 131061, 0, 65539, 131062, 0, 65539, 131063, 0, 65540, 131070, 0, 65538, 131071, 0, 65539, 65536, 0, 65539, 65537, 0, 65539, 65538, 0, 65539, 65539, 0, 65539, 65540, 0, 65539, 65541, 0, 65539, 65542, 0, 65539, 65543, 0, 65539, 65544, 0, 65539, 65545, 0, 65539, 65546, 0, 65540, 196595, 0, 131074, 196596, 0, 131075, 196597, 0, 131075, 196598, 0, 131075, 196599, 0, 131076, 196606, 0, 65538, 196607, 0, 65539, 131072, 0, 65539, 131073, 0, 65539, 131074, 0, 65539, 131075, 0, 65539, 131076, 0, 65539, 131077, 0, 65539, 131078, 0, 65539, 131079, 0, 65539, 131080, 0, 65539, 131081, 0, 65539, 131082, 0, 65540, 262142, 0, 65538, 262143, 0, 65539, 196608, 0, 65539, 196609, 0, 65539, 196610, 0, 65539, 196611, 0, 65539, 196612, 0, 65539, 196613, 0, 65539, 196614, 0, 65539, 196615, 0, 65539, 196616, 0, 65539, 196617, 0, 65539, 196618, 0, 65540, 327678, 0, 131074, 327679, 0, 1, 262144, 0, 65539, 262145, 0, 65539, 262146, 0, 65539, 262147, 0, 65539, 262148, 0, 65539, 262149, 0, 65539, 262150, 0, 65539, 262151, 0, 65539, 262152, 0, 65539, 262153, 0, 0, 262154, 0, 131076, 393215, 0, 131074, 327680, 0, 131075, 327681, 0, 131075, 327682, 0, 131075, 327683, 0, 131075, 327684, 0, 131075, 327685, 0, 131075, 327686, 0, 131075, 327687, 0, 131075, 327688, 0, 131075, 327689, 0, 131076 )
 
 [node name="Blocks" parent="Void" index="2"]
-tile_data = PoolIntArray( -458752, 0, 0, -458751, 0, 0, -327681, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -262145, 0, 0, -327673, 0, 0, -196609, 0, 0, -262137, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196603, 0, 0, -196602, 0, 0, -131069, 0, 0, -131067, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, 0, 0, 0, 3, 0, 0, 5, 0, 0, 8, 0, 0, 131071, 0, 0, 65545, 0, 0, 196607, 0, 0, 131073, 0, 0, 131075, 0, 0, 131077, 0, 0, 131079, 0, 0, 131081, 0, 0, 262143, 0, 0, 196617, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0 )
+tile_data = PoolIntArray( -458752, 0, 0, -458751, 0, 0, -327681, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -262145, 0, 0, -327673, 0, 0, -196609, 0, 0, -262137, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196603, 0, 0, -196602, 0, 0, -131069, 0, 0, -131067, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, 0, 0, 0, 3, 0, 0, 5, 0, 0, 8, 0, 0, 131071, 0, 0, 65545, 0, 0, 196607, 0, 0, 131073, 0, 0, 131075, 0, 0, 131077, 0, 0, 131079, 0, 0, 131081, 0, 0, 262143, 0, 0, 196617, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0 )
 
 [node name="GameObjects" type="Node2D" parent="."]
 position = Vector2( 8, 80 )
@@ -103,6 +132,9 @@ position = Vector2( -496, 88 )
 
 [node name="LeverTile" parent="GameObjects" instance=ExtResource( 14 )]
 position = Vector2( -512, 72 )
+
+[node name="Baud" parent="GameObjects" instance=ExtResource( 20 )]
+position = Vector2( -496, -8 )
 
 [node name="Question" type="Node2D" parent="GameObjects"]
 position = Vector2( -72, -120 )
@@ -156,11 +188,9 @@ isWholeNumber = false
 
 [node name="Sprite" parent="GameObjects/Question" instance=ExtResource( 15 )]
 position = Vector2( -688, 51.75 )
-frame = 0
 
 [node name="Sprite2" parent="GameObjects/Question" instance=ExtResource( 15 )]
 position = Vector2( -688, 27.75 )
-frame = 0
 
 [node name="DoubleDigits9" parent="GameObjects/Question" instance=ExtResource( 1 )]
 position = Vector2( -616, 59.75 )
@@ -181,9 +211,11 @@ objectValue = 0
 
 [node name="Sprite3" parent="GameObjects/Question" instance=ExtResource( 15 )]
 position = Vector2( -632, 51.75 )
+frame = 0
 
 [node name="Sprite4" parent="GameObjects/Question" instance=ExtResource( 15 )]
 position = Vector2( -632, 27.75 )
+frame = 0
 
 [node name="Crystal" parent="GameObjects/Question" instance=ExtResource( 7 )]
 position = Vector2( -640, 106 )
@@ -262,6 +294,67 @@ texture = ExtResource( 19 )
 position = Vector2( -656, 59.75 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 19 )
+
+[node name="Traps" type="Node2D" parent="GameObjects"]
+script = ExtResource( 22 )
+
+[node name="Timer" type="Timer" parent="GameObjects/Traps"]
+
+[node name="HealTimer" type="Timer" parent="GameObjects/Traps"]
+wait_time = 5.0
+
+[node name="Trap" type="Node2D" parent="GameObjects/Traps"]
+
+[node name="AnimatedSprite" parent="GameObjects/Traps/Trap" instance=ExtResource( 23 )]
+position = Vector2( -392, 104 )
+frame = 2
+
+[node name="Death" type="CanvasLayer" parent="GameObjects/Traps"]
+pause_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameObjects/Traps/Death"]
+material = SubResource( 16 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DeathScreen" type="Control" parent="GameObjects/Traps/Death"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="GameObjects/Traps/Death/DeathScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 17 )
+text = "ARCHI GOT LOST"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameObjects/Traps/Death/DeathScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 300, 37 )
+rect_pivot_offset = Vector2( 150, 18 )
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Reset" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 24 )]
+margin_left = 36.0
+margin_right = 147.0
+margin_bottom = 37.0
+text = "RESTART"
+
+[node name="Quit" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 24 )]
+margin_left = 197.0
+margin_right = 264.0
+margin_bottom = 37.0
+text = "QUIT"
 
 [node name="PausePanel" parent="." instance=ExtResource( 8 )]
 visible = false

@@ -63,7 +63,6 @@ position = Vector2( -512, 8 )
 
 [node name="Temple" parent="GameObjects" instance=ExtResource( 11 )]
 position = Vector2( -496, -24 )
-portalTheme = "Magical"
 
 [node name="Box4" parent="GameObjects" instance=ExtResource( 6 )]
 position = Vector2( -496, 8 )

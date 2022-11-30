@@ -102,9 +102,10 @@ func fireballTrap():
 		var children = traps.get_children()
 		for i in numberOfTraps:
 			var trapObject = children[randi() % children.size()]
-			if !trapObject.playing:
-				trapObject._casting()
+			trapObject._setTargetPost((trapObject.position - get_parent().get_node("Player").position) * -1)
+			trapObject._casting()
 	timer.start()
+
 
 func _on_Reset_buttonPressed(buttonName):
 	get_tree().reload_current_scene()

@@ -52,14 +52,17 @@ func _ready():
 	noise.period = 2
 
 func _playDialog():
-	if get_node_or_null('DialogNode') == null:
-		playingDialog = true
-		GameManager._setGamePaused(true)
-		GameManager._setGameOver(true)
-		GameManager._setGameTimerActive(false)
-		var dialog = Dialogic.start(timelines[timelinePlaying])
-		dialog.connect('timeline_end', self, '_dialogEnd')
-		add_child(dialog)
+	if timelines.empty():
+		_playGame()
+	else:
+		if get_node_or_null('DialogNode') == null:
+			playingDialog = true
+			GameManager._setGamePaused(true)
+			GameManager._setGameOver(true)
+			GameManager._setGameTimerActive(false)
+			var dialog = Dialogic.start(timelines[timelinePlaying])
+			dialog.connect('timeline_end', self, '_dialogEnd')
+			add_child(dialog)
 
 func _dialogEnd(timeline_name):
 	dialogSetEnded()

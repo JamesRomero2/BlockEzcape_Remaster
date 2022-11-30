@@ -21,7 +21,6 @@
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=23]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=24]
 
-
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
@@ -132,13 +131,13 @@ position = Vector2( 456, 136 )
 
 [node name="TheKnightSprite" parent="Board" instance=ExtResource( 11 )]
 position = Vector2( 288, -16 )
+frame = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/TheKnightSprite"]
 show_behind_parent = true
 position = Vector2( 0, 40 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 13 )
-frame = 1
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]
@@ -172,11 +171,9 @@ objectValue = 91
 
 [node name="Sprite" parent="Board/Question" instance=ExtResource( 10 )]
 position = Vector2( -560, 112 )
-frame = 0
 
 [node name="Sprite3" parent="Board/Question" instance=ExtResource( 10 )]
 position = Vector2( -560, 152 )
-frame = 0
 
 [node name="Crystal" parent="Board/Question" instance=ExtResource( 13 )]
 position = Vector2( -568, 160 )
