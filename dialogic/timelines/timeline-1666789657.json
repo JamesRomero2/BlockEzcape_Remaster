@@ -1,7 +1,7 @@
 {
 	"events": [
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -24,10 +24,10 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Good job! \nTake Note: You need to put a value box that you won't need to complete the puzzle or else you can't complete the level if the Value box you need is on the switch."
+			"text": "Good job! \nTake Note: You need to put a value box that you won't need to complete the puzzle or else\nyou can't complete the level if the Value box you need is on the switch."
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -47,7 +47,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -73,7 +73,7 @@
 			"text": "Thanks for the advice Baud! I'll keep that in mind "
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -93,7 +93,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -119,7 +119,7 @@
 			"text": "Now it gets harder and harder. You see the Value that you need isn't in the level. \nWhat you need to do is find an Operational Tile that will equal to the needed value in the Mathematical Box. \nAn Operational Tile is a tile that will show the output based on its Value. \nFor example, If you have 02 Value Box and an Operational Tile is +2, if you push the Value Box to it will result to 04."
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -139,7 +139,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "2-fade_in_up.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -165,7 +165,7 @@
 			"text": "Oh, I see, I see, Let me try it."
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,

@@ -67,7 +67,6 @@ position = Vector2( 320, 176 )
 scale = Vector2( 5, 5 )
 
 [node name="Particles2D" type="Particles2D" parent="Node2D"]
-visible = false
 material = ExtResource( 6 )
 explosiveness = 0.3
 process_material = ExtResource( 4 )
@@ -118,6 +117,9 @@ RPG Maker - Character Generator
 ICONS
 Lucid Icons by Midhil M
 
+OTHER GRAPHICS
+CharlesGabriel (CGArtsenal)
+
 [b]SPECIAL THANKS TO[/b]
 Ms. Isabelle Alyssa Mortega
 Mr. Julito Velasco Jr.
@@ -152,6 +154,9 @@ RPG Maker - Character Generator
 
 ICONS
 Lucid Icons by Midhil M
+
+OTHER GRAPHICS
+CharlesGabriel (CGArtsenal)
 
 SPECIAL THANKS TO
 Ms. Isabelle Alyssa Mortega

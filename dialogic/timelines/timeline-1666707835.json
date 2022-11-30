@@ -162,7 +162,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "That's because the labyrinth is a magical place where there is a different environment in each stage. In order to clear this level, you need to solve the Math Problem in this level. "
+			"text": "That's because the labyrinth is a magical place where there is a different environment in each stage.\nIn order to clear this level, you need to solve the Math Problem in this level. "
 		},
 		{
 			"animation": "1-fade_in.gd",
@@ -207,6 +207,12 @@
 			"text": "Great! We can now go to the level.\nLet's test how well do you know addition."
 		},
 		{
+			"event_id": "dialogic_015",
+			"id": "anchor-1634488067",
+			"index": 0,
+			"name": "try again"
+		},
+		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_010",
 			"options": [
@@ -226,7 +232,11 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "BaudAngry",
-			"text": "Close but wrong."
+			"text": "Close but wrong.\nTry again"
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
 		},
 		{
 			"choice": "5 Apples",
@@ -252,7 +262,11 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "BaudAngry",
-			"text": "That's not even close!"
+			"text": "That's not even close!\nTry again"
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
 		},
 		{
 			"event_id": "dialogic_013"
@@ -268,10 +282,20 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "It's okay if you don't know. I'm here to help.\nYou see, Addition is a process of combining two whole numbers to its total amount"
+			"text": "It's okay if you don't know. I'm here to help.\nYou see, Addition is a process of combining two whole numbers to its total amount.\nNow, let's try again"
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
 		},
 		{
 			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "BaudHappy",
+			"text": "That's correct!"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -281,7 +305,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
-			"portrait": "",
+			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
 				"0": false,
@@ -316,8 +340,8 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "ArchiHappy",
-			"text": "I told you. Haha!\nWait.....\nWhat are those across the floor?"
+			"portrait": "",
+			"text": "What are those across the floor?"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -327,7 +351,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
-			"portrait": "Default",
+			"portrait": "",
 			"portrait_definition": "",
 			"position": {
 				"0": false,
@@ -455,7 +479,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "The [color=#008000]Value box[/color] contains the value that needed to solve the level like in the first level the one you pushed is the  [color=#008000]Value Box[/color]\nThe [color=#008000]Scanner[/color] is where you will put the [color=#008000]Value box[/color] to read the box. If it is correct then the Value will appear in the [color=#008000]Mathematical Box[/color].\nAnd if you manage to solve the [color=#008000]Mathematical box[/color]. The [color=#008000] Temple[/color] will open, and you need to go to the temple to complete the level."
+			"text": "The [color=#008000]Value box[/color] contains the value that needed to solve the level like in the first level the one you pushed is the  [color=#008000]Value Box[/color]\nThe [color=#008000]Scanner[/color] is where you will put the [color=#008000]Value box[/color] to read the box. \nIf it is correct then the Value will appear in the [color=#008000]Mathematical Box[/color].\nAnd if you manage to solve the [color=#008000]Mathematical box[/color]. \nThe [color=#008000] Temple[/color] will open, and you need to go to the temple to complete the level."
 		},
 		{
 			"character": "character-1666707908.json",

@@ -5,10 +5,56 @@
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "There's a reason why this stage is called The Add Forest of Numbers.\nI guess you know what's this stage all about"
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
-			"portrait": "ArchiCurious",
+			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
 				"0": true,
@@ -24,7 +70,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Hmmmm. Baud?"
+			"text": "About Addition?"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -70,7 +116,25 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Yes? What is it Archi?"
+			"text": "Exactly! This stage is all about Addition of Decimal Numbers."
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You see, Solving decimal problems can help you in real life situations like counting change, measuring temperature and calculating discounts.\n The first decimal problems we will be solving in this stage is the Addition of Decimal Numbers."
+		},
+		{
+			"event_id": "dialogic_015",
+			"id": "anchor-1634488067",
+			"index": 0,
+			"name": "repeat"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "BaudShock",
+			"text": "Listen carefully Archi. If you don't understand this, you might have a hard time clearing the labyrinth"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -100,7 +164,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
-			"portrait": "ArchiCurious",
+			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
 				"0": true,
@@ -116,7 +180,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I think the Level and Stages is easy."
+			"text": "I'll try to understand it. "
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -126,7 +190,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
-			"portrait": "Default",
+			"portrait": "",
 			"portrait_definition": "",
 			"position": {
 				"0": false,
@@ -137,6 +201,10 @@
 			},
 			"type": 1,
 			"z_index": 0
+		},
+		{
+			"emit_signal": "blackboard",
+			"event_id": "dialogic_040"
 		},
 		{
 			"animation": "1-fade_in.gd",
@@ -161,100 +229,144 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "It's not always like this in each Levels and Stages. You can also be fail in here. \nThere's an instant death tile that if you step on it. The level will reset and you go back to the start of the level."
+			"portrait": "(Don't change)",
+			"text": "This is the step by step process of how to add a decimal numbers."
 		},
 		{
-			"animation": "4-fade_out.gd",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "Default",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 1,
-			"z_index": 0
-		},
-		{
-			"animation": "1-fade_in.gd",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1666707883.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "ArchiShock",
-			"portrait_definition": "",
-			"position": {
-				"0": true,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 0,
-			"z_index": 0
-		},
-		{
-			"character": "character-1666707883.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Really? I thought it is easy. I need to be careful not to step on those tiles."
-		},
-		{
-			"animation": "4-fade_out.gd",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1666707883.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 1,
-			"z_index": 0
-		},
-		{
-			"animation": "1-fade_in.gd",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "Default",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": true
-			},
-			"type": 0,
-			"z_index": 0
+			"emit_signal": "step1",
+			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Yes, that's why you need to be careful. "
+			"text": "Step 1: Convert the problem in a column form. "
+		},
+		{
+			"emit_signal": "step2",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " Step 2: Align the decimal point if not aligned vertically"
+		},
+		{
+			"emit_signal": "step3",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 3: Start Adding the Numbers in a straight column from right to left."
+		},
+		{
+			"emit_signal": "step4",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 4: 2 plus 8 is equals to ?\nStart at 2 then count forward 8 times\n2, 3, 4, 5, 6, 7, 8 , 9 , 10\n2 plus 8 is 10"
+		},
+		{
+			"emit_signal": "step4.1",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 4.1: We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a \"Carry\" Number.\nCarry Number would be place at the top of the next column"
+		},
+		{
+			"emit_signal": "step5",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 5: This column has a carry number so we should also add the carry number\n2 plus 0 plus 1 is equals to ?\nStart at 2 then count forward 0 times\n2\n2 plus 1 is, start at 2 then count forward 1 time\n2, 3\n2 plus 0 plus 1 is 3"
+		},
+		{
+			"emit_signal": "step6",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 6: 0 plus 0 is equals to ?\nStart at 0 then count forward 0 times\n0\n0 plus 0 is 0"
+		},
+		{
+			"emit_signal": "step7",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 7: Bring down the decimal point in the sum"
+		},
+		{
+			"emit_signal": "step8",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 8: Our Final Answer would be\n0.22 plus 0.08 equals to 0.30"
+		},
+		{
+			"emit_signal": "step9",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Did you understand it?"
+		},
+		{
+			"choice": "Yes",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Good, Let's continue clearing the labyrinth"
+		},
+		{
+			"choice": "No",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Let's go over it again. Try to understand it this time."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -262,52 +374,6 @@
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 1,
-			"z_index": 0
-		},
-		{
-			"animation": "1-fade_in.gd",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1666707883.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "ArchiSad",
-			"portrait_definition": "",
-			"position": {
-				"0": true,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 0,
-			"z_index": 0
-		},
-		{
-			"character": "character-1666707883.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Okay "
-		},
-		{
-			"animation": "4-fade_out.gd",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1666707883.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
 			"portrait": "",
@@ -325,7 +391,7 @@
 	],
 	"metadata": {
 		"dialogic-version": "1.4.5",
-		"file": "timeline-1666790513.json",
-		"name": "Level 04"
+		"file": "timeline-1669770506.json",
+		"name": "Stage1LessonDialogs"
 	}
 }

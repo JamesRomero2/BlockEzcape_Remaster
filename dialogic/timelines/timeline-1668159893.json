@@ -7,7 +7,7 @@
 			"text": "[i] Walking [/i]"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -33,7 +33,7 @@
 			"text": "Is it just me or are we going down?\nI feel like as we walk we are going down"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -53,7 +53,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -79,7 +79,7 @@
 			"text": "Yes, we are going down, the next stage we are going to is under the labyrinth.\nAs I told you earlier, the Labyrinth consists of different environments\nThe next one is completely different from the previous level."
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -99,7 +99,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -125,7 +125,7 @@
 			"text": "Under the labyrinth? \nNow that you mention it. It's getting hotter and hotter as we go down."
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,

@@ -8,7 +8,7 @@ onready var rand := RandomNumberGenerator.new()
 onready var noise := OpenSimplexNoise.new()
 onready var camera := $Camera2D
 
-export(String) var timelineName = ""
+export(Array, String) var timelines
 export var answers := {
 	0: null,
 	1: null,
@@ -36,12 +36,14 @@ var castleMusic = load("res://Assets/Audio/Music/Castle/FinalCastleLevelMusic.og
 var magicalMusic = load("res://Assets/Audio/Music/Magical/FinalMagicalLevelMusic.ogg")
 var noiseI: float = 0.0
 var shakeStrength: float = 0.0
+var counter: int = 0
+var timelinePlaying: int = 0
 
 func _ready():
 	get_tree().current_scene = self
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	_playDialog(timelineName)
+	_playDialog()
 	_connectSignal()
 	levelMusicManager()
 	
@@ -49,21 +51,25 @@ func _ready():
 	noise.seed = rand.randi()
 	noise.period = 2
 
-func _playDialog(value):
-	if value == "":
-		_playGame()
-	else:
-		if get_node_or_null('DialogNode') == null:
-			playingDialog = true
-			GameManager._setGamePaused(true)
-			GameManager._setGameOver(true)
-			GameManager._setGameTimerActive(false)
-			var dialog = Dialogic.start(value)
-			dialog.connect('timeline_end', self, '_dialogEnd')
-			add_child(dialog)
+func _playDialog():
+	if get_node_or_null('DialogNode') == null:
+		playingDialog = true
+		GameManager._setGamePaused(true)
+		GameManager._setGameOver(true)
+		GameManager._setGameTimerActive(false)
+		var dialog = Dialogic.start(timelines[timelinePlaying])
+		dialog.connect('timeline_end', self, '_dialogEnd')
+		add_child(dialog)
 
 func _dialogEnd(timeline_name):
-	_playGame()
+	dialogSetEnded()
+
+func dialogSetEnded():
+	if timelinePlaying < (timelines.size() - 1):
+		timelinePlaying += 1
+		_playDialog()
+	else:
+		_playGame()
 
 func _playGame():
 	playingDialog = false
@@ -104,7 +110,7 @@ func _unhandled_input(event):
 				if dialog.get_child(0).name == "DialogNode":
 					var dialogNode = dialog.get_child(0)
 					dialogNode.queue_free()
-					_playGame()
+					dialogSetEnded()
 				else:
 					print("No Dialog Node")
 

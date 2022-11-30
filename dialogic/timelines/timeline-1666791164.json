@@ -1,7 +1,7 @@
 {
 	"events": [
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -27,7 +27,7 @@
 			"text": "Now we reached the final level of the stage."
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -47,7 +47,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -73,7 +73,7 @@
 			"text": "This is the final level? Is there anything I need to worry about the final level?"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -93,7 +93,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -116,7 +116,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Yes, there is. The final level consists of combination of all the Tiles and Box you encounter in the past levels. And from here each level and stages are combinations of it."
+			"text": "Yes, there is. The final level consists of combination of all the Tiles and Box you encounter in the past levels.\nAnd from here each level and stages are combinations of it."
 		},
 		{
 			"character": "character-1666707908.json",
@@ -125,7 +125,7 @@
 			"text": "That's why you need to be careful and goodluck!"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,

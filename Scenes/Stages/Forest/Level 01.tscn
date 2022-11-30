@@ -18,9 +18,9 @@
 
 [node name="Level 01" type="Node"]
 script = ExtResource( 1 )
-timelineName = "/Forest/Level 01"
+timelines = [ "/Forest/Level 01", "/Stage1LessonDialogs", "/1" ]
 answers = {
-0: 59,
+0: 66,
 1: null,
 2: null,
 3: null
@@ -60,7 +60,7 @@ tile_data = PoolIntArray( 327653, 0, 0, 327654, 0, 0, 327656, 0, 0, 327657, 0, 0
 position = Vector2( -440, 88 )
 
 [node name="Box" parent="GameObjects" instance=ExtResource( 4 )]
-position = Vector2( -424, 104 )
+position = Vector2( -376, 104 )
 boxValue = 60
 
 [node name="Box3" parent="GameObjects" instance=ExtResource( 4 )]
@@ -69,6 +69,10 @@ boxValue = 13
 
 [node name="Box4" parent="GameObjects" instance=ExtResource( 4 )]
 position = Vector2( -376, 120 )
+boxValue = 15
+
+[node name="Box7" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -360, 152 )
 boxValue = 15
 
 [node name="Box5" parent="GameObjects" instance=ExtResource( 4 )]
@@ -81,7 +85,7 @@ boxValue = 34
 
 [node name="Box2" parent="GameObjects" instance=ExtResource( 4 )]
 position = Vector2( -408, 104 )
-boxValue = 59
+boxValue = 66
 
 [node name="Player" parent="GameObjects" instance=ExtResource( 3 )]
 position = Vector2( -424, 88 )
@@ -98,50 +102,68 @@ position = Vector2( 0, -24 )
 [node name="Top" type="Node2D" parent="GameObjects/Question"]
 
 [node name="DoubleDigits" parent="GameObjects/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -544, 120 )
+position = Vector2( -552, 120 )
 objectValue = 25
 
-[node name="DoubleDigits2" parent="GameObjects/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -568, 120 )
+[node name="DoubleDigits3" parent="GameObjects/Question/Top" instance=ExtResource( 14 )]
+position = Vector2( -536, 120 )
 objectValue = 0
+isWholeNumber = false
+
+[node name="DoubleDigits4" parent="GameObjects/Question/Top" instance=ExtResource( 14 )]
+position = Vector2( -536, 136 )
+objectValue = 20
+isWholeNumber = false
+
+[node name="DoubleDigits5" parent="GameObjects/Question/Top" instance=ExtResource( 14 )]
+position = Vector2( -536, 160 )
+objectValue = 20
+isWholeNumber = false
+
+[node name="DoubleDigits2" parent="GameObjects/Question/Top" instance=ExtResource( 14 )]
+position = Vector2( -576, 120 )
+objectValue = 4
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 8 )]
-position = Vector2( -560, 112 )
+position = Vector2( -568, 112 )
+frame = 0
 
 [node name="Bottom" type="Node2D" parent="GameObjects/Question"]
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 8 )]
-position = Vector2( -560, 128 )
+position = Vector2( -568, 128 )
+frame = 0
 
 [node name="DoubleDigits3" parent="GameObjects/Question/Bottom" instance=ExtResource( 14 )]
-position = Vector2( -544, 136 )
-objectValue = 34
+position = Vector2( -552, 136 )
+objectValue = 41
 
 [node name="DoubleDigits4" parent="GameObjects/Question/Bottom" instance=ExtResource( 14 )]
-position = Vector2( -568, 136 )
-objectValue = 0
+position = Vector2( -576, 136 )
+objectValue = 2
 
 [node name="Answer" type="Node2D" parent="GameObjects/Question"]
 
 [node name="DoubleDigits5" parent="GameObjects/Question/Answer" instance=ExtResource( 14 )]
-position = Vector2( -568, 160 )
-objectValue = 0
+position = Vector2( -576, 160 )
+objectValue = 6
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 8 )]
-position = Vector2( -560, 152 )
+position = Vector2( -568, 152 )
+frame = 0
 
 [node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 7 )]
-position = Vector2( -544, 160 )
+position = Vector2( -552, 160 )
 
 [node name="Characters" type="Node2D" parent="GameObjects/Question"]
 
 [node name="SymbolBlocks2" parent="GameObjects/Question/Characters" instance=ExtResource( 10 )]
-position = Vector2( -584, 128 )
+position = Vector2( -592, 128 )
 operation = "Plus"
 
 [node name="Line" type="Sprite" parent="GameObjects/Question/Characters"]
-position = Vector2( -592, 144 )
-scale = Vector2( 0.8, 0.5 )
+position = Vector2( -600, 144 )
+scale = Vector2( 1, 0.5 )
 texture = ExtResource( 12 )
 centered = false
 

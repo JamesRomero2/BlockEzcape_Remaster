@@ -1,7 +1,7 @@
 {
 	"events": [
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -27,7 +27,7 @@
 			"text": " This looks like an abandon castle.\nWhat happened here?"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -47,7 +47,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -79,7 +79,7 @@
 			"text": "This used to be home by a great King and Queen of the people here.\nThat's what I heard  "
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -99,7 +99,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -125,7 +125,7 @@
 			"text": "What happened to them?"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -145,7 +145,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -177,7 +177,7 @@
 			"text": "Now, Let's try to clear this stage and go to the last stage"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,

@@ -1,7 +1,7 @@
 {
 	"events": [
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -27,7 +27,7 @@
 			"text": "In this last level of the Underground Stage\nThe Guardian in this stage is the Rock Maiden"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -47,7 +47,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -73,7 +73,7 @@
 			"text": "Rock Maiden?\nSounds like a powerful Guardian"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -93,7 +93,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -119,7 +119,7 @@
 			"text": "Yes, indeed.\nThe Rock Maiden will interfere in clearing the  level.\nBe careful and watch out for rocks."
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,

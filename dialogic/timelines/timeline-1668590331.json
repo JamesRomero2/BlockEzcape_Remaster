@@ -1,7 +1,7 @@
 {
 	"events": [
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -27,7 +27,7 @@
 			"text": "I managed to get through it. Is it just me or each level are getting harder and harder to solve?"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -47,7 +47,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -73,7 +73,7 @@
 			"text": "Correct!, The labyrinth's level are getting harder, the higher the floor. \nI'm sure, the world you came from taught you some basic knowledge in Math, right?"
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -93,7 +93,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -113,7 +113,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -139,7 +139,7 @@
 			"text": "Yes, but I only know the basic knowledge of it. I hope I can get through this.\nI really want to go back to my world."
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -159,7 +159,7 @@
 			"z_index": 0
 		},
 		{
-			"animation": "[Default]",
+			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -188,10 +188,10 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Yes, I want you to remember what you learn from the past stages and levels, You can use it to the last stage. AND BE CAREFUL.\n"
+			"text": "Yes, I want you to remember what you learn from the past stages and levels, You can use it to the last stage.\nAND BE CAREFUL."
 		},
 		{
-			"animation": "[Default]",
+			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
 			"change_z_index": false,

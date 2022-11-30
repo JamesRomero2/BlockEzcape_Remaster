@@ -50,7 +50,15 @@
 				"timeline-1667207775.json",
 				"timeline-1667226701.json",
 				"timeline-1667271226.json",
-				"timeline-1667276127.json"
+				"timeline-1667276127.json",
+				"timeline-1669770506.json",
+				"timeline-1669788044.json",
+				"timeline-1669789672.json",
+				"timeline-1669789873.json",
+				"timeline-1669789983.json",
+				"timeline-1669790134.json",
+				"timeline-1669794577.json",
+				"timeline-1669800687.json"
 			],
 			"folders": {
 				"Dungeon": {
@@ -81,7 +89,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": true
+						"folded": false
 					}
 				},
 				"IntroDialog": {

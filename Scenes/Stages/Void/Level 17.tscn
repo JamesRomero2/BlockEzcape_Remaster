@@ -1,31 +1,35 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
-[ext_resource path="res://Components/Tilesets/Void/Void.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Textures/LevelBG/MagicalVoid/1.jpg" type="Texture" id=5]
-[ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=8]
-[ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
-[ext_resource path="res://GameObjects/Blocks/Crystal/Crystal.tscn" type="PackedScene" id=10]
-[ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Textures/DivisionLine.png" type="Texture" id=14]
-[ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=2]
+[ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameObjects/Blocks/Crystal/Crystal.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=9]
+[ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Components/Tilesets/Void/Void.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GameObjects/Tiles/OperationalTile/OperationalTile.tscn" type="PackedScene" id=12]
+[ext_resource path="res://GameObjects/Blocks/PhantomBlocks/PhantomBlock.tscn" type="PackedScene" id=13]
+[ext_resource path="res://GameObjects/Tiles/LeverTile/LeverTile.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Textures/LevelBG/MagicalVoid/1.jpg" type="Texture" id=17]
+[ext_resource path="res://Assets/Textures/DivisionLine.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Textures/Chevron-Arrow.png" type="Texture" id=19]
 
 [node name="Level 17" type="Node"]
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 answers = {
-0: null,
-1: 9,
-2: 1,
-3: 0
+0: 7,
+1: 56,
+2: null,
+3: null
 }
 resultAnimating = true
-requiredMedal = 1
+requiredMedal = 2
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -33,149 +37,236 @@ layer = -10
 [node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 17 )
 expand = true
 stretch_mode = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -528, 88 )
+position = Vector2( -576, 88 )
 current = true
-zoom = Vector2( 0.7, 0.7 )
+zoom = Vector2( 0.8, 0.8 )
 
-[node name="Void" parent="." instance=ExtResource( 2 )]
-
-[node name="TileMap" parent="Void" index="0"]
-tile_data = PoolIntArray( 196568, 1, 0, 196569, 1, 131074, 262104, 1, 0, 262105, 1, 131074, 327640, 1, 0, 327641, 1, 131074, 393176, 1, 0, 393177, 1, 131074, 458712, 1, 0, 458713, 1, 131074, 524248, 1, 0, 524249, 1, 131074, 589784, 1, 0, 589785, 1, 131074, 655320, 1, 0, 655321, 1, 0 )
+[node name="Void" parent="." instance=ExtResource( 11 )]
+position = Vector2( -544, 112 )
 
 [node name="TileMap2" parent="Void" index="1"]
-tile_data = PoolIntArray( 196563, 0, 2, 196564, 0, 3, 196565, 0, 3, 196566, 0, 3, 196567, 0, 3, 196568, 0, 3, 196569, 0, 3, 196570, 0, 3, 196571, 0, 4, 196575, 0, 2, 196576, 0, 3, 196577, 0, 3, 196578, 0, 3, 196579, 0, 3, 196580, 0, 3, 196581, 0, 3, 196582, 0, 3, 196583, 0, 3, 196584, 0, 3, 196585, 0, 4, 262099, 0, 65538, 262100, 0, 65539, 262101, 0, 65539, 262102, 0, 65539, 262103, 0, 65539, 262104, 0, 65539, 262105, 0, 65539, 262106, 0, 65539, 262107, 0, 65540, 262110, 0, 2, 262111, 0, 65537, 262112, 0, 65539, 262113, 0, 65539, 262114, 0, 65539, 262115, 0, 65539, 262116, 0, 65539, 262117, 0, 65539, 262118, 0, 65539, 262119, 0, 65539, 262120, 0, 65539, 262121, 0, 65536, 262122, 0, 4, 327635, 0, 65538, 327636, 0, 65539, 327637, 0, 65539, 327638, 0, 65539, 327639, 0, 65539, 327640, 0, 65539, 327641, 0, 65539, 327642, 0, 65539, 327643, 0, 65540, 327646, 0, 65538, 327647, 0, 65539, 327648, 0, 65539, 327649, 0, 65539, 327650, 0, 65539, 327651, 0, 65539, 327652, 0, 65539, 327653, 0, 65539, 327654, 0, 65539, 327655, 0, 65539, 327656, 0, 65539, 327657, 0, 65539, 327658, 0, 65540, 393171, 0, 65538, 393172, 0, 65539, 393173, 0, 65539, 393174, 0, 65539, 393175, 0, 65539, 393176, 0, 65539, 393177, 0, 65539, 393178, 0, 65539, 393179, 0, 65540, 393182, 0, 65538, 393183, 0, 65539, 393184, 0, 65539, 393185, 0, 65539, 393186, 0, 65539, 393187, 0, 65539, 393188, 0, 65539, 393189, 0, 65539, 393190, 0, 65539, 393191, 0, 65539, 393192, 0, 65539, 393193, 0, 65539, 393194, 0, 65540, 458707, 0, 65538, 458708, 0, 65539, 458709, 0, 65539, 458710, 0, 65539, 458711, 0, 65539, 458712, 0, 65539, 458713, 0, 65539, 458714, 0, 65539, 458715, 0, 65540, 458718, 0, 65538, 458719, 0, 65539, 458720, 0, 65539, 458721, 0, 65539, 458722, 0, 65539, 458723, 0, 65539, 458724, 0, 65539, 458725, 0, 65539, 458726, 0, 65539, 458727, 0, 65539, 458728, 0, 65539, 458729, 0, 65539, 458730, 0, 65540, 524243, 0, 65538, 524244, 0, 65539, 524245, 0, 65539, 524246, 0, 65539, 524247, 0, 65539, 524248, 0, 65539, 524249, 0, 65539, 524250, 0, 65539, 524251, 0, 65540, 524254, 0, 131074, 524255, 0, 1, 524256, 0, 65539, 524257, 0, 65539, 524258, 0, 65539, 524259, 0, 65539, 524260, 0, 65539, 524261, 0, 65539, 524262, 0, 65539, 524263, 0, 65539, 524264, 0, 65539, 524265, 0, 0, 524266, 0, 131076, 589779, 0, 131074, 589780, 0, 131075, 589781, 0, 131075, 589782, 0, 131075, 589783, 0, 131075, 589784, 0, 131075, 589785, 0, 131075, 589786, 0, 131075, 589787, 0, 131076, 589791, 0, 131074, 589792, 0, 131075, 589793, 0, 131075, 589794, 0, 131075, 589795, 0, 131075, 589796, 0, 131075, 589797, 0, 131075, 589798, 0, 131075, 589799, 0, 131075, 589800, 0, 131075, 589801, 0, 131076 )
+tile_data = PoolIntArray( -524303, 0, 2, -524302, 0, 3, -524301, 0, 3, -524300, 0, 3, -524299, 0, 3, -524298, 0, 3, -524297, 0, 3, -524296, 0, 3, -524295, 0, 3, -524294, 0, 3, -524293, 0, 3, -524292, 0, 3, -524291, 0, 4, -458767, 0, 65538, -458766, 0, 65539, -458765, 0, 65539, -458764, 0, 65539, -458763, 0, 65539, -458762, 0, 65539, -458761, 0, 65539, -458760, 0, 65539, -458759, 0, 65539, -458758, 0, 65539, -458757, 0, 65539, -458756, 0, 65539, -458755, 0, 65540, -458753, 0, 2, -524288, 0, 3, -524287, 0, 3, -524286, 0, 4, -393231, 0, 65538, -393230, 0, 65539, -393229, 0, 65539, -393228, 0, 65539, -393227, 0, 65539, -393226, 0, 65539, -393225, 0, 65539, -393224, 0, 65539, -393223, 0, 65539, -393222, 0, 65539, -393221, 0, 65539, -393220, 0, 65539, -393219, 0, 65536, -393218, 0, 3, -393217, 0, 65537, -458752, 0, 65539, -458751, 0, 65539, -458750, 0, 65536, -458749, 0, 3, -458748, 0, 3, -458747, 0, 3, -458746, 0, 3, -458745, 0, 4, -327695, 0, 65538, -327694, 0, 65539, -327693, 0, 65539, -327692, 0, 65539, -327691, 0, 65539, -327690, 0, 65539, -327689, 0, 65539, -327688, 0, 65539, -327687, 0, 65539, -327686, 0, 65539, -327685, 0, 65539, -327684, 0, 65539, -327683, 0, 65539, -327682, 0, 65539, -327681, 0, 65539, -393216, 0, 65539, -393215, 0, 65539, -393214, 0, 65539, -393213, 0, 65539, -393212, 0, 65539, -393211, 0, 65539, -393210, 0, 65539, -393209, 0, 65536, -393208, 0, 4, -262159, 0, 131074, -262158, 0, 131075, -262157, 0, 1, -262156, 0, 65539, -262155, 0, 65539, -262154, 0, 65539, -262153, 0, 0, -262152, 0, 131075, -262151, 0, 131075, -262150, 0, 131075, -262149, 0, 131075, -262148, 0, 131075, -262147, 0, 131075, -262146, 0, 1, -262145, 0, 65539, -327680, 0, 65539, -327679, 0, 65539, -327678, 0, 65539, -327677, 0, 65539, -327676, 0, 65539, -327675, 0, 65539, -327674, 0, 65539, -327673, 0, 65539, -327672, 0, 65540, -196621, 0, 65538, -196620, 0, 65539, -196619, 0, 65539, -196618, 0, 65539, -196617, 0, 65540, -196610, 0, 65538, -196609, 0, 65539, -262144, 0, 65539, -262143, 0, 65539, -262142, 0, 65539, -262141, 0, 65539, -262140, 0, 65539, -262139, 0, 65539, -262138, 0, 65539, -262137, 0, 65539, -262136, 0, 65540, -131085, 0, 65538, -131084, 0, 65539, -131083, 0, 65539, -131082, 0, 65539, -131081, 0, 65540, -131074, 0, 131074, -131073, 0, 1, -196608, 0, 65539, -196607, 0, 65539, -196606, 0, 65539, -196605, 0, 65539, -196604, 0, 65539, -196603, 0, 65539, -196602, 0, 65539, -196601, 0, 65539, -196600, 0, 65540, -65549, 0, 65538, -65548, 0, 65539, -65547, 0, 65539, -65546, 0, 65539, -65545, 0, 65540, -65537, 0, 65538, -131072, 0, 65539, -131071, 0, 65539, -131070, 0, 65539, -131069, 0, 65539, -131068, 0, 65539, -131067, 0, 65539, -131066, 0, 65539, -131065, 0, 65539, -131064, 0, 65540, -13, 0, 65538, -12, 0, 65539, -11, 0, 65539, -10, 0, 65539, -9, 0, 65540, -1, 0, 65538, -65536, 0, 65539, -65535, 0, 65539, -65534, 0, 65539, -65533, 0, 65539, -65532, 0, 65539, -65531, 0, 65539, -65530, 0, 65539, -65529, 0, 65539, -65528, 0, 65536, -65527, 0, 4, 65523, 0, 65538, 65524, 0, 65539, 65525, 0, 65539, 65526, 0, 65539, 65527, 0, 65540, 65534, 0, 2, 65535, 0, 65537, 0, 0, 65539, 1, 0, 65539, 2, 0, 65539, 3, 0, 65539, 4, 0, 65539, 5, 0, 65539, 6, 0, 65539, 7, 0, 65539, 8, 0, 65539, 9, 0, 65536, 10, 0, 4, 131059, 0, 65538, 131060, 0, 65539, 131061, 0, 65539, 131062, 0, 65539, 131063, 0, 65540, 131070, 0, 65538, 131071, 0, 65539, 65536, 0, 65539, 65537, 0, 65539, 65538, 0, 65539, 65539, 0, 65539, 65540, 0, 65539, 65541, 0, 65539, 65542, 0, 65539, 65543, 0, 65539, 65544, 0, 65539, 65545, 0, 65539, 65546, 0, 65540, 196595, 0, 131074, 196596, 0, 131075, 196597, 0, 131075, 196598, 0, 131075, 196599, 0, 131076, 196606, 0, 65538, 196607, 0, 65539, 131072, 0, 65539, 131073, 0, 65539, 131074, 0, 65539, 131075, 0, 65539, 131076, 0, 65539, 131077, 0, 65539, 131078, 0, 65539, 131079, 0, 65539, 131080, 0, 65539, 131081, 0, 65539, 131082, 0, 65540, 262142, 0, 65538, 262143, 0, 65539, 196608, 0, 65539, 196609, 0, 65539, 196610, 0, 65539, 196611, 0, 65539, 196612, 0, 65539, 196613, 0, 65539, 196614, 0, 65539, 196615, 0, 65539, 196616, 0, 65539, 196617, 0, 65539, 196618, 0, 65540, 327678, 0, 131074, 327679, 0, 1, 262144, 0, 65539, 262145, 0, 65539, 262146, 0, 65539, 262147, 0, 65539, 262148, 0, 65539, 262149, 0, 65539, 262150, 0, 65539, 262151, 0, 65539, 262152, 0, 65539, 262153, 0, 0, 262154, 0, 131076, 393215, 0, 131074, 327680, 0, 131075, 327681, 0, 131075, 327682, 0, 131075, 327683, 0, 131075, 327684, 0, 131075, 327685, 0, 131075, 327686, 0, 131075, 327687, 0, 131075, 327688, 0, 131075, 327689, 0, 131076 )
 
 [node name="Blocks" parent="Void" index="2"]
-tile_data = PoolIntArray( 262112, 0, 0, 262113, 0, 0, 262114, 0, 0, 262118, 0, 0, 262119, 0, 0, 262120, 0, 0, 327647, 0, 0, 327651, 0, 0, 327653, 0, 0, 327657, 0, 0, 393183, 0, 0, 393187, 0, 0, 393188, 0, 0, 393189, 0, 0, 393193, 0, 0, 458719, 0, 0, 458729, 0, 0, 524256, 0, 0, 524257, 0, 0, 524258, 0, 0, 524259, 0, 0, 524260, 0, 0, 524261, 0, 0, 524262, 0, 0, 524263, 0, 0, 524264, 0, 0 )
+tile_data = PoolIntArray( -458752, 0, 0, -458751, 0, 0, -327681, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -262145, 0, 0, -327673, 0, 0, -196609, 0, 0, -262137, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196603, 0, 0, -196602, 0, 0, -131069, 0, 0, -131067, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, 0, 0, 0, 3, 0, 0, 5, 0, 0, 8, 0, 0, 131071, 0, 0, 65545, 0, 0, 196607, 0, 0, 131073, 0, 0, 131075, 0, 0, 131077, 0, 0, 131079, 0, 0, 131081, 0, 0, 262143, 0, 0, 196617, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0 )
 
 [node name="GameObjects" type="Node2D" parent="."]
 position = Vector2( 8, 80 )
 
-[node name="Player" parent="GameObjects" instance=ExtResource( 3 )]
-position = Vector2( -480, -8 )
+[node name="OperationalTile2" parent="GameObjects" instance=ExtResource( 12 )]
+position = Vector2( -528, -24 )
+operation = 2
+operationalValue = 7
 
-[node name="Temple" parent="GameObjects" instance=ExtResource( 6 )]
-position = Vector2( -512, -8 )
+[node name="Player" parent="GameObjects" instance=ExtResource( 5 )]
+position = Vector2( -496, -24 )
+
+[node name="Temple" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -448, -40 )
 portalTheme = "Magical"
 
-[node name="Box4" parent="GameObjects" instance=ExtResource( 4 )]
-position = Vector2( -496, 8 )
-
-[node name="Box5" parent="GameObjects" instance=ExtResource( 4 )]
-position = Vector2( -400, 8 )
-boxValue = 9
-
-[node name="Box7" parent="GameObjects" instance=ExtResource( 4 )]
+[node name="Box4" parent="GameObjects" instance=ExtResource( 9 )]
 position = Vector2( -480, 8 )
-boxValue = 1
+boxValue = 23
 
-[node name="ScannerTile4" parent="GameObjects" instance=ExtResource( 9 )]
-position = Vector2( -480, 24 )
-scannerID = 2
+[node name="Box6" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -528, -40 )
+boxValue = 8
 
-[node name="ScannerTile5" parent="GameObjects" instance=ExtResource( 9 )]
-position = Vector2( -496, 24 )
-scannerID = 3
+[node name="Box7" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -480, -24 )
+boxValue = 7
 
-[node name="ScannerTile7" parent="GameObjects" instance=ExtResource( 9 )]
-position = Vector2( -400, 24 )
+[node name="ScannerTile3" parent="GameObjects" instance=ExtResource( 3 )]
+position = Vector2( -448, 72 )
+
+[node name="ScannerTile5" parent="GameObjects" instance=ExtResource( 3 )]
+position = Vector2( -480, 88 )
 scannerID = 1
+
+[node name="PhantomBlock" parent="GameObjects" instance=ExtResource( 13 )]
+position = Vector2( -512, -24 )
+
+[node name="PhantomBlock2" parent="GameObjects" instance=ExtResource( 13 )]
+position = Vector2( -512, -40 )
+
+[node name="PhantomBlock3" parent="GameObjects" instance=ExtResource( 13 )]
+position = Vector2( -448, 72 )
+
+[node name="PhantomBlock4" parent="GameObjects" instance=ExtResource( 13 )]
+position = Vector2( -496, 88 )
+
+[node name="LeverTile" parent="GameObjects" instance=ExtResource( 14 )]
+position = Vector2( -512, 72 )
 
 [node name="Question" type="Node2D" parent="GameObjects"]
-position = Vector2( -74, -128 )
+position = Vector2( -72, -120 )
 
-[node name="Top" type="Node2D" parent="GameObjects/Question"]
+[node name="DoubleDigits2" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -672, 59.75 )
+objectValue = 8
 
-[node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 8 )]
-position = Vector2( -564, 120 )
-frame = 0
+[node name="DoubleDigits5" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -664, 130 )
+objectValue = 8
 
-[node name="Sprite2" parent="GameObjects/Question/Top" instance=ExtResource( 8 )]
-position = Vector2( -612, 120 )
+[node name="DoubleDigits19" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -640, 130 )
+objectValue = 56
 
-[node name="DoubleDigits2" parent="GameObjects/Question/Top" instance=ExtResource( 12 )]
-position = Vector2( -572, 128 )
-objectValue = 1
-
-[node name="DoubleDigits7" parent="GameObjects/Question/Top" instance=ExtResource( 12 )]
-position = Vector2( -572, 165 )
-objectValue = 1
-
-[node name="DoubleDigits4" parent="GameObjects/Question/Top" instance=ExtResource( 12 )]
-position = Vector2( -596, 128 )
-objectValue = 2
-
-[node name="DoubleDigits5" parent="GameObjects/Question/Top" instance=ExtResource( 12 )]
-position = Vector2( -620, 128 )
+[node name="DoubleDigits23" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -640, 170 )
 objectValue = 0
 
-[node name="DoubleDigits3" parent="GameObjects/Question/Top" instance=ExtResource( 12 )]
-position = Vector2( -548, 128 )
-objectValue = 8
+[node name="DoubleDigits8" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -696, 35.75 )
+objectValue = 0
 
-[node name="Bottom" type="Node2D" parent="GameObjects/Question"]
-position = Vector2( -4, 9 )
+[node name="DoubleDigits7" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -672, 35.75 )
+objectValue = 56
+isWholeNumber = false
 
-[node name="DoubleDigits4" parent="GameObjects/Question/Bottom" instance=ExtResource( 12 )]
-position = Vector2( -544, 136 )
-objectValue = 8
+[node name="DoubleDigits4" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -696, 59.75 )
+objectValue = 0
 
-[node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 8 )]
-position = Vector2( -560, 128 )
+[node name="DoubleDigits6" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -584, 35.75 )
+objectValue = 10
+
+[node name="DoubleDigits14" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -568, 35.75 )
+objectValue = 0
+isWholeNumber = false
+
+[node name="DoubleDigits15" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -584, 59.75 )
+objectValue = 10
+
+[node name="DoubleDigits16" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -568, 59.75 )
+objectValue = 0
+isWholeNumber = false
+
+[node name="Sprite" parent="GameObjects/Question" instance=ExtResource( 15 )]
+position = Vector2( -688, 51.75 )
 frame = 0
 
-[node name="Answer" type="Node2D" parent="GameObjects/Question"]
+[node name="Sprite2" parent="GameObjects/Question" instance=ExtResource( 15 )]
+position = Vector2( -688, 27.75 )
+frame = 0
 
-[node name="Crystal2" parent="GameObjects/Question/Answer" instance=ExtResource( 10 )]
-position = Vector2( -548, 107 )
+[node name="DoubleDigits9" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -616, 59.75 )
+objectValue = 8
+
+[node name="DoubleDigits11" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -640, 35.75 )
+objectValue = 0
+
+[node name="DoubleDigits12" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -616, 35.75 )
+objectValue = 56
+isWholeNumber = false
+
+[node name="DoubleDigits13" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -640, 59.75 )
+objectValue = 0
+
+[node name="Sprite3" parent="GameObjects/Question" instance=ExtResource( 15 )]
+position = Vector2( -632, 51.75 )
+
+[node name="Sprite4" parent="GameObjects/Question" instance=ExtResource( 15 )]
+position = Vector2( -632, 27.75 )
+
+[node name="Crystal" parent="GameObjects/Question" instance=ExtResource( 7 )]
+position = Vector2( -640, 106 )
+
+[node name="Crystal2" parent="GameObjects/Question" instance=ExtResource( 7 )]
+position = Vector2( -640, 146 )
 scannerID = 1
 
-[node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 10 )]
-position = Vector2( -572, 145 )
-scannerID = 2
-
-[node name="Crystal3" parent="GameObjects/Question/Answer" instance=ExtResource( 10 )]
-position = Vector2( -548, 165 )
-scannerID = 3
-
-[node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 8 )]
-position = Vector2( -564, 156 )
-frame = 0
-
-[node name="Characters" type="Node2D" parent="GameObjects/Question"]
-
-[node name="SymbolBlocks2" parent="GameObjects/Question/Characters" instance=ExtResource( 11 )]
-position = Vector2( -587, 146 )
-scale = Vector2( 0.6, 0.6 )
+[node name="SymbolBlocks2" parent="GameObjects/Question" instance=ExtResource( 10 )]
+position = Vector2( -656, 154 )
 operation = "Minus"
 
-[node name="SymbolBlocks3" parent="GameObjects/Question/Characters" instance=ExtResource( 11 )]
-position = Vector2( -588, 114 )
-scale = Vector2( 0.6, 0.6 )
+[node name="SymbolBlocks3" parent="GameObjects/Question" instance=ExtResource( 10 )]
+position = Vector2( -600, 35.75 )
 operation = "Times"
 
-[node name="Line" type="Sprite" parent="GameObjects/Question/Characters"]
-position = Vector2( -584, 151 )
-scale = Vector2( 0.6, 0.5 )
-texture = ExtResource( 13 )
+[node name="SymbolBlocks4" parent="GameObjects/Question" instance=ExtResource( 10 )]
+position = Vector2( -600, 59.75 )
+operation = "Times"
+
+[node name="Line" type="Sprite" parent="GameObjects/Question"]
+position = Vector2( -704, 43.75 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
 centered = false
 
-[node name="DivisionLine" type="Sprite" parent="GameObjects/Question/Characters"]
-position = Vector2( -586, 137 )
-scale = Vector2( 0.65, 0.65 )
-texture = ExtResource( 14 )
+[node name="Line4" type="Sprite" parent="GameObjects/Question"]
+position = Vector2( -648, 154 )
+scale = Vector2( 0.2, 0.5 )
+texture = ExtResource( 16 )
 centered = false
-offset = Vector2( 0, -31.6667 )
 
-[node name="PausePanel" parent="." instance=ExtResource( 15 )]
+[node name="DoubleDigits20" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -536, 35.75 )
+objectValue = 56
+
+[node name="DoubleDigits27" parent="GameObjects/Question" instance=ExtResource( 1 )]
+position = Vector2( -536, 59.75 )
+objectValue = 8
+
+[node name="Line3" type="Sprite" parent="GameObjects/Question"]
+position = Vector2( -544, 43.75 )
+scale = Vector2( 0.2, 0.5 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="Line2" type="Sprite" parent="GameObjects/Question"]
+position = Vector2( -648, 43.75 )
+scale = Vector2( 1.1, 0.5 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="DivisionSign" type="Sprite" parent="GameObjects/Question"]
+position = Vector2( -650.825, 121 )
+scale = Vector2( 0.3625, 0.625 )
+texture = ExtResource( 18 )
+centered = false
+offset = Vector2( -6, -4 )
+
+[node name="Arr" type="Sprite" parent="GameObjects/Question"]
+position = Vector2( -656, 35.75 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 19 )
+
+[node name="Arr3" type="Sprite" parent="GameObjects/Question"]
+position = Vector2( -552, 35.75 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 19 )
+
+[node name="Arr4" type="Sprite" parent="GameObjects/Question"]
+position = Vector2( -552, 59.75 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 19 )
+
+[node name="Arr2" type="Sprite" parent="GameObjects/Question"]
+position = Vector2( -656, 59.75 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 19 )
+
+[node name="PausePanel" parent="." instance=ExtResource( 8 )]
 visible = false
 
-[node name="ResultPanel" parent="." instance=ExtResource( 7 )]
+[node name="ResultPanel" parent="." instance=ExtResource( 6 )]
 visible = false
 
 [node name="Timer" type="Timer" parent="."]

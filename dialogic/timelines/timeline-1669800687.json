@@ -1,0 +1,371 @@
+{
+	"events": [
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I saw you struggling at the last stage.\nThis is the last stage and also the hardest stage"
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Yes, it is really hard and there is swords that could hit me\nThe Guardian was a bit of a challenge. \nI thought I was not going to escape that level"
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I told you, you can do it. As you progress, the level is getting harder and harder\nJust understand how to solve the problem and don't worry I'm here to teach you how to solve it step by step"
+		},
+		{
+			"event_id": "dialogic_015",
+			"id": "anchor-1634488067",
+			"index": 0,
+			"name": "repeat"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "And now, It will get harder, the because this stage is All about Division.\nListen Archi, You need to focus and understand the problem and solve it\nOr else, you won't be able to clear this stage."
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I'll try to understand it. "
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"emit_signal": "blackboard",
+			"event_id": "dialogic_040"
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "(Don't change)",
+			"text": "This is the step by step process of how to divide a decimal numbers."
+		},
+		{
+			"emit_signal": "step1",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 1: Convert the problem in a column form. "
+		},
+		{
+			"emit_signal": "step2",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": " Step 2: Align the decimal point if not aligned vertically"
+		},
+		{
+			"emit_signal": "step3",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 3: Start Dividing the numbers in a straight column from right to left."
+		},
+		{
+			"emit_signal": "step4",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 4: 8 divided by 2 is equals to ?\nStart at 8 then count to 2 backwards, \nAnd every 2 is 1\nLike 8,7 = 1, 6, 5 = 2, 4, 3 = 3 and 2, 1 = 4\nSo 8 divided by 2 is equals to 4 "
+		},
+		{
+			"emit_signal": "step4.1",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 4.1: We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a \"Carry\" Number.\nCarry Number would be place at the top of the next column"
+		},
+		{
+			"emit_signal": "step5",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 5: This column has a carry number so we should also add the carry number\n8 divided by 2 divided by 2 is equals to ?\nSince the 8 divided by 2 is equals to 4.\n4 divided 2 is ?\n4, 3 = 1, 2, 1 = 2\n4 divided by 2 = 2\n8 divided by 2 divided by 2 equals to 2"
+		},
+		{
+			"emit_signal": "step6",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 6: 2 divided by 2 is equals to ?\nAgain the 2 is considered as 1\n2, 1 = 1\n2 divided by 2 equals 1"
+		},
+		{
+			"emit_signal": "step7",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 7: Bring down the decimal point in the difference"
+		},
+		{
+			"emit_signal": "step8",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Step 8: Our Final Answer would be\n0.08 times 0.02 equals to 0.04"
+		},
+		{
+			"emit_signal": "step9",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Did you understand it?"
+		},
+		{
+			"choice": "Yes",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Good, Let's continue clearing the labyrinth"
+		},
+		{
+			"choice": "No",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Let's go over it again. Try to understand it this time."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1669800687.json",
+		"name": "Stage4LessonDialogs"
+	}
+}

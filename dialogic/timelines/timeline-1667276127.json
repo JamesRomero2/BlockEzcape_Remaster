@@ -468,7 +468,7 @@
 			"text": "Yes, there's a way for you to get back to your world.\nUnlike the Reincarnated ones who are reborn here\nSummoned and Stray are the ones who can go back to their world by fulfilling their purpose."
 		},
 		{
-			"emit_signal": "changeToDoor",
+			"emit_signal": "changeToBook",
 			"event_id": "dialogic_040"
 		},
 		{

@@ -1,62 +1,45 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Underground/Underground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameObjects/Character/Player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GameObjects/Blocks/ValueBlocks/PushableBlocks.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Textures/LevelBG/Underground/4.jpg" type="Texture" id=5]
+[ext_resource path="res://GameObjects/Blocks/PhantomBlocks/PhantomBlock.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameObjects/Tiles/TempleTile/Temple.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=7]
-[ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Textures/LevelBG/Underground/4.jpg" type="Texture" id=7]
+[ext_resource path="res://GameObjects/Tiles/LeverTile/LeverTile.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=10]
-[ext_resource path="res://GameObjects/Blocks/Crystal/Crystal.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=12]
-[ext_resource path="res://GameObjects/Tiles/OperationalTile/OperationalTile.tscn" type="PackedScene" id=13]
+[ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Components/ResultPanel/ResultPanel.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=13]
 [ext_resource path="res://GameObjects/Character/NPC/Baud.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/BoulderSpawner.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Stages/Traps.gd" type="Script" id=19]
-[ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=20]
-[ext_resource path="res://Scenes/Stages/BossStage/TheGolem/Power/Stopper.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=18]
+[ext_resource path="res://GameObjects/Blocks/Crystal/Crystal.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=20]
 
-[sub_resource type="Shader" id=12]
-code = "shader_type canvas_item;
+[sub_resource type="DynamicFont" id=8]
+size = 12
+font_data = ExtResource( 17 )
 
-uniform vec4 color: hint_color;
-uniform float multiplier = 0.2;
-uniform float softness = 3.0;
-
-void fragment() {
-	float value = distance(UV, vec2(0.5));
-	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
-}"
-
-[sub_resource type="ShaderMaterial" id=13]
-shader = SubResource( 12 )
-shader_param/color = Color( 0.113725, 0.101961, 0.0784314, 1 )
-shader_param/multiplier = -0.5
-shader_param/softness = 6.0
-
-[sub_resource type="DynamicFont" id=14]
-size = 32
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 20 )
+[sub_resource type="DynamicFont" id=10]
+size = 12
+font_data = ExtResource( 17 )
 
 [node name="Level 06" type="Node"]
 script = ExtResource( 1 )
-timelineName = "/Forest/Level 05"
+timelineName = "/Forest/Level 02"
 answers = {
-0: 25,
-1: 15,
+0: 5,
+1: 93,
 2: null,
 3: null
 }
 resultAnimating = true
-requiredMedal = 3
+requiredMedal = 4
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -64,183 +47,269 @@ layer = -10
 [node name="TextureRect" type="TextureRect" parent="BackgroundLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 expand = true
 stretch_mode = 7
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -440, 88 )
+position = Vector2( -456, 120 )
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.6, 0.6 )
 
 [node name="UndergroundTilemap" parent="." instance=ExtResource( 2 )]
+position = Vector2( -448, 112 )
 
 [node name="Background" parent="UndergroundTilemap" index="0"]
-tile_data = PoolIntArray( 131044, 0, 2, 131045, 0, 3, 131046, 0, 3, 131047, 0, 3, 131048, 0, 4, 196571, 0, 2, 196572, 0, 3, 196573, 0, 3, 196574, 0, 3, 196575, 0, 4, 196579, 0, 2, 196580, 0, 65537, 196581, 0, 65539, 196582, 0, 65539, 196583, 0, 65539, 196584, 0, 65536, 196585, 0, 3, 196586, 0, 3, 196587, 0, 4, 262107, 0, 65538, 262108, 0, 65539, 262109, 0, 65539, 262110, 0, 65539, 262111, 0, 65540, 262114, 0, 2, 262115, 0, 65537, 262116, 0, 65539, 262117, 0, 65539, 262118, 0, 65539, 262119, 0, 65539, 262120, 0, 65539, 262121, 0, 65539, 262122, 0, 65539, 262123, 0, 65536, 262124, 0, 4, 327643, 0, 65538, 327644, 0, 65539, 327645, 0, 65539, 327646, 0, 65539, 327647, 0, 65540, 327650, 0, 65538, 327651, 0, 65539, 327652, 0, 65539, 327653, 0, 65539, 327654, 0, 65539, 327655, 0, 65539, 327656, 0, 65539, 327657, 0, 65539, 327658, 0, 65539, 327659, 0, 65539, 327660, 0, 65536, 327661, 0, 4, 393179, 0, 65538, 393180, 0, 65539, 393181, 0, 65539, 393182, 0, 65539, 393183, 0, 65540, 393186, 0, 65538, 393187, 0, 65539, 393188, 0, 65539, 393189, 0, 65539, 393190, 0, 65539, 393191, 0, 65539, 393192, 0, 65539, 393193, 0, 65539, 393194, 0, 65539, 393195, 0, 65539, 393196, 0, 65539, 393197, 0, 65540, 458715, 0, 65538, 458716, 0, 65539, 458717, 0, 65539, 458718, 0, 65539, 458719, 0, 65540, 458722, 0, 65538, 458723, 0, 65539, 458724, 0, 65539, 458725, 0, 65539, 458726, 0, 65539, 458727, 0, 65539, 458728, 0, 65539, 458729, 0, 65539, 458730, 0, 65539, 458731, 0, 65539, 458732, 0, 0, 458733, 0, 131076, 524251, 0, 65538, 524252, 0, 65539, 524253, 0, 65539, 524254, 0, 65539, 524255, 0, 65540, 524258, 0, 65538, 524259, 0, 65539, 524260, 0, 65539, 524261, 0, 65539, 524262, 0, 65539, 524263, 0, 65539, 524264, 0, 65539, 524265, 0, 65539, 524266, 0, 0, 524267, 0, 131075, 524268, 0, 131076, 589787, 0, 131074, 589788, 0, 131075, 589789, 0, 131075, 589790, 0, 131075, 589791, 0, 131076, 589794, 0, 131074, 589795, 0, 1, 589796, 0, 65539, 589797, 0, 65539, 589798, 0, 65539, 589799, 0, 65539, 589800, 0, 65539, 589801, 0, 0, 589802, 0, 131076, 655331, 0, 131074, 655332, 0, 131075, 655333, 0, 131075, 655334, 0, 131075, 655335, 0, 131075, 655336, 0, 131075, 655337, 0, 131076 )
+tile_data = PoolIntArray( -262142, 0, 2, -262141, 0, 3, -262140, 0, 3, -262139, 0, 3, -262138, 0, 4, -131081, 0, 2, -131080, 0, 3, -131079, 0, 3, -131078, 0, 3, -131077, 0, 3, -131076, 0, 4, -196608, 0, 2, -196607, 0, 3, -196606, 0, 65537, -196605, 0, 65539, -196604, 0, 65539, -196603, 0, 65539, -196602, 0, 65536, -196601, 0, 4, -65545, 0, 65538, -65544, 0, 65539, -65543, 0, 65539, -65542, 0, 65539, -65541, 0, 65539, -65540, 0, 65540, -65537, 0, 2, -131072, 0, 65537, -131071, 0, 65539, -131070, 0, 65539, -131069, 0, 65539, -131068, 0, 65539, -131067, 0, 65539, -131066, 0, 65539, -131065, 0, 65540, -9, 0, 65538, -8, 0, 65539, -7, 0, 65539, -6, 0, 65539, -5, 0, 65539, -4, 0, 65540, -1, 0, 65538, -65536, 0, 65539, -65535, 0, 65539, -65534, 0, 65539, -65533, 0, 65539, -65532, 0, 65539, -65531, 0, 65539, -65530, 0, 65539, -65529, 0, 65540, 65527, 0, 65538, 65528, 0, 65539, 65529, 0, 65539, 65530, 0, 65539, 65531, 0, 65539, 65532, 0, 65540, 65535, 0, 65538, 0, 0, 65539, 1, 0, 65539, 2, 0, 65539, 3, 0, 65539, 4, 0, 65539, 5, 0, 65539, 6, 0, 65539, 7, 0, 65540, 131063, 0, 65538, 131064, 0, 65539, 131065, 0, 65539, 131066, 0, 65539, 131067, 0, 65539, 131068, 0, 65540, 131071, 0, 65538, 65536, 0, 65539, 65537, 0, 65539, 65538, 0, 65539, 65539, 0, 65539, 65540, 0, 65539, 65541, 0, 65539, 65542, 0, 65539, 65543, 0, 65540, 196599, 0, 65538, 196600, 0, 65539, 196601, 0, 65539, 196602, 0, 65539, 196603, 0, 65539, 196604, 0, 65540, 196607, 0, 65538, 131072, 0, 65539, 131073, 0, 65539, 131074, 0, 65539, 131075, 0, 65539, 131076, 0, 65539, 131077, 0, 65539, 131078, 0, 0, 131079, 0, 131076, 262135, 0, 131074, 262136, 0, 131075, 262137, 0, 131075, 262138, 0, 131075, 262139, 0, 131075, 262140, 0, 131076, 262143, 0, 131074, 196608, 0, 1, 196609, 0, 65539, 196610, 0, 65539, 196611, 0, 65539, 196612, 0, 0, 196613, 0, 131075, 196614, 0, 131076, 262144, 0, 131074, 262145, 0, 131075, 262146, 0, 131075, 262147, 0, 131075, 262148, 0, 131076 )
 
 [node name="Blocks" parent="UndergroundTilemap" index="1"]
-tile_data = PoolIntArray( 196581, 0, 0, 196582, 0, 0, 196583, 0, 0, 262116, 0, 0, 262120, 0, 0, 262121, 0, 0, 262122, 0, 0, 327651, 0, 0, 327659, 0, 0, 393187, 0, 0, 393196, 0, 0, 458723, 0, 0, 458729, 0, 0, 458730, 0, 0, 458731, 0, 0, 524259, 0, 0, 524265, 0, 0, 589796, 0, 0, 589797, 0, 0, 589798, 0, 0, 589799, 0, 0, 589800, 0, 0 )
+tile_data = PoolIntArray( -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -131071, 0, 0, -131066, 0, 0, -65536, 0, 0, -65530, 0, 0, 0, 0, 0, 6, 0, 0, 65536, 0, 0, 65542, 0, 0, 131072, 0, 0, 131076, 0, 0, 131077, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0 )
 
 [node name="GameObjects" type="Node2D" parent="."]
-position = Vector2( 8, 80 )
-
-[node name="OperationalTile" parent="GameObjects" instance=ExtResource( 13 )]
-position = Vector2( -400, 8 )
-operationalValue = 5
-
-[node name="OperationalTile2" parent="GameObjects" instance=ExtResource( 13 )]
-position = Vector2( -384, 8 )
-operationalValue = 15
 
 [node name="Player" parent="GameObjects" instance=ExtResource( 3 )]
-position = Vector2( -448, 8 )
+position = Vector2( -424, 120 )
 
 [node name="Temple" parent="GameObjects" instance=ExtResource( 6 )]
-position = Vector2( -448, -8 )
+position = Vector2( -408, 104 )
+portalTheme = "Underground"
 
-[node name="Box2" parent="GameObjects" instance=ExtResource( 4 )]
-position = Vector2( -432, -8 )
-boxValue = 15
-
-[node name="Box4" parent="GameObjects" instance=ExtResource( 4 )]
-position = Vector2( -416, -8 )
+[node name="Box3" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -392, 136 )
 boxValue = 5
 
-[node name="ScannerTile2" parent="GameObjects" instance=ExtResource( 9 )]
-position = Vector2( -352, 8 )
+[node name="Box5" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -408, 136 )
+boxValue = 10
+
+[node name="Box4" parent="GameObjects" instance=ExtResource( 4 )]
+position = Vector2( -392, 120 )
+boxValue = 93
+
+[node name="LeverTile" parent="GameObjects" instance=ExtResource( 8 )]
+position = Vector2( -376, 120 )
+
+[node name="LeverTile2" parent="GameObjects" instance=ExtResource( 8 )]
+position = Vector2( -376, 104 )
 
 [node name="ScannerTile4" parent="GameObjects" instance=ExtResource( 9 )]
-position = Vector2( -336, 8 )
+position = Vector2( -392, 88 )
+
+[node name="ScannerTile5" parent="GameObjects" instance=ExtResource( 9 )]
+position = Vector2( -424, 152 )
 scannerID = 1
+
+[node name="PhantomBlock9" parent="GameObjects" instance=ExtResource( 5 )]
+position = Vector2( -392, 104 )
+
+[node name="PhantomBlock10" parent="GameObjects" instance=ExtResource( 5 )]
+position = Vector2( -376, 136 )
+
+[node name="PhantomBlock11" parent="GameObjects" instance=ExtResource( 5 )]
+position = Vector2( -424, 136 )
 
 [node name="Question" type="Node2D" parent="GameObjects"]
-position = Vector2( 0, -136 )
-
-[node name="Top" type="Node2D" parent="GameObjects/Question"]
-
-[node name="Crystal2" parent="GameObjects/Question/Top" instance=ExtResource( 11 )]
-position = Vector2( -568, 120 )
-scannerID = 1
-
-[node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 10 )]
-position = Vector2( -560, 112 )
-
-[node name="DoubleDigits" parent="GameObjects/Question/Top" instance=ExtResource( 16 )]
-position = Vector2( -544, 120 )
-objectValue = 90
-
-[node name="Bottom" type="Node2D" parent="GameObjects/Question"]
-
-[node name="DoubleDigits2" parent="GameObjects/Question/Bottom" instance=ExtResource( 16 )]
-position = Vector2( -544, 136 )
-objectValue = 65
-
-[node name="DoubleDigits3" parent="GameObjects/Question/Bottom" instance=ExtResource( 16 )]
-position = Vector2( -568, 136 )
-objectValue = 9
-
-[node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 10 )]
-position = Vector2( -560, 128 )
+position = Vector2( -8, 8 )
 
 [node name="Answer" type="Node2D" parent="GameObjects/Question"]
 
-[node name="DoubleDigits4" parent="GameObjects/Question/Answer" instance=ExtResource( 16 )]
-position = Vector2( -568, 160 )
-objectValue = 6
+[node name="Crystal2" parent="GameObjects/Question/Answer" instance=ExtResource( 19 )]
+position = Vector2( -552, 136 )
 
-[node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 10 )]
-position = Vector2( -560, 152 )
+[node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 19 )]
+position = Vector2( -528, 136 )
+scannerID = 1
 
-[node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 11 )]
-position = Vector2( -544, 160 )
+[node name="Sprite2" parent="GameObjects/Question/Answer" instance=ExtResource( 12 )]
+position = Vector2( -544, 128 )
+frame = 0
+
+[node name="Top" type="Node2D" parent="GameObjects/Question"]
+
+[node name="DoubleDigits2" parent="GameObjects/Question/Top" instance=ExtResource( 20 )]
+position = Vector2( -552, 96 )
+objectValue = 8
+
+[node name="DoubleDigits3" parent="GameObjects/Question/Top" instance=ExtResource( 20 )]
+position = Vector2( -528, 96 )
+objectValue = 75
+
+[node name="DoubleDigits4" parent="GameObjects/Question/Top" instance=ExtResource( 20 )]
+position = Vector2( -512, 96 )
+objectValue = 20
+isWholeNumber = false
+
+[node name="DoubleDigits7" parent="GameObjects/Question/Top" instance=ExtResource( 20 )]
+modulate = Color( 0.898039, 1, 0.00784314, 1 )
+position = Vector2( -526, 83 )
+scale = Vector2( 0.6, 0.6 )
+objectValue = 4
+
+[node name="DoubleDigits8" parent="GameObjects/Question/Top" instance=ExtResource( 20 )]
+modulate = Color( 0.898039, 1, 0.00784314, 1 )
+position = Vector2( -550, 83 )
+scale = Vector2( 0.6, 0.6 )
+objectValue = 7
+
+[node name="DoubleDigits5" parent="GameObjects/Question/Top" instance=ExtResource( 20 )]
+position = Vector2( -512, 112 )
+objectValue = 70
+isWholeNumber = false
+
+[node name="DoubleDigits6" parent="GameObjects/Question/Top" instance=ExtResource( 20 )]
+position = Vector2( -512, 136 )
+isWholeNumber = false
+
+[node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 12 )]
+position = Vector2( -544, 104 )
+
+[node name="Bottom" type="Node2D" parent="GameObjects/Question"]
+
+[node name="DoubleDigits" parent="GameObjects/Question/Bottom" instance=ExtResource( 20 )]
+modulate = Color( 0.0784314, 0.996078, 0, 1 )
+position = Vector2( -516, 84 )
+scale = Vector2( 0.5, 0.5 )
+objectValue = 12
+
+[node name="DoubleDigits2" parent="GameObjects/Question/Bottom" instance=ExtResource( 20 )]
+modulate = Color( 0.0784314, 0.996078, 0, 1 )
+position = Vector2( -532, 84 )
+scale = Vector2( 0.5, 0.5 )
+objectValue = 17
+
+[node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 12 )]
+position = Vector2( -544, 88 )
+
+[node name="DoubleDigits4" parent="GameObjects/Question/Bottom" instance=ExtResource( 20 )]
+position = Vector2( -528, 112 )
+objectValue = 81
+
+[node name="DoubleDigits5" parent="GameObjects/Question/Bottom" instance=ExtResource( 20 )]
+position = Vector2( -552, 112 )
+objectValue = 2
 
 [node name="Characters" type="Node2D" parent="GameObjects/Question"]
 
-[node name="SymbolBlocks2" parent="GameObjects/Question/Characters" instance=ExtResource( 8 )]
-position = Vector2( -584, 128 )
+[node name="BorrowSign" type="Sprite" parent="GameObjects/Question/Characters"]
+position = Vector2( -552, 88 )
+rotation = 1.11457
+scale = Vector2( 0.221642, 0.352669 )
+texture = ExtResource( 13 )
+centered = false
+offset = Vector2( 0.98407, -7.38068 )
+
+[node name="BorrowSign2" type="Sprite" parent="GameObjects/Question/Characters"]
+position = Vector2( -528, 88 )
+rotation = 1.11457
+scale = Vector2( 0.221642, 0.352669 )
+texture = ExtResource( 13 )
+centered = false
+offset = Vector2( 0.98407, -7.38068 )
+
+[node name="BorrowSign4" type="Sprite" parent="GameObjects/Question/Characters"]
+position = Vector2( -536, 88 )
+rotation = 1.11457
+scale = Vector2( 0.221642, 0.352669 )
+texture = ExtResource( 13 )
+centered = false
+offset = Vector2( 0.98407, -7.38068 )
+
+[node name="BorrowSign3" type="Sprite" parent="GameObjects/Question/Characters"]
+position = Vector2( -520, 88 )
+rotation = 1.11457
+scale = Vector2( 0.221642, 0.352669 )
+texture = ExtResource( 13 )
+centered = false
+offset = Vector2( 0.98407, -7.38068 )
+
+[node name="SymbolBlocks2" parent="GameObjects/Question/Characters" instance=ExtResource( 10 )]
+position = Vector2( -568, 104 )
 operation = "Minus"
 
 [node name="Line" type="Sprite" parent="GameObjects/Question/Characters"]
-position = Vector2( -592, 144 )
+position = Vector2( -568, 120 )
 scale = Vector2( 0.8, 0.5 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 centered = false
 
 [node name="Baud" parent="GameObjects" instance=ExtResource( 14 )]
-position = Vector2( -416, 8 )
-
-[node name="Traps" type="Node2D" parent="GameObjects"]
-script = ExtResource( 19 )
-
-[node name="Timer" type="Timer" parent="GameObjects/Traps"]
-
-[node name="HealTimer" type="Timer" parent="GameObjects/Traps"]
-wait_time = 5.0
-
-[node name="Trap" type="Node2D" parent="GameObjects/Traps"]
-
-[node name="BoulderSpawner" parent="GameObjects/Traps/Trap" instance=ExtResource( 17 )]
-position = Vector2( -400, -40 )
-
-[node name="Death" type="CanvasLayer" parent="GameObjects/Traps"]
-pause_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="GameObjects/Traps/Death"]
-material = SubResource( 13 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="DeathScreen" type="Control" parent="GameObjects/Traps/Death"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Label" type="Label" parent="GameObjects/Traps/Death/DeathScreen"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 14 )
-text = "ARCHI GOT LOST"
-align = 1
-valign = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GameObjects/Traps/Death/DeathScreen"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -150.0
-margin_top = 36.0
-margin_right = 150.0
-margin_bottom = 73.0
-rect_min_size = Vector2( 300, 37 )
-rect_pivot_offset = Vector2( 150, 18 )
-custom_constants/separation = 50
-alignment = 1
-
-[node name="Reset" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 18 )]
-margin_left = 36.0
-margin_right = 147.0
-margin_bottom = 37.0
-text = "RESTART"
-
-[node name="Quit" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 18 )]
-margin_left = 197.0
-margin_right = 264.0
-margin_bottom = 37.0
-text = "QUIT"
-
-[node name="Stopper4" parent="GameObjects/Traps" instance=ExtResource( 21 )]
-position = Vector2( -400, 72 )
+position = Vector2( -408, 88 )
 
 [node name="PausePanel" parent="." instance=ExtResource( 15 )]
 visible = false
 
-[node name="ResultPanel" parent="." instance=ExtResource( 7 )]
+[node name="UILayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Buttons" type="Control" parent="UILayer"]
+anchor_right = 1.0
+
+[node name="PauseButton" type="Button" parent="UILayer/Buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 64.0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/Buttons/PauseButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="UILayer/Buttons/PauseButton/TextureRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -12.0
+margin_top = -22.0
+margin_right = 13.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Esc"
+align = 1
+valign = 1
+
+[node name="UndoButton" type="Button" parent="UILayer/Buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -80.0
+margin_top = 8.0
+margin_right = -48.0
+margin_bottom = 64.0
+flat = true
+
+[node name="TextureRect2" type="TextureRect" parent="UILayer/Buttons/UndoButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 18 )
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="UILayer/Buttons/UndoButton/TextureRect2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -16.0
+margin_top = -22.0
+margin_right = 16.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 10 )
+text = "Undo"
+align = 1
+valign = 1
+
+[node name="ResultPanel" parent="." instance=ExtResource( 11 )]
 visible = false
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
 
+[connection signal="pressed" from="UILayer/Buttons/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="UILayer/Buttons/UndoButton" to="." method="_on_UndoButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="UndergroundTilemap"]

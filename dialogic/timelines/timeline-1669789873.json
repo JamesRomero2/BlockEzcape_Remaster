@@ -8,14 +8,14 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
-			"portrait": "BaudShock",
+			"portrait": "Default",
 			"portrait_definition": "",
 			"position": {
-				"0": true,
+				"0": false,
 				"1": false,
 				"2": false,
 				"3": false,
-				"4": false
+				"4": true
 			},
 			"type": 0,
 			"z_index": 0
@@ -24,13 +24,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Looks like the army of the late King and Queen is corrupted by the Guardian.\nThe Knight Commander is their leader."
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Be careful not to get hit by the knights "
+			"text": "Always remember what I taught you.\nIt will help you clear the labyrinth"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -55,7 +49,7 @@
 	],
 	"metadata": {
 		"dialogic-version": "1.4.5",
-		"file": "timeline-1668590267.json",
-		"name": "Level 15 (BossIntro)"
+		"file": "timeline-1669789873.json",
+		"name": "2"
 	}
 }
