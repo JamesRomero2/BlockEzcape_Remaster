@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/GameAssets/Animation/Player/WalkingLeft.tres" type="Animation" id=8]
 [ext_resource path="res://Components/Whirlpool/Whirlpool.tscn" type="PackedScene" id=9]
 
+
 [sub_resource type="Shader" id=13]
 code = "shader_type canvas_item;
 

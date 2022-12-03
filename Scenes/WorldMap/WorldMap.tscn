@@ -24,6 +24,7 @@
 [ext_resource path="res://Assets/Textures/StageGate.png" type="Texture" id=23]
 [ext_resource path="res://Components/WorldMapComponents/LevelInformation/LevelInformation.tscn" type="PackedScene" id=24]
 
+
 [sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 1
 

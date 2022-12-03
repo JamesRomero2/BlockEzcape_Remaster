@@ -47,6 +47,7 @@ font_data = ExtResource( 17 )
 
 [node name="Level 19" type="Node"]
 script = ExtResource( 2 )
+timelines = [ "/LessonRecap/DivisionRecap", "/1" ]
 answers = {
 0: 2,
 1: 4,
@@ -127,10 +128,10 @@ position = Vector2( -133, -122 )
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 5 )]
 position = Vector2( -570, 120 )
+frame = 0
 
 [node name="Sprite2" parent="GameObjects/Question/Top" instance=ExtResource( 5 )]
 position = Vector2( -570, 99 )
-frame = 0
 
 [node name="DoubleDigits2" parent="GameObjects/Question/Top" instance=ExtResource( 1 )]
 position = Vector2( -575, 128 )
@@ -239,7 +240,6 @@ wait_time = 5.0
 
 [node name="AnimatedSprite" parent="GameObjects/Traps/Trap" instance=ExtResource( 19 )]
 position = Vector2( -528, 104 )
-frame = 2
 
 [node name="Death" type="CanvasLayer" parent="GameObjects/Traps"]
 pause_mode = 2

@@ -21,6 +21,7 @@
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=23]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=24]
 
+
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],

@@ -51,6 +51,7 @@ font_data = ExtResource( 21 )
 
 [node name="Level 18" type="Node"]
 script = ExtResource( 1 )
+timelines = [ "/LessonRecap/DivisionRecap", "/4" ]
 answers = {
 0: 22,
 1: 6,
@@ -220,9 +221,11 @@ isWholeNumber = false
 
 [node name="Sprite" parent="GameObjects/Question" instance=ExtResource( 11 )]
 position = Vector2( -688, 51.75 )
+frame = 0
 
 [node name="Sprite2" parent="GameObjects/Question" instance=ExtResource( 11 )]
 position = Vector2( -688, 27.75 )
+frame = 0
 
 [node name="DoubleDigits9" parent="GameObjects/Question" instance=ExtResource( 12 )]
 position = Vector2( -616, 59.75 )
@@ -243,11 +246,9 @@ objectValue = 0
 
 [node name="Sprite3" parent="GameObjects/Question" instance=ExtResource( 11 )]
 position = Vector2( -632, 51.75 )
-frame = 0
 
 [node name="Sprite4" parent="GameObjects/Question" instance=ExtResource( 11 )]
 position = Vector2( -632, 27.75 )
-frame = 0
 
 [node name="Crystal" parent="GameObjects/Question" instance=ExtResource( 8 )]
 position = Vector2( -648, 88 )
@@ -345,7 +346,7 @@ wait_time = 5.0
 
 [node name="AnimatedSprite" parent="GameObjects/Traps/Trap" instance=ExtResource( 14 )]
 position = Vector2( -560, -64 )
-frame = 2
+frame = 1
 
 [node name="Death" type="CanvasLayer" parent="GameObjects/Traps"]
 pause_mode = 2

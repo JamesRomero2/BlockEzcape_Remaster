@@ -46,6 +46,7 @@ font_data = ExtResource( 16 )
 
 [node name="Level 13" type="Node"]
 script = ExtResource( 1 )
+timelines = [ "/LessonRecap/MultiplicationRecap", "/2" ]
 answers = {
 0: 11,
 1: 10,
@@ -149,10 +150,10 @@ objectValue = 11
 
 [node name="Sprite" parent="GameObjects/Question" instance=ExtResource( 10 )]
 position = Vector2( -560, 112 )
+frame = 0
 
 [node name="Sprite2" parent="GameObjects/Question" instance=ExtResource( 10 )]
 position = Vector2( -560, 192 )
-frame = 0
 
 [node name="Crystal4" parent="GameObjects/Question" instance=ExtResource( 8 )]
 position = Vector2( -568, 200 )

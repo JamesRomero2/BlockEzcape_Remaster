@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/GameAssets/Fonts/PausePanelSectionFonts.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=8]
 
+
 [sub_resource type="DynamicFont" id=2]
 outline_size = 1
 font_data = ExtResource( 4 )

@@ -49,6 +49,7 @@ font_data = ExtResource( 19 )
 
 [node name="Level 16" type="Node"]
 script = ExtResource( 2 )
+timelines = [ "/Magical/Level 16", "/Stage4LessonDialogs", "/2" ]
 answers = {
 0: null,
 1: null,

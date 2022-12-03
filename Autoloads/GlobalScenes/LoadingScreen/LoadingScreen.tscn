@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Textures/BlueLoading.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GameAssets/Fonts/DialogFont.tres" type="DynamicFont" id=7]
 
+
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"

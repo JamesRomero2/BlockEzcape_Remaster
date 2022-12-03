@@ -5,6 +5,7 @@
 [ext_resource path="res://Assets/GameAssets/Sounds/ButtonHoverSFX.tres" type="AudioStream" id=3]
 [ext_resource path="res://Assets/GameAssets/Sounds/ButtonClickSFX.tres" type="AudioStream" id=4]
 
+
 [node name="Button" type="Button"]
 margin_right = 160.0
 margin_bottom = 40.0

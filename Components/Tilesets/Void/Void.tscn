@@ -4,6 +4,7 @@
 [ext_resource path="res://Components/Tilesets/Tilesets.gd" type="Script" id=2]
 [ext_resource path="res://Components/Tilesets/Void/Texture/Custom.png" type="Texture" id=3]
 
+
 [sub_resource type="TileSet" id=3]
 0/name = "Custom.png 0"
 0/texture = ExtResource( 3 )

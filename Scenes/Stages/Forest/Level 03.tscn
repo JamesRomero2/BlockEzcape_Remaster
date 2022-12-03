@@ -19,6 +19,7 @@
 
 [node name="Level 03" type="Node"]
 script = ExtResource( 1 )
+timelines = [ "/Forest/Level 03", "/LessonRecap/AdditionRecap", "/2" ]
 answers = {
 0: 58,
 1: 61,
@@ -97,7 +98,6 @@ position = Vector2( 8, -128 )
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 6 )]
 position = Vector2( -568, 104 )
-frame = 0
 
 [node name="DoubleDigits" parent="GameObjects/Question/Top" instance=ExtResource( 2 )]
 position = Vector2( -552, 112 )
@@ -126,7 +126,6 @@ objectValue = 40
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 6 )]
 position = Vector2( -568, 120 )
-frame = 0
 
 [node name="DoubleDigits3" parent="GameObjects/Question/Bottom" instance=ExtResource( 2 )]
 position = Vector2( -552, 128 )
@@ -140,7 +139,6 @@ objectValue = 21
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 6 )]
 position = Vector2( -568, 144 )
-frame = 0
 
 [node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 13 )]
 position = Vector2( -552, 152 )

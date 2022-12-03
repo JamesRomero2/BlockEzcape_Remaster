@@ -23,6 +23,7 @@
 [ext_resource path="res://Assets/GameAssets/Fonts/PanelWarningFont.tres" type="DynamicFont" id=21]
 [ext_resource path="res://Assets/GameAssets/Fonts/PanelNormalText.tres" type="DynamicFont" id=22]
 
+
 [sub_resource type="DynamicFont" id=22]
 size = 36
 outline_size = 2

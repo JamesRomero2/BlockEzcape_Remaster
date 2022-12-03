@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Silhoutte3.png" type="Texture" id=7]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=8]
 
+
 [node name="DoorCutscene" type="Node"]
 script = ExtResource( 1 )
 

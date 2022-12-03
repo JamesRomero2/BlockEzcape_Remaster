@@ -21,6 +21,7 @@
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=23]
 
 
+
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 3 ) ],

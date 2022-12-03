@@ -126,13 +126,11 @@ objectValue = 4
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 8 )]
 position = Vector2( -568, 112 )
-frame = 0
 
 [node name="Bottom" type="Node2D" parent="GameObjects/Question"]
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 8 )]
 position = Vector2( -568, 128 )
-frame = 0
 
 [node name="DoubleDigits3" parent="GameObjects/Question/Bottom" instance=ExtResource( 14 )]
 position = Vector2( -552, 136 )
@@ -150,7 +148,6 @@ objectValue = 6
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 8 )]
 position = Vector2( -568, 152 )
-frame = 0
 
 [node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 7 )]
 position = Vector2( -552, 160 )

@@ -47,6 +47,7 @@ font_data = ExtResource( 2 )
 
 [node name="Level 12" type="Node"]
 script = ExtResource( 1 )
+timelines = [ "/LessonRecap/MultiplicationRecap", "/2" ]
 answers = {
 0: null,
 1: 80,

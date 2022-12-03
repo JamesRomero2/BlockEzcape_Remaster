@@ -21,6 +21,7 @@
 [ext_resource path="res://Assets/Textures/Bosses/Serpent/Temple/ForestBossTemple3.png" type="Texture" id=28]
 
 
+
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 27 ) ],

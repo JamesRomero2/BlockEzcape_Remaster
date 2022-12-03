@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Stages/BossStage/TheSerpent/Puzzles/1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Stages/BossStage/TheSerpent/Puzzles/3.tscn" type="PackedScene" id=8]
 
+
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"

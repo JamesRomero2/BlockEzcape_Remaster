@@ -4,6 +4,7 @@
 [ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Textures/Crystal.png" type="Texture" id=3]
 
+
 [node name="Crystal" type="Node2D" groups=["Crystal"]]
 script = ExtResource( 1 )
 

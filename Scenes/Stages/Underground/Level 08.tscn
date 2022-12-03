@@ -50,6 +50,7 @@ font_data = ExtResource( 22 )
 
 [node name="Level 08" type="Node"]
 script = ExtResource( 1 )
+timelines = [ "/LessonRecap/SubtractionRecap", "/3" ]
 answers = {
 0: 21,
 1: 11,
@@ -156,7 +157,6 @@ isCrystalWholeNumber = false
 
 [node name="Sprite2" parent="GameObjects/Question/Answer" instance=ExtResource( 11 )]
 position = Vector2( -544, 128 )
-frame = 0
 
 [node name="Top" type="Node2D" parent="GameObjects/Question"]
 
@@ -179,11 +179,13 @@ isWholeNumber = false
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 11 )]
 position = Vector2( -544, 104 )
+frame = 0
 
 [node name="Bottom" type="Node2D" parent="GameObjects/Question"]
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 11 )]
 position = Vector2( -544, 88 )
+frame = 0
 
 [node name="DoubleDigits4" parent="GameObjects/Question/Bottom" instance=ExtResource( 10 )]
 position = Vector2( -528, 112 )

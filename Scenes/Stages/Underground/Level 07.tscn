@@ -19,7 +19,7 @@
 
 [node name="Level 07" type="Node"]
 script = ExtResource( 15 )
-timelineName = "/Forest/Level 03"
+timelines = [ "/LessonRecap/SubtractionRecap", "/1" ]
 answers = {
 0: 5,
 1: 8,
@@ -105,7 +105,6 @@ isCrystalWholeNumber = false
 
 [node name="Sprite2" parent="GameObjects/Question/Answer" instance=ExtResource( 1 )]
 position = Vector2( -544, 128 )
-frame = 0
 
 [node name="Top" type="Node2D" parent="GameObjects/Question"]
 
@@ -137,6 +136,7 @@ objectValue = 0
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 1 )]
 position = Vector2( -544, 104 )
+frame = 0
 
 [node name="Bottom" type="Node2D" parent="GameObjects/Question"]
 
@@ -148,6 +148,7 @@ objectValue = 10
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 1 )]
 position = Vector2( -544, 88 )
+frame = 0
 
 [node name="DoubleDigits4" parent="GameObjects/Question/Bottom" instance=ExtResource( 10 )]
 position = Vector2( -528, 112 )

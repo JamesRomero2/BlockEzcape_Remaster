@@ -89,7 +89,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				},
 				"IntroDialog": {
@@ -105,6 +105,21 @@
 					"metadata": {
 						"color": null,
 						"folded": true
+					}
+				},
+				"LessonRecap": {
+					"files": [
+						"timeline-1669874938.json",
+						"timeline-1670032917.json",
+						"timeline-1670032942.json",
+						"timeline-1670032953.json"
+					],
+					"folders": {
+
+					},
+					"metadata": {
+						"color": null,
+						"folded": false
 					}
 				},
 				"Magical": {

@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/Textures/ArrowIndicator.png" type="Texture" id=14]
 [ext_resource path="res://Components/Highlighter/Highlighter.tscn" type="PackedScene" id=15]
 
+
 [sub_resource type="TileSet" id=3]
 0/name = "Custome.png 0"
 0/texture = ExtResource( 2 )

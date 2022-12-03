@@ -22,6 +22,7 @@
 [ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=20]
 
 
+
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 8 ) ],

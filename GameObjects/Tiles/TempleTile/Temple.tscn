@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Textures/PortalTemple/Portal4.png" type="Texture" id=13]
 [ext_resource path="res://Components/Whirlpool/Whirlpool.tscn" type="PackedScene" id=14]
 
+
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 2 ), ExtResource( 9 ) ],

@@ -47,6 +47,7 @@ font_data = ExtResource( 14 )
 
 [node name="Level 11" type="Node"]
 script = ExtResource( 1 )
+timelines = [ "/Dungeon/Level 11", "/Stage3LessonDialogs", "/4" ]
 answers = {
 0: null,
 1: 3,
