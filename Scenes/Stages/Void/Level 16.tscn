@@ -178,9 +178,11 @@ isWholeNumber = false
 
 [node name="Sprite" parent="GameObjects/Question" instance=ExtResource( 15 )]
 position = Vector2( -688, 59.75 )
+frame = 0
 
 [node name="Sprite2" parent="GameObjects/Question" instance=ExtResource( 15 )]
 position = Vector2( -688, 35.75 )
+frame = 0
 
 [node name="DoubleDigits9" parent="GameObjects/Question" instance=ExtResource( 1 )]
 position = Vector2( -616, 67.75 )
@@ -201,11 +203,9 @@ objectValue = 0
 
 [node name="Sprite3" parent="GameObjects/Question" instance=ExtResource( 15 )]
 position = Vector2( -632, 59.75 )
-frame = 0
 
 [node name="Sprite4" parent="GameObjects/Question" instance=ExtResource( 15 )]
 position = Vector2( -632, 35.75 )
-frame = 0
 
 [node name="Crystal" parent="GameObjects/Question" instance=ExtResource( 16 )]
 position = Vector2( -637, 116 )
@@ -298,6 +298,7 @@ wait_time = 5.0
 
 [node name="AnimatedSprite" parent="GameObjects/Traps/Trap" instance=ExtResource( 9 )]
 position = Vector2( -480, -72 )
+frame = 1
 
 [node name="Death" type="CanvasLayer" parent="GameObjects/Traps"]
 pause_mode = 2

@@ -31,13 +31,13 @@ func _setTexture():
 			tween.interpolate_property(spriteTexture, "scale", Vector2(0, 0), Vector2(0.5, 0.5), 0.5, Tween.TRANS_BOUNCE, Tween.EASE_IN_OUT)
 			door = true
 			whirlpool.emitting = true
-		tween.start()
+		tween.call_deferred("start")
 	else:
 		if door:
 			tween.interpolate_property(spriteTexture, "scale", Vector2(0.5, 0.5), Vector2(0, 0),  0.5, Tween.TRANS_BOUNCE, Tween.EASE_IN_OUT)
 			door = false
 			whirlpool.emitting = false
-		tween.start()
+		tween.call_deferred("start")
 
 func _on_Temple_body_entered(body):
 	if body.name == "Player" and _getDoorState():

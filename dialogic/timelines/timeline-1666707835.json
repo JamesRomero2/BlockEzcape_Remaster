@@ -70,7 +70,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Yes, we are inside the labyrinth. This is the first floor of the labyrinth, [color=#00FF00]The Add Forest of Numbers[/color[."
+			"text": "Yes, we are inside the labyrinth. This is the first floor of the labyrinth, [color=#00FF00]The Add Forest of Numbers[/color]."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -254,7 +254,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "This stage is all about[color=#008000]Addition[/color].\nYou see,[color=#008000]Addition[/color] is a process of combining two whole numbers to its total amount."
+			"text": "This stage is all about [color=#008000]Addition[/color].\nYou see, [color=#008000]Addition[/color] is a process of combining two whole numbers to its total amount."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -300,7 +300,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "How can I use [color=#008000]Addition[/colo] in here?"
+			"text": "How can I use [color=#008000]Addition[/color] in here?"
 		},
 		{
 			"animation": "4-fade_out.gd",

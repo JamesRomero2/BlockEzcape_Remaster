@@ -7,6 +7,8 @@ onready var resultPanel := $ResultPanel
 onready var rand := RandomNumberGenerator.new()
 onready var noise := OpenSimplexNoise.new()
 onready var camera := $Camera2D
+onready var blackBoad := $WhiteBoard
+onready var slides := $WhiteBoard/Control/Slides
 
 export(Array, String) var timelines
 export var answers := {
@@ -38,6 +40,7 @@ var noiseI: float = 0.0
 var shakeStrength: float = 0.0
 var counter: int = 0
 var timelinePlaying: int = 0
+var slideCount : int = 0
 
 func _ready():
 	get_tree().current_scene = self
@@ -46,6 +49,8 @@ func _ready():
 	_playDialog()
 	_connectSignal()
 	levelMusicManager()
+	closePresentation()
+	hideAllSlide()
 	
 	rand.randomize()
 	noise.seed = rand.randi()
@@ -62,6 +67,7 @@ func _playDialog():
 			GameManager._setGameTimerActive(false)
 			var dialog = Dialogic.start(timelines[timelinePlaying])
 			dialog.connect('timeline_end', self, '_dialogEnd')
+			dialog.connect('dialogic_signal', self, 'dialogicSignals')
 			add_child(dialog)
 
 func _dialogEnd(timeline_name):
@@ -73,6 +79,7 @@ func dialogSetEnded():
 		_playDialog()
 	else:
 		_playGame()
+		closePresentation()
 
 func _playGame():
 	playingDialog = false
@@ -269,3 +276,32 @@ func _onPlayerHurt():
 
 func applyShake():
 	shakeStrength = noiseShakeStrength
+
+func dialogicSignals(signalName):
+	if slides.get_children().empty(): return
+	hideAllSlide()
+	
+	if signalName == "open":
+		openPresentation()
+		openNextSlide(slideCount)
+	if signalName == "close":
+		closePresentation()
+	if signalName == "slide":
+		slideCount += 1
+		openNextSlide(slideCount)
+	if signalName == "reset":
+		slideCount = 0
+		openNextSlide(slideCount)
+
+func hideAllSlide():
+	for slide in slides.get_children():
+		slide.visible = false
+
+func openPresentation():
+	blackBoad.visible = true
+
+func closePresentation():
+	blackBoad.visible = false
+
+func openNextSlide(value):
+	slides.get_child(value).visible = true
