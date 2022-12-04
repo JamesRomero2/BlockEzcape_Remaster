@@ -24,7 +24,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "There's a reason why this stage is called The Add Forest of Numbers.\nI guess you know what's this stage all about"
+			"text": "There's a reason why this stage is called [color=#008000]The Add Forest of Numbers[/color].\nI guess you know what's this stage all about"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -116,13 +116,13 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Exactly! This stage is all about Addition of Decimal Numbers."
+			"text": "Exactly! This stage is all about [color=#008000]Addition of Decimal Numbers[/color]."
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "You see, Solving decimal problems can help you in real life situations like counting change, measuring temperature and calculating discounts.\n The first decimal problems we will be solving in this stage is the Addition of Decimal Numbers."
+			"text": "You see, Solving decimal problems can help you in real life situations like [color=#008000]counting change, measuring temperature and calculating discounts[/color].\n The first decimal problems we will be solving in this stage is the [color=#008000]Addition of Decimal Numbers[/color]."
 		},
 		{
 			"event_id": "dialogic_015",
@@ -280,7 +280,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 4.1: We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a \"Carry\" Number.\nCarry Number would be place at the top of the next column"
+			"text": "Step 4.1: We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a [color=#008000]\"Carry\" Number[/color].\n[color=#008000]Carry[/color] Number would be place at the top of the next column"
 		},
 		{
 			"emit_signal": "step5",

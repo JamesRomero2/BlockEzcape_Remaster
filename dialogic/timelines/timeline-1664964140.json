@@ -24,7 +24,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Alright! Chores are done. time to head to the library to do some howework "
+			"text": "Alright! Chores are done. time to head to the [color=#964B00]Library[/color] to do some howework "
 		},
 		{
 			"character": "character-1666707883.json",
@@ -54,7 +54,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "I wonder if the library have some book that can help me"
+			"text": "I wonder if the [color=#964B00]Library[/color] have some book that can help me"
 		},
 		{
 			"animation": "4-fade_out.gd",

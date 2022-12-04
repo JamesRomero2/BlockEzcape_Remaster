@@ -24,7 +24,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I think i need to go to the Library to do my Homework first."
+			"text": "I think i need to go to the [color=#964B00]Library[/color] to do my Homework first."
 		},
 		{
 			"animation": "4-fade_out.gd",

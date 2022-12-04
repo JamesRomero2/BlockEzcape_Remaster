@@ -24,7 +24,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiHappy",
-			"text": "Wow the architecture on this library is awesome!"
+			"text": "Wow! The architecture on this [color=#964B00]Library[/color] is awesome!"
 		},
 		{
 			"character": "character-1666707883.json",
@@ -36,7 +36,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiAngry",
-			"text": "Wait ! Gotta stay focus. My Math Homework doesn't solve on it's own."
+			"text": "Wait ! I have stay focus. \nMy Math homework doesn't solve on it's own."
 		},
 		{
 			"character": "character-1666707883.json",

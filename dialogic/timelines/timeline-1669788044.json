@@ -24,7 +24,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "So, How was The Add Forest of Numbers?"
+			"text": "So, How was [color=#008000]The Add Forest of Numbers[/color]?"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -70,7 +70,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "It's good, I now know how to add decimals\nThe Guardian was a bit of a challenge. I thought I was not going to escape that level"
+			"text": "It's good, I now know how to add decimals\nThe [color=#008000]Serpent Guardian[/color] was a bit of a challenge. I thought I was not going to escape that level"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -128,7 +128,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "And now, It will get harder, the because this stage is All about Subtraction.\nListen Archi, You need to focus and understand the problem and solve it\nOr else, you won't be able to clear this stage."
+			"text": "And now, It will get harder, the because this stage is All about [color=#C4A484]Subtraction[/color].\nListen Archi, You need to focus and understand the problem and solve it\nOr else, you won't be able to clear this stage."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -224,7 +224,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "(Don't change)",
-			"text": "This is the step by step process of how to subtract a decimal numbers."
+			"text": "This is the step by step process of how to [color=#C4A484]Subtract a decimal numbers[/color]."
 		},
 		{
 			"emit_signal": "step1",
@@ -274,7 +274,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 4.1: We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a \"Carry\" Number.\nCarry Number would be place at the top of the next column"
+			"text": "Step 4.1: We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a [color=#C4A484]\"Carry\"[/color] Number.\n[color=#C4A484]Carry[/color] Number would be place at the top of the next column"
 		},
 		{
 			"emit_signal": "step5",

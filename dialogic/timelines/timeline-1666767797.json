@@ -208,7 +208,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Thanks for the tip, Baud.\nNow I can clear this level.  "
+			"text": "Thanks for the tip, Baud.\nNow I can clear this level. "
 		},
 		{
 			"animation": "4-fade_out.gd",

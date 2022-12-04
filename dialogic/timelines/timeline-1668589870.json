@@ -24,7 +24,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Now, we arrive at the deepest stage of the labyrinth. It's located under the labyrinth.\nAre you ready to face the dangers that lie ahead of Underground Stage of the Labyrinth ?"
+			"text": "Now, we arrive at the deepest stage of the labyrinth. It's located under the labyrinth.\nAre you ready to face the dangers that lie ahead of [color=#C4A484]Underground Stage,[/color] of the Labyrinth ?\nThis stage is called [color=#C4A484]Diminishing the Surface[/color]."
 		},
 		{
 			"animation": "4-fade_out.gd",

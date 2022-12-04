@@ -70,7 +70,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "This is the Magical Stage. "
+			"text": "This is the [color=#FF00FF]Magical Stage[/color]."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -116,7 +116,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Magical Stage?"
+			"text": "[color=#FF00FF]Magical Stage[/color]?"
 		},
 		{
 			"animation": "4-fade_out.gd",

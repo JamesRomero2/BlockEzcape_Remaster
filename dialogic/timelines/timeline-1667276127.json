@@ -24,7 +24,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "(Don't change)",
-			"text": "Huh? Where am  I ?\nI remember going to the library to find some book to help me with my homework.\nAnd then I saw a light coming from a book."
+			"text": "Huh? Where am  I ?\nI remember going to the [color=#964B00]Library[/color] to find some book to help me with my homework.\nAnd then I saw a light coming from a book."
 		},
 		{
 			"character": "character-1666707883.json",
@@ -225,7 +225,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "(Don't change)",
-			"text": "Labyrinth?\nWait! Let me Explain! My name is Archi\nI was at my school library searching for a book then I saw a magical sparkling book, but then when I opened it, \nI was brought to this place then woken up in front of this door."
+			"text": "Labyrinth?\nWait! Let me Explain! My name is Archi\nI was at my school library searching for a book then I saw a magical sparkling book, but then when I opened it,\nI was brought to this place then woken up in front of this door."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -271,7 +271,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "I see. You are an another worlder. And you were brought here for a purpose. "
+			"text": "I see. You are an [color=#FFFF00]Another Worlder[/color]. And you were brought here for a purpose. "
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -317,7 +317,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Another worlder? What is that?"
+			"text": "[color=#FFFF00]Another Worlder[/color] What is that?"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -367,13 +367,13 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Individuals from another world that are transported here  are called Another Worlder.\nAnd they are classified into three types the Summoned, Stray and Reincarnated.\nSummoned are the ones that are summon through ritual\nStray are the one that accidentally brought here\nAnd Reincarnated are the ones that died from their world and reborn here."
+			"text": "Individuals from another world that are transported here  are called Another Worlder.\nAnd they are classified into three types the [color=#0000FF]Summoned[/color], [color=#c1c1c1]Stray[/color] and [color=#FF0000]Reincarnated[/color].\n[color=#0000FF]Summoned[/color] are the ones that are summon through ritual\n[color=#c1c1c1]Stray[/color] are the one that accidentally brought here\nAnd [color=#FF0000]Reincarnated[/color] are the ones that died from their world and reborn here."
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "It seems in your case you are Summoned here. "
+			"text": "It seems in your case you are Summoned here."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -567,7 +567,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "That door is a door leading to labyrinth.\nLabyrinths are complicated passage in which it is difficult to find one’s way. "
+			"text": "That door is a door leading to labyrinth.\nLabyrinths are complicated passage in which it is difficult to find one’s way."
 		},
 		{
 			"character": "character-1666707908.json",

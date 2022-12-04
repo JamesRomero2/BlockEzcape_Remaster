@@ -70,7 +70,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Yes, it is really hard and the boulders that could hit me\nThe Guardian was a bit of a challenge. I thought I was not going to escape that level"
+			"text": "Yes, it is really hard and the boulders that could hit me\nThe [color=#C4A484]Golem Guardian[/color] was a bit of a challenge. I thought I was not going to escape that level"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -128,7 +128,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "And now, It will get harder, the because this stage is All about Multiplication.\nListen Archi, You need to focus and understand the problem and solve it\nOr else, you won't be able to clear this stage."
+			"text": "And now, It will get harder, the because this stage is All about [color=#c4d4e0]Multiplication[/color].\nListen Archi, You need to focus and understand the problem and solve it\nOr else, you won't be able to clear this stage."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -274,7 +274,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 4.1: We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a \"Carry\" Number.\nCarry Number would be place at the top of the next column"
+			"text": "Step 4.1: We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a [color=#c4d4e0]\"Carry\"[/color] Number.\n[color=#c4d4e0]Carry[/color] Number would be place at the top of the next column"
 		},
 		{
 			"emit_signal": "step5",

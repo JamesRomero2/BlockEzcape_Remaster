@@ -70,7 +70,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Yes, we are inside the labyrinth. This is the first floor of the labyrinth\t"
+			"text": "Yes, we are inside the labyrinth. This is the first floor of the labyrinth, [color=#00FF00]The Add Forest of Numbers[/color[."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -165,139 +165,6 @@
 			"text": "That's because the labyrinth is a magical place where there is a different environment in each stage.\nIn order to clear this level, you need to solve the Math Problem in this level. "
 		},
 		{
-			"animation": "1-fade_in.gd",
-			"animation_length": 0,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "Default",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": true
-			},
-			"type": 0,
-			"z_index": 0
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_010",
-			"options": [
-
-			],
-			"portrait": "",
-			"question": "I have question\t\nDo you know how to add numbers?"
-		},
-		{
-			"choice": "Yes",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_001",
-			"portrait": "BaudHappy",
-			"text": "Great! We can now go to the level.\nLet's test how well do you know addition."
-		},
-		{
-			"event_id": "dialogic_015",
-			"id": "anchor-1634488067",
-			"index": 0,
-			"name": "try again"
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_010",
-			"options": [
-
-			],
-			"portrait": "BaudShock",
-			"question": "I have 3 apples and you have 2 apples. Then I decided to give you my 3 apples. How many apples do you have ? "
-		},
-		{
-			"choice": "7 Apples",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_001",
-			"portrait": "BaudAngry",
-			"text": "Close but wrong.\nTry again"
-		},
-		{
-			"anchor_id": "anchor-1634488067",
-			"event_id": "dialogic_016"
-		},
-		{
-			"choice": "5 Apples",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_001",
-			"portrait": "BaudHappy",
-			"text": "Great Job!"
-		},
-		{
-			"choice": "12 Apples",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_001",
-			"portrait": "BaudAngry",
-			"text": "That's not even close!\nTry again"
-		},
-		{
-			"anchor_id": "anchor-1634488067",
-			"event_id": "dialogic_016"
-		},
-		{
-			"event_id": "dialogic_013"
-		},
-		{
-			"choice": "No",
-			"condition": "",
-			"definition": "",
-			"event_id": "dialogic_011",
-			"value": ""
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "It's okay if you don't know. I'm here to help.\nYou see, Addition is a process of combining two whole numbers to its total amount.\nNow, let's try again"
-		},
-		{
-			"anchor_id": "anchor-1634488067",
-			"event_id": "dialogic_016"
-		},
-		{
-			"event_id": "dialogic_013"
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_001",
-			"portrait": "BaudHappy",
-			"text": "That's correct!"
-		},
-		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,
@@ -305,7 +172,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
-			"portrait": "Default",
+			"portrait": "",
 			"portrait_definition": "",
 			"position": {
 				"0": false,
@@ -341,7 +208,99 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "What are those across the floor?"
+			"text": "Math Problems?"
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This stage is all about[color=#008000]Addition[/color].\nYou see,[color=#008000]Addition[/color] is a process of combining two whole numbers to its total amount."
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "How can I use [color=#008000]Addition[/colo] in here?"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -387,7 +346,99 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Those are the [color=#008000]Value Box, Scanner, Temple and The Mathematical Box [/color]"
+			"text": "Before that, Let me tell you what are those across the floor."
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Okay, sure"
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Across the floor is the [color=#008000]Value Box, Scanner, Temple and The Mathematical Box [/color]"
 		},
 		{
 			"animation": "4-fade_out.gd",
