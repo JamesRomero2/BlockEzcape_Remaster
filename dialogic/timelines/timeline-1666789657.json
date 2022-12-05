@@ -3,6 +3,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -23,12 +24,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Good job! \n[color=#008000]Take Note:[/color] You need to put a value box that you won't need to complete the puzzle or else\nyou can't complete the level if the Value box you need is on the switch."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -49,6 +51,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -69,12 +72,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "ArchiHappy",
 			"text": "Thanks for the advice Baud! I'll keep that in mind "
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -95,6 +99,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -115,12 +120,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Now it gets harder and harder. You see the[color=#008000] Value[/color] that you need isn't in the level. \nWhat you need to do is find an [color=#008000]Operational Tile[/color] that will equal to the needed value in the [color=#008000]Mathematical Box[/color].\nAn [color=#008000]Operational Tile[/color] is a tile that will show the output based on its [color=#008000]Value[/color]. \nFor example, If you have [color=#008000]02 Value Box[/color] and an [color=#008000]Operational Tile is +2[/color], if you push the [color=#008000]Value Box[/color] to it will result to [color=#008000]04[/color]."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -141,6 +147,7 @@
 		{
 			"animation": "2-fade_in_up.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -161,12 +168,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "ArchiTalking",
 			"text": "Oh, I see, I see, Let me try it."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",

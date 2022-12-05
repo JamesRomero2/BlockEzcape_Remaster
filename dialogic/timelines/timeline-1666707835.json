@@ -556,7 +556,7 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Try solving this level."
 		},
 		{

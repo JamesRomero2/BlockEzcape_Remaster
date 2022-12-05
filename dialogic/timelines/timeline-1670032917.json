@@ -3,6 +3,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -26,7 +27,7 @@
 			"options": [
 
 			],
-			"portrait": "",
+			"portrait": "Default",
 			"question": "Do you still remember how to [color=#C4A484]Subtract[/color]?"
 		},
 		{
@@ -39,7 +40,7 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Okay , then let's continue"
 		},
 		{
@@ -52,7 +53,7 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Let's go over the lesson again."
 		},
 		{
@@ -61,6 +62,27 @@
 		},
 		{
 			"event_id": "dialogic_013"
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
 		}
 	],
 	"metadata": {

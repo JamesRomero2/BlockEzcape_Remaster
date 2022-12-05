@@ -3,6 +3,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -23,12 +24,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Now we reached the final level of the stage."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -49,6 +51,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -69,12 +72,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "This is the final level? Is there anything I need to worry about the final level?"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -95,6 +99,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -115,18 +120,19 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Yes, there is. The final level consists of [color=#00FF00]Combination of all the Tiles and Box[/color] you encounter in the past levels.\nAnd it is a series of problems."
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "That's why you need to be careful and goodluck!"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",

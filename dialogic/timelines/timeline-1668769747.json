@@ -3,6 +3,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0.5,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1668575118.json",
@@ -29,6 +30,7 @@
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0.5,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1668575118.json",
@@ -49,12 +51,13 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0.5,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
-			"portrait": "Default",
+			"portrait": "ArchiShock",
 			"portrait_definition": "",
 			"position": {
 				"0": true,
@@ -75,6 +78,7 @@
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0.5,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",

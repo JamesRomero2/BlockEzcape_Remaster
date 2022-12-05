@@ -3,12 +3,13 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
-			"portrait": "ArchiConfuse",
+			"portrait": "ArchiShock",
 			"portrait_definition": "",
 			"position": {
 				"0": true,
@@ -23,18 +24,19 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "(Don't change)",
+			"portrait": "ArchiShock",
 			"text": "Huh? Where am  I ?\nI remember going to the [color=#964B00]Library[/color] to find some book to help me with my homework.\nAnd then I saw a light coming from a book."
 		},
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "(Don't change)",
+			"portrait": "ArchiTalking",
 			"text": "........\nWhy is there a door here?"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -55,6 +57,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_position": false,
 			"change_z_index": false,
@@ -76,12 +79,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "(Don't change)",
+			"portrait": "Default",
 			"text": "Hey"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -102,6 +106,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -122,12 +127,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "(Don't change)",
+			"portrait": "ArchiAngry",
 			"text": "AAAAAAAAAAH\nWh-who are you?"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -148,6 +154,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -168,18 +175,19 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "(Don't change)",
+			"portrait": "Default",
 			"text": "Oh, Don't be scared. I'm not here to hurt you."
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "(Don't change)",
+			"portrait": "Default",
 			"text": "But first, Who are you? and what are you doing at the door to the labyrinth? "
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -200,12 +208,13 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
-			"portrait": "ArchiConfuse",
+			"portrait": "ArchiShock",
 			"portrait_definition": "",
 			"position": {
 				"0": true,
@@ -224,12 +233,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "(Don't change)",
+			"portrait": "ArchiShock",
 			"text": "Labyrinth?\nWait! Let me Explain! My name is Archi\nI was at my school library searching for a book then I saw a magical sparkling book, but then when I opened it,\nI was brought to this place then woken up in front of this door."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -250,6 +260,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -270,12 +281,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "I see. You are an [color=#FFFF00]Another Worlder[/color]. And you were brought here for a purpose. "
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -296,6 +308,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -316,12 +329,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "ArchiTalking",
 			"text": "[color=#FFFF00]Another Worlder[/color] What is that?"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -342,6 +356,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -366,18 +381,19 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Individuals from another world that are transported here  are called Another Worlder.\nAnd they are classified into three types the [color=#0000FF]Summoned[/color], [color=#c1c1c1]Stray[/color] and [color=#FF0000]Reincarnated[/color].\n[color=#0000FF]Summoned[/color] are the ones that are summon through ritual\n[color=#c1c1c1]Stray[/color] are the one that accidentally brought here\nAnd [color=#FF0000]Reincarnated[/color] are the ones that died from their world and reborn here."
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "It seems in your case you are [color=#0000FF]Summoned[/color] here."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -398,6 +414,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -418,12 +435,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "ArchiShock",
 			"text": "I was summon here? Who would do that? I'm just a student.\nWhy would they summon me? \nIs there any way to get back to my world?"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -444,6 +462,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -464,7 +483,7 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Yes, there's a way for you to get back to your world.\nUnlike the [color=#FF0000]Reincarnated[/color] ones who are reborn here\n[color=#0000FF]Summoned[/color] and [color=#c1c1c1]Stray[/color] are the ones who can go back to their world by fulfilling their purpose."
 		},
 		{
@@ -474,12 +493,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "You said, you woke up in front of the door, right?"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -500,6 +520,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -520,12 +541,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Yes, I was at the school library and  I saw a light coming from the book. And I opened it.\nI was unconscious when I got here and woke up in front of that door."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -546,6 +568,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -566,18 +589,19 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "That door is a door leading to labyrinth.\nLabyrinths are complicated passage in which it is difficult to find one’s way."
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Maybe this is the reason why you are summoned here.\nTo clear the labyrinth."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -598,6 +622,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -618,7 +643,7 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "ArchiSad",
 			"text": "I hope so. I want to go back to my world."
 		},
 		{
@@ -636,6 +661,7 @@
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -656,6 +682,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -676,12 +703,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Are you sure? Once we enter the door, there's no going back only forward.\nDon't worry, I'll go with you.\nLet's clear the labyrinth together."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -702,6 +730,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -728,6 +757,7 @@
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -748,6 +778,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -768,12 +799,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "BaudHappy",
 			"text": "Alright then, Let's go!!"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
