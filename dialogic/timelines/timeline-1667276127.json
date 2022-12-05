@@ -373,7 +373,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "It seems in your case you are Summoned here."
+			"text": "It seems in your case you are [color=#0000FF]Summoned[/color] here."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -465,7 +465,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Yes, there's a way for you to get back to your world.\nUnlike the Reincarnated ones who are reborn here\nSummoned and Stray are the ones who can go back to their world by fulfilling their purpose."
+			"text": "Yes, there's a way for you to get back to your world.\nUnlike the [color=#FF0000]Reincarnated[/color] ones who are reborn here\n[color=#0000FF]Summoned[/color] and [color=#c1c1c1]Stray[/color] are the ones who can go back to their world by fulfilling their purpose."
 		},
 		{
 			"emit_signal": "changeToBook",
