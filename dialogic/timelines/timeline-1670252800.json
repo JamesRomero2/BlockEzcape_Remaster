@@ -1,0 +1,307 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_015",
+			"id": "anchor-1634488067",
+			"index": 0,
+			"name": "repeat"
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Listen Archi, You need to focus and understand the problem and solve it\nOr else, you won't be able to clear this stage."
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "I'll try to understand it. "
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"emit_signal": "open",
+			"event_id": "dialogic_040"
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "This is the step by step process of how to [color=#FF00FF]divide a decimal numbers[/color]."
+		},
+		{
+			"emit_signal": "slide",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "First Step is to convert the problem into fraction form"
+		},
+		{
+			"emit_signal": "slide",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Count the number of decimal places in the Divisor until it became a whole number"
+		},
+		{
+			"emit_signal": "slide",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Since the decimal point stops at hundredths. Multiply both numbers by 100"
+		},
+		{
+			"emit_signal": "slide",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Now that both numbers are in whole number, you can now divide it."
+		},
+		{
+			"emit_signal": "slide",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "If you use the second method, divide 36 by 12\nNote: How many 12s does 36 have ? "
+		},
+		{
+			"emit_signal": "slide",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Now since the answer is 3, multiply 3 by 12\nNote: Use what you learned in multiplication to figure out the answer"
+		},
+		{
+			"emit_signal": "slide",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Place the answer below the 36, then subtract 36 by 36"
+		},
+		{
+			"emit_signal": "slide",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "If the Difference is 0, you got the answer correctly"
+		},
+		{
+			"emit_signal": "slide",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "If the Difference is 0, you got the answer correctly\nThe final answer would be 36 divided by 12 is equals to 3"
+		},
+		{
+			"emit_signal": "close",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "Default",
+			"question": "Did you understand it?"
+		},
+		{
+			"choice": "Yes",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"emit_signal": "close",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Good, Let's continue clearing the labyrinth"
+		},
+		{
+			"choice": "No",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"emit_signal": "reset",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Let's go over it again. Try to understand it this time."
+		},
+		{
+			"anchor_id": "anchor-1634488067",
+			"event_id": "dialogic_016"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1670252800.json",
+		"name": "Division"
+	}
+}
