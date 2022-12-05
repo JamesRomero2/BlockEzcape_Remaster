@@ -5,7 +5,7 @@ export(String) var timeLine
 var dialogPlaying := true
 
 func _input(event):
-	if GameManager._getGamePause():
+	if !GameManager._getGamePause() and !GameManager._getGameCutScenePlaying():
 		if event.is_action_pressed("space") and dialogPlaying:
 			if get_overlapping_bodies().size() > 0:
 				if get_node_or_null('DialogNode') == null:

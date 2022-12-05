@@ -82,7 +82,7 @@ _global_script_class_icons={
 
 config/name="Block Ezcape"
 run/main_scene="res://Scenes/Splash/Splash.tscn"
-config/icon="res://Assets/Textures/GameIconLogo_2_192x192.png"
+config/icon="res://Assets/Textures/GameIconLogo_256x256.png"
 config/windows_native_icon="res://Assets/GameAssets/Texture/GameIconLogo.ico"
 
 [audio]

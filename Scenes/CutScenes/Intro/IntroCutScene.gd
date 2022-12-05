@@ -23,6 +23,7 @@ func _ready():
 	get_tree().paused = false
 	GameManager._setGameOver(false)
 	GameManager._setGamePaused(true)
+	GameManager._setGameCutScenePlaying(true)
 	GlobalMusic._changeMusic(cutScene)
 	target = player
 	arrow.visible = false
@@ -38,6 +39,7 @@ func _process(delta):
 	
 func _startCutScene():
 	GameManager._setGamePaused(false)
+	GameManager._setGameCutScenePlaying(false)
 
 func _unhandled_input(event):
 	if event.is_pressed():

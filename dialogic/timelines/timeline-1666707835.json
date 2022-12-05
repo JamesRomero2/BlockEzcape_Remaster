@@ -3,6 +3,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -24,11 +25,12 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiShock",
-			"text": "Woah, Where are we? Is this really inside the labyrinth? "
+			"text": "Woah, Where are we? Is this really inside the labyrinth?"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -49,6 +51,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -69,12 +72,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Yes, we are inside the labyrinth. This is the first floor of the labyrinth, [color=#00FF00]The Add Forest of Numbers[/color]."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -95,6 +99,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -115,12 +120,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "(Don't change)",
+			"portrait": "ArchiShock",
 			"text": "How come there is a forest inside the labyrinth? "
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -141,6 +147,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -161,12 +168,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "That's because the labyrinth is a magical place where there is a different environment in each stage.\nIn order to clear this level, you need to solve the Math Problem in this level. "
+			"portrait": "Default",
+			"text": "That's because the labyrinth is a magical place where there is a different environment.\nIn order to clear this puzzle, you need to solve the Arithmetic Problem in this level. "
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -187,6 +195,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -207,12 +216,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Math Problems?"
+			"portrait": "ArchiShock",
+			"text": "Wait what ? Math Problems ?"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -233,6 +243,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -253,12 +264,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "This stage is all about [color=#008000]Addition[/color].\nYou see, [color=#008000]Addition[/color] is a process of combining two whole numbers to its total amount."
+			"portrait": "Default",
+			"text": "This area is all about [color=#008000]Addition[/color].\nYou see, [color=#008000]Addition[/color] is a process of combining two whole numbers to its total amount."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -279,6 +291,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -299,12 +312,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "How can I use [color=#008000]Addition[/color] in here?"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -325,6 +339,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -345,12 +360,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Before that, Let me tell you what are those across the floor."
+			"portrait": "BaudHappy",
+			"text": "Alright Listen but before that, Let me tell you what are those objects across the floor."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -371,6 +387,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -391,12 +408,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Okay, sure"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -416,7 +434,7 @@
 		},
 		{
 			"animation": "1-fade_in.gd",
-			"animation_length": 0,
+			"animation_length": 0.2,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -437,12 +455,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "Default",
 			"text": "Across the floor is the [color=#008000]Value Box, Scanner, Temple and The Mathematical Box [/color]"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -462,7 +481,7 @@
 		},
 		{
 			"animation": "1-fade_in.gd",
-			"animation_length": 0,
+			"animation_length": 0.2,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -483,12 +502,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "ArchiTalking",
 			"text": "What do they do?"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -509,6 +529,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -529,8 +550,8 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "The [color=#008000]Value box[/color] contains the value that needed to solve the level like in the first level the one you pushed is the  [color=#008000]Value Box[/color]\nThe [color=#008000]Scanner[/color] is where you will put the [color=#008000]Value box[/color] to read the box. \nIf it is correct then the Value will appear in the [color=#008000]Mathematical Box[/color].\nAnd if you manage to solve the [color=#008000]Mathematical box[/color]. \nThe [color=#008000] Temple[/color] will open, and you need to go to the temple to complete the level."
+			"portrait": "Default",
+			"text": "The [color=#249FDE]Value box[/color] contains a numeric value that needed to solve the level. You can push the Value Boxes in 4-Directions.\nSee those numbers in the Puzzle Board ? That is the [color=#249FDE]Value box[/color].\nNext is the [color=#DE2F24]Scanner Tile[/color], the [color=#DE2F24]Scanner Tile[/color] will scan the value of any [color=#249FDE]Value box[/color] that you put on top of it.\nThe [color=#DE2F24]Scanner Tile[/color] is important to completing the puzzle.\nSee that red circle with a shape in the middle ? That is the [color=#DE2F24]Scanner Tile[/color].\nThe [color=#DE2F24]Scanner Tile[/color] is connected to a [color=#FF0C9E]Crystal[/color]. You can see the connection by their color.\nA [color=#B4202A]Red Scanner Tile[/color] is connected to a [color=#B4202A]Red Crystal[/color]\nA [color=#14A02E]Green Scanner Tile[/color] is connected to a [color=#14A02E]Green Crystal[/color]\nA [color=#285CC4]Blue Scanner Tile[/color] is connected to a [color=#285CC4]Blue Crystal[/color]\nA [color=#FFFC40]Yellow Scanner Tile[/color] is connected to a [color=#FFFC40]Yellow Crystal[/color]\nThe purpose of a [color=#FF0C9E]Crystal[/color] is to reflect the value on its connected [color=#DE2F24]Scanner Tile[/color]\nThe value of the [color=#249FDE]Value box[/color] on top of the [color=#DE2F24]Scanner Tile[/color] will reflect on the [color=#FF0C9E]Crystal[/color].\nLastly is the [color=#8692FF]Portal[/color], the portal will appear if all the [color=#FF0C9E]Crystal[/color] has a numeric value and the Mathematical Problem in the Puzzle is Correct."
 		},
 		{
 			"character": "character-1666707908.json",
@@ -541,6 +562,7 @@
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
