@@ -234,7 +234,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 1: Convert the problem in a column form. "
+			"text": "First step is to Convert the problem in a column form.\nNote: The minuend is always at the top and the subtrahend is at the bottom."
 		},
 		{
 			"emit_signal": "slide",
@@ -244,7 +244,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": " Step 2: Align the decimal point if not aligned vertically"
+			"text": "Next is to Align the decimal point if not aligned vertically"
 		},
 		{
 			"emit_signal": "slide",
@@ -254,7 +254,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 3: Start Subtracting the numbers in a straight column from right to left."
+			"text": "Now Start Subtracting the numbers in a straight column from right to left."
 		},
 		{
 			"emit_signal": "slide",
@@ -264,7 +264,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 4: 8 plus 2 is equals to ?\nStart at 8 then count backward 2 times\n8, 7, 6, 5, 4, 3, 2\n8 minus 2 is 6"
+			"text": "Start Subtracting 2 minus 0 is equals to ?"
 		},
 		{
 			"emit_signal": "slide",
@@ -274,7 +274,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 4.1: We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a [color=#C4A484]\"Carry\"[/color] Number.\n[color=#C4A484]Carry[/color] Number would be place at the top of the next column"
+			"text": "Start at 2 then count backward 0 times\nThe answer is still 2"
 		},
 		{
 			"emit_signal": "slide",
@@ -284,7 +284,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 5: This column has a carry number so we should also add the carry number\n8 minus 1 minus 1 is equals to ?\nStart at 8 then count backward 1 time\n7\n7 minus 1 is, start at 7 then count backward 1 time\n6\n8 minus 1 minus 1 is 6"
+			"text": "Then Subtract the next column\nThe minuend is less than the subtrahend\nWhat you need to do is [color=#C4A484]Borrow[/color] from the next column"
 		},
 		{
 			"emit_signal": "slide",
@@ -294,7 +294,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 6: 2 minus 2 is equals to ?\nStart at 2 then count backward 2 times\n0\n2 minus 2 is 0"
+			"text": "This should be the formula after Borrowing\nThe next column will turned into 7\nThe 3 will turn 13, so 13 - 5 equals to 8"
 		},
 		{
 			"emit_signal": "slide",
@@ -304,7 +304,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 7: Bring down the decimal point in the difference"
+			"text": "And now subtract the rest from right to left\nAfter subtracting from right to left, bring down the decimal point"
 		},
 		{
 			"emit_signal": "slide",
@@ -314,7 +314,11 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 8: Our Final Answer would be\n0.08 minus 0.02 equals to 0.06"
+			"text": "This is should be the final answer\n0.832 minus 0.150 is equals to 0.682"
+		},
+		{
+			"emit_signal": "close",
+			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",

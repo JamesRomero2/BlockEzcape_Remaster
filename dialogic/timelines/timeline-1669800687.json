@@ -70,7 +70,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Yes, it is really hard and there is swords that could hit me\nThe [color=#c4d4e0]Knight Guardian[/color] was a bit of a challenge. \nI thought I was not going to escape that level"
+			"text": "Yes, it is really hard and there is swords that could hit me\nThe [color=#c4d4e0]Knight Guardian[/color] was a bit of a challenge.\nI thought I was not going to escape that level"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -197,7 +197,7 @@
 			"z_index": 0
 		},
 		{
-			"emit_signal": "blackboard",
+			"emit_signal": "open",
 			"event_id": "dialogic_040"
 		},
 		{
@@ -227,97 +227,97 @@
 			"text": "This is the step by step process of how to [color=#FF00FF]divide a decimal numbers[/color]."
 		},
 		{
-			"emit_signal": "step1",
+			"emit_signal": "slide",
 			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 1: Convert the problem in a column form. "
+			"text": "First Step is to convert the problem into fraction form"
 		},
 		{
-			"emit_signal": "step2",
+			"emit_signal": "slide",
 			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": " Step 2: Align the decimal point if not aligned vertically"
+			"text": "Count the number of decimal places in the Divisor until it became a whole number"
 		},
 		{
-			"emit_signal": "step3",
+			"emit_signal": "slide",
 			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 3: Start Dividing the numbers in a straight column from right to left."
+			"text": "Since the decimal point stops at hundredths. Multiply both numbers by 100"
 		},
 		{
-			"emit_signal": "step4",
+			"emit_signal": "slide",
 			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 4: 8 divided by 2 is equals to ?\nStart at 8 then count to 2 backwards, \nAnd every 2 is 1\nLike 8,7 = 1, 6, 5 = 2, 4, 3 = 3 and 2, 1 = 4\nSo 8 divided by 2 is equals to 4 "
+			"text": "Now that both numbers are in whole number, you can now divide it."
 		},
 		{
-			"emit_signal": "step4.1",
+			"emit_signal": "slide",
 			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 4.1: We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a [color=#FF00FF]\"Carry\"[/color] Number.\n[color=#FF00FF]Carry[/color] Number would be place at the top of the next column"
+			"text": "If you use the second method, divide 36 by 12\nNote: How many 12s does 36 have ? "
 		},
 		{
-			"emit_signal": "step5",
+			"emit_signal": "slide",
 			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 5: This column has a carry number so we should also add the carry number\n8 divided by 2 divided by 2 is equals to ?\nSince the 8 divided by 2 is equals to 4.\n4 divided 2 is ?\n4, 3 = 1, 2, 1 = 2\n4 divided by 2 = 2\n8 divided by 2 divided by 2 equals to 2"
+			"text": "Now since the answer is 3, multiply 3 by 12\nNote: Use what you learned in multiplication to figure out the answer"
 		},
 		{
-			"emit_signal": "step6",
+			"emit_signal": "slide",
 			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 6: 2 divided by 2 is equals to ?\nAgain the 2 is considered as 1\n2, 1 = 1\n2 divided by 2 equals 1"
+			"text": "Place the answer below the 36, then subtract 36 by 36"
 		},
 		{
-			"emit_signal": "step7",
+			"emit_signal": "slide",
 			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 7: Bring down the decimal point in the difference"
+			"text": "If the Difference is 0, you got the answer correctly"
 		},
 		{
-			"emit_signal": "step8",
+			"emit_signal": "slide",
 			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 8: Our Final Answer would be\n0.08 times 0.02 equals to 0.04"
+			"text": "If the Difference is 0, you got the answer correctly\nThe final answer would be 36 divided by 12 is equals to 3"
 		},
 		{
-			"emit_signal": "step9",
+			"emit_signal": "close",
 			"event_id": "dialogic_040"
 		},
 		{

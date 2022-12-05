@@ -240,7 +240,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "The first Step is to Convert the problem in a column form. "
+			"text": "The first Step is to Convert the problem in a column form.\nNote: The first addend is always at the top and the second is at the bottom."
 		},
 		{
 			"emit_signal": "slide",
@@ -290,7 +290,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a [color=#008000]\"Carry\" Number[/color].\n[color=#008000]Carry[/color] Number would be place at the top of the next column"
+			"text": "We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a [color=#008000]Carry Number[/color].\n[color=#008000]Carry[/color] Number would be place at the top of the next column"
 		},
 		{
 			"emit_signal": "slide",
@@ -336,7 +336,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 7: Bring down the decimal point in the sum"
+			"text": "Bring down the decimal point in the sum"
 		},
 		{
 			"emit_signal": "slide",
@@ -357,6 +357,10 @@
 			"event_id": "dialogic_001",
 			"portrait": "",
 			"text": "0.22 plus 0.08 equals to 0.30"
+		},
+		{
+			"emit_signal": "close",
+			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",
