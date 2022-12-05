@@ -270,7 +270,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Start adding 2 plus 8 is equals to ?\nStart at 2 then count forward 8 times\n2, 3, 4, 5, 6, 7, 8 , 9 , 10\n2 plus 8 is 10"
+			"text": "Start adding 2 plus 8 is equals to ?"
 		},
 		{
 			"emit_signal": "slide",
@@ -280,7 +280,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 4.1: We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a [color=#008000]\"Carry\" Number[/color].\n[color=#008000]Carry[/color] Number would be place at the top of the next column"
+			"text": "Start at 2 then count forward 8 times\n2, 3, 4, 5, 6, 7, 8 , 9 , 10\n2 plus 8 is equals to 10"
 		},
 		{
 			"emit_signal": "slide",
@@ -290,7 +290,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 5: This column has a carry number so we should also add the carry number\n2 plus 0 plus 1 is equals to ?\nStart at 2 then count forward 0 times\n2\n2 plus 1 is, start at 2 then count forward 1 time\n2, 3\n2 plus 0 plus 1 is 3"
+			"text": "We can only put 1 digit as an answer and that would be 0\nBut what will happen to 1 ?\nWe called that a [color=#008000]\"Carry\" Number[/color].\n[color=#008000]Carry[/color] Number would be place at the top of the next column"
 		},
 		{
 			"emit_signal": "slide",
@@ -300,7 +300,33 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 6: 0 plus 0 is equals to ?\nStart at 0 then count forward 0 times\n0\n0 plus 0 is 0"
+			"text": "This column has a carry number so we should also add the carry number\n1 plus 2 plus 0 is equals to ?"
+		},
+		{
+			"emit_signal": "slide",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "1 plus 2 plus 0 is equals to 3"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Start at 1 then count forward 2 times\n1 2 3\n3 plus 0 is, start at 3 then count forward 0 times\n3"
+		},
+		{
+			"emit_signal": "slide",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "0 plus 0 is equals to ?\nStart at 0 then count forward 0 times\n0\n0 plus 0 is 0"
 		},
 		{
 			"emit_signal": "slide",
@@ -320,11 +346,17 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Step 8: Our Final Answer would be\n0.22 plus 0.08 equals to 0.30"
+			"text": "Our Final Answer would be"
 		},
 		{
 			"emit_signal": "slide",
 			"event_id": "dialogic_040"
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "0.22 plus 0.08 equals to 0.30"
 		},
 		{
 			"character": "character-1666707908.json",
