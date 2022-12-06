@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Assets/Textures/CustomImport/effect_4.png" type="Texture" id=1]
 
-
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
 

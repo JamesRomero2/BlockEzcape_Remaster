@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/GameAssets/Particles/BlueGreenParticles.tres" type="Material" id=2]
 [ext_resource path="res://Assets/GameAssets/Animation/Splash/SplashAnim.tres" type="Animation" id=3]
 [ext_resource path="res://Assets/GameAssets/Materials/RemoveBlackBGMaterial.tres" type="Material" id=4]
-[ext_resource path="res://Assets/GameAssets/Texture/BurningDustParticleTexture.tres" type="Texture" id=7]
+[ext_resource path="res://Assets/Textures/CustomImport/DUMMY_Particles.png" type="Texture" id=5]
 
 [sub_resource type="StreamTexture" id=1]
 load_path = "res://.import/Keys.png-13469275d5aab9ee433265296e1dd612.stex"
@@ -27,7 +27,7 @@ scale = Vector2( 5, 5 )
 material = ExtResource( 4 )
 explosiveness = 0.3
 process_material = ExtResource( 2 )
-texture = ExtResource( 7 )
+texture = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Key"]
 texture = SubResource( 1 )
