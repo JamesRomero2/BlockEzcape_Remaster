@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Components/Dot/Dot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Components/Tilesets/Underground/Underground.tscn" type="PackedScene" id=2]
@@ -16,6 +16,17 @@
 [ext_resource path="res://GameObjects/Tiles/ScannerTile/ScannerTile.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=15]
 [ext_resource path="res://GameObjects/Character/NPC/Baud.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/Textures/DarkBackgroundPanel.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/3.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/4.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/1.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/8.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/7.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/10.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/2.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/5.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/6.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/9.png" type="Texture" id=27]
 
 [node name="Level 07" type="Node"]
 script = ExtResource( 15 )
@@ -27,7 +38,7 @@ answers = {
 3: null
 }
 resultAnimating = true
-requiredMedal = 4
+requiredMedal = 3
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -66,6 +77,7 @@ portalTheme = "Underground"
 [node name="Box2" parent="GameObjects" instance=ExtResource( 11 )]
 position = Vector2( -368, -8 )
 boxValue = 4
+boxWholeNum = false
 
 [node name="Box3" parent="GameObjects" instance=ExtResource( 11 )]
 position = Vector2( -384, 24 )
@@ -184,6 +196,97 @@ position = Vector2( -568, 120 )
 scale = Vector2( 0.8, 0.5 )
 texture = ExtResource( 4 )
 centered = false
+
+[node name="WhiteBoard" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="WhiteBoard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Board" type="NinePatchRect" parent="WhiteBoard/Control"]
+modulate = Color( 1, 1, 1, 0.980392 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -312.0
+margin_top = -172.0
+margin_right = 312.0
+margin_bottom = 92.0
+texture = ExtResource( 17 )
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Slides" type="Control" parent="WhiteBoard/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -88.0
+rect_min_size = Vector2( 624, 264 )
+
+[node name="TextureRect" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 20 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 24 )
+expand = true
+
+[node name="TextureRect3" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 18 )
+expand = true
+
+[node name="TextureRect4" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 19 )
+expand = true
+
+[node name="TextureRect5" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 25 )
+expand = true
+
+[node name="TextureRect6" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 26 )
+expand = true
+
+[node name="TextureRect7" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 22 )
+expand = true
+
+[node name="TextureRect8" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 21 )
+expand = true
+
+[node name="TextureRect9" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 27 )
+expand = true
+
+[node name="TextureRect10" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 23 )
+expand = true
 
 [node name="PausePanel" parent="." instance=ExtResource( 9 )]
 visible = false

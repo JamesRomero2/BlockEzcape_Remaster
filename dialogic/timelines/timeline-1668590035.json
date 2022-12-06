@@ -73,7 +73,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "BaudSad",
-			"text": "This is the [color=#c4d4e0]Dungeon Stage[/color]\nAnd yes this used to be a castle."
+			"text": "This is the [color=#c4d4e0]Dungeon Augmentation[/color]\nAnd yes this used to be a castle."
 		},
 		{
 			"character": "character-1666707908.json",
@@ -181,7 +181,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "BaudSad",
-			"text": "Now, Let's try to clear this stage and go to the last stage"
+			"text": "Now, Let's try to clear this stage and go to the last area."
 		},
 		{
 			"animation": "4-fade_out.gd",

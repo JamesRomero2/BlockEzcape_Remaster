@@ -25,7 +25,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "I saw you struggling at the last stage"
+			"text": "Now that you've learned [color=#008000]Addition[/color] and even [color=#C4A484]Subtraction[/color].\nIt's time for you to learn [color=#63E9B9]Multiplication[/color]."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -73,7 +73,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Yes, it is really hard and the boulders that could hit me\nThe [color=#C4A484]Golem Guardian[/color] was a bit of a challenge. I thought I was not going to escape that level"
+			"text": "This is exciting, Time to learn [color=#63E9B9]Multiplication[/color]."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -121,19 +121,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "I told you, you can do it. As you progress, the level is getting harder and harder\nJust understand how to solve the problem and don't worry I'm here to teach you how to solve it step by step"
-		},
-		{
-			"event_id": "dialogic_015",
-			"id": "anchor-1634488067",
-			"index": 0,
-			"name": "repeat"
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_001",
-			"portrait": "Default",
-			"text": "And now, It will get harder, the because this stage is All about [color=#c4d4e0]Multiplication[/color].\nListen Archi, You need to focus and understand the problem and solve it\nOr else, you won't be able to clear this stage."
+			"text": "[color=#63E9B9]Multiplication[/color] is the same as [color=#008000]Addition[/color].\nYou will repeatedly add the same number depending on the second number.\nFor Example, 2 multiplied by 3. is the same as 2 plus 2 plus 2, where the answer is still 6."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -155,6 +143,12 @@
 			},
 			"type": 1,
 			"z_index": 0
+		},
+		{
+			"event_id": "dialogic_015",
+			"id": "anchor-1634488067",
+			"index": 0,
+			"name": "repeat"
 		},
 		{
 			"animation": "1-fade_in.gd",

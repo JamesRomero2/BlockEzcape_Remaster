@@ -31,7 +31,6 @@ var secs
 var mins
 var undoRedoJournal: UndoRedo = UndoRedo.new()
 var canUndo: bool = true
-var playingDialog: bool = false
 var forestMusic = load("res://Assets/Audio/Music/Forest/FinalForestLevelMusic.ogg")
 var undergroundMusic = load("res://Assets/Audio/Music/Underground/FinalUndergroundLevelMusic.ogg")
 var castleMusic = load("res://Assets/Audio/Music/Castle/FinalCastleLevelMusic.ogg")
@@ -51,7 +50,7 @@ func _ready():
 	levelMusicManager()
 	closePresentation()
 	hideAllSlide()
-	
+
 	rand.randomize()
 	noise.seed = rand.randi()
 	noise.period = 2
@@ -61,7 +60,7 @@ func _playDialog():
 		_playGame()
 	else:
 		if get_node_or_null('DialogNode') == null:
-			playingDialog = true
+			GameManager._setGameDialogPlaying(true)
 			GameManager._setGamePaused(true)
 			GameManager._setGameOver(true)
 			GameManager._setGameTimerActive(false)
@@ -82,10 +81,11 @@ func dialogSetEnded():
 		closePresentation()
 
 func _playGame():
-	playingDialog = false
+	GameManager._setGameDialogPlaying(false)
 	GameManager._setGameOver(false)
 	GameManager._setGamePaused(false)
 	GameManager._setGameTimerActive(true)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	if get_node_or_null("GameObjects/Traps") != null: 
 		get_node_or_null("GameObjects/Traps")._cast()
 
@@ -115,7 +115,7 @@ func _unhandled_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("escape") and !GameManager._getGameOver():
 			_changeGameState()
-		if playingDialog and event.is_action_pressed("skip"):
+		if GameManager._getGameDialogPlaying() and event.is_action_pressed("skip"):
 				var dialog = self.get_child(get_child_count() - 1)
 				if dialog.get_child(0).name == "DialogNode":
 					var dialogNode = dialog.get_child(0)

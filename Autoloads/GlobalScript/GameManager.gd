@@ -8,6 +8,7 @@ var gameOver := true setget _setGameOver, _getGameOver
 var gameTimerActive := false setget _setGameTimerActive, _getGameTimerActive
 var playerAnimating := false setget _setPlayerAnimating, _getPlayerAnimating
 var gameCutScenePlaying := false setget _setGameCutScenePlaying, _getGameCutScenePlaying
+var gameDialogPlaying := false setget _setGameDialogPlaying, _getGameDialogPlaying
 var worldSelectorPosition: Vector2 = Vector2.ZERO setget _setWorldSelectorPosition, _getWorldSelectorPosition
 var worldLevelOpen: Array = Array() setget _setOpenLevels, _getOpenLevels
 
@@ -34,6 +35,12 @@ func _setGameCutScenePlaying(value):
 
 func _getGameCutScenePlaying():
 	return gameCutScenePlaying
+
+func _setGameDialogPlaying(value):
+	gameDialogPlaying = value
+
+func _getGameDialogPlaying():
+	return gameDialogPlaying
 
 func _setWorldSelectorPosition(value):
 	worldSelectorPosition = value

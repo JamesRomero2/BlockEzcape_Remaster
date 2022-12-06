@@ -73,7 +73,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "BaudSad",
-			"text": "This is the [color=#FF00FF]Magical Stage[/color]."
+			"text": "This is the [color=#FF00FF]Severancial World [/color]."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -121,7 +121,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiTalking",
-			"text": "[color=#FF00FF]Magical Stage[/color]?"
+			"text": "[color=#FF00FF]Severancial World [/color]?"
 		},
 		{
 			"animation": "4-fade_out.gd",

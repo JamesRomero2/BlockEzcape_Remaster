@@ -121,7 +121,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiTalking",
-			"text": "I think the Level and Stages is easy."
+			"text": "I think the puzzles in this area is so easy."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -169,7 +169,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "It's not always like this in each Levels and Stages. You can also be fail in here. \nThere is a [color=#008000]Poison Puddle[/color] that damage you  if you step on it.\nIf you are damage [color=#008000]five times in a row[/color], you will fail and  go back to the start of the level."
+			"text": "It's not always like this in each area. You can also fail and get stuck in here. \nThere is a [color=#008000]Venom[/color] that damage you if you step on it.\nIf you get damaged [color=#008000]five consecutive times[/color], you will fail."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -217,7 +217,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiShock",
-			"text": "Really? I thought it is easy. I need to be careful not to step on those tiles."
+			"text": "Really? I thought it is easy. I need to be careful not to step on those venoms."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -265,7 +265,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Yes, that's why you need to be careful."
+			"text": "Yes, that's why you need to be careful.\nBut do not worry Archi. Since I am here, when you get damaged after 5 seconds I will heal you."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -313,7 +313,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiSad",
-			"text": "Okay "
+			"text": "Okay Thanks Baud ! "
 		},
 		{
 			"animation": "4-fade_out.gd",

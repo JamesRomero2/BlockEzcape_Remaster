@@ -20,8 +20,6 @@
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=23]
 
-
-
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 3 ) ],
@@ -62,6 +60,7 @@ answers = {
 2: null,
 3: null
 }
+introTimelineName = "/Underground/Level 10(BossIntro)"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -288, 160 )
@@ -118,13 +117,14 @@ position = Vector2( 408, 168 )
 
 [node name="Golem" parent="Board" instance=ExtResource( 4 )]
 position = Vector2( 208, 80 )
-frame = 1
+frame = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/Golem"]
 show_behind_parent = true
 position = Vector2( 0, 40 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]

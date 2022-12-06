@@ -169,7 +169,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "That's because the labyrinth is a magical place where there is a different environment.\nIn order to clear this puzzle, you need to solve the Arithmetic Problem in this level. "
+			"text": "That's because the labyrinth is a magical place where there are different environments.\nTo Clear the puzzles in the Labyrinth, it is required to solve the Math Problem in each level."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -265,7 +265,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "This area is all about [color=#008000]Addition[/color].\nYou see, [color=#008000]Addition[/color] is a process of combining two whole numbers to its total amount."
+			"text": "This area in the Labyrinth contains [color=#008000]Addition[/color] Problems.\nYou see, [color=#008000]Addition[/color] is a process of combining two whole numbers to its total amount."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -456,7 +456,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Across the floor is the [color=#008000]Value Box, Scanner, Temple and The Mathematical Box [/color]"
+			"text": "Across the floor is the [color=#249FDE]Value box[/color], [color=#DE2F24]Scanner Tile[/color], and the [color=#FF0C9E]Crystal[/color]."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -552,12 +552,6 @@
 			"event_id": "dialogic_001",
 			"portrait": "Default",
 			"text": "The [color=#249FDE]Value box[/color] contains a numeric value that needed to solve the level. You can push the Value Boxes in 4-Directions.\nSee those numbers in the Puzzle Board ? That is the [color=#249FDE]Value box[/color].\nNext is the [color=#DE2F24]Scanner Tile[/color], the [color=#DE2F24]Scanner Tile[/color] will scan the value of any [color=#249FDE]Value box[/color] that you put on top of it.\nThe [color=#DE2F24]Scanner Tile[/color] is important to completing the puzzle.\nSee that red circle with a shape in the middle ? That is the [color=#DE2F24]Scanner Tile[/color].\nThe [color=#DE2F24]Scanner Tile[/color] is connected to a [color=#FF0C9E]Crystal[/color]. You can see the connection by their color.\nA [color=#B4202A]Red Scanner Tile[/color] is connected to a [color=#B4202A]Red Crystal[/color]\nA [color=#14A02E]Green Scanner Tile[/color] is connected to a [color=#14A02E]Green Crystal[/color]\nA [color=#285CC4]Blue Scanner Tile[/color] is connected to a [color=#285CC4]Blue Crystal[/color]\nA [color=#FFFC40]Yellow Scanner Tile[/color] is connected to a [color=#FFFC40]Yellow Crystal[/color]\nThe purpose of a [color=#FF0C9E]Crystal[/color] is to reflect the value on its connected [color=#DE2F24]Scanner Tile[/color]\nThe value of the [color=#249FDE]Value box[/color] on top of the [color=#DE2F24]Scanner Tile[/color] will reflect on the [color=#FF0C9E]Crystal[/color].\nLastly is the [color=#8692FF]Portal[/color], the portal will appear if all the [color=#FF0C9E]Crystal[/color] has a numeric value and the Mathematical Problem in the Puzzle is Correct."
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_001",
-			"portrait": "Default",
-			"text": "Try solving this level."
 		},
 		{
 			"animation": "4-fade_out.gd",

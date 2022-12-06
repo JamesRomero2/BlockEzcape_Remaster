@@ -25,7 +25,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Now, we arrive at the deepest stage of the labyrinth. It's located under the labyrinth.\nAre you ready to face the dangers that lie ahead of [color=#C4A484]Underground Stage,[/color] of the Labyrinth ?\nThis stage is called [color=#C4A484]Diminishing the Surface[/color]."
+			"text": "Now, we arrive at the deepest part of the labyrinth. It's located under the Labyrinth.\nAre you ready to face the dangers that lie ahead in the Next Area of the Labyrinth ?\nThis Area is called [color=#C4A484]Diminishing the Surface[/color]."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -73,7 +73,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiTalking",
-			"text": "That's why it is hot because of the volcano and the magma inside the stage."
+			"text": "That's why it is hot because of the volcano and the magma inside the area."
 		},
 		{
 			"animation": "4-fade_out.gd",

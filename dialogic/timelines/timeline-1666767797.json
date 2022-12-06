@@ -25,7 +25,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiHappy",
-			"text": "Alright, I finished it! Let's go.\nWhat's next?"
+			"text": "Alright, I completed the last puzzle! Let's go.\nWhat's next?"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -73,7 +73,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Wow, you look so happy . Things are about to get harder now.\nYou see those Red Blocks. It is blocking your way."
+			"text": "Wow, you look so happy. Things are about to get harder now.\nYou see those [color=#EA1B29]Red Blocks[/color]. It is blocking your way to solve the puzzle.\nThe [color=#EA1B29]Red Blocks[/color] is called [color=#EA1B29]Phantom Block[/color]"
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -169,7 +169,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "There's always a way Archi. You see those blue tile ? \nIf you put something on top of it the red blocks will be disabled and you can complete the level now. \nThe blue tile is a switch that will open the blocked pathway."
+			"text": "There's always a way Archi. You see those [color=#B9BFFB]Blue tile[/color] ?\nThe [color=#B9BFFB]Blue tile[/color] is called [color=#B9BFFB]Lever tile[/color] \nIf you put something on top of a [color=#B9BFFB]Lever tile[/color]  the [color=#EA1B29]Phantom Block[/color] will be disabled and you can pass through now. \nThe [color=#B9BFFB]Lever tile[/color]  is a switch that will open the blocked pathway."
 		},
 		{
 			"animation": "4-fade_out.gd",
@@ -229,54 +229,6 @@
 			"event_id": "dialogic_002",
 			"mirror_portrait": false,
 			"portrait": "Default",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 1,
-			"z_index": 0
-		},
-		{
-			"animation": "1-fade_in.gd",
-			"animation_length": 0,
-			"animation_wait": true,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "Default",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": true
-			},
-			"type": 0,
-			"z_index": 0
-		},
-		{
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_001",
-			"portrait": "Default",
-			"text": "Goodluck!"
-		},
-		{
-			"animation": "4-fade_out.gd",
-			"animation_length": 0,
-			"animation_wait": true,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "",
 			"portrait_definition": "",
 			"position": {
 				"0": false,

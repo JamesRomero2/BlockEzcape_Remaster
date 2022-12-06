@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Underground/Underground.tscn" type="PackedScene" id=2]
@@ -15,19 +15,19 @@
 [ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=13]
 [ext_resource path="res://GameObjects/Character/NPC/Baud.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Textures/PauseButton.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Regular.ttf" type="DynamicFontData" id=17]
-[ext_resource path="res://Assets/Textures/UndoButton.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/3.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/4.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/1.png" type="Texture" id=18]
 [ext_resource path="res://GameObjects/Blocks/Crystal/Crystal.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Components/DoubleDigits/DoubleDigitSprite.tscn" type="PackedScene" id=20]
-
-[sub_resource type="DynamicFont" id=8]
-size = 12
-font_data = ExtResource( 17 )
-
-[sub_resource type="DynamicFont" id=10]
-size = 12
-font_data = ExtResource( 17 )
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/8.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/7.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/10.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/2.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/5.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/6.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Textures/Slides/Subtraction/9.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Textures/DarkBackgroundPanel.png" type="Texture" id=28]
 
 [node name="Level 06" type="Node"]
 script = ExtResource( 1 )
@@ -39,7 +39,7 @@ answers = {
 3: null
 }
 resultAnimating = true
-requiredMedal = 4
+requiredMedal = 3
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -122,7 +122,6 @@ scannerID = 1
 
 [node name="Sprite2" parent="GameObjects/Question/Answer" instance=ExtResource( 12 )]
 position = Vector2( -544, 128 )
-frame = 0
 
 [node name="Top" type="Node2D" parent="GameObjects/Question"]
 
@@ -162,6 +161,7 @@ isWholeNumber = false
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 12 )]
 position = Vector2( -544, 104 )
+frame = 0
 
 [node name="Bottom" type="Node2D" parent="GameObjects/Question"]
 
@@ -179,6 +179,7 @@ objectValue = 17
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 12 )]
 position = Vector2( -544, 88 )
+frame = 0
 
 [node name="DoubleDigits4" parent="GameObjects/Question/Bottom" instance=ExtResource( 20 )]
 position = Vector2( -528, 112 )
@@ -235,72 +236,99 @@ centered = false
 [node name="Baud" parent="GameObjects" instance=ExtResource( 14 )]
 position = Vector2( -408, 88 )
 
-[node name="PausePanel" parent="." instance=ExtResource( 15 )]
-visible = false
+[node name="WhiteBoard" type="CanvasLayer" parent="."]
 
-[node name="UILayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Buttons" type="Control" parent="UILayer"]
+[node name="Control" type="Control" parent="WhiteBoard"]
 anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="PauseButton" type="Button" parent="UILayer/Buttons"]
-anchor_left = 1.0
+[node name="Board" type="NinePatchRect" parent="WhiteBoard/Control"]
+modulate = Color( 1, 1, 1, 0.980392 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -312.0
+margin_top = -172.0
+margin_right = 312.0
+margin_bottom = 92.0
+texture = ExtResource( 28 )
+patch_margin_left = 8
+patch_margin_top = 6
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Slides" type="Control" parent="WhiteBoard/Control"]
 anchor_right = 1.0
-margin_left = -40.0
+anchor_bottom = 1.0
+margin_left = 8.0
 margin_top = 8.0
 margin_right = -8.0
-margin_bottom = 64.0
-flat = true
+margin_bottom = -88.0
+rect_min_size = Vector2( 624, 264 )
 
-[node name="TextureRect" type="TextureRect" parent="UILayer/Buttons/PauseButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 16 )
-stretch_mode = 6
-
-[node name="Label" type="Label" parent="UILayer/Buttons/PauseButton/TextureRect"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -12.0
-margin_top = -22.0
-margin_right = 13.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 8 )
-text = "Esc"
-align = 1
-valign = 1
-
-[node name="UndoButton" type="Button" parent="UILayer/Buttons"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -80.0
-margin_top = 8.0
-margin_right = -48.0
-margin_bottom = 64.0
-flat = true
-
-[node name="TextureRect2" type="TextureRect" parent="UILayer/Buttons/UndoButton"]
+[node name="TextureRect" type="TextureRect" parent="WhiteBoard/Control/Slides"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 18 )
-stretch_mode = 6
+expand = true
 
-[node name="Label" type="Label" parent="UILayer/Buttons/UndoButton/TextureRect2"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+[node name="TextureRect2" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -16.0
-margin_top = -22.0
-margin_right = 16.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 10 )
-text = "Undo"
-align = 1
-valign = 1
+texture = ExtResource( 24 )
+expand = true
+
+[node name="TextureRect3" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 16 )
+expand = true
+
+[node name="TextureRect4" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="TextureRect5" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 25 )
+expand = true
+
+[node name="TextureRect6" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 26 )
+expand = true
+
+[node name="TextureRect7" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 22 )
+expand = true
+
+[node name="TextureRect8" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 21 )
+expand = true
+
+[node name="TextureRect9" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 27 )
+expand = true
+
+[node name="TextureRect10" type="TextureRect" parent="WhiteBoard/Control/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 23 )
+expand = true
+
+[node name="PausePanel" parent="." instance=ExtResource( 15 )]
+visible = false
 
 [node name="ResultPanel" parent="." instance=ExtResource( 11 )]
 visible = false
@@ -308,8 +336,6 @@ visible = false
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
 
-[connection signal="pressed" from="UILayer/Buttons/PauseButton" to="." method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="UILayer/Buttons/UndoButton" to="." method="_on_UndoButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="UndergroundTilemap"]
