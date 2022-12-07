@@ -3,6 +3,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -23,12 +24,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "In this last level of the Underground Stage\nThe Guardian in this stage is the Rock Maiden"
+			"portrait": "Default",
+			"text": "In this last level of the [color=#C4A484]Underground Stage[/color]\nThe Guardian in this stage is the [color=#C4A484]The Golem[/color] "
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -49,6 +51,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -69,12 +72,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Rock Maiden?\nSounds like a powerful Guardian"
+			"portrait": "ArchiTalking",
+			"text": "[color=#C4A484]Golem[/color]?\nSounds like a powerful Guardian"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -95,6 +99,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -115,12 +120,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Yes, indeed.\nThe Rock Maiden will interfere in clearing the  level.\nBe careful and watch out for rocks."
+			"portrait": "Default",
+			"text": "Yes, indeed.\n[color=#C4A484]The Golem[/color] will interfere in clearing the  level.\nBe careful and watch out for rocks."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",

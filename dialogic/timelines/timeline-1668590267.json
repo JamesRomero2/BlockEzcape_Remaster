@@ -3,6 +3,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -23,18 +24,19 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Looks like the army of the late King and Queen is corrupted by the Guardian.\nThe Knight Commander is their leader."
+			"portrait": "BaudShock",
+			"text": "Looks like the army of the late King and Queen is corrupted by the Guardian.\nThis is the [color=#63E9B9]Knight[/color] Guardian\n"
 		},
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Be careful not to get hit by the knights "
+			"portrait": "BaudShock",
+			"text": "Be careful not to get hit by the flying swords "
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",

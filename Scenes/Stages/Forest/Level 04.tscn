@@ -175,7 +175,7 @@ isWholeNumber = false
 
 [node name="DoubleDigits8" parent="GameObjects/Question/Top" instance=ExtResource( 19 )]
 position = Vector2( -440, 168 )
-objectValue = 80
+objectValue = 90
 isWholeNumber = false
 
 [node name="DoubleDigits4" parent="GameObjects/Question/Top" instance=ExtResource( 19 )]

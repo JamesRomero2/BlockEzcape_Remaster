@@ -436,7 +436,7 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiShock",
-			"text": "I was summon here? Who would do that? I'm just a student.\nWhy would they summon me? \nIs there any way to get back to my world?"
+			"text": "I was summon here? Who would do that?\nI'm just a student.\nWhy would they summon me? \nIs there any way to get back to my world?"
 		},
 		{
 			"animation": "4-fade_out.gd",
