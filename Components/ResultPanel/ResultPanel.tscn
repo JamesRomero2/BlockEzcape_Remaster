@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Components/ResultPanel/ResultPanel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Backto1982/BACKTO1982.TTF" type="DynamicFontData" id=2]
@@ -120,6 +120,12 @@ font_data = ExtResource( 13 )
 [sub_resource type="DynamicFont" id=34]
 size = 24
 font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=40]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="Animation" id=35]
 resource_name = "LevelLocked"
@@ -506,7 +512,8 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id=37]
 resource_name = "ResultsAnimationForEndLevel"
-length = 4.0
+length = 15.0
+step = 1.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Container/Label2:rect_position")
 tracks/0/interp = 1
@@ -634,9 +641,15 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 4 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 5, 11, 15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "openFinal"
+}, {
+"args": [  ],
+"method": "openEnd"
+}, {
 "args": [  ],
 "method": "playLastScene"
 } ]
@@ -940,6 +953,32 @@ fit_content_height = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 1, 1, 1, 0 )
+
+[node name="Label3" type="Label" parent="Container/ColorRect2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 200, 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Archi and Baud Go Back to their World,
+Lifting Up the curse and Freeing Baud,
+Everything goes back to Normal,
+As it should be,"
+align = 1
+valign = 1
+
+[node name="Label4" type="Label" parent="Container/ColorRect2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 200, 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 40 )
+text = "Thank you For Playing BlockEzcape,
+THE END"
+align = 1
+valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/LevelLocked = SubResource( 35 )

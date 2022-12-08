@@ -34,7 +34,7 @@
 [ext_resource path="res://Assets/Textures/Slides/Addition/6.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Textures/Slides/Addition/9.png" type="Texture" id=33]
 
-[sub_resource type="Shader" id=15]
+[sub_resource type="Shader" id=16]
 code = "shader_type canvas_item;
 
 uniform vec4 color: hint_color;
@@ -46,13 +46,13 @@ void fragment() {
 	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
 }"
 
-[sub_resource type="ShaderMaterial" id=13]
-shader = SubResource( 15 )
+[sub_resource type="ShaderMaterial" id=17]
+shader = SubResource( 16 )
 shader_param/color = Color( 0, 0.27451, 0.188235, 1 )
 shader_param/multiplier = -0.5
 shader_param/softness = 6.0
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=18]
 size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -138,7 +138,6 @@ position = Vector2( 8, -128 )
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 4 )]
 position = Vector2( -472, 120 )
-frame = 0
 
 [node name="DoubleDigits" parent="GameObjects/Question/Top" instance=ExtResource( 19 )]
 position = Vector2( -456, 128 )
@@ -150,6 +149,7 @@ objectValue = 1
 
 [node name="Sprite2" parent="GameObjects/Question/Top" instance=ExtResource( 4 )]
 position = Vector2( -472, 104 )
+frame = 0
 
 [node name="DoubleDigits3" parent="GameObjects/Question/Top" instance=ExtResource( 19 )]
 position = Vector2( -456, 112 )
@@ -186,7 +186,6 @@ objectValue = 2
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 4 )]
 position = Vector2( -472, 136 )
-frame = 0
 
 [node name="DoubleDigits3" parent="GameObjects/Question/Bottom" instance=ExtResource( 19 )]
 position = Vector2( -456, 144 )
@@ -201,7 +200,6 @@ isWholeNumber = false
 
 [node name="Sprite3" parent="GameObjects/Question/Answer" instance=ExtResource( 4 )]
 position = Vector2( -472, 160 )
-frame = 0
 
 [node name="Crystal" parent="GameObjects/Question/Answer" instance=ExtResource( 3 )]
 position = Vector2( -456, 168 )
@@ -233,9 +231,6 @@ spawnWaitTime = 1
 
 [node name="Timer" type="Timer" parent="GameObjects/Traps"]
 
-[node name="HealTimer" type="Timer" parent="GameObjects/Traps"]
-wait_time = 5.0
-
 [node name="Trap" type="Node2D" parent="GameObjects/Traps"]
 
 [node name="Venom" parent="GameObjects/Traps/Trap" instance=ExtResource( 10 )]
@@ -252,54 +247,6 @@ position = Vector2( -320, -32 )
 
 [node name="Venom5" parent="GameObjects/Traps/Trap" instance=ExtResource( 10 )]
 position = Vector2( -288, -32 )
-
-[node name="Death" type="CanvasLayer" parent="GameObjects/Traps"]
-pause_mode = 2
-layer = 2
-
-[node name="ColorRect" type="ColorRect" parent="GameObjects/Traps/Death"]
-material = SubResource( 13 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="DeathScreen" type="Control" parent="GameObjects/Traps/Death"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Label" type="Label" parent="GameObjects/Traps/Death/DeathScreen"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 14 )
-text = "ARCHI GOT LOST"
-align = 1
-valign = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GameObjects/Traps/Death/DeathScreen"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -150.0
-margin_top = 36.0
-margin_right = 150.0
-margin_bottom = 73.0
-rect_min_size = Vector2( 300, 37 )
-rect_pivot_offset = Vector2( 150, 18 )
-custom_constants/separation = 50
-alignment = 1
-
-[node name="Reset" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 17 )]
-margin_left = 36.0
-margin_right = 147.0
-margin_bottom = 37.0
-text = "RESTART"
-
-[node name="Quit" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 17 )]
-margin_left = 197.0
-margin_right = 264.0
-margin_bottom = 37.0
-text = "QUIT"
 
 [node name="WhiteBoard" type="CanvasLayer" parent="."]
 
@@ -416,8 +363,59 @@ visible = false
 [node name="ResultPanel" parent="." instance=ExtResource( 12 )]
 visible = false
 
+[node name="Death" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="Death"]
+material = SubResource( 17 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DeathScreen" type="Control" parent="Death"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Death/DeathScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 18 )
+text = "ARCHI GOT LOST"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Death/DeathScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 300, 37 )
+rect_pivot_offset = Vector2( 150, 18 )
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Reset" parent="Death/DeathScreen/HBoxContainer" instance=ExtResource( 17 )]
+margin_left = 36.0
+margin_right = 147.0
+margin_bottom = 37.0
+text = "RESTART"
+
+[node name="Quit" parent="Death/DeathScreen/HBoxContainer" instance=ExtResource( 17 )]
+margin_left = 197.0
+margin_right = 264.0
+margin_bottom = 37.0
+text = "QUIT"
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="HealTimer" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

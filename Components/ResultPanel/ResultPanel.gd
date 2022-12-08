@@ -136,4 +136,10 @@ func playLastScene():
 	if newRecord:
 		saveRecordToSaveFile()
 	LoadingScreen.loadLevel("Credits")
-	
+
+func openFinal():
+	$Container/ColorRect2/Label3.visible = true
+
+func openEnd():
+	$Container/ColorRect2/Label3.visible = false
+	$Container/ColorRect2/Label4.visible = true

@@ -11,6 +11,11 @@ onready var resultPanel := $ResultPanel
 onready var animation := $AnimationPlayer
 onready var stageArea := $StageArea
 onready var bg := $BackgroundLayer/TextureRect
+onready var death := $Death
+onready var deathFog := $Death/ColorRect
+onready var deathScreen := $Death/DeathScreen
+onready var resetButton := $Death/DeathScreen/HBoxContainer/Reset
+onready var quitButton := $Death/DeathScreen/HBoxContainer/Quit
 
 var set: int = 0
 var puzzleSets = Array()
@@ -28,7 +33,12 @@ var portalBG = load("res://Assets/Textures/LevelBG/portalWorld.jpg")
 var fieldsBG = load("res://Assets/Textures/LevelBG/fields.jpg")
 
 func _ready():
+	get_tree().current_scene = self
+	get_tree().paused = false
+	deathFog.material.set_shader_param("softness", 6)
 	GlobalMusic._changeMusic(setBossStageBGMusic())
+	resetButton.connect("buttonPressed", self, "_on_Reset_buttonPressed")
+	quitButton.connect("buttonPressed", self, "_on_Quit_buttonPressed")
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	puzzleSets = [set1, set2, set3]
 	_setPuzzle()
@@ -68,6 +78,15 @@ func _gameTimer(value):
 	
 	secs = fmod(time, 60)
 	mins = fmod(time, 60 * 60) / 60
+	
+	if int(mins) == 1:
+		death.visible = true
+		deathFog.material.set_shader_param("softness", 0)
+		deathScreen.visible = true
+		GameManager._setGameOver(true)
+		GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().paused = true
 
 func _setPuzzle():
 	print("Setting Puzzle...")
@@ -133,4 +152,8 @@ func _dialogic_signal(signalName):
 func _setComplete():
 	_changeSet()
 
+func _on_Reset_buttonPressed(buttonName):
+	get_tree().reload_current_scene()
 
+func _on_Quit_buttonPressed(buttonName):
+	LoadingScreen.loadLevel("WorldMap")

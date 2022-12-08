@@ -17,7 +17,7 @@ func _on_Unpause_pressed():
 
 func _unpause():
 	GameManager._setGamePaused(false)
-	GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
+	GameManager._setGameTimerActive(true)
 	self.visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_tree().paused = false

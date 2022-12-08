@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/Stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Components/Tilesets/Underground/Underground.tscn" type="PackedScene" id=2]
@@ -28,6 +28,32 @@
 [ext_resource path="res://Assets/Textures/Slides/Subtraction/6.png" type="Texture" id=26]
 [ext_resource path="res://Assets/Textures/Slides/Subtraction/9.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Textures/DarkBackgroundPanel.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=29]
+[ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=30]
+
+[sub_resource type="Shader" id=4]
+code = "shader_type canvas_item;
+
+uniform vec4 color: hint_color;
+uniform float multiplier = 0.2;
+uniform float softness = 3.0;
+
+void fragment() {
+	float value = distance(UV, vec2(0.5));
+	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 4 )
+shader_param/color = Color( 0, 0.27451, 0.188235, 1 )
+shader_param/multiplier = -0.5
+shader_param/softness = 6.0
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 29 )
 
 [node name="Level 06" type="Node"]
 script = ExtResource( 1 )
@@ -122,6 +148,7 @@ scannerID = 1
 
 [node name="Sprite2" parent="GameObjects/Question/Answer" instance=ExtResource( 12 )]
 position = Vector2( -544, 128 )
+frame = 0
 
 [node name="Top" type="Node2D" parent="GameObjects/Question"]
 
@@ -161,7 +188,6 @@ isWholeNumber = false
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 12 )]
 position = Vector2( -544, 104 )
-frame = 0
 
 [node name="Bottom" type="Node2D" parent="GameObjects/Question"]
 
@@ -179,7 +205,6 @@ objectValue = 17
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 12 )]
 position = Vector2( -544, 88 )
-frame = 0
 
 [node name="DoubleDigits4" parent="GameObjects/Question/Bottom" instance=ExtResource( 20 )]
 position = Vector2( -528, 112 )
@@ -333,8 +358,59 @@ visible = false
 [node name="ResultPanel" parent="." instance=ExtResource( 11 )]
 visible = false
 
+[node name="Death" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="Death"]
+material = SubResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DeathScreen" type="Control" parent="Death"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Death/DeathScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "ARCHI GOT LOST"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Death/DeathScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 300, 37 )
+rect_pivot_offset = Vector2( 150, 18 )
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Reset" parent="Death/DeathScreen/HBoxContainer" instance=ExtResource( 30 )]
+margin_left = 36.0
+margin_right = 147.0
+margin_bottom = 37.0
+text = "RESTART"
+
+[node name="Quit" parent="Death/DeathScreen/HBoxContainer" instance=ExtResource( 30 )]
+margin_left = 197.0
+margin_right = 264.0
+margin_bottom = 37.0
+text = "QUIT"
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="HealTimer" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

@@ -34,7 +34,7 @@
 [ext_resource path="res://Assets/Textures/DarkBackgroundPanel.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Textures/Slides/Multiplication/9.png" type="Texture" id=33]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=4]
 code = "shader_type canvas_item;
 
 uniform vec4 color: hint_color;
@@ -46,13 +46,13 @@ void fragment() {
 	COLOR = vec4(color.rgb, smoothstep(multiplier, softness, value));
 }"
 
-[sub_resource type="ShaderMaterial" id=2]
-shader = SubResource( 1 )
-shader_param/color = Color( 0.490196, 0.482353, 0.145098, 1 )
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 4 )
+shader_param/color = Color( 0, 0.27451, 0.188235, 1 )
 shader_param/multiplier = -0.5
 shader_param/softness = 6.0
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=6]
 size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -219,9 +219,6 @@ script = ExtResource( 23 )
 
 [node name="Timer" type="Timer" parent="GameObjects/Traps"]
 
-[node name="HealTimer" type="Timer" parent="GameObjects/Traps"]
-wait_time = 5.0
-
 [node name="Trap" type="Node2D" parent="GameObjects/Traps"]
 
 [node name="Cavalier6" parent="GameObjects/Traps/Trap" instance=ExtResource( 16 )]
@@ -241,53 +238,6 @@ position = Vector2( -480, 8 )
 
 [node name="Cavalier11" parent="GameObjects/Traps/Trap" instance=ExtResource( 16 )]
 position = Vector2( -336, 40 )
-
-[node name="Death" type="CanvasLayer" parent="GameObjects/Traps"]
-pause_mode = 2
-
-[node name="ColorRect" type="ColorRect" parent="GameObjects/Traps/Death"]
-material = SubResource( 2 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="DeathScreen" type="Control" parent="GameObjects/Traps/Death"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Label" type="Label" parent="GameObjects/Traps/Death/DeathScreen"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 3 )
-text = "ARCHI GOT LOST"
-align = 1
-valign = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GameObjects/Traps/Death/DeathScreen"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -150.0
-margin_top = 36.0
-margin_right = 150.0
-margin_bottom = 73.0
-rect_min_size = Vector2( 300, 37 )
-rect_pivot_offset = Vector2( 150, 18 )
-custom_constants/separation = 50
-alignment = 1
-
-[node name="Reset" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 17 )]
-margin_left = 36.0
-margin_right = 147.0
-margin_bottom = 37.0
-text = "RESTART"
-
-[node name="Quit" parent="GameObjects/Traps/Death/DeathScreen/HBoxContainer" instance=ExtResource( 17 )]
-margin_left = 197.0
-margin_right = 264.0
-margin_bottom = 37.0
-text = "QUIT"
 
 [node name="WhiteBoard" type="CanvasLayer" parent="."]
 
@@ -386,8 +336,59 @@ visible = false
 [node name="ResultPanel" parent="." instance=ExtResource( 6 )]
 visible = false
 
+[node name="Death" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="Death"]
+material = SubResource( 5 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DeathScreen" type="Control" parent="Death"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Death/DeathScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
+text = "ARCHI GOT LOST"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Death/DeathScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 300, 37 )
+rect_pivot_offset = Vector2( 150, 18 )
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Reset" parent="Death/DeathScreen/HBoxContainer" instance=ExtResource( 17 )]
+margin_left = 36.0
+margin_right = 147.0
+margin_bottom = 37.0
+text = "RESTART"
+
+[node name="Quit" parent="Death/DeathScreen/HBoxContainer" instance=ExtResource( 17 )]
+margin_left = 197.0
+margin_right = 264.0
+margin_bottom = 37.0
+text = "QUIT"
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="HealTimer" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

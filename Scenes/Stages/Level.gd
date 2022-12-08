@@ -9,6 +9,12 @@ onready var noise := OpenSimplexNoise.new()
 onready var camera := $Camera2D
 onready var blackBoad := $WhiteBoard
 onready var slides := $WhiteBoard/Control/Slides
+onready var death := $Death
+onready var deathFog := $Death/ColorRect
+onready var deathScreen := $Death/DeathScreen
+onready var healTimer := $HealTimer
+onready var resetButton := $Death/DeathScreen/HBoxContainer/Reset
+onready var quitButton := $Death/DeathScreen/HBoxContainer/Quit
 
 export(Array, String) var timelines
 export var answers := {
@@ -45,6 +51,7 @@ func _ready():
 	get_tree().current_scene = self
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	deathFog.material.set_shader_param("softness", 6)
 	_playDialog()
 	_connectSignal()
 	levelMusicManager()
@@ -94,6 +101,9 @@ func _connectSignal():
 	player.connect("playerPushed", self, "_playerPushJournal")
 	player.connect("playerDamage", self, "_onPlayerHurt")
 	temple.connect("levelAccomplish", self, "_onLevelAccomplish")
+	resetButton.connect("buttonPressed", self, "_on_Reset_buttonPressed")
+	quitButton.connect("buttonPressed", self, "_on_Quit_buttonPressed")
+	healTimer.connect("timeout", self, "_on_HealTimer_timeout")
 	
 	for box in get_tree().get_nodes_in_group("Box"):
 		box.connect("boxMoves", self, "_boxJournal")
@@ -148,6 +158,15 @@ func _gameTimer(value):
 	
 	secs = fmod(time, 60)
 	mins = fmod(time, 60 * 60) / 60
+	
+	if int(mins) == 7:
+		death.visible = true
+		deathFog.material.set_shader_param("softness", 0)
+		deathScreen.visible = true
+		GameManager._setGameOver(true)
+		GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().paused = true
 
 func _onPhantomTileStateChange():
 	for unWalkable in get_tree().get_nodes_in_group("Unwalkable"):
@@ -272,7 +291,17 @@ func levelMusicManager():
 
 func _onPlayerHurt():
 	applyShake()
-	get_node_or_null("GameObjects/Traps")._onPlayerHurt()
+	var currentValue = deathFog.material.get_shader_param("softness")
+	if currentValue > 0:
+		deathFog.material.set_shader_param("softness", currentValue - 1)
+		healTimer.start()
+
+	if (currentValue - 1) == 0:
+		deathScreen.visible = true
+		GameManager._setGameOver(true)
+		GameManager._setGameTimerActive(false)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().paused = true
 
 func applyShake():
 	shakeStrength = noiseShakeStrength
@@ -305,3 +334,18 @@ func closePresentation():
 
 func openNextSlide(value):
 	slides.get_child(value).visible = true
+
+func _on_HealTimer_timeout():
+	var currentValue = deathFog.material.get_shader_param("softness")
+	if (currentValue - 1) < 5 and !GameManager._getGameOver() and !GameManager._getGamePause():
+		deathFog.material.set_shader_param("softness", currentValue + 1)
+		healTimer.start()
+	else:
+		healTimer.stop()
+
+func _on_Reset_buttonPressed(buttonName):
+	get_tree().reload_current_scene()
+
+func _on_Quit_buttonPressed(buttonName):
+	LoadingScreen.loadLevel("WorldMap")
+	
