@@ -1,9 +1,11 @@
 extends Node
 
 signal setDone
+
 onready var camera := $Camera2D
 onready var rand := RandomNumberGenerator.new()
 onready var noise := OpenSimplexNoise.new()
+
 onready var board := $Board
 onready var player := $Board/Player
 onready var temple := $Board/Temple
@@ -25,11 +27,11 @@ export var answers := {
 export(String) var introTimelineName = ""
 export(int) var numberOfTraps = 2
 export(int) var spawnWaitTime = 2
-export var randomShakeStrength: float = 10.0
-export var shakeDecayRate: float = 3.0
-export var noiseShakeSpeed: float = 10.0
-export var noiseShakeStrength: float = 15.0
 
+var randomShakeStrength: float = 10.0
+var shakeDecayRate: float = 3.0
+var noiseShakeSpeed: float = 10.0
+var noiseShakeStrength: float = 15.0
 var moveCount: int = 0
 var result = Array()
 var undoRedoJournal: UndoRedo = UndoRedo.new()

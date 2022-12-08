@@ -4,6 +4,7 @@ export(PackedScene) var set1
 export(PackedScene) var set2
 export(PackedScene) var set3
 export(int, 0, 4) var requiredMedal = 0
+export(String) var bossEndingTimeline = ""
 
 onready var pause := $PausePanel
 onready var resultPanel := $ResultPanel
@@ -21,7 +22,6 @@ var dungeonBossMusic = load("res://Assets/Audio/Music/Castle/FinalCastleBossLeve
 var magicalBossMusic = load("res://Assets/Audio/Music/Magical/FinalMagicalBossLevelMusic.ogg")
 
 func _ready():
-#	setBossStageBGMusic()
 	GlobalMusic._changeMusic(setBossStageBGMusic())
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	puzzleSets = [set1, set2, set3]
@@ -98,7 +98,19 @@ func _changeSet():
 func _onLevelAccomplish():
 	GameManager._setGameOver(true)
 	GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
+	stageArea.call_deferred("queue_free")
+	if get_node_or_null('DialogNode') == null:
+		GameManager._setGamePaused(true)
+		GameManager._setGameOver(true)
+		GameManager._setGameTimerActive(false)
+		var dialog = Dialogic.start(bossEndingTimeline)
+		dialog.connect('timeline_end', self, '_dialogEnd')
+		add_child(dialog)
+
+func _dialogEnd(timeline_name):
 	resultPanel._showResult(mins, secs, self.name.right(5).to_int(), requiredMedal)
 
 func _setComplete():
 	_changeSet()
+
+

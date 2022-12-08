@@ -72,7 +72,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				},
 				"Forest": {
@@ -89,7 +89,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				},
 				"IntroDialog": {
@@ -176,7 +176,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": false
+						"folded": true
 					}
 				}
 			},

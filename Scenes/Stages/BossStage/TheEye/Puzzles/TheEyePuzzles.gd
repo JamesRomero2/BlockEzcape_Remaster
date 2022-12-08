@@ -48,7 +48,6 @@ func _ready():
 	spawnTime.wait_time = spawnWaitTime
 	_connectSignal()
 	_playDialog(introTimelineName)
-	_cast()
 	venomFog.material.set_shader_param("softness", 6)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
@@ -74,6 +73,7 @@ func _playGame():
 	GameManager._setGameOver(false)
 	GameManager._setGamePaused(false)
 	GameManager._setGameTimerActive(true)
+	_cast()
 
 func _connectSignal():
 	player.connect("objectStateChange", self, "_playerJournal")

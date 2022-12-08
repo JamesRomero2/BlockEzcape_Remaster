@@ -2,7 +2,7 @@
 	"events": [
 		{
 			"animation": "1-fade_in.gd",
-			"animation_length": 0.5,
+			"animation_length": 0.2,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,

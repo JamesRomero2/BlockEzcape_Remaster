@@ -9,7 +9,6 @@
 [ext_resource path="res://Scenes/Stages/BossStage/TheKnight/Puzzles/3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Stages/BossStage/TheKnight/Puzzles/2.tscn" type="PackedScene" id=8]
 
-
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
@@ -45,6 +44,7 @@ script = ExtResource( 1 )
 set1 = ExtResource( 6 )
 set2 = ExtResource( 8 )
 set3 = ExtResource( 7 )
+bossEndingTimeline = "/Dungeon/Level 15(AfterBoss)"
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 layer = -10

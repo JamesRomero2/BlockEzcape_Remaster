@@ -2,7 +2,7 @@
 	"events": [
 		{
 			"animation": "1-fade_in.gd",
-			"animation_length": 0.5,
+			"animation_length": 0.2,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -29,7 +29,7 @@
 		},
 		{
 			"animation": "4-fade_out.gd",
-			"animation_length": 0.5,
+			"animation_length": 0.2,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -50,7 +50,7 @@
 		},
 		{
 			"animation": "1-fade_in.gd",
-			"animation_length": 0.5,
+			"animation_length": 0.2,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -77,7 +77,7 @@
 		},
 		{
 			"animation": "4-fade_out.gd",
-			"animation_length": 0.5,
+			"animation_length": 0.2,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -98,7 +98,7 @@
 		},
 		{
 			"animation": "1-fade_in.gd",
-			"animation_length": 0.5,
+			"animation_length": 0.2,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -125,7 +125,7 @@
 		},
 		{
 			"animation": "4-fade_out.gd",
-			"animation_length": 0.5,
+			"animation_length": 0.2,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -146,7 +146,7 @@
 		},
 		{
 			"event_id": "dialogic_022",
-			"transition_duration": 0.5
+			"transition_duration": 0.2
 		}
 	],
 	"metadata": {

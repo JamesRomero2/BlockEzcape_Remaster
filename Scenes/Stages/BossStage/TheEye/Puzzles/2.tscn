@@ -21,8 +21,6 @@
 [ext_resource path="res://Assets/Textures/Chevron-Arrow.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=20]
 
-
-
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 8 ) ],
@@ -121,25 +119,22 @@ position = Vector2( 456, 88 )
 
 [node name="TheEyeSprite" parent="Board" instance=ExtResource( 13 )]
 position = Vector2( 272, 64 )
-frame = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/TheEyeSprite"]
 show_behind_parent = true
 position = Vector2( -1, 49 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 13 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]
 
 [node name="AnimatedSprite" parent="Board/Traps" instance=ExtResource( 4 )]
 position = Vector2( 360, 16 )
-frame = 1
 
 [node name="AnimatedSprite2" parent="Board/Traps" instance=ExtResource( 4 )]
 position = Vector2( 552, 16 )
-frame = 1
 
 [node name="Question" type="Node2D" parent="Board"]
 position = Vector2( 704, -40 )
@@ -208,9 +203,11 @@ isWholeNumber = false
 
 [node name="Sprite" parent="Board/Question" instance=ExtResource( 17 )]
 position = Vector2( -688, 64 )
+frame = 0
 
 [node name="Sprite2" parent="Board/Question" instance=ExtResource( 17 )]
 position = Vector2( -688, 40 )
+frame = 0
 
 [node name="Crystal" parent="Board/Question" instance=ExtResource( 16 )]
 position = Vector2( -608, 104 )
@@ -296,9 +293,11 @@ objectValue = 0
 
 [node name="Sprite4" parent="Board/Question" instance=ExtResource( 17 )]
 position = Vector2( -632, 64 )
+frame = 0
 
 [node name="Sprite5" parent="Board/Question" instance=ExtResource( 17 )]
 position = Vector2( -632, 40 )
+frame = 0
 
 [node name="Line2" type="Sprite" parent="Board/Question"]
 position = Vector2( -648, 56 )
@@ -315,22 +314,22 @@ offset = Vector2( -6, -4 )
 
 [node name="Arr" type="Sprite" parent="Board/Question"]
 position = Vector2( -656, 48 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.063, 0.063 )
 texture = ExtResource( 19 )
 
 [node name="Arr3" type="Sprite" parent="Board/Question"]
 position = Vector2( -552, 48 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.063, 0.063 )
 texture = ExtResource( 19 )
 
 [node name="Arr4" type="Sprite" parent="Board/Question"]
 position = Vector2( -552, 72 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.063, 0.063 )
 texture = ExtResource( 19 )
 
 [node name="Arr2" type="Sprite" parent="Board/Question"]
 position = Vector2( -656, 72 )
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.063, 0.063 )
 texture = ExtResource( 19 )
 
 [node name="Timers" type="Node" parent="."]

@@ -1,12 +1,6 @@
 {
 	"events": [
 		{
-			"character": "",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "[i] Walking [/i]"
-		},
-		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"change_mirror_portrait": false,

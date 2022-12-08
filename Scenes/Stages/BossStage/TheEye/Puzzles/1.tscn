@@ -21,7 +21,6 @@
 [ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Textures/Chevron-Arrow.png" type="Texture" id=20]
 
-
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 8 ) ],
@@ -62,6 +61,7 @@ answers = {
 2: 5,
 3: null
 }
+introTimelineName = "/Magical/Level 20(BossIntro)"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -312, 176 )
@@ -107,21 +107,19 @@ position = Vector2( 504, 40 )
 
 [node name="TheEyeSprite" parent="Board" instance=ExtResource( 13 )]
 position = Vector2( 360, 32 )
-frame = 0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/TheEyeSprite"]
 show_behind_parent = true
 position = Vector2( -1, 49 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 13 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]
 
 [node name="AnimatedSprite2" parent="Board/Traps" instance=ExtResource( 4 )]
 position = Vector2( 439, -51 )
-frame = 2
 
 [node name="Question" type="Node2D" parent="Board"]
 position = Vector2( 808, -96 )
@@ -298,22 +296,22 @@ offset = Vector2( -6, -4 )
 
 [node name="Arr" type="Sprite" parent="Board/Question"]
 position = Vector2( -656, 48 )
-scale = Vector2( 0.125, 0.125 )
+scale = Vector2( 0.063, 0.063 )
 texture = ExtResource( 20 )
 
 [node name="Arr3" type="Sprite" parent="Board/Question"]
 position = Vector2( -552, 48 )
-scale = Vector2( 0.125, 0.125 )
+scale = Vector2( 0.063, 0.063 )
 texture = ExtResource( 20 )
 
 [node name="Arr4" type="Sprite" parent="Board/Question"]
 position = Vector2( -552, 72 )
-scale = Vector2( 0.125, 0.125 )
+scale = Vector2( 0.063, 0.063 )
 texture = ExtResource( 20 )
 
 [node name="Arr2" type="Sprite" parent="Board/Question"]
 position = Vector2( -656, 72 )
-scale = Vector2( 0.125, 0.125 )
+scale = Vector2( 0.063, 0.063 )
 texture = ExtResource( 20 )
 
 [node name="Timers" type="Node" parent="."]

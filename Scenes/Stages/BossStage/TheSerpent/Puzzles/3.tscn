@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GameObjects/Blocks/SymbolBlocks/SymbolBlocks.tscn" type="PackedScene" id=2]
@@ -17,9 +17,10 @@
 [ext_resource path="res://Assets/Textures/Bosses/Serpent/Temple/ForestBossTemple1.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Textures/Bosses/Serpent/Temple/ForestBossTemple3.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Textures/Bosses/Serpent/Temple/ForestBossTemple2.png" type="Texture" id=17]
+[ext_resource path="res://GameObjects/Blocks/PhantomBlocks/PhantomBlock.tscn" type="PackedScene" id=18]
+[ext_resource path="res://GameObjects/Tiles/LeverTile/LeverTile.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Stages/BossStage/TheSerpent/Puzzles/SerpentsPuzzle.gd" type="Script" id=25]
 [ext_resource path="res://Assets/Textures/Line.png" type="Texture" id=26]
-
 
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
@@ -57,20 +58,22 @@ font_data = ExtResource( 1 )
 script = ExtResource( 25 )
 answers = {
 0: 3,
-1: 7,
-2: 5,
-3: 6
+1: 37,
+2: 50,
+3: 60
 }
 numberOfTraps = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 376, 112 )
+position = Vector2( -328, 184 )
 current = true
+zoom = Vector2( 0.9, 0.9 )
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="Board" type="Node2D" parent="."]
+position = Vector2( -696, 72 )
 
 [node name="ForestTilemap" parent="Board" instance=ExtResource( 10 )]
 
@@ -89,9 +92,15 @@ position = Vector2( 360, 24 )
 [node name="Player" parent="Board" instance=ExtResource( 5 )]
 position = Vector2( 552, 24 )
 
+[node name="PhantomBlock" parent="Board" instance=ExtResource( 18 )]
+position = Vector2( 536, 104 )
+
+[node name="PhantomBlock2" parent="Board" instance=ExtResource( 18 )]
+position = Vector2( 344, 136 )
+
 [node name="Serpent" parent="Board" instance=ExtResource( 11 )]
 position = Vector2( 160, 32 )
-frame = 2
+frame = 0
 speed_scale = 2.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/Serpent"]
@@ -101,6 +110,44 @@ scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 13 )
 frame = 3
 playing = true
+
+[node name="ScannerTile" parent="Board" instance=ExtResource( 8 )]
+position = Vector2( 328, 184 )
+scannerID = 1
+
+[node name="ScannerTile2" parent="Board" instance=ExtResource( 8 )]
+position = Vector2( 584, 184 )
+scannerID = 2
+
+[node name="ScannerTile3" parent="Board" instance=ExtResource( 8 )]
+position = Vector2( 328, 24 )
+
+[node name="ScannerTile4" parent="Board" instance=ExtResource( 8 )]
+position = Vector2( 584, 56 )
+scannerID = 3
+
+[node name="Box" parent="Board" instance=ExtResource( 13 )]
+position = Vector2( 520, 104 )
+boxValue = 37
+
+[node name="Box2" parent="Board" instance=ExtResource( 13 )]
+position = Vector2( 440, 104 )
+boxValue = 50
+
+[node name="Box3" parent="Board" instance=ExtResource( 13 )]
+position = Vector2( 504, 136 )
+boxValue = 3
+
+[node name="Box4" parent="Board" instance=ExtResource( 13 )]
+position = Vector2( 376, 104 )
+boxValue = 60
+boxWholeNum = false
+
+[node name="Baud" parent="Board" instance=ExtResource( 3 )]
+position = Vector2( 568, 24 )
+
+[node name="LeverTile" parent="Board" instance=ExtResource( 19 )]
+position = Vector2( 328, 40 )
 
 [node name="Traps" type="Node2D" parent="Board"]
 
@@ -215,121 +262,88 @@ position = Vector2( 392, 136 )
 [node name="Venom21" parent="Board/Traps" instance=ExtResource( 12 )]
 position = Vector2( 360, 136 )
 
-[node name="ScannerTile" parent="Board" instance=ExtResource( 8 )]
-position = Vector2( 328, 184 )
-scannerID = 1
-
-[node name="ScannerTile2" parent="Board" instance=ExtResource( 8 )]
-position = Vector2( 584, 184 )
-scannerID = 2
-
-[node name="ScannerTile3" parent="Board" instance=ExtResource( 8 )]
-position = Vector2( 328, 24 )
-
-[node name="ScannerTile4" parent="Board" instance=ExtResource( 8 )]
-position = Vector2( 584, 56 )
-scannerID = 3
-
-[node name="Box" parent="Board" instance=ExtResource( 13 )]
-position = Vector2( 520, 104 )
-boxValue = 7
-
-[node name="Box2" parent="Board" instance=ExtResource( 13 )]
-position = Vector2( 440, 104 )
-boxValue = 5
-
-[node name="Box3" parent="Board" instance=ExtResource( 13 )]
-position = Vector2( 504, 136 )
-boxValue = 3
-
-[node name="Box4" parent="Board" instance=ExtResource( 13 )]
-position = Vector2( 376, 104 )
-boxValue = 6
-
-[node name="Baud" parent="Board" instance=ExtResource( 3 )]
-position = Vector2( 568, 24 )
-
 [node name="Question" type="Node2D" parent="Board"]
 position = Vector2( 712, 8 )
 
 [node name="Top" type="Node2D" parent="Board/Question"]
 
 [node name="DoubleDigits2" parent="Board/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -568, 136 )
+position = Vector2( -568, 144 )
 objectValue = 0
 
 [node name="DoubleDigits3" parent="Board/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -544, 136 )
-objectValue = 3
+position = Vector2( -544, 144 )
+objectValue = 30
 
 [node name="DoubleDigits4" parent="Board/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -528, 136 )
+position = Vector2( -528, 144 )
 objectValue = 1
+isWholeNumber = false
 
 [node name="DoubleDigits13" parent="Board/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -512, 136 )
-objectValue = 7
+position = Vector2( -512, 144 )
+objectValue = 70
+isWholeNumber = false
 
 [node name="DoubleDigits14" parent="Board/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -512, 120 )
-objectValue = 9
+position = Vector2( -512, 128 )
+objectValue = 90
+isWholeNumber = false
 
 [node name="DoubleDigits5" parent="Board/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -528, 120 )
+position = Vector2( -528, 128 )
 objectValue = 1
+isWholeNumber = false
 
 [node name="DoubleDigits6" parent="Board/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -544, 120 )
-objectValue = 2
+position = Vector2( -544, 128 )
+objectValue = 20
 
 [node name="DoubleDigits7" parent="Board/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -568, 120 )
-objectValue = 7
-
-[node name="DoubleDigits8" parent="Board/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -584, 120 )
-objectValue = 3
+position = Vector2( -568, 128 )
+objectValue = 37
 
 [node name="DoubleDigits9" parent="Board/Question/Top" instance=ExtResource( 14 )]
-position = Vector2( -528, 160 )
-objectValue = 3
+position = Vector2( -528, 112 )
+objectValue = 1
 
 [node name="Sprite" parent="Board/Question/Top" instance=ExtResource( 9 )]
-position = Vector2( -560, 112 )
+position = Vector2( -560, 120 )
 
 [node name="Bottom" type="Node2D" parent="Board/Question"]
 
 [node name="Sprite2" parent="Board/Question/Bottom" instance=ExtResource( 9 )]
-position = Vector2( -560, 128 )
+position = Vector2( -560, 136 )
 
 [node name="Answer" type="Node2D" parent="Board/Question"]
 
 [node name="Sprite3" parent="Board/Question/Answer" instance=ExtResource( 9 )]
-position = Vector2( -560, 152 )
+position = Vector2( -560, 160 )
 
 [node name="Crystal" parent="Board/Question/Answer" instance=ExtResource( 6 )]
-position = Vector2( -568, 160 )
+position = Vector2( -568, 168 )
 scannerID = 1
 
 [node name="Crystal2" parent="Board/Question/Answer" instance=ExtResource( 6 )]
-position = Vector2( -584, 160 )
+position = Vector2( -528, 168 )
 
 [node name="Crystal3" parent="Board/Question/Answer" instance=ExtResource( 6 )]
-position = Vector2( -544, 160 )
+position = Vector2( -544, 168 )
 scannerID = 2
 
 [node name="Crystal4" parent="Board/Question/Answer" instance=ExtResource( 6 )]
-position = Vector2( -512, 160 )
+position = Vector2( -512, 168 )
 scannerID = 3
+isCrystalWholeNumber = false
 
 [node name="Characters" type="Node2D" parent="Board/Question"]
 
 [node name="SymbolBlocks2" parent="Board/Question/Characters" instance=ExtResource( 2 )]
-position = Vector2( -608, 128 )
+position = Vector2( -608, 136 )
 operation = "Plus"
 
 [node name="Line" type="Sprite" parent="Board/Question/Characters"]
-position = Vector2( -600, 144 )
+position = Vector2( -600, 152 )
 scale = Vector2( 1.3, 0.5 )
 texture = ExtResource( 26 )
 centered = false

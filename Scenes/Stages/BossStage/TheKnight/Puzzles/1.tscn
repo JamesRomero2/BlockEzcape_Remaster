@@ -21,7 +21,6 @@
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=23]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=24]
 
-
 [sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
@@ -62,6 +61,7 @@ answers = {
 2: 55,
 3: null
 }
+introTimelineName = "/Dungeon/Level 15 (BossIntro)"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( -256, 144 )
@@ -132,7 +132,6 @@ position = Vector2( 456, 136 )
 
 [node name="TheKnightSprite" parent="Board" instance=ExtResource( 11 )]
 position = Vector2( 288, -16 )
-frame = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/TheKnightSprite"]
 show_behind_parent = true

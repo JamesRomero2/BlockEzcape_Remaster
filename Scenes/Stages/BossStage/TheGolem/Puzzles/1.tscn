@@ -124,7 +124,6 @@ show_behind_parent = true
 position = Vector2( 0, 40 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 14 )
-frame = 2
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]

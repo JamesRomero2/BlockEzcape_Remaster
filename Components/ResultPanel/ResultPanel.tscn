@@ -14,7 +14,6 @@
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Semibold.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Black.ttf" type="DynamicFontData" id=13]
 
-
 [sub_resource type="Shader" id=17]
 code = "shader_type canvas_item;
 
@@ -33,15 +32,15 @@ shader_param/color = Color( 0, 0, 0, 1 )
 shader_param/multiplier = 0.208
 shader_param/softness = 1.005
 
-[sub_resource type="CanvasItemMaterial" id=11]
+[sub_resource type="CanvasItemMaterial" id=38]
 blend_mode = 1
 particles_animation = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="StreamTexture" id=12]
-load_path = "res://.import/spotlight_1.png-6c06cfb6da324d2658dd2ceeacedde65.stex"
+[sub_resource type="StreamTexture" id=39]
+load_path = "res://.import/spotlight_1.png-66113458d15ee387c2707e03bfaefe16.stex"
 
 [sub_resource type="DynamicFont" id=8]
 size = 18
@@ -674,10 +673,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Sprite" type="Sprite" parent="Container"]
-material = SubResource( 11 )
+material = SubResource( 38 )
 position = Vector2( 480, 160 )
 scale = Vector2( 1e-05, 1e-05 )
-texture = SubResource( 12 )
+texture = SubResource( 39 )
 
 [node name="Awards" type="Control" parent="Container"]
 anchor_left = 1.0
@@ -765,9 +764,9 @@ text = "Puzzle Complete"
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = -200.0
-margin_top = 96.0
+margin_top = -84.0
 margin_right = -12.0
-margin_bottom = 125.0
+margin_bottom = -55.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 13 )
 text = "Total Time Spent"
