@@ -3,6 +3,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -23,12 +24,13 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Is it just me or are we going down?\nI feel like as we walk we are going down"
+			"portrait": "ArchiTalking",
+			"text": "I've finished the Guardian Level, Baud\nWhat's next?"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -49,6 +51,7 @@
 		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -69,12 +72,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Yes, we are going down, the next stage we are going to is under the labyrinth.\nAs I told you earlier, the Labyrinth consists of different environments\nThe next one is completely different from the previous level."
+			"portrait": "Default",
+			"text": "Excellent Job finishing the Guardian Level\nNow we are going to the next stage\nFollow me"
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -93,8 +97,15 @@
 			"z_index": 0
 		},
 		{
+			"event_id": "dialogic_023",
+			"hide_dialogbox": true,
+			"wait_seconds": 1.5,
+			"waiting_skippable": false
+		},
+		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",
@@ -115,12 +126,109 @@
 		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
+			"portrait": "ArchiTalking",
+			"text": "Is it just me or are we going down?\nI feel like as we walk we are going down"
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
 			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Yes, we are going down, the next stage we are going to is under the labyrinth.\nAs I told you earlier, the Labyrinth consists of different environments\nThe next one is completely different from the previous level."
+		},
+		{
+			"animation": "4-fade_out.gd",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707908.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 1,
+			"z_index": 0
+		},
+		{
+			"animation": "1-fade_in.gd",
+			"animation_length": 0,
+			"animation_wait": true,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "ArchiTalking",
+			"portrait_definition": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"character": "character-1666707883.json",
+			"event_id": "dialogic_001",
+			"portrait": "ArchiTalking",
 			"text": "Under the labyrinth? \nNow that you mention it. It's getting hotter and hotter as we go down."
 		},
 		{
 			"animation": "4-fade_out.gd",
 			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707883.json",

@@ -72,7 +72,7 @@
 					},
 					"metadata": {
 						"color": null,
-						"folded": true
+						"folded": false
 					}
 				},
 				"Forest": {
@@ -168,15 +168,14 @@
 					"files": [
 						"timeline-1668589870.json",
 						"timeline-1668589916.json",
-						"timeline-1668589970.json",
-						"timeline-1668589974.json"
+						"timeline-1668589970.json"
 					],
 					"folders": {
 
 					},
 					"metadata": {
 						"color": null,
-						"folded": true
+						"folded": false
 					}
 				}
 			},

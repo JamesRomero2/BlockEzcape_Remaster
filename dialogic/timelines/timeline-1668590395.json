@@ -199,12 +199,6 @@
 			"z_index": 0
 		},
 		{
-			"character": "character-1668504567.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "The labyrinth has been cleared.\nThey both woke up in front of the door tot the labyrinth"
-		},
-		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"animation_wait": true,
@@ -491,12 +485,6 @@
 			},
 			"type": 1,
 			"z_index": 0
-		},
-		{
-			"character": "character-1668504567.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Archi is sent back to his world and lifted the curse in Baud 's world and finally remembers everything about Math."
 		}
 	],
 	"metadata": {
