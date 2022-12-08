@@ -127,7 +127,7 @@
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "You see that [color=maroon]Torch[/color]?\nThat [color=maroon]Torch[/color] shoots a fireball that targets you wherever you are."
+			"text": "You remember the [color=maroon]Torch[/color]?\nThat [color=maroon]Torch[/color] is connected to the Guardian\nAnd it shoots a fireball that targets you wherever you are."
 		},
 		{
 			"character": "character-1666707908.json",
