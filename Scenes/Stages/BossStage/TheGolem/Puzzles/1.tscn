@@ -117,13 +117,14 @@ position = Vector2( 408, 168 )
 
 [node name="Golem" parent="Board" instance=ExtResource( 4 )]
 position = Vector2( 208, 80 )
-frame = 2
+frame = 1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/Golem"]
 show_behind_parent = true
 position = Vector2( 0, 40 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 14 )
+frame = 3
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]
@@ -180,14 +181,13 @@ isWholeNumber = false
 
 [node name="Sprite" parent="Board/Question" instance=ExtResource( 13 )]
 position = Vector2( -560, 112 )
+frame = 0
 
 [node name="Sprite2" parent="Board/Question" instance=ExtResource( 13 )]
 position = Vector2( -560, 128 )
-frame = 0
 
 [node name="Sprite3" parent="Board/Question" instance=ExtResource( 13 )]
 position = Vector2( -560, 152 )
-frame = 0
 
 [node name="Crystal" parent="Board/Question" instance=ExtResource( 14 )]
 position = Vector2( -568, 160 )

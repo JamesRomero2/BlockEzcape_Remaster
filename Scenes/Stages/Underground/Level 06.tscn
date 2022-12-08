@@ -122,7 +122,6 @@ scannerID = 1
 
 [node name="Sprite2" parent="GameObjects/Question/Answer" instance=ExtResource( 12 )]
 position = Vector2( -544, 128 )
-frame = 0
 
 [node name="Top" type="Node2D" parent="GameObjects/Question"]
 
@@ -162,6 +161,7 @@ isWholeNumber = false
 
 [node name="Sprite" parent="GameObjects/Question/Top" instance=ExtResource( 12 )]
 position = Vector2( -544, 104 )
+frame = 0
 
 [node name="Bottom" type="Node2D" parent="GameObjects/Question"]
 
@@ -179,6 +179,7 @@ objectValue = 17
 
 [node name="Sprite2" parent="GameObjects/Question/Bottom" instance=ExtResource( 12 )]
 position = Vector2( -544, 88 )
+frame = 0
 
 [node name="DoubleDigits4" parent="GameObjects/Question/Bottom" instance=ExtResource( 20 )]
 position = Vector2( -528, 112 )

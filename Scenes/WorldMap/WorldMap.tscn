@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Scenes/WorldMap/WorldMap.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/WorldMap/LevelSelector/LevelSelector.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/Textures/Chevron-Arrow.png" type="Texture" id=10]
 [ext_resource path="res://GameObjects/Tiles/LeverTile/Texture/LeverTexture.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Textures/Keys.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/CustomImport/offset_glow.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Assets/Fonts/source-sans-pro/SourceSansPro-Bold.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://Assets/Fonts/Rubik/Rubik-Medium.ttf" type="DynamicFontData" id=16]
@@ -23,7 +24,6 @@
 [ext_resource path="res://Assets/Textures/castle map.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Textures/StageGate.png" type="Texture" id=23]
 [ext_resource path="res://Components/WorldMapComponents/LevelInformation/LevelInformation.tscn" type="PackedScene" id=24]
-
 
 [sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 1
@@ -68,10 +68,6 @@ scale_random = 0.5
 scale_curve = SubResource( 8 )
 color_ramp = SubResource( 15 )
 
-[sub_resource type="StreamTexture" id=17]
-flags = 4
-load_path = "res://.import/offset_glow.png-4a64e79ca1a292e7d5fe8e7c4448333e.stex"
-
 [sub_resource type="CanvasItemMaterial" id=18]
 blend_mode = 1
 
@@ -98,15 +94,8 @@ scale_random = 0.5
 scale_curve = SubResource( 8 )
 color_ramp = SubResource( 20 )
 
-[sub_resource type="StreamTexture" id=22]
-flags = 4
-load_path = "res://.import/offset_glow.png-4a64e79ca1a292e7d5fe8e7c4448333e.stex"
-
 [sub_resource type="CanvasItemMaterial" id=25]
 blend_mode = 1
-
-[sub_resource type="StreamTexture" id=26]
-load_path = "res://.import/spotlight_1.png-6c06cfb6da324d2658dd2ceeacedde65.stex"
 
 [sub_resource type="CanvasItemMaterial" id=27]
 blend_mode = 1
@@ -126,10 +115,6 @@ angle_random = 1.0
 scale_random = 0.5
 scale_curve = SubResource( 8 )
 color_ramp = SubResource( 15 )
-
-[sub_resource type="StreamTexture" id=29]
-flags = 4
-load_path = "res://.import/offset_glow.png-4a64e79ca1a292e7d5fe8e7c4448333e.stex"
 
 [sub_resource type="CanvasItemMaterial" id=30]
 blend_mode = 1
@@ -157,21 +142,131 @@ scale_random = 0.5
 scale_curve = SubResource( 8 )
 color_ramp = SubResource( 34 )
 
-[sub_resource type="StreamTexture" id=32]
-flags = 4
-load_path = "res://.import/offset_glow.png-4a64e79ca1a292e7d5fe8e7c4448333e.stex"
-
 [sub_resource type="CanvasItemMaterial" id=49]
 blend_mode = 1
 
-[sub_resource type="StreamTexture" id=50]
-load_path = "res://.import/spotlight_1.png-6c06cfb6da324d2658dd2ceeacedde65.stex"
+[sub_resource type="CanvasItemMaterial" id=52]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=53]
+offsets = PoolRealArray( 0, 0.229008 )
+colors = PoolColorArray( 0.0156863, 0.32549, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=54]
+gradient = SubResource( 53 )
+
+[sub_resource type="ParticlesMaterial" id=55]
+emission_shape = 1
+emission_sphere_radius = 128.0
+flag_disable_z = true
+gravity = Vector3( 0, -200, 0 )
+angular_velocity = 1.0
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 4 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.5
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 54 )
+
+[sub_resource type="StreamTexture" id=56]
+flags = 4
+load_path = "res://.import/offset_glow.png-5ba62dc0897adcc6204c53b3db4e968d.stex"
+
+[sub_resource type="CanvasItemMaterial" id=57]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=58]
+offsets = PoolRealArray( 0, 0.870229, 1 )
+colors = PoolColorArray( 0.938216, 0.945313, 0.0369263, 1, 0.190121, 0.188265, 0, 0.221374, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=59]
+gradient = SubResource( 58 )
+
+[sub_resource type="ParticlesMaterial" id=60]
+emission_shape = 1
+emission_sphere_radius = 128.0
+flag_disable_z = true
+gravity = Vector3( 0, -200, 0 )
+angular_velocity = 1.0
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 4 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.5
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 59 )
+
+[sub_resource type="StreamTexture" id=61]
+flags = 4
+load_path = "res://.import/offset_glow.png-5ba62dc0897adcc6204c53b3db4e968d.stex"
 
 [sub_resource type="CanvasItemMaterial" id=47]
 blend_mode = 1
 
-[sub_resource type="StreamTexture" id=48]
-load_path = "res://.import/spotlight_1.png-6c06cfb6da324d2658dd2ceeacedde65.stex"
+[sub_resource type="CanvasItemMaterial" id=62]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=63]
+offsets = PoolRealArray( 0, 0.229008 )
+colors = PoolColorArray( 0.670588, 0.00784314, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=64]
+gradient = SubResource( 63 )
+
+[sub_resource type="ParticlesMaterial" id=65]
+emission_shape = 1
+emission_sphere_radius = 128.0
+flag_disable_z = true
+gravity = Vector3( 0, -200, 0 )
+angular_velocity = 1.0
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 4 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.5
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 64 )
+
+[sub_resource type="StreamTexture" id=66]
+flags = 4
+load_path = "res://.import/offset_glow.png-5ba62dc0897adcc6204c53b3db4e968d.stex"
+
+[sub_resource type="CanvasItemMaterial" id=67]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=68]
+offsets = PoolRealArray( 0, 0.870229, 1 )
+colors = PoolColorArray( 0.956863, 0.266667, 0.960784, 1, 0.190121, 0.188265, 0, 0.221374, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=69]
+gradient = SubResource( 68 )
+
+[sub_resource type="ParticlesMaterial" id=70]
+emission_shape = 1
+emission_sphere_radius = 128.0
+flag_disable_z = true
+gravity = Vector3( 0, -200, 0 )
+angular_velocity = 1.0
+angular_velocity_random = 1.0
+angular_velocity_curve = SubResource( 4 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 360.0
+angle_random = 1.0
+scale_random = 0.5
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 69 )
+
+[sub_resource type="StreamTexture" id=71]
+flags = 4
+load_path = "res://.import/offset_glow.png-5ba62dc0897adcc6204c53b3db4e968d.stex"
 
 [sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 16, 16 )
@@ -422,14 +517,14 @@ position = Vector2( -384, -240 )
 scale = Vector2( 0.8, 0.8 )
 amount = 16
 process_material = SubResource( 16 )
-texture = SubResource( 17 )
+texture = ExtResource( 13 )
 
 [node name="Particles2D3" type="Particles2D" parent="Map/ForestArea"]
 material = SubResource( 18 )
 position = Vector2( -384, -256 )
 scale = Vector2( 0.8, 0.8 )
 process_material = SubResource( 21 )
-texture = SubResource( 22 )
+texture = ExtResource( 13 )
 
 [node name="UndergroundArea" type="Node2D" parent="Map"]
 position = Vector2( -144, 64 )
@@ -439,7 +534,7 @@ modulate = Color( 0.803922, 0.627451, 0, 1 )
 material = SubResource( 25 )
 position = Vector2( 0, -32 )
 scale = Vector2( 2.5, 2.5 )
-texture = SubResource( 26 )
+texture = ExtResource( 6 )
 
 [node name="Forest" type="Sprite" parent="Map/UndergroundArea"]
 scale = Vector2( 2, 2 )
@@ -489,13 +584,13 @@ material = SubResource( 27 )
 scale = Vector2( 0.8, 0.8 )
 amount = 16
 process_material = SubResource( 28 )
-texture = SubResource( 29 )
+texture = ExtResource( 13 )
 
 [node name="Particles2D3" type="Particles2D" parent="Map/UndergroundArea"]
 material = SubResource( 30 )
 scale = Vector2( 0.8, 0.8 )
 process_material = SubResource( 35 )
-texture = SubResource( 32 )
+texture = ExtResource( 13 )
 
 [node name="Ruins" type="Node2D" parent="Map"]
 position = Vector2( 128, -232 )
@@ -504,7 +599,7 @@ position = Vector2( 128, -232 )
 modulate = Color( 0.0156863, 0.113725, 0.94902, 1 )
 material = SubResource( 49 )
 scale = Vector2( 2.5, 2.5 )
-texture = SubResource( 50 )
+texture = ExtResource( 6 )
 
 [node name="Ruins" type="Sprite" parent="Map/Ruins"]
 scale = Vector2( 2, 2 )
@@ -545,6 +640,19 @@ targetLevel = "Level 11"
 levelTitle = "Dungeon Augmentation - Act 1"
 levelNumber = 11
 
+[node name="Particles2D2" type="Particles2D" parent="Map/Ruins"]
+material = SubResource( 52 )
+scale = Vector2( 0.8, 0.8 )
+amount = 16
+process_material = SubResource( 55 )
+texture = SubResource( 56 )
+
+[node name="Particles2D3" type="Particles2D" parent="Map/Ruins"]
+material = SubResource( 57 )
+scale = Vector2( 0.8, 0.8 )
+process_material = SubResource( 60 )
+texture = SubResource( 61 )
+
 [node name="Magical" type="Node2D" parent="Map"]
 position = Vector2( 392, 16 )
 
@@ -552,7 +660,7 @@ position = Vector2( 392, 16 )
 modulate = Color( 1, 0.419608, 1, 1 )
 material = SubResource( 47 )
 scale = Vector2( 2.5, 2.5 )
-texture = SubResource( 48 )
+texture = ExtResource( 6 )
 
 [node name="Forest" type="Sprite" parent="Map/Magical"]
 scale = Vector2( 2, 2 )
@@ -592,6 +700,19 @@ scale = Vector2( 2, 2 )
 targetLevel = "Level 20"
 levelTitle = "The Eye between Different Worlds"
 levelNumber = 20
+
+[node name="Particles2D2" type="Particles2D" parent="Map/Magical"]
+material = SubResource( 62 )
+scale = Vector2( 0.8, 0.8 )
+amount = 16
+process_material = SubResource( 65 )
+texture = SubResource( 66 )
+
+[node name="Particles2D3" type="Particles2D" parent="Map/Magical"]
+material = SubResource( 67 )
+scale = Vector2( 0.8, 0.8 )
+process_material = SubResource( 70 )
+texture = SubResource( 71 )
 
 [node name="Blockers" type="Node2D" parent="Map"]
 

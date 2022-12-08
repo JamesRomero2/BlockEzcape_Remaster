@@ -402,11 +402,11 @@
 			"portrait": "BaudSad",
 			"portrait_definition": "",
 			"position": {
-				"0": true,
+				"0": false,
 				"1": false,
 				"2": false,
 				"3": false,
-				"4": false
+				"4": true
 			},
 			"type": 0,
 			"z_index": 0
@@ -616,46 +616,8 @@
 			"text": "So let me explain it to you in the process."
 		},
 		{
-			"animation": "4-fade_out.gd",
-			"animation_length": 0,
-			"animation_wait": true,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": false
-			},
-			"type": 1,
-			"z_index": 0
-		},
-		{
-			"animation": "1-fade_in.gd",
-			"animation_length": 0,
-			"animation_wait": true,
-			"change_mirror_portrait": false,
-			"change_z_index": false,
-			"character": "character-1666707908.json",
-			"event_id": "dialogic_002",
-			"mirror_portrait": false,
-			"portrait": "BaudSad",
-			"portrait_definition": "",
-			"position": {
-				"0": false,
-				"1": false,
-				"2": false,
-				"3": false,
-				"4": true
-			},
-			"type": 0,
-			"z_index": 0
+			"emit_signal": "changeBGtoCastle",
+			"event_id": "dialogic_040"
 		},
 		{
 			"character": "character-1666707908.json",

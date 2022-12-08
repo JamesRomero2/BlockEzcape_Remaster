@@ -100,7 +100,7 @@ position = Vector2( 344, 136 )
 
 [node name="Serpent" parent="Board" instance=ExtResource( 11 )]
 position = Vector2( 160, 32 )
-frame = 0
+frame = 2
 speed_scale = 2.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/Serpent"]
@@ -108,7 +108,7 @@ show_behind_parent = true
 position = Vector2( 0, 32 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 13 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="ScannerTile" parent="Board" instance=ExtResource( 8 )]
@@ -137,6 +137,7 @@ boxValue = 50
 [node name="Box3" parent="Board" instance=ExtResource( 13 )]
 position = Vector2( 504, 136 )
 boxValue = 3
+boxWholeNum = false
 
 [node name="Box4" parent="Board" instance=ExtResource( 13 )]
 position = Vector2( 376, 104 )
@@ -326,10 +327,12 @@ scannerID = 1
 
 [node name="Crystal2" parent="Board/Question/Answer" instance=ExtResource( 6 )]
 position = Vector2( -528, 168 )
+isCrystalWholeNumber = false
 
 [node name="Crystal3" parent="Board/Question/Answer" instance=ExtResource( 6 )]
 position = Vector2( -544, 168 )
 scannerID = 2
+isCrystalWholeNumber = false
 
 [node name="Crystal4" parent="Board/Question/Answer" instance=ExtResource( 6 )]
 position = Vector2( -512, 168 )

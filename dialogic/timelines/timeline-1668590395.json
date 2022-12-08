@@ -123,6 +123,10 @@
 			"text": "We did it!!!! \nWhat will happen now?"
 		},
 		{
+			"emit_signal": "changeBGtoPortal",
+			"event_id": "dialogic_040"
+		},
+		{
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
@@ -197,6 +201,10 @@
 			},
 			"type": 1,
 			"z_index": 0
+		},
+		{
+			"emit_signal": "changeBGtoRealWorld",
+			"event_id": "dialogic_040"
 		},
 		{
 			"animation": "1-fade_in.gd",

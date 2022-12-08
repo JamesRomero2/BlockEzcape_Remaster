@@ -20,8 +20,6 @@
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=22]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=23]
 
-
-
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 3 ) ],
@@ -92,6 +90,7 @@ boxValue = 5
 [node name="Box5" parent="Board" instance=ExtResource( 7 )]
 position = Vector2( 472, 104 )
 boxValue = 8
+boxWholeNum = false
 
 [node name="ScannerTile3" parent="Board" instance=ExtResource( 5 )]
 position = Vector2( 472, 56 )
@@ -120,6 +119,7 @@ position = Vector2( 488, 88 )
 
 [node name="Golem" parent="Board" instance=ExtResource( 4 )]
 position = Vector2( 264, 16 )
+frame = 2
 speed_scale = 1.5
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/Golem"]
@@ -171,7 +171,6 @@ isWholeNumber = false
 
 [node name="DoubleDigits7" parent="Board/Question" instance=ExtResource( 14 )]
 position = Vector2( -544, 120 )
-isWholeNumber = false
 
 [node name="Sprite" parent="Board/Question" instance=ExtResource( 15 )]
 position = Vector2( -576, 112 )
@@ -206,6 +205,34 @@ position = Vector2( -600, 144 )
 scale = Vector2( 0.9, 0.5 )
 texture = ExtResource( 17 )
 centered = false
+
+[node name="BorrowSign3" type="Sprite" parent="Board/Question"]
+position = Vector2( -544, 112 )
+rotation = 1.11457
+scale = Vector2( 0.221642, 0.352669 )
+texture = ExtResource( 17 )
+centered = false
+offset = Vector2( 0.98407, -7.38068 )
+
+[node name="BorrowSign4" type="Sprite" parent="Board/Question"]
+position = Vector2( -552, 112 )
+rotation = 1.11457
+scale = Vector2( 0.221642, 0.352669 )
+texture = ExtResource( 17 )
+centered = false
+offset = Vector2( 0.98407, -7.38068 )
+
+[node name="DoubleDigits8" parent="Board/Question" instance=ExtResource( 14 )]
+modulate = Color( 0.898039, 1, 0.00784314, 1 )
+position = Vector2( -550, 107 )
+scale = Vector2( 0.6, 0.6 )
+objectValue = 4
+
+[node name="DoubleDigits" parent="Board/Question" instance=ExtResource( 14 )]
+modulate = Color( 0.0784314, 0.996078, 0, 1 )
+position = Vector2( -540, 108 )
+scale = Vector2( 0.5, 0.5 )
+objectValue = 10
 
 [node name="Timers" type="Node" parent="."]
 

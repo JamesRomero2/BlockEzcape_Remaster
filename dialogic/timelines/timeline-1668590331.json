@@ -49,6 +49,10 @@
 			"z_index": 0
 		},
 		{
+			"emit_signal": "changeBGtoMagical",
+			"event_id": "dialogic_040"
+		},
+		{
 			"animation": "1-fade_in.gd",
 			"animation_length": 0,
 			"animation_wait": true,

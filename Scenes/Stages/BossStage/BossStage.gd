@@ -10,6 +10,7 @@ onready var pause := $PausePanel
 onready var resultPanel := $ResultPanel
 onready var animation := $AnimationPlayer
 onready var stageArea := $StageArea
+onready var bg := $BackgroundLayer/TextureRect
 
 var set: int = 0
 var puzzleSets = Array()
@@ -20,6 +21,11 @@ var forestBossMusic = load("res://Assets/Audio/Music/Forest/FinalForestBossLevel
 var undergroundBossMusic = load("res://Assets/Audio/Music/Underground/FinalUndergroundBossLevelMusic.ogg")
 var dungeonBossMusic = load("res://Assets/Audio/Music/Castle/FinalCastleBossLevelMusic.ogg")
 var magicalBossMusic = load("res://Assets/Audio/Music/Magical/FinalMagicalBossLevelMusic.ogg")
+var undergroundBG = load("res://Assets/Textures/LevelBG/Underground/9.jpg")
+var ruinsBG = load("res://Assets/Textures/LevelBG/Ruins/3.jpg")
+var magicalBG = load("res://Assets/Textures/LevelBG/MagicalVoid/8.jpg")
+var portalBG = load("res://Assets/Textures/LevelBG/portalWorld.jpg")
+var fieldsBG = load("res://Assets/Textures/LevelBG/fields.jpg")
 
 func _ready():
 	GlobalMusic._changeMusic(setBossStageBGMusic())
@@ -105,10 +111,24 @@ func _onLevelAccomplish():
 		GameManager._setGameTimerActive(false)
 		var dialog = Dialogic.start(bossEndingTimeline)
 		dialog.connect('timeline_end', self, '_dialogEnd')
+		dialog.connect("dialogic_signal", self, "_dialogic_signal")
 		add_child(dialog)
 
 func _dialogEnd(timeline_name):
 	resultPanel._showResult(mins, secs, self.name.right(5).to_int(), requiredMedal)
+
+func _dialogic_signal(signalName):
+	match signalName:
+		"changeBGtoUnderground":
+			bg.texture = undergroundBG
+		"changeBGtoCastle":
+			bg.texture = ruinsBG
+		"changeBGtoMagical":
+			bg.texture = magicalBG
+		"changeBGtoPortal":
+			bg.texture = portalBG
+		"changeBGtoRealWorld":
+			bg.texture = fieldsBG
 
 func _setComplete():
 	_changeSet()
