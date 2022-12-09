@@ -463,7 +463,7 @@ texture = ExtResource( 5 )
 position = Vector2( -560, -248 )
 scale = Vector2( 2, 2 )
 targetLevel = "Level 00"
-levelTitle = "Block Ezcape"
+levelTitle = "BlockEzcape - Tutorial"
 levelOpen = true
 
 [node name="LevelContainer2" parent="Map/ForestArea" instance=ExtResource( 3 )]
