@@ -8,7 +8,6 @@
 [ext_resource path="res://Assets/Textures/BlueLoading.png" type="Texture" id=6]
 [ext_resource path="res://Assets/GameAssets/Fonts/DialogFont.tres" type="DynamicFont" id=7]
 
-
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
@@ -101,4 +100,4 @@ margin_right = 163.0
 margin_bottom = -6.0
 rect_pivot_offset = Vector2( 0, 18 )
 custom_fonts/font = ExtResource( 7 )
-text = "Game Version: 2.0.4.BETA"
+text = "Game Version: 2.1.0"

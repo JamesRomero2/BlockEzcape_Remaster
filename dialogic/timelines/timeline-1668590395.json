@@ -493,6 +493,10 @@
 			},
 			"type": 1,
 			"z_index": 0
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0
 		}
 	],
 	"metadata": {

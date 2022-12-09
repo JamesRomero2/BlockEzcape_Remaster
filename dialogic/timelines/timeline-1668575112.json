@@ -2,7 +2,7 @@
 	"events": [
 		{
 			"animation": "1-fade_in.gd",
-			"animation_length": 0.2,
+			"animation_length": 0,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -25,11 +25,11 @@
 			"character": "character-1666707883.json",
 			"event_id": "dialogic_001",
 			"portrait": "ArchiTalking",
-			"text": "Hello? Excuse me, [color=#0000FF]Librarian[/color]\nWhere can I find a [color=#0000FFMathematics[/color] Book?"
+			"text": "Hello? Excuse me, [color=#0000FF]Librarian[/color]\nWhere can I find a [color=#0000FF]Mathematics[/color] Book?"
 		},
 		{
 			"animation": "4-fade_out.gd",
-			"animation_length": 0.2,
+			"animation_length": 0,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -49,14 +49,8 @@
 			"z_index": 0
 		},
 		{
-			"character": "character-1668575118.json",
-			"event_id": "dialogic_001",
-			"portrait": "",
-			"text": "Hello Archi, Let me just check on the records.\nThis software might take a long time to find the book.\nWhile waiting, Can I ask for a favor Archi ?\nCan you find the Vase and put it on top of the Square Platform.\nI appreciate your help Archi ! Thanks !"
-		},
-		{
 			"animation": "1-fade_in.gd",
-			"animation_length": 0.2,
+			"animation_length": 0,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -76,8 +70,14 @@
 			"z_index": 0
 		},
 		{
+			"character": "character-1668575118.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hello Archi, Let me just check on the records.\nThis software might take a long time to find the book.\nWhile waiting, Can I ask for a favor Archi ?\nCan you find the Vase and put it on top of the Square Platform.\nI appreciate your help Archi ! Thanks !"
+		},
+		{
 			"animation": "4-fade_out.gd",
-			"animation_length": 0.2,
+			"animation_length": 0,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -98,7 +98,7 @@
 		},
 		{
 			"animation": "1-fade_in.gd",
-			"animation_length": 0.2,
+			"animation_length": 0,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -125,7 +125,7 @@
 		},
 		{
 			"animation": "4-fade_out.gd",
-			"animation_length": 0.2,
+			"animation_length": 0,
 			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
@@ -146,7 +146,7 @@
 		},
 		{
 			"event_id": "dialogic_022",
-			"transition_duration": 0.5
+			"transition_duration": 0
 		}
 	],
 	"metadata": {

@@ -2,8 +2,8 @@
 	"events": [
 		{
 			"animation": "slide_in_right.gd",
-			"animation_length": 1,
-			"animation_wait": false,
+			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -24,13 +24,13 @@
 		{
 			"character": "character-1666707908.json",
 			"event_id": "dialogic_001",
-			"portrait": "",
+			"portrait": "BaudHappy",
 			"text": "Good Job ! You have unlocked a new Level !"
 		},
 		{
 			"animation": "4-fade_out.gd",
-			"animation_length": 1,
-			"animation_wait": false,
+			"animation_length": 0,
+			"animation_wait": true,
 			"change_mirror_portrait": false,
 			"change_z_index": false,
 			"character": "character-1666707908.json",
@@ -47,10 +47,6 @@
 			},
 			"type": 1,
 			"z_index": 0
-		},
-		{
-			"event_id": "dialogic_022",
-			"transition_duration": 1
 		}
 	],
 	"metadata": {
