@@ -12,6 +12,7 @@ onready var gotoLibr := $GameObjects/Player/GotoLibrary
 onready var gotoSafe := $GameObjects/Player/GotoSafeArea
 onready var placeHere := $GameObjects/Interact3/Here
 onready var tween := $Tween
+onready var labl := $CanvasLayer/Control/Digit
 
 var cutScene = load("res://Assets/Audio/Music/CutSceneBG.ogg")
 var target = null
@@ -29,6 +30,7 @@ func _ready():
 	arrow.visible = false
 	gotoLibr.visible = false
 	gotoSafe.visible = false
+	labl.visible = false
 	arrowTarget = libraryPoint
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
@@ -45,6 +47,9 @@ func _unhandled_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("escape") and !GameManager._getGameOver():
 			_changeGameState()
+		if event.is_action_pressed("skip") and GameManager._getGameCutScenePlaying():
+			labl.visible = true
+			$CanvasLayer/Timer.start()
 
 func _changeGameState():
 	GameManager._setGamePaused(!GameManager._getGamePause())
@@ -87,17 +92,20 @@ func _unPauseAnimation(timeline_name):
 	if timeline_name == "Dialog1":
 		arrow.visible = true
 		gotoLibr.visible = true
+	
+	GameManager._setGameCutScenePlaying(false)
 
 func _playDialog(timelineTitle):
 	if get_node_or_null('DialogNode') == null:
 		GameManager._setGamePaused(true)
+		GameManager._setGameCutScenePlaying(true)
 		var dialog = Dialogic.start(timelineTitle)
 		dialog.connect('timeline_end', self, '_unPauseAnimation')
 		add_child(dialog)
 
-
 func _on_Tween_tween_completed(object, key):
 	if object.name == "Here":
 		placeHere.visible = false
-	
-	pass # Replace with function body.
+
+func _on_Timer_timeout():
+	$CanvasLayer/Control/Digit.visible = false

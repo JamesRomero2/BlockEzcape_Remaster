@@ -48,7 +48,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = SubResource( 4 )
-shader_param/color = Color( 0, 0.27451, 0.188235, 1 )
+shader_param/color = Color( 0.490196, 0.482353, 0.145098, 1 )
 shader_param/multiplier = -0.5
 shader_param/softness = 6.0
 
@@ -182,10 +182,10 @@ objectValue = 29
 
 [node name="Sprite" parent="GameObjects/Question" instance=ExtResource( 7 )]
 position = Vector2( -560, 112 )
+frame = 0
 
 [node name="Sprite2" parent="GameObjects/Question" instance=ExtResource( 7 )]
 position = Vector2( -560, 192 )
-frame = 0
 
 [node name="Crystal4" parent="GameObjects/Question" instance=ExtResource( 4 )]
 position = Vector2( -568, 200 )

@@ -100,7 +100,7 @@ position = Vector2( 344, 136 )
 
 [node name="Serpent" parent="Board" instance=ExtResource( 11 )]
 position = Vector2( 160, 32 )
-frame = 2
+frame = 1
 speed_scale = 2.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/Serpent"]
@@ -108,7 +108,7 @@ show_behind_parent = true
 position = Vector2( 0, 32 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 13 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="ScannerTile" parent="Board" instance=ExtResource( 8 )]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/DoorCutscene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/CustomImport/DoorImage1.jpg" type="Texture" id=2]
@@ -8,6 +8,14 @@
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Silhoutte1.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/CutScenes/DoorCutscene/Textures/Silhoutte3.png" type="Texture" id=7]
 [ext_resource path="res://Components/PausePanel/PausePanel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Fonts/Rubik/Rubik-Medium.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Components/CustomLabel/Label.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
 
 [node name="DoorCutscene" type="Node"]
 script = ExtResource( 1 )
@@ -67,5 +75,21 @@ texture = ExtResource( 7 )
 hframes = 4
 vframes = 2
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Timer" type="Timer" parent="CanvasLayer2"]
+wait_time = 1.5
+
+[node name="Control" type="Control" parent="CanvasLayer2"]
+
+[node name="Digit" parent="CanvasLayer2/Control" instance=ExtResource( 10 )]
+visible = false
+margin_right = 235.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 1 )
+text = "Cannot Skip Dialog in Tutorial"
+
 [node name="PausePanel" parent="." instance=ExtResource( 8 )]
 visible = false
+
+[connection signal="timeout" from="CanvasLayer2/Timer" to="." method="_on_Timer_timeout"]

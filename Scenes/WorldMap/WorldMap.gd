@@ -8,6 +8,7 @@ onready var levelInfo = $LevelInfo
 var mapMusic = load("res://Assets/Audio/Music/Music1.ogg")
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	GlobalMusic._changeMusic(mapMusic)
 	GameManager._setGamePaused(false)
 	$MainMenuNavigation/Control/VBoxContainer2/Music/MusicVolume.value = GlobalSettings._getMusicVolume()
@@ -42,6 +43,7 @@ func _on_Unpause_pressed():
 	if pause.visible:
 		GameManager._setGamePaused(false)
 		pause.visible = !pause.visible
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _on_MapButton_pressed():
 	_on_Unpause_pressed()
@@ -65,7 +67,12 @@ func _on_SFXVolume_value_changed(value):
 
 func _changeGameState():
 	GameManager._setGamePaused(!GameManager._getGamePause())
-	pause.visible = !pause.visible
+	if !pause.visible:
+		pause.visible = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		pause.visible = false
 
 func _changeBackground(areas):
 	var tween = $CanvasLayer/WorldMapUI/Tween

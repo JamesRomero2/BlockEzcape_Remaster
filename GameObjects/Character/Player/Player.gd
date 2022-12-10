@@ -33,6 +33,8 @@ func _ready():
 func _process(delta):
 	if GameManager._getGameOver() || GameManager._getGamePause():
 		return
+	if GameManager._getGameCutScenePlaying():
+		return
 
 	for dir in inputs.keys():
 		if Input.is_action_pressed(dir):

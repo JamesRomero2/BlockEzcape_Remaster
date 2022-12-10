@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scenes/Stages/BossStage/BossStage.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Textures/ForestCurtain.png" type="Texture" id=2]
@@ -10,6 +10,14 @@
 [ext_resource path="res://Scenes/Stages/BossStage/TheSerpent/Puzzles/3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Fonts/Amiko/Amiko-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Components/Button/Button.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Fonts/Rubik/Rubik-Medium.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Components/CustomLabel/Label.tscn" type="PackedScene" id=12]
+
+[sub_resource type="DynamicFont" id=21]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 11 )
 
 [sub_resource type="Shader" id=18]
 code = "shader_type canvas_item;
@@ -83,6 +91,20 @@ expand = true
 stretch_mode = 7
 
 [node name="StageArea" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 1.5
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+
+[node name="Digit" parent="CanvasLayer/Control" instance=ExtResource( 12 )]
+visible = false
+margin_right = 235.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 21 )
+text = "Cannot Skip Dialog in Tutorial"
 
 [node name="PausePanel" parent="." instance=ExtResource( 4 )]
 visible = false

@@ -60,11 +60,13 @@ func _playDialog(value):
 			GameManager._setGamePaused(true)
 			GameManager._setGameOver(true)
 			GameManager._setGameTimerActive(false)
+			GameManager._setGameCutScenePlaying(true)
 			var dialog = Dialogic.start(value)
 			dialog.connect('timeline_end', self, '_dialogEnd')
 			add_child(dialog)
 
 func _dialogEnd(timeline_name):
+	GameManager._setGameCutScenePlaying(false)
 	_playGame()
 
 func _playGame():

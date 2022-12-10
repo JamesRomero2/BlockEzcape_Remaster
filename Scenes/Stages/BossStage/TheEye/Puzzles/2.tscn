@@ -119,22 +119,25 @@ position = Vector2( 456, 88 )
 
 [node name="TheEyeSprite" parent="Board" instance=ExtResource( 13 )]
 position = Vector2( 272, 64 )
+frame = 2
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Board/TheEyeSprite"]
 show_behind_parent = true
 position = Vector2( -1, 49 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 13 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Traps" type="Node2D" parent="Board"]
 
 [node name="AnimatedSprite" parent="Board/Traps" instance=ExtResource( 4 )]
 position = Vector2( 360, 16 )
+frame = 1
 
 [node name="AnimatedSprite2" parent="Board/Traps" instance=ExtResource( 4 )]
 position = Vector2( 552, 16 )
+frame = 1
 
 [node name="Question" type="Node2D" parent="Board"]
 position = Vector2( 704, -40 )
@@ -203,11 +206,9 @@ isWholeNumber = false
 
 [node name="Sprite" parent="Board/Question" instance=ExtResource( 17 )]
 position = Vector2( -688, 64 )
-frame = 0
 
 [node name="Sprite2" parent="Board/Question" instance=ExtResource( 17 )]
 position = Vector2( -688, 40 )
-frame = 0
 
 [node name="Crystal" parent="Board/Question" instance=ExtResource( 16 )]
 position = Vector2( -608, 104 )
@@ -293,11 +294,9 @@ objectValue = 0
 
 [node name="Sprite4" parent="Board/Question" instance=ExtResource( 17 )]
 position = Vector2( -632, 64 )
-frame = 0
 
 [node name="Sprite5" parent="Board/Question" instance=ExtResource( 17 )]
 position = Vector2( -632, 40 )
-frame = 0
 
 [node name="Line2" type="Sprite" parent="Board/Question"]
 position = Vector2( -648, 56 )

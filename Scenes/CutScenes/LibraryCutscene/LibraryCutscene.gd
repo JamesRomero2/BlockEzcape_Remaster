@@ -16,6 +16,7 @@ onready var taskLabel := $GameArea/Player/Task1/Label
 onready var interact := $Interact
 onready var space := $Close/Space
 onready var whirlpool := $Camera2D/Whirlpool
+onready var labl := $CanvasLayer/Control/Digit
 
 var target = null
 var libraryMusic = load("res://Assets/Audio/Music/LibraryBG.ogg")
@@ -44,6 +45,7 @@ func _ready():
 	space.visible = false
 	whirlpool.visible = false
 	whirlpool.modulate.a = 0
+	labl.visible = false
 	_playDialog()
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
@@ -74,7 +76,12 @@ func _unhandled_input(event):
 						if taskState == 1:
 							dialog = Dialogic.start('/IntroDialog/LibrarianVaseTaskDone')
 						dialog.connect('timeline_end', self, '_unPauseAnimation')
+						GameManager._setGameCutScenePlaying(true)
 						add_child(dialog)
+		
+		if event.is_action_pressed("skip") and GameManager._getGameCutScenePlaying():
+			$CanvasLayer/Timer.start()
+			labl.visible = true
 
 func _changeGameState():
 	GameManager._setGamePaused(!GameManager._getGamePause())
@@ -87,6 +94,7 @@ func _playDialog():
 	if get_node_or_null('DialogNode') == null:
 		GameManager._setGamePaused(true)
 		var dialog = Dialogic.start('Dialog3')
+		GameManager._setGameCutScenePlaying(true)
 		dialog.connect('timeline_end', self, '_unPauseAnimation')
 		add_child(dialog)
 
@@ -103,6 +111,7 @@ func _unPauseAnimation(timeline_name):
 	if timeline_name == "/IntroDialog/LibrarianVaseTaskDone":
 		arrowTarget = bookPoint
 		taskLabel.text = task4
+	GameManager._setGameCutScenePlaying(false)
 
 func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
@@ -146,12 +155,14 @@ func _animationPause():
 	if get_node_or_null('DialogNode') == null:
 		GameManager._setGamePaused(true)
 		var dialog = Dialogic.start("Dialog4")
+		GameManager._setGameCutScenePlaying(true)
 		dialog.connect('timeline_end', self, '_animationUnpause')
 		add_child(dialog)
 	animation.stop(false)
 
 func _animationUnpause(timeline_name):
 	animation.play()
+	GameManager._setGameCutScenePlaying(false)
 
 func _continueAnim():
 	target = player
@@ -175,3 +186,6 @@ func _on_Area2D_body_entered(body):
 		playerEnteredVase = true
 		arrowTarget = $GameArea/LeverTile
 		taskLabel.text = task3
+
+func _on_Timer_timeout():
+	labl.visible = false

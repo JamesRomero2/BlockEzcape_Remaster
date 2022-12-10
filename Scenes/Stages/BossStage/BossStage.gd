@@ -16,6 +16,7 @@ onready var deathFog := $Death/ColorRect
 onready var deathScreen := $Death/DeathScreen
 onready var resetButton := $Death/DeathScreen/HBoxContainer/Reset
 onready var quitButton := $Death/DeathScreen/HBoxContainer/Quit
+onready var labl := $CanvasLayer/Control/Digit
 
 var set: int = 0
 var puzzleSets = Array()
@@ -39,6 +40,7 @@ func _ready():
 	GlobalMusic._changeMusic(setBossStageBGMusic())
 	resetButton.connect("buttonPressed", self, "_on_Reset_buttonPressed")
 	quitButton.connect("buttonPressed", self, "_on_Quit_buttonPressed")
+	$CanvasLayer/Timer.connect("timeout", self, "_on_Timer_timeout")
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	puzzleSets = [set1, set2, set3]
 	_setPuzzle()
@@ -63,6 +65,9 @@ func _unhandled_input(event):
 	if event.is_pressed():
 		if event.is_action_pressed("escape") and !GameManager._getGameOver():
 			_changeGameState()
+		if event.is_action_pressed("skip") and GameManager._getGameCutScenePlaying():
+			labl.visible = true
+			$CanvasLayer/Timer.start()
 
 func _changeGameState():
 	GameManager._setGameTimerActive(!GameManager._getGameTimerActive())
@@ -79,7 +84,7 @@ func _gameTimer(value):
 	secs = fmod(time, 60)
 	mins = fmod(time, 60 * 60) / 60
 	
-	if int(mins) == 1:
+	if int(mins) == 7:
 		death.visible = true
 		deathFog.material.set_shader_param("softness", 0)
 		deathScreen.visible = true
@@ -89,8 +94,7 @@ func _gameTimer(value):
 		get_tree().paused = true
 
 func _setPuzzle():
-	print("Setting Puzzle...")
-	
+	GameManager._setGameCutScenePlaying(true)
 	if puzzleSets.has(""):
 		print("Please Set all Puzzle")
 		
@@ -109,12 +113,12 @@ func _setPuzzle():
 
 	GameManager._setGamePaused(false)
 	GameManager._setGameTimerActive(true)
+	GameManager._setGameCutScenePlaying(false)
 
 func _changeSet():
 	if set >= 0 and set < 2:
 		GameManager._setGamePaused(true)
 		GameManager._setGameTimerActive(false)
-		print("Changing Set...")
 		set += 1
 		_setPuzzle()
 	else:
@@ -128,12 +132,14 @@ func _onLevelAccomplish():
 		GameManager._setGamePaused(true)
 		GameManager._setGameOver(true)
 		GameManager._setGameTimerActive(false)
+		GameManager._setGameCutScenePlaying(true)
 		var dialog = Dialogic.start(bossEndingTimeline)
 		dialog.connect('timeline_end', self, '_dialogEnd')
 		dialog.connect("dialogic_signal", self, "_dialogic_signal")
 		add_child(dialog)
 
 func _dialogEnd(timeline_name):
+	GameManager._setGameCutScenePlaying(false)
 	resultPanel._showResult(mins, secs, self.name.right(5).to_int(), requiredMedal)
 
 func _dialogic_signal(signalName):
@@ -157,3 +163,6 @@ func _on_Reset_buttonPressed(buttonName):
 
 func _on_Quit_buttonPressed(buttonName):
 	LoadingScreen.loadLevel("WorldMap")
+
+func _on_Timer_timeout():
+	labl.visible = false
